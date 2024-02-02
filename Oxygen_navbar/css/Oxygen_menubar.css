@@ -1,0 +1,153 @@
+:root {
+  --base-font: "Oxygen", Arial, Helvetica, sans-serif;
+  --main-color: #F5F5F5;
+  --main-background: #448844;
+  --link-color: #FFFFFF;
+  --link-background: #224822;
+  --pseudo-color: #000000;
+  --pseudo-background: #448844;
+  --base-padding: 1em;
+  --transition-properties: background, color;
+  --transition-duration: 0.3s;
+}
+
+html {
+  font-family: var(--base-font);
+}
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background: var(--main-background);
+}
+
+.navbar div {
+  display: none;
+}
+
+.navbar .menu {
+  color: var(--main-color);
+  display: inline-block;
+  padding: var(--base-padding);
+}
+
+.navbar .brand {
+  color: var(--main-color);
+  display: inline-block;
+  padding: var(--base-padding);
+  text-align: center;
+  min-width: 10em;
+  max-width: 12em;
+}
+
+.navbar .link {
+  display: block;
+  text-align: center;
+  padding: var(--base-padding);
+  text-decoration: none;
+  background: var(--link-background);
+  color: var(--link-color);
+}
+
+.navbar .link:hover,
+.navbar .link:focus,
+.navbar .link:active {
+  background: var(--pseudo-background);
+  color: var(--pseudo-color);
+  transition: var(--transition-properties) var(--transition-duration);
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: var(--main-background);
+  color: var(--main-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: var(--transition-properties) var(--transition-duration);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .navbar,
+  .navbar div {
+    display: flex;
+  }
+
+  .navbar .left {
+    display: flex;
+    flex: 1;
+  }
+
+  .navbar .right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .navbar .right > :first-child {
+    margin-left: auto;
+  }
+
+  .navbar .link:hover {
+    width: auto;
+    font-weight: bolder;
+  }
+
+  .navbar .menu {
+    display: none;
+  }
+
+  .brand:hover {
+    font-weight: bolder;
+    scale: 1.2;
+    width: 12em;
+    transition: var(--transition-properties) var(--transition-duration);
+  }
+}
+
+@media (max-width: 48em) {
+  .navbar.active .menu {
+    background: var(--link-background);
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  .navbar.active div {
+    display: block;
+  }
+
+  .navbar .brand {
+    font-weight: bold;
+    padding-top: 0;
+    padding-left: var(--base-padding);
+    text-align: left;
+  }
+
+  button:active,
+  button:focus {
+    background: var(--pseudo-background);
+    color: var(--pseudo-color);
+  }
+
+  button:hover,
+  .link:hover {
+    background: var(--pseudo-color);
+    color: var(--pseudo-background);
+    font-weight: bolder;
+  }
+}

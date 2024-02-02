@@ -1,0 +1,44 @@
+Este Checkpoint tenemos varios ejercicios prácticos y preguntas teóricas
+
+Ejercicio 1 https://docs.google.com/document/d/1UDwEZ5bKcE1X2o0JIuyFMgDyZ8M4AbSbPj2mXZ4dHkY/edit?usp=sharing
+
+Ejercicio 2 https://docs.google.com/document/d/1AftyzXRLnA47iSHGLNcypRuiRuO_wmDDLsMOrijo6Uw/edit
+
+Preguntas teóricas (por favor responde sin mirar ni apuntes ni documentación por internet, no hagamos trampas al solitario), explícamelo como si fuese tu alumno:
+
+cuatro valores que se pueden usar con la propiedad justify-content.
+
+    center, coloca los items alrededor del centro del contenedor
+    flex-end, agrupa los items desde el final del contenedor
+    flex-start,  agrupa los items desde el principio del contenedor
+    space-around, deja el mismo espacio a cada lado del item con lo que entre item e item el espacio es doble que al inicio o al final del contenedor
+    space-between, el primer y el último item están pegados a los laterales del contenedor
+    space-evenly, los espacios son iguales, sin tener en cuenta si a continuación hay otro item o está en un extremo del contenedor
+
+¿Cuál es un objetivo primordial?
+
+    Organizar los items repartiendo el espacio sobrante del contenedor.
+
+¿Qué son los wireframes de baja fidelidad?
+
+    Es el esqueleto (con pocos detalles) de un proyecto (aplicación, página web,...). Se usa para saber si un diseño tiene sentido o puede funcionar.
+
+¿Qué es Git?
+
+    Es una biblioteca gratuita (y de libre acceso) de código abierto con un sistema de control de versiones distribuido.
+    Es de código abierto porque está desarrollado y mantenido por una comunidad de programadores/desarrolladores de todo el mundo que permiten su uso.
+    Es distribuido porque hay un almacén de código centralizado con el que se puede trabajar individual o colectivamente (varios programadores trabajando al mismo tiempo en los mismos archivos de código).
+    Con el sistema de control de versiones se pueden crear hitos (etapas, fases, puntos...) en el código para realizar un seguimiento de los cambios realizados y, en caso necesario, poder desaherlos en cualquier momento.
+
+¿Qué es un sitemap?
+
+    Es un fichero donde se guarda la estructura del sitio web (la información de los elementos -páginas, imágenes,...- que lo componen y la relacción entre ellos).
+
+Asigne un nombre a tres valores que se pueden utilizar con flex-direction, incluido el valor predeterminado que utiliza flexbox cuando se crea.
+
+    column,
+    column-reverse,
+    row, (predeterminado)
+    row-reverse
+
+Cuando tengas todo completo nos envías el enlace a través de este ticket

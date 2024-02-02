@@ -1,0 +1,150 @@
+$darkolivegreen: #224822;
+$seagreen: #448844;
+
+html {
+    font-family: "Oxygen", sans-serif;
+}
+
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.navbar {
+    background: $seagreen;
+
+    div {
+        display: none;
+    }
+
+    .menu {
+        color: black;
+        display: inline-block;
+        padding: 1em;
+    }
+
+    .brand {
+        color: white;
+        display: inline-block;
+        padding: 1em;
+        text-align: center;
+        width: 10em;
+    }
+
+    .link {
+        display: block;
+        text-align: center;
+        padding: 1em;
+        text-decoration: none;
+        background: $darkolivegreen;
+        color: white;
+
+        &:hover {
+            background: white;
+            color: $darkolivegreen;
+        }
+
+        &:active {
+            background: white;
+            color: $darkolivegreen;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+button {
+    background: $seagreen;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: background .3s, color .3s;
+}
+
+@media (min-width: 48em) {
+    .navbar {
+        display: flex;
+
+        .left {
+            display: flex;
+            flex: 1;
+        }
+
+        .right {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .link {
+            width: auto;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        div {
+            display: flex;
+        }
+    }
+
+    .brand {
+        &:hover {
+            font-weight: bold;
+            scale: 1.2;
+            width: 12em;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 48em) {
+    .navbar {
+        &.active {
+            .menu {
+                background: $darkolivegreen;
+                color: white;
+            }
+
+            div {
+                display: block;
+            }
+        }
+
+        .brand {
+            font-weight: bold;
+            padding: 0 0 0 1em;
+            text-align: left;
+        }
+    }
+
+    button {
+        &:active {
+            background: $seagreen;
+            color: white;
+        }
+
+        &:focus {
+            background: $seagreen;
+            color: white;
+        }
+
+        &:hover {
+            background: white;
+            color: $seagreen;
+        }
+    }
+}

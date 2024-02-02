@@ -1,0 +1,120 @@
+html {
+  font-family: "Oxygen", sans-serif;
+}
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.navbar {
+  background: #448844;
+}
+.navbar div {
+  display: none;
+}
+.navbar .menu {
+  color: black;
+  display: inline-block;
+  padding: 1em;
+}
+.navbar .brand {
+  color: white;
+  display: inline-block;
+  padding: 1em;
+  text-align: center;
+  width: 10em;
+}
+.navbar .link {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  background: #224822;
+  color: white;
+}
+.navbar .link:hover {
+  background: white;
+  color: #224822;
+}
+.navbar .link:active {
+  background: white;
+  color: #224822;
+}
+.navbar a {
+  text-decoration: none;
+}
+
+button {
+  background: #448844;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+@media (min-width: 48em) {
+  .navbar {
+    display: flex;
+  }
+  .navbar .left {
+    display: flex;
+    flex: 1;
+  }
+  .navbar .right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .navbar .link {
+    width: auto;
+  }
+  .navbar .menu {
+    display: none;
+  }
+  .navbar div {
+    display: flex;
+  }
+  .brand:hover {
+    font-weight: bold;
+    scale: 1.2;
+    width: 12em;
+  }
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 48em) {
+  .navbar.active .menu {
+    background: #224822;
+    color: white;
+  }
+  .navbar.active div {
+    display: block;
+  }
+  .navbar .brand {
+    font-weight: bold;
+    padding: 0 0 0 1em;
+    text-align: left;
+  }
+  button:active {
+    background: #448844;
+    color: white;
+  }
+  button:focus {
+    background: #448844;
+    color: white;
+  }
+  button:hover {
+    background: white;
+    color: #448844;
+  }
+}

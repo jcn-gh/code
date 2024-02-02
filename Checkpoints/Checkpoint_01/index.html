@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkpoint 01</title>
+    <meta name="M1C1 CSS Grid Assignment" content="Checkpoint 01">
+    <meta name="description" content="This is the index page of the Checkpoint 01 project.">
+    <meta name="keywords" content="web development, CSS, HTML, Git, GitHub">
+    <meta name="author" content="JCN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- For Grid 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Grid 1: Create a div tag with the class of “gridOne”. Create two paragraph tags that respectively say “Hello World” and “My Fantastic Content”. This grid should have two equally sized columns. Use inline styling to turn the text of the second paragraph tag blue. -->
+    <div class="gridOne">
+        <p>Hello World</p>
+        <p style="color: blue;">My Fantastic Content</p>
+    </div>
+
+    <!-- Grid 2: Create another div tag in the same HTML file. Make sure that none of the grids are nested inside each other. Give this div the class of “gridTwo”. Create three divs inside of gridTwo, this means that they will be child divs in relation to gridTwo. Assign them each a unique class. Add a paragraph tag to each of the divs with whatever text you would like. Each child div should have its own different background color. Try using red, blue, and yellow. This grid should have three columns. The third column should be twice as large as the first two columns. The background colors will help you identify if the sizes created by your grid-template-columns are correct. -->
+    <div class="gridTwo">
+        <div class="divOne">This is the first div</div>
+        <div class="divTwo">This is the second div</div>
+        <div class="divThree">This is the third div</div>
+    </div>
+    <!-- Grid 3: Create another div tag in the same HTML file. Give this div the class of “gridThree”. Create two child divs inside of gridThree and give them both a unique class. The first child div should contain a paragraph tag and the second should contain an image of your choice. This grid should have two rows. The second row should be three times as large as the first. Use background colors again to help make the sizes clear. Give gridThree a width of 500 pixels and a height of 300 pixels.
+    *Make sure that you give the image a width of 500 pixels and a height of 225 pixels. You will also need to make sure that object-fit equals cover so that the image will not be distorted or too large for the row. -->
+    <div class="gridThree">
+        <div class="divChild">
+            <p>This is the first divChild</p>
+        </div>
+        <div class="divChild">
+            <img src="https://gravatar.com/avatar/0572f486b08abf78fc90a029dccdd635" alt="logo">
+        </div>
+    </div>
+    <!-- Create another div tag in the same HTML file. Give this div the class of “gridFour”. Create two child divs and give the first a unique class name and the second an ID. The first div should contain a paragraph tag. The second should contain two paragraph tags. GridFour should have two equally sized rows. Now we will deal with a nested grid. Select the second child div by its ID. Use CSS Grid to create another grid in that div. There should be two grid columns of equal size. Give gridFour a width of 500 pixels and a background color of green. -->
+    <div class="gridFour">
+        <div class="divOne-gridFour">
+            <p>This is the first div of gridFour</p>
+        </div>
+        <div id="divTwo-gridFour">
+            <p>This is the first paragraph</p>
+            <p>This is the second paragraph</p>
+        </div>
+    </div>
+    <!-- Create another grid following the same instructions as in Grid 4, with the exception of the second child div. Give this div the class of “gridFive”. The second child div should have two images instead of two paragraph tags. The first picture should be twice as wide as the second. You will also have to resize these images so that they fit, try making each 200 pixels tall and wide. Make sure to use object-fit: cover; again. -->
+    <div class="gridFive">
+        <div class="divOne-gridFive">
+            <p>This is the first div of gridFive</p>
+        </div>
+        <div id="divTwo-gridFive">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Vy5PUdCk1nZpeE31MCa1pwHaHa%26pid%3DApi&f=1&ipt=63b14df76c8bb5032ee7c69ee95452d2b8c57fa852ac6d7b4a6b6d767c91aba1&ipo=images" alt="logo1">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.r0HtX7FMJKolxOsVnkW3CQHaGw%26pid%3DApi&f=1&ipt=7321732920dccb532ee56d865a3859427abd5b736c5f4f4a8fd33a2d3d998e39&ipo=images" alt="logo2">
+        </div>
+    </div>
+    <!-- Create another div tag in the same HTML file. Give this div the class of “gridSix”. There should be two elements inside of gridSix. The first should be a font-awesome icon of your choice. The second element should be a paragraph tag. Choose a google font and apply it to the paragraph tag. GridSix should have two grid-template-columns. The second column, with the paragraph, should be three times the size of the first column with the icon. Give gridSix a width of 500px and make the background color light gray. -->
+    <div class="gridSix">
+        <i class="fas fa-star"></i>
+        <p class="roboto">This is a paragraph with Google Roboto Font applied.</p>
+    </div>
+
+</body>
+
+</html>
