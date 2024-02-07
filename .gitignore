@@ -1,0 +1,14 @@
+*out
+*logs
+*actions
+*notifications
+*tools
+*lock
+plugins
+user_trunk.yaml
+user.yaml
+tmp
+.vscode
+.trunk
+.git
+node_modules
