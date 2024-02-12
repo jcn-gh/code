@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 4</title>
+</head>
+
+<body>
+    <h3>Checkpoint 4</h3>
+    <p>Ejercicio</p>
+    <p><a href="https://docs.google.com/document/d/1HbmXeyLzi_-vU7hjzVcTpdeXEnk7JYhoQDnWHMk9OfA/edit#heading=h.b8mpzu1kn7qf">M2C4 Python Assignment</a></p>
+
+    <!-- Python Code -->
+
+    <ol>
+        <li>
+            <p>Create a list, tuple, float, integer, decimal, and dictionary.</p>
+            <ul>
+                <li>
+                    <p><code>mi_lista = [1, 2, 3, 4, 5]</code></p>
+                </li>
+
+                <li>
+                    <p><code>mi_tupla = ('lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo')</code></p>
+                </li>
+
+                <li>
+                    <p><code>mi_float = 3.14159</code></p>
+                </li>
+
+                <li>
+                    <p><code>mi_integer = 36</code></p>
+                </li>
+
+                <li>
+                    <pre><code>from decimal import Decimal
+mi_decimal = Decimal('2.718281828')</code></pre>
+                </li>
+
+                <li>
+                    <pre><code>mi_diccionario = {
+    12345678: {
+        'nombre': 'Julian',
+        'edad': 85,
+        'ciudad': 'Valladolid'
+    },
+    87654321: {
+        'nombre': 'Maria',
+        'edad': 83,
+        'ciudad': 'Valladolid'
+    }
+}</code></pre>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <p>Round your float up.</p>
+            <pre><code>import math
+redondeado = round(mi_float)
+redondeado_arriba = math.ceil(mi_float)</code></pre>
+        </li>
+
+        <li>
+            <p>Get the square root of your float.</p>
+            <pre><code>import math
+raiz_cuadrada = math.sqrt(mi_float)</code></pre>
+        </li>
+
+        <li>
+            <p>Select the first element from your dictionary</p>
+            <pre><code>primera_clave = list(mi_diccionario.keys())[0]
+primer_registro = mi_diccionario[primera_clave]</code></pre>
+        </li>
+
+        <li>
+            <p>Select the second element from your tuple</p>
+            <p><code>segundo_elemento = mi_tupla[1]</code></p>
+        </li>
+
+        <li>
+            <p>Add an element to the end of your list</p>
+            <p><code>mi_lista.append(6)</code></p>
+        </li>
+
+        <li>
+            <p>Replace the first element in your list</p>
+            <p><code>mi_lista[0] = 99</code></p>
+        </li>
+
+        <li>
+            <p>Sort your list alphabetically</p>
+            <pre><code>mi_lista.sort() # para modificar la lista originalnueva_
+lista = sorted(mi_lista) # para crear una nueva lista</code></pre>
+        </li>
+
+        <li>
+            <p>Use reassignment to add an element to your tuple.</p>
+            <p><code>mi_tupla = mi_tupla + ('otro_dia',)</code></p>
+        </li>
+    </ol>
+
+    <!-- Python Code End -->
+
+    <p>Preguntas teóricas:</p>
+    <ul>
+        <li>
+            <p><b>¿Cuál es la diferencia entre una lista y una tupla en Python?</b></p>
+            <p>Hay varias. La principal es que las tuplas son inmutables, es decir, no se pueden modificar (como los días de la semana o los meses del año) y las listas pueden variar durante la ejecución del programa (como los usuarios de una aplicación). En cuanto a la sintaxis, las listas se crean con corchetes <b>[]</b> y las tuplas con paréntesis <b>()</b>.</p>
+        </li>
+        <li>
+            <p><b>¿Cuál es el orden de las operaciones?</b></p>
+            <ul>
+                <li>Primero los paréntesis <b>()</b>,</li>
+                <li>luego las potencias <b>**</b>,</li>
+                <li>después multiplicación <b>*</b>, división <b>/</b>, división de enteros <b>//</b>, módulo <b>%</b>,</li>
+                <li>y por último suma <b>+</b> y resta <b>-</b>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><b>¿Qué es un diccionario Python?</b></p>
+            <p>Es un conjunto de datos sin orden con una <b>clave</b> única e inmutable y un <b>valor</b> modificable.<br>Por ejemplo:<br><code>diccionario = {'clave': 'valor'}</code></p>
+        </li>
+        <li>
+            <p><b>¿Cuál es la diferencia entre el método ordenado y la función de ordenación?</b></p>
+            <p>Mientras la función <b>sorted()</b> devuelve una lista ordenada y se puede usar con cualquier secuencia de datos iterable (diccionario, lista, tupla...), el método <b><i>lista</i>.sort()</b> modifica la lista original y es propio de las listas.</p>
+        </li>
+        <li>
+            <p><b>¿Qué es un operador de asignación?</b></p>
+            <p>Es el que asigna un valor a una variable. Aunque el básico es <b>=</b> en Python se puede usar con un operador delante, así <code><i>x <b>+=</b> 33</i></code> suma el valor de la derecha <i>(33)</i> a la variable de la izquierda <i>(x)</i> siendo equivalente a <code><i>x = x + 33</i></code>.</p>
+        </li>
+    </ul>
+</body>
+
+</html>
