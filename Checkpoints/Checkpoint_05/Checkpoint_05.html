@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 5</title>
+</head>
+
+<body>
+    <h2>Checkpoint 5</h2>
+
+    <p>Este checkpoint será un poco distinto, vas a poder utilizar documentación que busques por la web, porque el objetivo es que tienes que generar una documentación sobre las preguntas que te envío a continuación, tienes que prepararlas para que las personas que no tienen conocimientos puedan aprender, por lo que intenta ser lo más detallado posible, poner ejemplos, etc...</p>
+
+    <p>Eres el responsable de crear la documentación que utilizarán los nuevos compañeros de tu equipo...</p>
+
+
+    <h3>¿Qué es un condicional?</h3>
+
+    <p>Es la forma que tienen los lenguajes de programación de hacer que se ejecuten unas instrucciones u otras dependiendo de si unas condiciones se cumplen o no. Es decir, se toman decisiones teniendo en cuenta las condiciones establecidas.</p>
+
+    <p>En Python, se usan las palabras clave 'if' (si), 'else' (sino) y 'elif' (contracción de <i>else if</i>) para definir las diferentes situaciones que nos podemos encontrar. La palabra clave «if» se utiliza para la primera condición, «elif» se utiliza para condiciones adicionales y «else» se utiliza para el caso en que ninguna de las condiciones anteriores sea verdadera. Esta es la sintaxis básica:</p>
+
+    <pre><code>if condición_1:
+    # código que se ejecuta si condición_1 es verdadera
+elif condición_2:
+    # código que se ejecuta si condición_1 es falsa pero condición_2 es verdadera
+else:
+    # código que se ejecuta si ninguna de las condiciones anteriores es verdadera</code></pre>
+
+    <p>Por ejemplo, podríamos tener un programa que imprima si un número es positivo, negativo o cero:</p>
+
+    <pre><code>numero = input("Por favor, introduzca un número: ")
+numero = int(numero)
+
+if numero &gt; 0:
+    print("El número es positivo.")
+elif numero &lt; 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
+
+# instrucciones fuera de las condiciones</code></pre>
+
+    <p>Resaltar que cada instrucción condicional finaliza con dos puntos ":" y que las instrucciones a ejecutar deben llevar una sangría o indentación.</p>
+
+    <p>Se pueden incluir condicionales dentro de otros, dando lugar a lo que se llaman <i>condicionales anidados</i>.</p>
+
+    <pre><code>password = input("Introduzca contraseña: ")
+
+if (len(password) &gt;= 8):
+    print('La contraseña es suficientemente larga.')
+
+    if(password == 'miClaveSegura'):
+        print("Además es la correcta.")
+    else:
+        print("Pero es incorrecta.")
+elif (password != 'miClaveSegura'):
+    print('Además de incorrecta, la contraseña es muy corta e insegura.')</code></pre>
+
+    <p>Así pues, los condicionales nos permiten definir en nuestro programa múltiples vías de ejecución, contemplando así todas las posibilidades de un proceso. Ten en cuenta que, Muchas veces, elegir qué hacer implica una combinación de varias condiciones para tomar la decisión final.</p>
+
+
+    <h3>¿Cuáles son los diferentes tipos de bucles en python? ¿Por qué son útiles?</h3>
+
+    <p>Los bucles, también conocidos como ciclos permiten repetir bloques de código muchas veces sin tener que escribir el mismo código una y otra vez. Python tiene dos tipos de bucles o ciclos: el bucle 'for' (para) y el bucle 'while' (mientras).</p>
+
+    <ol>
+        <li>
+            <p>Bucle <b>For</b>: Este tipo de bucle se utiliza para recorrer una secuencia (como una lista, tupla, diccionario, conjunto o cadena) o cualquier otro objeto iterable (repetitivo). La sintaxis básica es:</p>
+
+            <pre><code><b>for</b> variable <b>in</b> secuencia<b>:</b> # código a ejecutar para cada
+print('Fin del programa.')</code></pre>
+
+            <p>el ciclo se ejecuta interminablemente. Sin embargo, al haber introducido la condición de salida (num == 0) nos aseguramos que, en ese momento, se cierre el ciclo.</p>
+        </li>
+    </ol>
+
+    <p>Los bucles son útiles en programación porque permiten ejecutar un bloque de código repetidamente. Por ejemplo, podemos usar un bucle "for" para procesar todos los elementos de una lista, o un bucle "while" para repetir una acción hasta que se cumpla una condición (como esperar a que el usuario introduzca una entrada válida). Sin embargo, desde el punto de vista de la eficiencia, es recomendable evitarlos en la medida de lo posible. Siempre que vayas a usar un ciclo deberías preguntarte si es totalmente necesario, si puedes recudir la cantidad de veces que vaya a repetir las instrucciones o si existe una manera más efectiva de hacerlo.</p>
+
+
+    <h3>¿Qué es una comprensión de listas en python?</h3>
+
+    <p>La comprensión de listas es una característica única y poderosa de Python que permite crear y manipular listas de manera eficiente con menos código, aplicando una expresión a cada elemento de una secuencia iterable. Esencialmente, es una forma de transformar una lista en otra lista, aplicando una expresión a cada uno de sus elementos, y filtrando los resultados.</p>
+
+    <p>La sintaxis básica de una comprensión de listas es:</p>
+
+    <pre><code>nueva_lista = [expresión <i>for</i> elemento <i>in</i> lista_original <i>if</i> condición]</code></pre>
+
+    <p>La "expresión" es el resultado que queremos obtener y se aplica a cada elemento de la lista. La parte "for elemento in lista_original" es similar a un bucle for normal en Python donde "elemento" es una variable temporal que toma cada valor de la lista original durante la iteración. La "condición" es opcional y se puede usar para filtrar los elementos que se incluirán en la nueva lista. En esencia: "haz esto para todos los elementos de la lista que cumplan la condición".</p>
+
+    <p>Por ejemplo, si queremos crear una lista de los cuadrados de todos los números del 1 al 10, podríamos usar una comprensión de listas de la siguiente manera:</p>
+
+    <pre><code>cuadrados = [x**2 for x in range(1, 11)]
+        print(cuadrados)</code></pre>
+
+    <p>Esto imprimirá: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</p>
+
+    <p>En este caso, "x**2" es la expresión que se aplica a cada número, "x" es la variable que toma cada valor de la lista números del 1 al 10.</p>
+
+    <p>Si tenemos una lista de autores y queremos otra con aquellos que comienzen por "j" y ponerlos en mayúsculas, podríamos usar una comprensión de listas de la siguiente manera:</p>
+
+    <pre><code>autores = ["jane austen","george orwell","james clear","cal newport"]
+
+autor_lista = [autor.title() for autor in autores if autor.startswith('j')]
+print(autor_lista)</code></pre>
+
+    <p>Esto imprimirá: ["Jane Austen", "James Clear"]</p>
+
+    <p>En este ejemplo, para poner en mayúscula cada autor se aplica .title(), autor es la variable que toma cada valor de la lista autores, y se aplica .startswith('j') a cada autor para saber si comienza por 'j'.</p>
+
+    <p>Las comprensiones de listas son una forma muy eficiente y legible de realizar operaciones comunes en listas, y son una de las características que hacen a Python un lenguaje tan popular para el procesamiento de datos.</p>
+
+
+    <h3>¿Qué es un argumento en Python?</h3>
+
+    <p>Un argumento en Python es un valor que se pasa a una función o método cuando se llama. Los argumentos se utilizan para proporcionar datos a las funciones y permitirles realizar operaciones con esos valores de entrada.</p>
+
+    <p>Por ejemplo, la siguiente función suma dos números:</p>
+
+    <pre><code>def suma(a, b):
+    return a + b </code></pre>
+
+    <p>Aquí, 'a' y 'b' son argumentos de la función 'suma'. Cuando llamamos a la función, debemos proporcionar dos argumentos:</p>
+
+    <pre><code>resultado = suma(6, 3)
+print(resultado) # Imprime: 9
+
+resultado = suma(b=30, a=10)
+print(resultado) # Imprime: 40
+</code></pre>
+
+    <p>En este caso, los números 6 y 3 son los argumentos que pasamos a la función 'suma'.</p>
+
+    <p>Python soporta argumentos por defecto, lo que significa que puedes asignar un valor predeterminado a un argumento que se utilizará si no se proporciona un valor al llamar a la función. Por ejemplo:</p>
+
+    <pre><code>def saludar(nombre="extraño"):
+    print(f"Hola, {nombre}!")
+
+    saludar("Alice")  # Imprime "Hola, Alice!"
+    saludar()  # Imprime "Hola, extraño!"</code></pre>
+
+    <p>Aquí, "nombre" es un argumento con un valor predeterminado de "extraño". Si no proporcionamos un argumento al llamar a la función "saludar", se utilizará el valor predeterminado.</p>
+
+    <p>En Python, es posible llamar a una función proporcionando explícitamente el nombre de los argumentos junto con sus valores. Esto puede hacer que el código sea más fácil de leer, ya que queda claro qué argumento representa cada valor.</p>
+
+    <p>La siguiente función que calcula el área de un rectángulo:</p>
+
+    <pre><code>def area_rectangulo(ancho, alto):
+        return ancho * alto</code></pre>
+
+    <p>Podríamos usar argumentos de palabras clave para hacer que el código sea más claro:</p>
+
+    <pre><code>a = area_rectangulo(ancho=5, alto=3)</code></pre>
+
+    <p>Así queda claro que el primer argumento representa el ancho del rectángulo y el segundo argumento representa su alto.</p>
+
+    <p>Quizá en alguna ocasión no sabemos de antemano cuantos elementos vamos a enviar a una función. En estos casos podemos utilizar los parámetros indeterminados por posición y por nombre.</p>
+
+    <p>Para manejar un número indeterminado de argumentos posicionales, podemos utilizar el operador "*". Esto recogerá todos los argumentos posicionales no asignados en una tupla. Por ejemplo:</p>
+
+    <pre><code>def indeterminados_posicion(*args):
+    for arg in args:
+        print(arg)
+
+indeterminados_posicion(1, 2, 3, 4)  # Imprime 1, 2, 3, 4 en líneas separadas</code></pre>
+
+    <p>En este caso, "args" es una tupla que contiene todos los argumentos posicionales que se pasaron a la función.</p>
+
+    <p>Para manejar un número indeterminado de argumentos de palabras clave (en inglés keyword args), podemos utilizar el operador "**". Esto recogerá todos los argumentos de palabras clave no asignados en un diccionario. Por ejemplo:</p>
+
+    <pre><code>def indeterminados_nombre(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+
+indeterminados_nombre(nombre="Alice", edad=25)  # Imprime "nombre = Alice" y "edad = 25" en líneas separadas
+    </code></pre>
+
+    <p>En este caso, "kwargs" es un diccionario que contiene todos los argumentos de palabras clave que se pasaron a la función.</p>
+
+    <p>Si queremos aceptar ambos tipos de parámetros simultáneamente, entonces debemos crear ambas colecciones dinámicas. Primero los argumentos indeterminados por valor y luego los que son por clave y valor:</p>
+
+    <pre><code>def super_funcion(*args,**kwargs):
+    total = 0
+    for arg in args:
+        total += arg
+    print("sumatorio =&gt; ", total)
+    for kwarg in kwargs:
+        print(kwarg, "=&gt;", kwargs[kwarg])
+
+super_funcion(10, 50, -1, 1.56, 10, 20, 300, nombre="Hector", edad=27)
+
+# Nos devolvería:
+
+sumatorio =&gt; 390.56
+nombre =&gt; Hector
+edad =&gt; 27</code></pre>
+
+    <p>Los nombres <b>args</b> y <b>kwargs</b> no son obligatorios, pero se suelen utilizar por convención. Muchos frameworks y librerías los utilizan por lo que es una buena practica llamarlos así.</p>
+
+    <p>Estas características hacen que Python sea muy flexible al manejar funciones con un número variable de argumentos.</p>
+
+
+    <h3>¿Qué es una función de Python Lambda?</h3>
+    <p>Una función Lambda en Python es una pequeña función anónima (no se les da un nombre explícito) que se define con la palabra clave <b>"lambda"</b>. Estas funciones pueden tener cualquier número de argumentos, pero solo una expresión, y se pueden usar donde se requieran objetos de función.</p>
+
+    <p>La sintaxis de una función lambda es la siguiente:</p>
+
+    <pre><code>lambda argumentos: expresión</code></pre>
+
+    <p>Por ejemplo, la función lambda que suma dos argumentos podría ser:</p>
+
+    <pre><code>sumar = lambda a, b: a + b</code></pre>
+
+    <p>Aquí, 'a' y 'b' son los argumentos a la función, y 'a + b' es la expresión que se evalúa y se devuelve. Entonces, si llamamos a la función 'sumar' (como lo haríamos con cualquier otra función) con dos números:</p>
+
+    <pre><code>print(sumar(6, 3)) # Imprime: 9</code></pre>
+
+    <p>Otro ejemplo, puedes escribir una función lambda que duplique sus argumentos <i>lambda x: x * 2</i> y usarla con la función <i>map</i> para duplicar todos los elementos de una lista:</p>
+
+    <pre><code>mi_lista = [1, 2, 3, 4, 5, 6]
+lista_nueva = list(map(<b>lambda</b> x: x * 2, mi_lista))
+print(lista_nueva)  # [2, 4, 6, 8, 10, 12]</code></pre>
+
+    <p>También puedes escribir una función lambda que revise si un número es positivo, <i>lambda x: x &gt; 0</i>, y usarla con la función <i>filter</i> para crear una lista de números positivos.</p>
+
+    <pre><code>mi_lista = [18, -3, 5, 0, -1, 12]
+lista_nueva = list(filter(<b>lambda</b> x: x &gt; 0, mi_lista))
+print(lista_nueva) # [18, 5, 12]</code></pre>
+
+    <p>También es posible que una función devuelva una función lambda.</p>
+
+    <p>Si necesitas funciones que, por ejemplo, dupliquen, tripliquen, etc... una función lambda puede ser útil:</p>
+
+    <pre><code>def multiplicar_por (n):
+    return <b>lambda</b> x: x * n
+
+duplicar = multiplicar_por(2)
+triplicar = multiplicar_por(3)
+diez_veces = multiplicar_por(10)
+
+duplicar(6)
+12
+triplicar(5)
+15
+diez_veces(12)
+120</code></pre>
+
+    <p>Las funciones lambda son útiles cuando necesitamos una pequeña función para un uso de corta duración, a menudo dentro de funciones, como por ejemplo, como argumento para funciones de orden superior (map, filter, etc.) que toman otras funciones como parámetros. También son útiles para definir funciones simples de una línea que se utilizan sólo una vez en nuestro código.</p>
+
+    <p>Usando una función lambda el código es más compacto y legible.</p>
+
+
+    <h3>¿Qué es un paquete pip?</h3>
+
+    <p>PIP (Pip Installs Packages) es un sistema de gestión de paquetes utilizado para instalar y administrar paquetes de software escritos en Python. Los paquetes son módulos de código que pueden ser reutilizados, y están disponibles públicamente a través del Python Package Index (PyPI), un repositorio (lugar donde se guarda algo) de software para el lenguaje de programación Python. Estos paquetes pueden ser instalados en cualquier sistema operativo que soporte Python, como Windows, macOS o Linux.</p>
+
+    <p>PIP proporciona una forma sencilla de instalar paquetes, permitiendo a los usuarios acceder y utilizar rápidamente el código escrito por otros desarrolladores.</p>
+
+    <p>Para comprobar si pip está instalado, abre una ventana de terminal y escribe el siguiente comando:</p>
+
+    <pre><code>pip --version</code></pre>
+
+    <p>Si no está instalado, puedes instalarlo con el siguiente comando:</p>
+
+    <pre><code>python3 -m pip install --user pip</code></pre>
+
+    <p>que instalará pip en tu directorio de usuario.</p>
+
+    <p>Si, por ejemplo, quieres instalar el paquete de manipulación de datos llamado <i>Pandas</i> (o el paquete <i>requests</i>, que proporciona utilidades para realizar solicitudes HTTP), simplemente puedes abrir tu terminal y escribir:</p>
+
+    <pre><code>pip install pandas</code></pre>
+
+    <p>PIP descargará e instalará el paquete Pandas y todas sus dependencias, haciendo que estén disponibles para su uso en tus programas Python.</p>
+
+    <p>Además de instalar paquetes, PIP también ofrece otras características para ayudarte a gestionar tus paquetes Python de manera eficiente, como la posibilidad de desinstalar paquetes que ya no se necesitan<sup>(1)</sup>, actualizar un paquete a la versión más reciente<sup>(2)</sup>, listar los paquetes instalados y sus versiones<sup>(3)</sup>, mostrar información detallada sobre un paquete específico, como su versión, su ubicación, sus dependencias, etc.<sup>(4)</sup> y más.</p>
+
+    <pre><code><sup>(1)</sup>pip uninstall <i>nombre_del_paquete</i>
+<sup>(2)</sup>pip install --upgrade <i>nombre_del_paquete</i>
+<sup>(3)</sup>pip list
+<sup>(4)</sup>pip show <i>nombre_del_paquete</i></code></pre>
+
+    <p>Los entornos virtuales son entornos de Python aislados que permiten instalar paquetes para que los use una aplicación en particular, en lugar de instalarlos en todo el sistema. Esto puede ser útil para evitar conflictos entre paquetes o para mantener versiones diferentes de un mismo paquete para diferentes proyectos.</p>
+
+    <p>Por ejemplo, para crear un entorno virtual llamado <i>my_env</i>, escribe el siguiente comando:</p>
+
+    <pre><code>python3 -m venv my_env</code></pre>
+
+    <p>Una vez que hayas creado un entorno virtual, debes activarlo antes de poder instalar paquetes en él. Por ejemplo, para activar el entorno virtual <i>my_env</i>, escribe el siguiente comando:</p>
+
+    <pre><code>source my_env/bin/activate</code></pre>
+
+    <p>Cuando el entorno virtual esté activado, verás el nombre del entorno virtual en el prompt de tu terminal y podrás trabajar con él.</p>
+
+    <p>Cuando hayas terminado de usar el entorno virtual, puedes desactivarlo escribiendo el siguiente comando:</p>
+
+    <pre><code>deactivate</code></pre>
+
+    <p>Puede decirse que <b>pip</b> es una herramienta rápida, sencilla e indispensable para cualquier desarrollador Python.</p>
+</body>
+
+</html>
