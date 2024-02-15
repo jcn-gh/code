@@ -1,9 +1,9 @@
 from functools import reduce
 
 
-     def manual_exponent(num, exp):
-          computed_list = [num] * exp
-          return (reduce(lambda total, element: total * element, computed_list))
+def manual_exponent(num, exp):
+    computed_list = [num] * exp
+    return (reduce(lambda total, element: total * element, computed_list))
 
 
 print(manual_exponent(2, 3))
@@ -21,7 +21,7 @@ print(manual_exponent(10, 5))
 
 #     return total
 
-print(manual_exponent(2, 3))
-print(manual_exponent(10, 2))
-print(manual_exponent(3, 3))
-print(manual_exponent(10, 5))
+# print(manual_exponent(2, 3))
+# print(manual_exponent(10, 2))
+# print(manual_exponent(3, 3))
+# print(manual_exponent(10, 5))
