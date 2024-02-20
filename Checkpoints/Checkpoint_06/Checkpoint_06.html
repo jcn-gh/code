@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkpoint 6</title>
+    <style>
+        p {
+            text-align: justify;
+        }
+
+        pre {
+            text-align: left;
+            margin-left: 2em;
+            background-color: #eeeeee;
+        }
+
+        code {
+            background-color: #eeffee;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,14 +28,25 @@
     <p>Este checkpoint consta de dos partes:</p>
     <ul>
         <li>
-            <p>Una primera parte que es similar al checkpoint anterior, las preguntas hay que realizar una "documentación", lo más completa posible</p>
+            <p>
+                Una primera parte en la que hay que realizar una "documentación", lo más completa posible.
+            </p>
+            <p><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta.</i></p>
             <ul>
                 <li>
                     <h3>¿Para qué usamos Classes en Python?</h3>
-                    <p>Las clases en Python se utilizan para crear objetos y organizar la funcionalidad relacionada en un solo lugar. Algunas de las razones por las que se utilizan clases en Python son:</p>
-                    <ul>
-                        <li><b>Abstracción</b>: Las clases permiten representar entidades del mundo real o conceptos abstractos como objetos con propiedades y comportamientos específicos.
-                            <pre><code>from abc import ABC, abstractmethod
+                    <div class="contenido">
+                        <p>
+                            Las clases en Python se utilizan para crear objetos y organizar la
+                            funcionalidad relacionada en un solo lugar. Algunas de las razones
+                            por las que se utilizan clases en Python son:
+                        </p>
+                        <ul>
+                            <li>
+                                <b>Abstracción</b>: Las clases permiten representar entidades
+                                del mundo real o conceptos abstractos como objetos con
+                                propiedades y comportamientos específicos.
+                                <pre><code>from abc import ABC, abstractmethod
 
 class Device(ABC):
     def __init__(self, name):
@@ -55,10 +81,23 @@ fan = Fan("Ceiling fan")
 # Encender y apagar los dispositivos
 print(f"{light.name}: {light.turn_on()}")  # Esto imprimirá "Living room light: Light turned on"
 print(f"{fan.name}: {fan.turn_off()}")  # Esto imprimirá "Ceiling fan: Fan turned off"</code></pre>
-                            <p>En este ejemplo, la clase <code>Device</code> es una clase abstracta que define métodos abstractos <code>turn_on</code> y <code>turn_off</code>. Las clases <code>Light</code> y <code>Fan</code> heredan de <code>Device</code> y proporcionan implementaciones concretas de estos métodos. Esto permite abstraer el comportamiento de encendido y apagado, mientras que las clases hijas proporcionan implementaciones específicas para diferentes tipos de dispositivos.</p>
-                        </li>
-                        <li><b>Encapsulación</b>: Las clases permiten encapsular datos y funciones relacionadas en un solo objeto, lo que facilita la gestión y el mantenimiento del código.
-                            <pre><code>class Person:
+                                <p>
+                                    En este ejemplo, la clase <code>Device</code> es una clase
+                                    abstracta que define métodos abstractos <code>turn_on</code> y
+                                    <code>turn_off</code>. Las clases <code>Light</code> y
+                                    <code>Fan</code> heredan de <code>Device</code> y proporcionan
+                                    implementaciones concretas de estos métodos. Esto permite
+                                    abstraer el comportamiento de encendido y apagado, mientras
+                                    que las clases hijas proporcionan implementaciones específicas
+                                    para diferentes tipos de dispositivos.
+                                </p>
+                                <blockquote><b>Recordatorio</b>: <i>los atributos protegidos son una convención para indicar que el atributo no debe ser modificado directamente desde fuera de la clase (aunque no se impide su acceso), mientras que los atributos privados restringen el acceso y modificación desde fuera de la clase y se acceden a través de métodos de la clase.</i></blockquote>
+                            </li>
+                            <li>
+                                <b>Encapsulación</b>: Las clases permiten encapsular datos y
+                                funciones relacionadas en un solo objeto, lo que facilita la
+                                gestión y el mantenimiento del código.
+                                <pre><code>class Person:
     def __init__(self, name, age):
         self._name = name  # Atributo protegido
         self.__age = age  # Atributo privado
@@ -88,10 +127,19 @@ print(person.get_age())  # Esto imprimirá "35"
 # Intentar establecer una edad negativa
 person.set_age(-1)
 print(person.get_age())  # Esto imprimirá "35", ya que la validación impide establecer una edad negativa</code></pre>
-                            <p>En este ejemplo, la clase <code>Person</code> tiene un atributo protegido <code>_name</code> y un atributo privado <code>__age</code>. También proporciona métodos para acceder y modificar el atributo privado <code>__age</code>, lo que permite encapsular el acceso a los datos internos de la clase.</p>
-                        </li>
-                        <li><b>Reutilización de código</b>: Las clases permiten crear objetos que pueden ser reutilizados en diferentes partes del programa, evitando la duplicación de código.
-                            <pre><code>class Employee:
+                                <p>
+                                    En este ejemplo, la clase <code>Person</code> tiene un
+                                    atributo protegido <code>_name</code> y un atributo privado
+                                    <code>__age</code>. También proporciona métodos para acceder y
+                                    modificar el atributo privado <code>__age</code>, lo que
+                                    permite encapsular el acceso a los datos internos de la clase.
+                                </p>
+                            </li>
+                            <li>
+                                <b>Reutilización de código</b>: Las clases permiten crear
+                                objetos que pueden ser reutilizados en diferentes partes del
+                                programa, evitando la duplicación de código.
+                                <pre><code>class Employee:
     def __init__(self, name, salary):
         self.name = name
         self.salary = salary
@@ -122,10 +170,11 @@ developer = Developer("Bob", 60000, "Python")
 # Mostrar la información de cada empleado
 print(manager.display_info())  # Esto imprimirá "Manager: Alice, Salario: 80000, Departamento: IT"
 print(developer.display_info())  # Esto imprimirá "Desarrollador: Bob, Salario: 60000, Lenguaje de programación: Python"</code></pre>
-                            <p>En este ejemplo, la clase <code>Employee</code> contiene información básica sobre un empleado y el método <code>display_info</code> para mostrar la información del empleado. Las clases <code>Manager</code> y <code>Developer</code> heredan de <code>Employee</code> y proporcionan sus propias implementaciones del método <code>display_info</code>, lo que permite reutilizar el código para mostrar la información de diferentes roles de empleados.</p>
-                        </li>
-                        <li><b>Herencia</b>: Las clases pueden heredar propiedades y métodos de otras clases, lo que permite crear jerarquías de clases y compartir funcionalidad común.
-                            <pre><code>class Vehiculo:
+                                <p>En este ejemplo, la clase <code>Employee</code> contiene información básica sobre un empleado y el método <code>display_info</code> para mostrar la información del empleado. Las clases <code>Manager</code> y <code>Developer</code> heredan de <code>Employee</code> y proporcionan sus propias implementaciones del método <code>display_info</code>, lo que permite reutilizar el código para mostrar la información de diferentes roles de empleados.</p>
+                            </li>
+                            <li>
+                                <b>Herencia</b>: Las clases pueden heredar propiedades y métodos de otras clases, lo que permite crear jerarquías de clases y compartir funcionalidad común.
+                                <pre><code>class Vehiculo:
     def __init__(self, marca, modelo):
         self.marca = marca
         self.modelo = modelo
@@ -155,13 +204,22 @@ motocicleta = Motocicleta("Honda", "CBR", 500)
 print(automovil.obtener_info())    # Imprime "Marca: Toyota, Modelo: Corolla, Color: Rojo"
 print(motocicleta.obtener_info())  # Imprime "Marca: Honda, Modelo: CBR, Cilindrada: 500cc"
 </code></pre>
-                            <p>En este ejemplo, tenemos una clase base llamada "Vehiculo" que tiene un constructor para inicializar la marca y el modelo del vehículo, y un método "obtener_info" que devuelve una cadena con la información del vehículo.</p>
-                            <p>Luego, creamos dos clases derivadas, "Automovil" y "Motocicleta", que heredan de la clase "Vehiculo". Estas clases sobrescriben el método "obtener_info" para agregar información adicional específica de cada tipo de vehículo.</p>
-                            <p>Cuando creamos objetos de las clases "Automovil" y "Motocicleta", heredan las propiedades y métodos de la clase "Vehiculo". Podemos llamar al método "obtener_info" en cada objeto y obtendremos la información específica de cada tipo de vehículo, incluyendo el color para los automóviles y la cilindrada para las motocicletas.</p>
-                            <p>En resumen, la herencia nos permite crear jerarquías de clases y compartir funcionalidad común entre ellas. Las clases derivadas pueden heredar propiedades y métodos de la clase base, y también pueden sobrescribir o agregar nuevos métodos para adaptarse a su comportamiento específico. Esto nos permite reutilizar código y organizar nuestra estructura de clases de manera más eficiente.</p>
-                        </li>
-                        <li><b>Polimorfismo</b>: Las clases en Python permiten el polimorfismo, lo que significa que diferentes objetos pueden responder de manera diferente a la misma llamada de método.
-                            <pre><code>class Vehiculo:
+                                <p>
+                                    En este ejemplo, tenemos una clase base llamada "Vehiculo" que tiene un constructor para inicializar la marca y el modelo del vehículo, y un método "obtener_info" que devuelve una cadena con la información del vehículo.
+                                </p>
+                                <p>
+                                    Luego, creamos dos clases derivadas, "Automovil" y "Motocicleta", que heredan de la clase "Vehiculo". Estas clases sobrescriben el método "obtener_info" para agregar información adicional específica de cada tipo de vehículo.
+                                </p>
+                                <p>
+                                    Cuando creamos objetos de las clases "Automovil" y "Motocicleta", heredan las propiedades y métodos de la clase "Vehiculo". Podemos llamar al método "obtener_info" en cada objeto y obtendremos la información específica de cada tipo de vehículo, incluyendo el color para los automóviles y la cilindrada para las motocicletas.
+                                </p>
+                                <p>
+                                    En resumen, la herencia nos permite crear jerarquías de clases y compartir funcionalidad común entre ellas. Las clases derivadas pueden heredar propiedades y métodos de la clase base, y también pueden sobrescribir o agregar nuevos métodos para adaptarse a su comportamiento específico. Esto nos permite reutilizar código y organizar nuestra estructura de clases de manera más eficiente.
+                                </p>
+                            </li>
+                            <li>
+                                <b>Polimorfismo</b>: Las clases en Python permiten el polimorfismo, lo que significa que diferentes objetos pueden responder de manera diferente a la misma llamada de método.
+                                <pre><code>class Vehiculo:
     def moverse(self):
         pass
 
@@ -182,43 +240,90 @@ avion = Avion()
 moverse_vehiculo(automovil)  # Imprime "El automóvil se desplaza por la carretera."
 moverse_vehiculo(avion)     # Imprime "El avión vuela por el cielo."
 </code></pre>
-                            <p>En este ejemplo, tenemos una clase base llamada "Vehiculo" con un método llamado "moverse" que no hace nada. Luego, creamos dos clases derivadas, "Automovil" y "Avion", que heredan de la clase "Vehiculo" y sobrescriben el método "moverse" para imprimir diferentes mensajes de movimiento.</p>
-                            <p>La función "moverse_vehiculo" toma un objeto de tipo "Vehiculo" como argumento y llama al método "moverse" en ese objeto. Dependiendo del tipo de objeto que se pase a la función, se imprimirá un mensaje de movimiento diferente.</p>
-                            <p>En resumen, el polimorfismo nos permite tratar diferentes objetos de manera uniforme a través de una interfaz común, pero cada objeto puede tener su propia implementación específica del método. Esto nos brinda flexibilidad para trabajar con diferentes tipos de objetos y realizar acciones específicas según el tipo de objeto.</p>
-                        </li>
-                    </ul>
-                    <p>Imagina que estás construyendo un programa para administrar una biblioteca. Aquí hay algunos ejemplos de cómo las clases en Python pueden ser útiles en este escenario:</p>
-                    <ul>
-                        <li>Clase "Libro":
-                            <ul>
-                                <li>Puedes crear una clase llamada "Libro" para representar cada libro en la biblioteca.</li>
-                                <li>La clase "Libro" puede tener propiedades como "título", "autor" y "año de publicación".</li>
-                                <li>También puede tener métodos como "prestar()" y "devolver()" para realizar acciones específicas en un libro.</li>
-                            </ul>
-                        </li>
-                        <li>Clase "Biblioteca":
-                            <ul>
-                                <li>Puedes crear una clase llamada "Biblioteca" para representar la biblioteca en sí.</li>
-                                <li>La clase "Biblioteca" puede tener propiedades como "nombre" y "ubicación".</li>
-                                <li>También puede tener métodos como "agregar_libro()" y "buscar_libro()" para administrar los libros en la biblioteca.</li>
-                            </ul>
-                        </li>
-                        <li>Clase "Usuario":
-                            <ul>
-                                <li>Puedes crear una clase llamada "Usuario" para representar a las personas que utilizan la biblioteca.</li>
-                                <li>La clase "Usuario" puede tener propiedades como "nombre" y "número de identificación".</li>
-                                <li>También puede tener métodos como "tomar_prestado()" y "devolver_libro()" para que los usuarios interactúen con los libros.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>Estos son solo ejemplos básicos, pero muestran cómo las clases en Python nos permiten modelar entidades del mundo real y organizar la funcionalidad relacionada en un solo lugar. Al utilizar clases, podemos crear objetos que representen libros, bibliotecas y usuarios, y definir cómo interactúan entre sí. Esto hace que nuestro código sea más organizado, reutilizable y fácil de mantener.</p>
-                    <p>En resumen, las clases en Python son utilizadas para crear objetos, organizar la funcionalidad relacionada y facilitar la reutilización y el mantenimiento del código.</p>
+                                <p>
+                                    En este ejemplo, tenemos una clase base llamada "Vehiculo" con un método llamado "moverse" que no hace nada. Luego, creamos dos clases derivadas, "Automovil" y "Avion", que heredan de la clase "Vehiculo" y sobrescriben el método "moverse" para imprimir diferentes mensajes de movimiento.
+                                </p>
+                                <p>
+                                    La función "moverse_vehiculo" toma un objeto de tipo "Vehiculo" como argumento y llama al método "moverse" en ese objeto. Dependiendo del tipo de objeto que se pase a la función, se imprimirá un mensaje de movimiento diferente.
+                                </p>
+                                <p>
+                                    En resumen, el polimorfismo nos permite tratar diferentes objetos de manera uniforme a través de una interfaz común, pero cada objeto puede tener su propia implementación específica del método. Esto nos brinda flexibilidad para trabajar con diferentes tipos de objetos y realizar acciones específicas según el tipo de objeto.
+                                </p>
+                            </li>
+                        </ul>
+                        <p>Imagina que estás construyendo un programa para administrar una biblioteca. Estos son algunos ejemplos de cómo las clases en Python pueden resultar útiles:</p>
+                        <ul>
+                            <li>
+                                Clase "Libro":
+                                <ul>
+                                    <li>
+                                        Puedes crear una clase llamada "Libro" para representar cada libro en la biblioteca.
+                                    </li>
+                                    <li>
+                                        La clase "Libro" puede tener propiedades como "título", "autor" y "año de publicación".
+                                    </li>
+                                    <li>
+                                        También puede tener métodos como "prestar()" y "devolver()" para realizar acciones específicas en un libro.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Clase "Biblioteca":
+                                <ul>
+                                    <li>
+                                        Puedes crear una clase llamada "Biblioteca" para representar la biblioteca en sí.
+                                    </li>
+                                    <li>
+                                        La clase "Biblioteca" puede tener propiedades como "nombre" y "ubicación".
+                                    </li>
+                                    <li>
+                                        También puede tener métodos como "agregar_libro()" y "buscar_libro()" para administrar los libros en la biblioteca.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Clase "Usuario":
+                                <ul>
+                                    <li>
+                                        Puedes crear una clase llamada "Usuario" para representar a las personas que utilizan la biblioteca.
+                                    </li>
+                                    <li>
+                                        La clase "Usuario" puede tener propiedades como "nombre" y "número de identificación".
+                                    </li>
+                                    <li>
+                                        También puede tener métodos como "tomar_prestado()" y "devolver_libro()" para que los usuarios interactúen con los libros.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            Estos son solo ejemplos básicos, pero muestran cómo las clases en
+                            Python nos permiten modelar entidades del mundo real y organizar
+                            la funcionalidad relacionada en un solo lugar. Al utilizar clases,
+                            podemos crear objetos que representen libros, bibliotecas y
+                            usuarios, y definir cómo interactúan entre sí. Esto hace que
+                            nuestro código sea más organizado, reutilizable y fácil de
+                            mantener.
+                        </p>
+                        <p>
+                            En resumen, las clases en Python son utilizadas para crear
+                            objetos, organizar la funcionalidad relacionada y facilitar la
+                            reutilización y el mantenimiento del código.
+                        </p>
+                        <p>Para saber <a href="https://realpython.com/python-classes/" target="_blank">más</a> en iglés... y <a href="https://docs.python.org/es/3/tutorial/classes.html" target="_blank">aquí</a> y <a href="https://blog.hubspot.es/website/clases-python" target="_blank">aqui</a> en castellano.</p>
+                    </div>
                 </li>
                 <li>
-                    <h3>¿Qué método se ejecuta automáticamente cuando se crea una instancia de una clase?</h3>
-                    <p>El método <code>__init__</code> es un método especial de Python que se ejecuta automáticamente cuando se crea una instancia de una clase. Se utiliza para inicializar los atributos de la instancia.</p>
-                    <p>Un ejemplo sencillo:</p>
-                    <pre><code>class Persona:
+
+                    <h3>
+                        ¿Qué método se ejecuta automáticamente cuando se crea una
+                        instancia de una clase?
+                    </h3>
+                    <div class="contenido">
+
+                        <p>El método <b><code>__init__</code></b> es un método especial de Python que se ejecuta automáticamente (en primer lugar) cuando se crea una instancia de una clase y se utiliza para inicializar los atributos de la misma de manera personalizada sin devolver ningún valor. Aunque solo se puede tener un método <code>__init__</code> en una clase, se pueden tener varios métodos con diferentes nombres que cumplan funciones similares.</p>
+                        <p>Un ejemplo sencillo:</p>
+                        <pre><code>class Persona:
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
@@ -226,78 +331,582 @@ moverse_vehiculo(avion)     # Imprime "El avión vuela por el cielo."
 persona1 = Persona("Juan", 25)
 print(persona1.nombre)  # Salida: Juan
 print(persona1.edad)    # Salida: 25</code></pre>
-                    <p>En este ejemplo, cuando creamos una instancia de la clase <code>Persona</code>, el método <code>__init__</code> se ejecuta automáticamente, inicializando los atributos <code>nombre</code> y <code>edad</code> con los valores proporcionados.</p>
-                    <p>El método <code>__init__</code> también se conoce como el "constructor" de la clase, ya que se encarga de inicializar los atributos de la instancia cuando ésta se crea. Es un lugar apropiado para realizar cualquier configuración inicial que la instancia pueda necesitar.</p>
-                    <p>Además, el método <code>__init__</code> puede aceptar parámetros además del parámetro <code>self</code>, lo que le permite inicializar la instancia con valores específicos y puede llamar a otros métodos de la clase para realizar tareas de inicialización más complejas. También puede tener valores por defecto para los parámetros, lo que permite crear instancias con algunos atributos predefinidos si no se proporcionan valores específicos al crear la instancia.</p>
-                    <p>Por último, es importante recordar que el uso de doble guion bajo (underscore) al inicio y al final del nombre del método (<code>__init__</code>) indica que es un método especial en Python y no se debe crear un método con un nombre similar para otros fines. Igualmente, hay que tener en cuenta que el método <code>__init__</code> no es el único método especial en Python. Hay otros métodos como <code>__str__</code>, <code>__repr__</code>, <code>__eq__</code>... que también proporcionan comportamientos especiales a las clases y sus instancias.</p>
+                        <p>En este ejemplo, cuando creamos una instancia de la clase <code>Persona</code>, el método <code>__init__</code> se ejecuta automáticamente, inicializando los atributos <code>nombre</code> y <code>edad</code> con los valores proporcionados.</p>
+                        <p>El método <code>__init__</code> también se conoce como el "constructor" de la clase, ya que se encarga de inicializar los atributos de la instancia cuando ésta se crea. Es un lugar apropiado para realizar cualquier configuración inicial que la instancia pueda necesitar.</p>
+                        <p>El parámetro <code>self</code> es obligatorio en la definición del método <code>__init__</code>, hace referencia al objeto mismo y se utiliza para diferenciar entre las variables de instancia y las variables locales. Fuera de los métodos de la clase, el parámetro <code>self</code> no tiene un significado especial. Aunque se suele usar la palabra <code>self</code>, en realidad se puede utilizar cualquier otro nombre válido, pero no es una práctica recomendable, ya que usando <code>self</code> evitaremos confusiones y mantendremos el código legible.</p>
+                        <p>Además, el método <code>__init__</code> puede aceptar más parámetros que el parámetro <code>self</code>, lo que le permite inicializar la instancia con valores específicos y puede llamar a otros métodos de la clase para realizar tareas de inicialización más complejas. También puede tener valores por defecto para los parámetros, lo que permite crear instancias con algunos atributos predefinidos si no se proporcionan valores específicos al crear la instancia.</p>
+                        <pre><code>class MyClass:
+    def __init__(self, param1, param2="default"):
+        self.param1 = param1
+        self.param2 = param2
+
+# Crear una instancia de la clase MyClass
+instance1 = MyClass("value1", "value2")
+instance2 = MyClass("value3")
+
+print(instance1.param1, instance1.param2)  # Output: value1 value2
+print(instance2.param1, instance2.param2)  # Output: value3 default</code></pre>
+                        <p>En este ejemplo, se define una clase llamada <code>MyClass</code> con un método <code>__init__</code> que toma dos parámetros: <code>param1</code> y <code>param2</code>, donde <code>param2</code> tiene un valor por defecto de <i>"default"</i>. Dentro del método <code>__init__</code>, se inicializan los atributos <code>param1</code> y <code>param2</code> de la instancia con los valores proporcionados o los valores por defecto. Luego, se crean dos instancias de la clase <code>MyClass</code> con diferentes combinaciones de valores para los parámetros. Finalmente, se imprimen los valores de los atributos de ambas instancias, demostrando el uso de los parámetros personalizados y los valores por defecto.</p>
+                        <p>Por último, es importante recordar que el uso de doble guion bajo (<i>double underscore</i>) al inicio y al final del nombre del método (<code>__init__</code>) indica que es un método especial en Python y no se debe crear un método con un nombre similar para otros fines. Igualmente, hay que tener en cuenta que el método <code>__init__</code> no es el único método especial en Python. Hay otros métodos como <code>__str__</code>, <code>__repr__</code>, <code>__eq__</code>... que también proporcionan comportamientos especiales a las clases y sus instancias.</p>
+                        <p>Para saber más sobre <a href="https://scriptologia.com/guia-del-metodo-__init__-en-python-como-usarlo-y-su-funcion-principal/" target="_blank"><code>__init__</code></a> y específicamente sobre <a href="https://scriptologia.com/guia-de-uso-de-self-en-python-para-la-instancia-de-una-clase/" target="_blank"><code>self</code></a>.</p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Cuáles son los tres verbos de API?</h3>
-                    <p>Ver documentación en <a href="https://es.wikipedia.org/wiki/API">Wikipedia</a> o en <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">MDN</a></p>
+                    <div class="contenido">
+                        <p>Los verbos Http involucrados en un sistema REST son GET, POST, PUT, PATCH y DELETE.</p>
+                        <p>GET es el que usamos para obtener información del servidor. Una de las principales características de una petición GET es que no debe causar efectos secundarios en el servidor, no deben producir nuevos registros, ni modificar los ya existentes.</p>
+                        <p>Las peticiones con POST consisten en enviar datos al servidor para su procesamiento. Cada llamada con POST debería producir un nuevo recurso.</p>
+                        <p>Normalmente, la acción POST se dirige a un recurso que representa una colección, para indicar que el nuevo recurso debe agregarse a dicha colección.</p>
+                        <p>Algunos escenarios más complejos para el uso de POST son los inicios de sesión, agregar a un carrito de compras, procesar un pago nuevo, etc. Estos ejemplos dejan claro que el recurso creado por POST no es precisamente una fila en la base de datos, el recurso puede ser una sesión, un pago en una API externa, etc.</p>
+                        <p>Los verbos PUT/PATCH son muy similares ya que ambos se usan para modificar/actualizar datos existentes en el servidor. PUT indica que vamos a sustituir por completo un recurso, mientras que PATCH habla de actualizar algunos elementos del recurso, sin sustituirlo por completo.</p>
+                        <p>En la práctica ambos verbos se usan para actualizar un recurso, sin importar si lo sustituimos parcial o totalmente.</p>
+                        <p>Por último, DELETE es el verbo que usamos para eliminar datos existentes en el servidor, ya sea un item o una colección completa.</p>
+                        <p>En Python, una de las librerías más sencillas y potentes para realizar peticiones HTTP es <code>requests</code>. Esta librería permite trabajar con APIs de un modo casi intuitivo, facilitando tareas como el envío de encabezados http, la gestión de parámetros, o la manipulación de la respuesta obtenida en formato JSON. Veamos un ejemplo simple de cómo se haría una petición GET con <code>requests</code>:</p>
+                        <pre><code>import requests
+
+response = requests.get('https://api.example.com/data')
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print("Error: ", response.status_code)
+</code></pre>
+                        <p>Este fragmento de código ilustra cómo con unas pocas líneas podemos obtener datos de una API y convertir una respuesta JSON en un objeto de Python para su posterior manipulación.</p>
+                        <h4>Creación de APIs con Python</h4>
+
+                        <p>Gracias a su simplicidad y potencia, Python se convierte en un ideal aliado al proporcionar herramientas como Flask y Django REST framework que nos ayudan a desarrollar nuestras propias APIs de manera rápida y eficaz.</p>
+
+                        <p>Flask es un microframework web que permite construir aplicaciones web y APIs de una forma muy sencilla, pero sin sacrificar la flexibilidad. Por ejemplo, con Flask puedes crear una simple API en cuestión de minutos. Un «Hola mundo» en Flask sería algo así:</p>
+                        <pre><code>from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api', methods=['GET'])
+def hello_world():
+    return jsonify({"message": "Hola mundo"})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+                        <p>Por otro lado, Django REST framework es una poderosa y flexible herramienta para construir APIs Web, que trabaja sobre el ya robusto framework de Django, brindando un nivel extraordinario de abstracción para trabajar con bases de datos y la autenticación de usuarios, entre otras funcionalidades. Implementar una API con Django REST framework también es relativamente sencillo pero ofrece muchas más características para aplicaciones más complejas.</p>
+
+                        <p>Ambas herramientas proveen mecanismos para la serialización de datos, la validación de peticiones, la paginación de resultados y la autentificación de peticiones. Y aunque Flask tiende a ser más utilizado en proyectos más pequeños o donde la flexibilidad y simplicidad son cruciales, Django REST framework es generalmente la opción preferida para proyectos de mayor escala que requieren una estructura más robusta y completa.</p>
+
+                        <p>Es crucial, al crear APIs, considerar aspectos de diseño y arquitectura como la adecuada documentación de la API, y la implementación de pruebas automatizadas que garantizarán el comportamiento esperado y facilitarán la mantenibilidad y escalabilidad del servicio a largo plazo.</p>
+
+                        <p>En resumen, crear APIs en Python no solo es accesible, sino que también se adapta a una gama de necesidades, desde pequeños proyectos personales hasta soluciones empresariales complejas. El aprendizaje invertido en comprender cómo consumir APIs será invaluable al momento de diseñar y construir tus propias interfaces, cerrando así el ciclo de habilidades necesarias para aprovechar al máximo la potencia de la interoperabilidad que las APIs ofrecen en el mundo del desarrollo de software.</p>
+
+                        <h4>Casos de Uso y Ejemplos Prácticos</h4>
+
+                        <p>Para ilustrar cómo trabajar con APIs en Python, vamos a presentar algunos casos de uso y ejemplos prácticos. Por ejemplo, podríamos desarrollar un agregador de noticias que consume APIs de varios periódicos y los muestra en una sola interfaz, o una aplicación que integra datos climatológicos en tiempo real para proporcionar información actualizada a sus usuarios.</p>
+                        <p>En ambos casos, sería necesario comprender cómo trabajar con diferentes APIs, manejar las respuestas en JSON y XML, y cómo presentar esta información de una forma amigable y útil. Es a través de ejemplos prácticos y aplicaciones reales donde realmente se aprende a enfrentar y superar los desafíos habituales en el trabajo con APIs.</p>
+
+                        <h4>Recursos y Herramientas Recomendadas</h4>
+
+                        <p>Existen numerosas librerías y herramientas que pueden facilitar el trabajo con APIs en Python. Algunas de las más destacadas son <code>requests</code> y <code>httpx</code> para realizar peticiones HTTP, <code>requests-oauthlib</code> y <code>python-social-auth</code> para manejar la autenticación, y frameworks como <code>Flask</code> y <code>Django REST framework</code> para la creación de APIs.</p>
+
+                        <p>También es útil familiarizarse con herramientas como Postman o Insomnia para probar APIs de una forma visual e interactiva, o plataformas como RapidAPI, que permiten descubrir y conectar con miles de APIs fácilmente.</p>
+
+                        <p>La <a href="https://docs.python.org/3/" target="_blank" rel="noopener">documentación oficial de Python</a>, así como los recursos proporcionados por <a href="https://realpython.com/">Real Python</a> o <a href="https://dataquest.io/">Dataquest</a>, son excelentes puntos de partida para mejorar tus habilidades en API y Python en general. También puedes consultar la
+                            <a href="https://datascientest.com/es/programacion-de-api-web-en-python-con-flask">Programación de API web en Python con Flask</a> y la
+                            <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">Introducción a las APIs web</a> de MDN.
+                        </p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Es MongoDB una base de datos SQL o NoSQL?</h3>
-                    <p>MongoDB es una base de datos NoSQL, lo que significa que no utiliza el lenguaje de consulta estructurado (SQL) para realizar consultas y manipular los datos. En cambio, utiliza un modelo de datos flexible basado en documentos.</p>
-                    <p>Estas son algunas características clave de MongoDB que lo distinguen de las bases de datos SQL:</p>
-                    <ul>
-                        <li><b>Flexibilidad</b> (Modelo de datos flexible): MongoDB almacena los datos en documentos BSON (Binary JSON), que son estructuras de datos similares a JSON. Estos documentos pueden tener una estructura flexible, lo que significa que no es necesario seguir un esquema fijo como en las bases de datos SQL.</li>
-                        <li><b>Escalabilidad horizontal</b>: MongoDB está diseñado para escalar horizontalmente, lo que significa que puede manejar grandes volúmenes de datos distribuyendo la carga en múltiples servidores. Esto permite un mejor rendimiento y capacidad de almacenamiento a medida que los datos crecen.</li>
-                        <li><b>Consultas ricas</b>: MongoDB ofrece una amplia gama de operaciones de consulta y búsqueda, como consultas por campo, consultas de rango, consultas de texto completo y consultas geoespaciales. Estas operaciones permiten realizar consultas complejas y obtener resultados rápidos.</li>
-                        <li><b>Alta disponibilidad</b>: MongoDB proporciona mecanismos para garantizar la alta disponibilidad de los datos, como la replicación automática y el enrutamiento automático de consultas. Esto asegura que los datos estén siempre disponibles incluso en caso de fallos del servidor.</li>
-                    </ul>
-                    <p>Aquí hay un ejemplo para ilustrar cómo se vería una consulta en MongoDB en comparación con una consulta SQL:</p>
-                    <p>Consulta SQL:<br> <code>SELECT * FROM usuarios WHERE edad &gt; 25</code></p>
-                    <p>Consulta MongoDB:<br> <code>db.usuarios.find({ edad: { $gt: 25 } })</code></p>
-                    <p>En resumen, MongoDB es una base de datos NoSQL que ofrece flexibilidad en el modelo de datos, escalabilidad horizontal, consultas ricas y alta disponibilidad.</p>
+                    <div class="contenido">
+
+                        <p>MongoDB es una base de datos NoSQL de código abierto, lo que significa que no utiliza el lenguaje de consulta estructurado (SQL) para realizar consultas y manipular los datos ni utiliza tablas como las bases de datos SQL. En cambio, MongoDB almacena los datos en objetos similares a JavaScript, conocidos como documentos, cuyo contenido tiene este aspecto:</p>
+                        <p><code>{ _id: "123", "name": "John", "age": 30, "city": "New York" }</code></p>
+                        <p> En este caso, el campo <code>_id</code> es el identificador único del documento, y los demás campos representan atributos como el nombre, la edad y la ciudad.</p>
+                        <p>El identificador único de documento en MongoDB es un campo obligatorio llamado <code>_id</code> que puede ser de cualquier tipo de datos ( excepto un array) y si no se proporciona un valor para el campo <code>_id</code> al insertar un documento, MongoDB generará un identificador único para el documento, que debe ser único dentro de la colección a la que pertenece el documento.</p>
+                        <p>Estas son algunas características clave de MongoDB que lo distinguen de las bases de datos SQL:</p>
+                        <ul>
+                            <li>
+                                <p><b>Flexibilidad</b> (Modelo de datos flexible): MongoDB almacena los datos en documentos BSON (Binary JSON), que son estructuras de datos similares a JSON, lo que permite representar de manera natural estructuras complejas. Estos documentos pueden tener una estructura flexible, lo que significa que no es necesario seguir un esquema fijo como en las bases de datos SQL.</p>
+                                <p>A diferencia de las tablas SQL, no hay límites estructurales sobre lo que puedes almacenar en MongoDB. Los esquemas de datos no se imponen: puedes almacenar lo que quieras donde quieras. Esto hace que MongoDB sea ideal para estructuras de datos más orgánicas <i>—o desordenadas—</i>.</p>
+                                <p>Piensa en una agenda de contactos. Los individuos pueden tener a menudo varios números de teléfono. Podrías definir tres campos de teléfono en una tabla SQL, pero eso sería demasiado para algunos contactos y demasiado poco para otros. En última instancia, necesitarás una tabla de teléfonos independiente, lo que añade más complejidad.</p>
+                                <p>En MongoDB, esos números de teléfono podrían definirse como una matriz ilimitada de objetos en el mismo documento:</p>
+                                <pre><code>{
+    _id: "123",
+    name: "Craig",
+    telephone: [
+      { home: "0123456789" },
+      { work: "9876543210" },
+      { cell: "3141592654" }
+    ]
+}</code></pre>
+                            </li>
+                            <li>
+                                <b>Escalabilidad horizontal</b>: MongoDB está diseñado para
+                                escalar horizontalmente, lo que significa que puede manejar
+                                grandes volúmenes de datos distribuyendo la carga en múltiples
+                                servidores. Esto permite un mejor rendimiento y capacidad de
+                                almacenamiento a medida que los datos crecen.
+                            </li>
+                            <li>
+                                <p><b>Consultas ricas</b>: MongoDB ofrece una amplia gama de operaciones de consulta y búsqueda, como consultas por campo, consultas de rango, consultas de texto completo y consultas geoespaciales. Estas operaciones permiten realizar consultas complejas y obtener resultados rápidos.</p>
+                                <p>Ejemplo de consulta geoespacial por campo:</p>
+                                <pre><code>// Buscar documentos cerca de una ubicación específica
+db.places.find({
+  location: {
+    $near: {
+      $geometry: {
+        type: "Point",
+        coordinates: [ -73.9667, 40.78 ]
+      },
+      $maxDistance: 1000
+    }
+  }
+})</code></pre>
+                                <p>Ejemplo de consulta de texto:</p>
+                                <pre><code>// Buscar documentos que contienen una palabra específica en un campo de texto indexado
+db.articles.find({ $text: { $search: "mongodb" } })</code></pre>
+                            </li>
+                            <li>
+                                <b>Alta disponibilidad</b>: MongoDB proporciona mecanismos para garantizar la alta disponibilidad de los datos, como la replicación automática y el enrutamiento automático de consultas. Esto asegura que los datos estén siempre disponibles incluso en caso de fallos del servidor.
+                            </li>
+                        </ul>
+                        <p>
+                            Este es un ejemplo para ilustrar la diferencia entre una consulta en SQL y la misma consulta en MongoDB:
+                        </p>
+                        <p>
+                            Consulta SQL:<br>
+                            <code>SELECT * FROM usuarios WHERE edad &gt; 25</code>
+                        </p>
+                        <p>
+                            Consulta MongoDB:<br>
+                            <code>db.usuarios.find({ edad: { $gt: 25 } })</code>
+                        </p>
+                        <h4>Elementos de MongoDB y su analogía con SQL</h4>
+                        <ul>
+                            <li><b>Documento:</b> Un único objeto individual en un almacén de datos, análogo a un registro o fila en una tabla de una base de datos SQL.</li>
+                            <li><b>Campo:</b> Un único dato dentro de un documento, como un nombre o un número de teléfono, análogo a un campo o columna de una tabla SQL.</li>
+                            <li><b>Colección:</b> Un conjunto de documentos similares, análogo a una tabla SQL. Aunque podrías poner todos tus documentos en una sola colección, suele ser más práctico agruparlos en tipos específicos. En una agenda de contactos podrías tener una colección para personas y otra para empresas.</li>
+                            <li><b>Base de datos:</b> Una colección de datos relacionados, con un significado idéntico al de una base de datos SQL.</li>
+                            <li><b>Esquema:</b> Un esquema define las estructuras de datos. En las bases de datos SQL deben definirse las tablas con campos y tipos asociados antes de poder almacenar datos. Esto no es necesario en MongoDB, aunque es posible crear un esquema que valide los documentos antes de añadirlos a una colección.</li>
+                            <li><b>Índice:</b> Una estructura de datos utilizada para mejorar el rendimiento de las consultas, con un significado idéntico al de los índices de SQL.</li>
+                            <li><b>Clave primaria:</b> Un identificador único para cada documento. MongoDB añade automáticamente un campo <code>_id</code> único e indexado a cada documento de una colección.</li>
+                            <li><b>Desnormalización:</b> En las bases de datos SQL, la <i>normalización</i> es una técnica utilizada para organizar los datos y eliminar la duplicación. En MongoDB, se fomenta la <i>desnormalización</i>. Se repiten activamente los datos y un solo documento podría contener toda la información necesaria.</li>
+                            <li><b>Uniones:</b> SQL proporciona un operador JOIN para poder recuperar datos de varias tablas normalizadas en una sola consulta. Las uniones no eran posibles en MongoDB hasta la versión 3.6 y las limitaciones siguen existiendo. Esta es otra razón por la que los datos deben desnormalizarse en documentos autocontenidos.</li>
+                            <li><b>Transacciones:</b> Las transacciones en bases de datos son un conjunto de operaciones que se ejecutan como una única unidad lógica de trabajo y son fundamentales para garantizar la integridad de los datos (al asegurar que todas las operaciones se completen con éxito o se reviertan en caso de error) en entornos de bases de datos multiusuario. En SQL, las transacciones son atómicas, lo que significa que todas las operaciones dentro de una transacción se realizan de manera completa o ninguna se realiza. En MongoDB, las transacciones son atómicas solo a nivel de un único documento. A partir de la versión 4.0, MongoDB admite transacciones multi-documento en clústeres replicados, pero no en clústeres distribuidos ni en un único servidor.</li>
+                        </ul>
+                        <h4>Consultas Simples en MongoDB</h4>
+                        <p>Puedes listar todos los documentos de una colección, como persona, utilizando un <code>find()</code> vacío:</p>
+                        <pre><code>db.person.find({})</code></pre>
+                        <p>El método <a href="https://www.mongodb.com/docs/manual/reference/command/count/"><code>count()</code></a> devuelve el número de documentos:</p>
+                        <pre><code>db.person.find({}).count();</code></pre>
+                        <p>El método <a href="https://www.mongodb.com/docs/manual/reference/operator/update/sort/"><code>sort()</code></a> devuelve los documentos en el orden que prefieras, por ejemplo, por orden alfabético inverso del nombre:</p>
+                        <pre><code>db.person.find({}).sort({ name: -1 });</code></pre>
+                        <p>También puedes limitar el número de documentos devueltos, por ejemplo, encontrar los tres primeros nombres:</p>
+                        <pre><code>db.person.find({}).sort({ name: 1 }).limit(2);</code></pre>
+                        <p>Puedes buscar registros específicos definiendo una consulta con uno o varios campos, por ejemplo, localizar todos los documentos de personas cuyo nombre sea «Claire»:</p>
+                        <pre><code>db.person.find({ name: 'Claire' });</code></pre>
+                        <p>También se admiten <a href="https://www.mongodb.com/docs/manual/reference/operator/query/">operadores lógicos</a> como <code>$and, $or, $not, $gt</code> (mayor que), <code>$lt</code> (menor que) y <code>$ne</code> (no igual), por ejemplo, localizar todos los documentos de persona en los que la empresa sea «Alpha Inc» o «Beta Inc»:</p>
+                        <pre><code>db.person.find({
+  $or: [
+    { company: 'Alpha Inc' },
+    { company: 'Beta Inc' }
+  ]
+});</code></pre>
+                        <p>Usaremos <code>$nin</code> (no en) para extraer todos los documentos en los que la empresa <b>no</b> sea «Gamma Inc»:</p>
+                        <pre><code>db.person.find({
+  company: { $nin: ['Gamma Inc'] }
+});</code></pre>
+                        <p>Un segundo objeto valor en el método <code>find()</code> establece una <i>proyección</i> que define los campos devueltos. En este ejemplo, sólo se devuelve el nombre (ten en cuenta que siempre se devuelve el <code>_id</code> del documento, a menos que se desactive explícitamente):</p>
+                        <pre><code>db.person.find(
+  { name:'Claire' },
+  { _id:0, name:1 }
+);</code></pre>
+                        <p>El resultado:</p>
+                        <pre><code>{
+  "name" : "Claire"
+}</code></pre>
+                        <p>La consulta <a href="https://www.mongodb.com/docs/manual/reference/operator/query/elemMatch/" target="_blank" rel="noopener noreferrer"><code>$elemMatch</code></a> te permite encontrar elementos en un array, como por ejemplo todos los documentos en los que el array de teléfonos tiene un elemento de trabajo. El mismo <code>$elemMatch</code> puede utilizarse en la proyección para mostrar sólo el número de trabajo:</p>
+                        <pre><code>db.person.find(
+  {
+    telephone: { $elemMatch: { work: { $exists: true }} }
+  },
+  {
+    _id: 0,
+    name:1,
+    telephone: { $elemMatch: { work: { $exists: true }}}
+  }
+);</code></pre>
+                        <p>El resultado:</p>
+                        <pre><code>{
+  "name" : "Abdul",
+  "telephone" : [
+    { "work" : "9876543210" }
+  ]
+},
+{
+  "name" : "Henry",
+  "telephone" : [
+    { "work" : "012301230123" }
+  ]
+}</code></pre>
+                        <h4>Uso de los Esquemas de Validación de Datos de MongoDB</h4>
+                        <p>A diferencia de SQL, los esquemas de definición de datos no son necesarios en MongoDB. Puedes enviar cualquier dato a cualquier documento de cualquier colección en cualquier momento.</p>
+                        <p>Esto proporciona una libertad considerable. Sin embargo, puede haber ocasiones en las que quieras insistir en que se sigan las reglas. Por ejemplo, no debería ser posible insertar un documento en la colección de personas si no contiene un nombre.</p>
+                        <p>Las reglas de validación pueden especificarse mediante un objeto <a href="https://www.mongodb.com/docs/manual/reference/operator/query/jsonSchema/" target="_blank" rel="noopener noreferrer"><code>$jsonSchema</code></a> que define un array de elementos requeridos y las propiedades de cada campo validado. La colección de personas ya ha sido creada, pero aún puedes definir un esquema que especifique que se requiere una cadena de nombre:</p>
+                        <pre><code>db.runCommand({
+  collMod: 'person',
+  validator: {
+    $jsonSchema: {
+      required: [ 'name' ],
+      properties: {
+        name: {
+          bsonType: 'string',
+          description: 'name string required'
+        }
+      }
+    }
+  }
+});</code></pre>
+                        <p>Intenta insertar un documento de persona sin nombre:</p>
+                        <pre><code>db.person.insertOne({ company: 'Alpha Inc' });</code></pre>
+                        <p>…y el comando fallará:</p>
+                        <pre><code>{
+  "index" : 0.0,
+  "code" : 121.0,
+  "errmsg" : "Document failed validation",
+  "op" : {
+      "_id" : ObjectId("624591771658cd08f8290401"),
+      "company" : "Alpha Inc"
+  }
+}</code></pre>
+                        <p>Los esquemas también pueden definirse si <a href="https://www.mongodb.com/docs/manual/reference/method/db.createCollection/" target="_blank" rel="noopener noreferrer">creas una colección</a> antes de utilizarla. El siguiente comando implementa las mismas reglas que el anterior:</p>
+                        <pre><code>db.createCollection('person', {
+  validator: {
+    $jsonSchema: {
+        required: [ 'name' ],
+        properties: {
+          name: {
+          bsonType: 'string',
+          description: 'name string required'
+          }
+      }
+    }
+  }
+});</code></pre>
+                        <p>Este ejemplo más complejo crea una colección de usuarios que valida que se proporcione un nombre, una dirección de correo electrónico y al menos un número de teléfono:</p>
+                        <pre><code>db.createCollection('users', {
+  validator: {
+    $jsonSchema: {
+      required: [ 'name', 'email', 'telephone' ],
+      properties: {
+        name: {
+          bsonType: 'string',
+          description: 'name string required'
+          },
+          email: {
+        bsonType: 'string',
+          pattern: '^.+@.+$',
+          description: 'valid email required'
+          },
+        telephone: {
+          bsonType: 'array',
+          minItems: 1,
+          description: 'at least one telephone number required'
+          }
+      }
+    }
+  }
+});</code></pre>
+                        <h4>Cómo Actualizar Documentos Existentes en MongoDB</h4>
+                        <p>MongoDB ofrece varios <a href="https://www.mongodb.com/docs/manual/reference/update-methods/" target="_blank" rel="noopener noreferrer">métodos de actualización</a>, como <code>updateOne()</code>, <code>updateMany()</code> y <code>replaceOne()</code>. Estos pasan:</p>
+                        <ul>
+                            <li>Un objeto filtro que localiza los documentos a actualizar.</li>
+                            <li>Un objeto de actualización — o un array de objetos de actualización — que describa los datos a modificar.</li>
+                            <li>Un objeto de opciones opcional. La propiedad más útil es <code>upsert</code>, que puede insertar un nuevo documento si no se encuentra ninguno.</li>
+                        </ul>
+                        <p>El siguiente ejemplo actualiza el documento de persona en el que el nombre se establece como «Henry». Elimina el número de teléfono del trabajo, añade un número de teléfono de casa y establece una nueva fecha de nacimiento:</p>
+                        <pre><code>db.person.updateOne(
+  { name: 'Henry' },
+  [
+    { $unset: [ 'telephone.work' ] },
+    { $set: {
+      'birthdate': new ISODate('1980-01-01'),
+      'telephone': [ { 'home': '789789789' } ]
+    } }
+  ]
+);</code></pre>
+                        <p>El siguiente ejemplo actualiza el documento de persona en el que el nombre es «Ian». Ese nombre no existe actualmente, pero al establecer upsert a «true» se crea:</p>
+                        <pre><code>db.person.updateOne(
+  { name: 'Ian' },
+  { $set: { company: 'Beta Inc' } },
+  { upsert: true }
+);</code></pre>
+                        <p>Puedes ejecutar comandos de consulta para examinar las actualizaciones de datos en cualquier momento.</p>
+                        <h4>Cómo Eliminar Documentos en MongoDB</h4>
+                        <p>El ejemplo de actualización anterior utilizó <code>$unset</code> para eliminar el número de teléfono del trabajo del documento con el nombre «Henry». Para eliminar un documento completo, puedes utilizar uno de los diversos <a href="https://www.mongodb.com/docs/manual/reference/delete-methods/" target="_blank" rel="noopener noreferrer">métodos de eliminación</a>, como <code>deleteOne()</code>, <code>deleteMany()</code> y <code>remove()</code> (que pueden eliminar uno o varios).</p>
+                        <p>El documento recién creado para Ian se puede eliminar con un filtro adecuado:</p>
+                        <pre><code>db.person.deleteOne({ name: 'Ian' });</code></pre>
+
+                        <h4>Uso de las Operaciones de Agregación en MongoDB</h4>
+                        <p>La <a href="https://www.mongodb.com/docs/manual/aggregation/" target="_blank" rel="noopener noreferrer">agregación</a> es potente, pero puede ser difícil de comprender. Define una serie — o <i>pipeline</i> — de <a href="https://www.mongodb.com/docs/manual/meta/aggregation-quick-reference/" target="_blank" rel="noopener noreferrer">operaciones</a> en un array (como filtrar, agrupar, calcular o modificar un conjunto de documentos). Una etapa también puede utilizar un comportamiento similar al de SQL JOIN con una operación <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/lookup/" target="_blank" rel="noopener noreferrer"><code>$lookup</code></a>. Los documentos resultantes se pasan a la siguiente etapa de la cadena para su posterior procesamiento, según sea necesario.</p>
+                        <p>Veamos la agregación con un ejemplo. Construiremos paso a paso una consulta que devuelva el nombre, la empresa y el número de teléfono del trabajo (si está disponible) de cualquier persona que trabaje para una organización con sede en EE.UU.</p>
+                        <p>La primera operación ejecuta un <code>$match</code> para filtrar las empresas con sede en EEUU:</p>
+                        <p>Podemos añadir un nuevo operador pipeline <code>$lookup</code> que haga coincidir el nombre de la empresa (localField) con la empresa (foreignField) en la colección de personas (from). El resultado se añadirá como una matriz de empleados al documento de cada empresa.</p>
+                        <p>Una operación <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/#mongodb-pipeline-pipe.-project" target="_blank" rel="noopener noreferrer"><code>$project</code></a> puede ahora eliminar todo, excepto el array de empleados. A esto le sigue una operación <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/unwind/#mongodb-pipeline-pipe.-unwind" target="_blank" rel="noopener noreferrer"><code>$unwind</code></a> para destruir el array y obtener los documentos de los empleados por separado.</p>
+                        <p>Por último, se utiliza una operación <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/replaceRoot/#mongodb-pipeline-pipe.-replaceRoot" target="_blank" rel="noopener noreferrer"><code>$replaceRoot</code></a> para formatear cada documento de modo que sólo se devuelva el nombre de la persona, la empresa y el número de teléfono del trabajo. A esto le sigue una operación <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation/sort/#mongodb-pipeline-pipe.-sort" target="_blank" rel="noopener noreferrer"><code>$sort</code></a> para obtener los documentos en orden ascendente de nombre. La consulta agregada completa:</p>
+                        <pre><code>db.company.aggregate([
+  { $match: { base: 'US' } },
+  { $lookup: { from: 'person', localField: 'name', foreignField: 'company', as: 'employee' } },
+  { $project: { _id: 0, employee: 1 } },
+  { $unwind: '$employee' },
+  { $replaceRoot: {
+    newRoot: {
+      $mergeObjects: [ {
+        name: "$employee.name",
+        company: '$employee.company',
+        work: { $first: '$employee.telephone.work' }
+      }, "$name" ]
+   } } },
+  { $sort: { name: 1 } }
+]);</code></pre>
+                        <p>El resultado:</p>
+                        <pre><code>{
+  "name" : "Abdul",
+  "company" : "Alpha Inc",
+  "work" : "9876543210"
+}
+{
+  "name" : "Brian",
+  "company" : "Beta Inc",
+}
+{
+  "name" : "Dawn",
+  "company" : "Alpha Inc",
+}
+{
+  "name" : "Esther",
+  "company" : "Beta Inc"
+}
+{
+  "name" : "Henry",
+  "company" : "Alpha Inc"
+}</code></pre>
+                        <p>Hay otras formas de conseguir este resultado, pero la cuestión es que MongoDB puede hacer la mayor parte del trabajo. Rara vez es necesario leer los documentos y manipular los datos en el código de la aplicación directamente.</p>
+
+                        <p>
+                            En resumen, MongoDB es una base de datos NoSQL flexible y escalable que se adapta bien a aplicaciones modernas que requieren manejo eficiente de grandes volúmenes de datos y consultas complejas. Pero MongoDB no es adecuado para las aplicaciones que tienen requisitos transaccionales estrictos en los que la integridad de los datos es esencial, como ocurre con los sistemas bancarios, de contabilidad y de control de existencias que tienen campos de datos identificables que deben diseñarse antes de comenzar la codificación.
+                        </p>
+                        <p>Para saber <a href="https://es.wikipedia.org/wiki/MongoDB">más</a> y la página de <a href="https://www.mongodb.com/es">MongoDB</a> en castellano.</p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Qué es una API?</h3>
-                    <p>Una API (Application Programming Interface) es un conjunto de reglas y protocolos que permite a diferentes aplicaciones comunicarse entre sí.O, si se prefiere, un conjunto de métodos y datos que se pueden utilizar para realizar una tarea o realizar una acción. En Python, una API es un objeto. Veamos una explicación paso a paso:</p>
-                    <ul>
-                        <li>Una API define cómo las aplicaciones pueden solicitar y enviar datos entre sí.</li>
-                        <li>Imagina que tienes una aplicación de clima y quieres mostrar la temperatura actual en tu página web. En lugar de escribir todo el código para obtener los datos del clima tú mismo, puedes utilizar una API de clima existente.</li>
-                        <li>La API de clima proporciona una serie de reglas y protocolos que te permiten solicitar datos de temperatura a través de una URL específica.</li>
-                        <li>Tu aplicación web puede enviar una solicitud a la API de clima, especificando la ubicación para la que deseas obtener la temperatura.</li>
-                        <li>La API de clima procesa tu solicitud y devuelve los datos de temperatura en un formato específico, como JSON o XML.</li>
-                        <li>Tu aplicación web puede recibir los datos de temperatura de la API y mostrarlos en tu página web.</li>
-                        <li>Además de obtener datos, las API también pueden permitir enviar datos a otras aplicaciones. Por ejemplo, una API de pago puede permitir a tu aplicación enviar una solicitud de pago a un proveedor de servicios de pago.</li>
-                        <li>Las API pueden ser públicas, lo que significa que están disponibles para cualquier persona, o privadas, lo que significa que solo están disponibles para ciertos usuarios o aplicaciones autorizadas.</li>
-                        <li>Las API son esenciales para la integración de aplicaciones y permiten a los desarrolladores aprovechar la funcionalidad existente en lugar de tener que crearla desde cero.</li>
-                    </ul>
-                    <p>Algunos ejemplos de API ampliamente conocidas y utilizadas en diferentes áreas:</p>
-                    <ul>
-                        <li>API de <b>Google Maps</b>: Permite a los desarrolladores integrar mapas interactivos en sus aplicaciones y acceder a funciones como geolocalización, rutas y lugares de interés.</li>
-                        <li>API de <b>Twitter</b>: Da acceso a datos y funcionalidades de Twitter, como publicar tweets, leer el timeline de un usuario y buscar tweets por palabras clave.</li>
-                        <li>API de <b>Facebook</b>: Proporciona acceso a la plataforma de Facebook, lo que permite a los desarrolladores integrar funciones de inicio de sesión con Facebook, compartir contenido en Facebook y acceder a datos de perfil de usuario.</li>
-                        <li>API de <b>PayPal</b>: Posibilita integrar pagos en línea en las aplicaciones, lo que implica aceptar pagos con tarjeta de crédito, transferencias bancarias y otros métodos de pago.</li>
-                        <li>API de <b>OpenWeatherMap</b>: Proporciona datos de pronóstico del tiempo y condiciones meteorológicas actuales para cualquier ubicación del mundo.</li>
-                        <li>API de <b>YouTube</b>: Otorga acceso a contenido de YouTube, como videos, listas de reproducción y comentarios, y también permite la carga y administración de videos.</li>
-                        <li>API de <b>Spotify</b>: Facilita acceder a la biblioteca de música de Spotify, buscar canciones, crear listas de reproducción y reproducir música en sus aplicaciones.</li>
-                    </ul>
-                    <p>Estos son solo algunos ejemplos, pero hay muchas otras API populares y ampliamente utilizadas en diferentes industrias y áreas de desarrollo de software.</p>
-                    <p>En resumen, una API es como un intermediario que permite que diferentes aplicaciones se comuniquen y compartan datos de manera estructurada y eficiente.</p>
+                    <div class="contenido">
+
+                        <p>
+                            Una API (Application Programming Interface) es un conjunto de reglas y protocolos que permite a diferentes aplicaciones comunicarse entre sí. O, si se prefiere, un conjunto de métodos y datos que se pueden utilizar para realizar una tarea o una acción. En Python, una API es un objeto. Veamos una explicación paso a paso:
+                        </p>
+                        <ul>
+                            <li>
+                                Una API define cómo las aplicaciones pueden solicitar y enviar datos entre sí.
+                            </li>
+                            <li>
+                                Imagina que tienes una aplicación de clima y quieres mostrar la temperatura actual en tu página web. En lugar de escribir todo el código para obtener los datos del clima tú mismo, puedes utilizar una API de clima existente.
+                            </li>
+                            <li>
+                                La API de clima proporciona una serie de reglas y protocolos que te permiten solicitar datos de temperatura a través de una URL específica.
+                            </li>
+                            <li>
+                                Tu aplicación web puede enviar una solicitud a la API de clima, especificando la ubicación para la que deseas obtener la temperatura.
+                            </li>
+                            <li>
+                                La API de clima procesa tu solicitud y devuelve los datos de temperatura en un formato específico, como JSON o XML.
+                            </li>
+                            <li>
+                                Tu aplicación web puede recibir los datos de temperatura de la API y mostrarlos en tu página web.
+                            </li>
+                            <li>
+                                Además de obtener datos, las API también pueden permitir enviar datos a otras aplicaciones. Por ejemplo, una API de pago puede permitir a tu aplicación enviar una solicitud de pago a un proveedor de servicios de pago.
+                            </li>
+                            <li>
+                                Las API pueden ser públicas, lo que significa que están disponibles para cualquier persona, o privadas, lo que significa que solo están disponibles para ciertos usuarios o aplicaciones autorizadas.
+                            </li>
+                            <li>
+                                Las API son esenciales para la integración de aplicaciones y permiten a los desarrolladores aprovechar la funcionalidad existente en lugar de tener que crearla desde cero.
+                            </li>
+                        </ul>
+                        <p>
+                            Algunos ejemplos de API ampliamente conocidas y utilizadas en diferentes áreas:
+                        </p>
+                        <ul>
+                            <li>
+                                API de <b>Google Maps</b>: Permite a los desarrolladores
+                                integrar mapas interactivos en sus aplicaciones y acceder a
+                                funciones como geolocalización, rutas y lugares de interés.
+                            </li>
+                            <li>
+                                API de <b>Twitter</b>: Da acceso a datos y funcionalidades de
+                                Twitter, como publicar tweets, leer el timeline de un usuario y
+                                buscar tweets por palabras clave.
+                            </li>
+                            <li>
+                                API de <b>Facebook</b>: Proporciona acceso a la plataforma de
+                                Facebook, lo que permite a los desarrolladores integrar
+                                funciones de inicio de sesión con Facebook, compartir contenido
+                                en Facebook y acceder a datos de perfil de usuario.
+                            </li>
+                            <li>
+                                API de <b>PayPal</b>: Posibilita integrar pagos en línea en las
+                                aplicaciones, lo que implica aceptar pagos con tarjeta de
+                                crédito, transferencias bancarias y otros métodos de pago.
+                            </li>
+                            <li>
+                                API de <b>OpenWeatherMap</b>: Proporciona datos de pronóstico
+                                del tiempo y condiciones meteorológicas actuales para cualquier
+                                ubicación del mundo.
+                            </li>
+                            <li>
+                                API de <b>YouTube</b>: Otorga acceso a contenido de YouTube,
+                                como videos, listas de reproducción y comentarios, y también
+                                permite la carga y administración de videos.
+                            </li>
+                            <li>
+                                API de <b>Spotify</b>: Facilita acceder a la biblioteca de
+                                música de Spotify, buscar canciones, crear listas de
+                                reproducción y reproducir música en sus aplicaciones.
+                            </li>
+                        </ul>
+                        <p>
+                            Estos son solo algunos ejemplos, pero hay muchas otras API populares y ampliamente utilizadas en diferentes industrias y áreas de desarrollo de software.
+                        </p>
+                        <p>El siguiente código muestra cómo utilizar la API de la base de datos MySQL para conectarse a una base de datos y recuperar los datos de una tabla:</p>
+                        <pre><code>import mysql.connector
+
+# Conectar a la base de datos
+connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",
+    database="my_database"
+)
+
+# Crear un cursor para ejecutar consultas
+cursor = connection.cursor()
+
+# Ejecutar la consulta
+cursor.execute("SELECT * FROM my_table")
+
+# Obtener los resultados de la consulta
+results = cursor.fetchall()
+
+# Imprimir los resultados
+for result in results:
+    print(result)
+</code></pre>
+                        <p>Este código se conectará a la base de datos <code>my_database</code> en el host <code>localhost</code>. Luego, creará un cursor para ejecutar consultas. A continuación, ejecutará la consulta <code>SELECT * FROM my_table</code> para recuperar todos los datos de la tabla <code>my_table</code>. Finalmente, imprimirá los resultados de la consulta.</p>
+
+                        <p>
+                            En resumen, una API es como un intermediario que permite que diferentes aplicaciones se comuniquen y compartan datos de manera estructurada y eficiente.
+                        </p>
+                        <p>Si estás interesado en aprender más sobre APIs, <a href="https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces">¡sigue leyendo!</a></p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Qué es Postman?</h3>
-                    <p>Postman es una herramienta de desarrollo de API que permite a los desarrolladores probar, documentar y colaborar en el desarrollo de APIs. Algunas de sus características más importantes son:</p>
-                    <ul>
-                        <li><b>Interfaz de usuario intuitiva:</b> Postman proporciona una interfaz gráfica fácil de usar que permite a los desarrolladores enviar solicitudes HTTP a una API y ver las respuestas.</li>
-                        <li><b>Pruebas automatizadas:</b> Postman permite a los desarrolladores escribir y ejecutar pruebas automatizadas para verificar el comportamiento de una API. Esto es útil para asegurarse de que una API funcione correctamente y cumpla con los requisitos.</li>
-                        <li><b>Colecciones y entornos:</b> Postman permite a los desarrolladores organizar sus solicitudes en colecciones, lo que facilita la gestión y la reutilización de las solicitudes. Además, los entornos permiten configurar variables y configuraciones específicas para diferentes entornos, como desarrollo, pruebas o producción.</li>
-                        <li><b>Documentación de API:</b> Postman permite generar automáticamente documentación de API a partir de las solicitudes y respuestas guardadas en una colección. Esto facilita la comprensión y el uso de una API por parte de otros desarrolladores.</li>
-                        <li><b>Colaboración:</b> Postman permite a los equipos de desarrollo colaborar en el desarrollo de APIs. Los desarrolladores pueden compartir colecciones, colaborar en pruebas y documentación, y trabajar juntos en el desarrollo de APIs.</li>
-                    </ul>
-                    <p>Un ejemplo de uso de Postman sería probar una API de clima. Podrías enviar una solicitud GET a la URL de la API con los parámetros necesarios, como la ubicación o la fecha, y Postman mostraría la respuesta de la API, que podría incluir información sobre el clima actual en esa ubicación.</p>
-                    <p>En resumen, Postman es una herramienta esencial para los desarrolladores de API, ya que les permite probar, documentar y colaborar en el desarrollo de APIs de manera eficiente y efectiva.</p>
+                    <div class="contenido">
+
+                        <p>
+                            Postman es una herramienta de desarrollo de API que permite a los
+                            desarrolladores probar, documentar y colaborar en el desarrollo de
+                            APIs. Algunas de sus características más importantes son:
+                        </p>
+                        <ul>
+                            <li>
+                                <b>Interfaz de usuario intuitiva:</b> Postman proporciona una
+                                interfaz gráfica fácil de usar que permite a los desarrolladores
+                                enviar solicitudes HTTP a una API y ver las respuestas.
+                            </li>
+                            <li>
+                                <b>Pruebas automatizadas:</b> Postman permite a los
+                                desarrolladores escribir y ejecutar pruebas automatizadas para
+                                verificar el comportamiento de una API. Esto es útil para
+                                asegurarse de que una API funcione correctamente y cumpla con
+                                los requisitos.
+                            </li>
+                            <li>
+                                <b>Colecciones y entornos:</b> Postman permite a los
+                                desarrolladores organizar sus solicitudes en colecciones, lo que
+                                facilita la gestión y la reutilización de las solicitudes.
+                                Además, los entornos permiten configurar variables y
+                                configuraciones específicas para diferentes entornos, como
+                                desarrollo, pruebas o producción.
+                            </li>
+                            <li>
+                                <b>Documentación de API:</b> Postman permite generar
+                                automáticamente documentación de API a partir de las solicitudes
+                                y respuestas guardadas en una colección. Esto facilita la
+                                comprensión y el uso de una API por parte de otros
+                                desarrolladores.
+                            </li>
+                            <li>
+                                <b>Colaboración:</b> Postman permite a los equipos de desarrollo
+                                colaborar en el desarrollo de APIs. Los desarrolladores pueden
+                                compartir colecciones, colaborar en pruebas y documentación, y
+                                trabajar juntos en el desarrollo de APIs.
+                            </li>
+                        </ul>
+                        <p>
+                            Un ejemplo de uso de Postman sería probar una API de clima.
+                            Podrías enviar una solicitud GET a la URL de la API con los
+                            parámetros necesarios, como la ubicación o la fecha, y Postman
+                            mostraría la respuesta de la API, que podría incluir información
+                            sobre el clima actual en esa ubicación.
+                        </p>
+                        <p>
+                            En resumen, Postman es una herramienta esencial para los
+                            desarrolladores de API, ya que les permite probar, documentar y
+                            colaborar en el desarrollo de APIs de manera eficiente y efectiva.
+                        </p>
+                        <p>Si tienes interés en <a href="https://www.postman.com/">Postman</a> o quieres <a href="https://openwebinars.net/blog/que-es-postman/">comparar</a>.</p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Qué es el polimorfismo?</h3>
-                    <p>El polimorfismo en Python es un concepto de programación orientada a objetos que permite que un objeto pueda tomar diferentes formas o comportamientos según el contexto en el que se utilice. En otras palabras, un objeto puede ser tratado como si fuera de un tipo diferente al que realmente es.</p>
-                    <p>En Python, el polimorfismo se logra mediante el uso de herencia y la implementación de métodos con el mismo nombre en diferentes clases.</p>
-                    <p>Cuando se llama a un método en un objeto, Python busca primero en la clase del objeto y luego en las clases superiores en la jerarquía de herencia para encontrar la implementación del método.</p>
-                    <p>Si una clase hereda de otra y redefine un método con el mismo nombre, se dice que está sobrescribiendo el método de la clase base.</p>
-                    <p>El polimorfismo permite que un objeto de una clase derivada se utilice donde se espera un objeto de la clase base, lo que facilita la reutilización del código y la flexibilidad en el diseño de programas.</p>
-                    <pre><code>class Figura:
+                    <div class="contenido">
+
+                        <p>
+                            El polimorfismo en Python es un concepto de programación orientada
+                            a objetos que permite que un objeto pueda tomar diferentes formas
+                            o comportamientos según el contexto en el que se utilice. En otras
+                            palabras, un objeto puede ser tratado como si fuera de un tipo
+                            diferente al que realmente es.
+                        </p>
+                        <p>
+                            En Python, el polimorfismo se logra mediante el uso de herencia y
+                            la implementación de métodos con el mismo nombre en diferentes
+                            clases.
+                        </p>
+                        <p>
+                            Cuando se llama a un método en un objeto, Python busca primero en
+                            la clase del objeto y luego en las clases superiores en la
+                            jerarquía de herencia para encontrar la implementación del método.
+                        </p>
+                        <p>
+                            Si una clase hereda de otra y redefine un método con el mismo
+                            nombre, se dice que está sobrescribiendo el método de la clase
+                            base.
+                        </p>
+                        <p>
+                            El polimorfismo permite que un objeto de una clase derivada se
+                            utilice donde se espera un objeto de la clase base, lo que
+                            facilita la reutilización del código y la flexibilidad en el
+                            diseño de programas.
+                        </p>
+                        <pre><code>class Figura:
     def area(self):
         pass
 
@@ -325,9 +934,30 @@ circulo = Circulo(2)
 calcular_area(rectangulo)  # Imprime "El área de la figura es: 15"
 calcular_area(circulo)  # Imprime "El área de la figura es: 12.56636"
 </code></pre>
-                    <p>En este ejemplo, tenemos una clase base llamada <code>Figura</code> que define un método <code>area()</code>. Luego, tenemos dos clases derivadas, <code>Rectangulo</code> y <code>Circulo</code>, que sobrescriben el método <code>area()</code> para calcular el área específica de cada figura. La función <code>calcular_area()</code> toma un objeto de la clase <code>Figura</code> como argumento y llama al método <code>area()</code> en ese objeto para calcular y mostrar el área de la figura. A pesar de que <code>rectangulo</code> y <code>circulo</code> son objetos de clases derivadas, se pueden pasar como argumentos a <code>calcular_area()</code> porque heredan de la clase <code>Figura</code>. Esto demuestra el polimorfismo en acción, ya que el mismo método <code>calcular_area()</code> puede ser utilizado con diferentes tipos de objetos.</p>
-                    <p>Un ejemplo común de polimorfismo en Python es el uso de la función <code>len()</code>. Esta función puede ser utilizada para obtener la longitud de una lista, una cadena de texto o cualquier otro objeto que implemente el método <code>__len__</code>.</p>
-                    <pre><code>class MiColeccion:
+                        <p>
+                            En este ejemplo, tenemos una clase base llamada
+                            <code>Figura</code> que define un método <code>area()</code>.
+                            Luego, tenemos dos clases derivadas, <code>Rectangulo</code> y
+                            <code>Circulo</code>, que sobrescriben el método
+                            <code>area()</code> para calcular el área específica de cada
+                            figura. La función <code>calcular_area()</code> toma un objeto de
+                            la clase <code>Figura</code> como argumento y llama al método
+                            <code>area()</code> en ese objeto para calcular y mostrar el área
+                            de la figura. A pesar de que <code>rectangulo</code> y
+                            <code>circulo</code> son objetos de clases derivadas, se pueden
+                            pasar como argumentos a <code>calcular_area()</code> porque
+                            heredan de la clase <code>Figura</code>. Esto demuestra el
+                            polimorfismo en acción, ya que el mismo método
+                            <code>calcular_area()</code> puede ser utilizado con diferentes
+                            tipos de objetos.
+                        </p>
+                        <p>
+                            Un ejemplo común de polimorfismo en Python es el uso de la función
+                            <code>len()</code>. Esta función puede ser utilizada para obtener
+                            la longitud de una lista, una cadena de texto o cualquier otro
+                            objeto que implemente el método <code>__len__</code>.
+                        </p>
+                        <pre><code>class MiColeccion:
     def __init__(self, elementos):
         self.elementos = elementos
 
@@ -342,9 +972,21 @@ print(len(mi_lista))  # Imprime 5
 print(len(mi_cadena))  # Imprime 12
 print(len(mi_coleccion))  # Imprime 5
 </code></pre>
-                    <p>En este ejemplo, se crea una clase <code>MiColeccion</code> que tiene una lista de elementos. La clase implementa el método especial <code>__len__()</code> que devuelve la longitud de la lista de elementos. Luego, utilizamos la función <code>len()</code> para obtener la longitud de una lista, una cadena de texto y una instancia de la clase <code>MiColeccion</code>. A pesar de que los objetos son de tipos diferentes, el polimorfismo nos permite utilizar la misma función <code>len()</code> para obtener la longitud de cada uno de ellos.</p>
-                    <p>Veamos un ejemplo más para ilustrar el polimorfismo en Python:</p>
-                    <pre><code>class Animal:
+                        <p>
+                            En este ejemplo, se crea una clase <code>MiColeccion</code> que
+                            tiene una lista de elementos. La clase implementa el método
+                            especial <code>__len__()</code> que devuelve la longitud de la
+                            lista de elementos. Luego, utilizamos la función
+                            <code>len()</code> para obtener la longitud de una lista, una
+                            cadena de texto y una instancia de la clase
+                            <code>MiColeccion</code>. A pesar de que los objetos son de tipos
+                            diferentes, el polimorfismo nos permite utilizar la misma función
+                            <code>len()</code> para obtener la longitud de cada uno de ellos.
+                        </p>
+                        <p>
+                            Veamos un ejemplo más para ilustrar el polimorfismo en Python:
+                        </p>
+                        <pre><code>class Animal:
     def hablar(self):
         pass
 
@@ -365,27 +1007,64 @@ gato = Gato()
 hacer_hablar(perro)  # Imprime "¡Guau!"
 hacer_hablar(gato)  # Imprime "¡Miau!"
 </code></pre>
-                    <p>En este ejemplo, la función <code>hacer_hablar()</code> puede recibir tanto un objeto de la clase <code>Perro</code> como un objeto de la clase <code>Gato</code>, ya que ambas clases heredan de la clase <code>Animal</code> y tienen un método <code>hablar()</code> definido. Esto demuestra el polimorfismo en acción, ya que el mismo método <code>hacer_hablar()</code> puede ser utilizado con diferentes tipos de objetos.</p>
+                        <p>
+                            En este ejemplo, la función <code>hacer_hablar()</code> puede
+                            recibir tanto un objeto de la clase <code>Perro</code> como un
+                            objeto de la clase <code>Gato</code>, ya que ambas clases heredan
+                            de la clase <code>Animal</code> y tienen un método
+                            <code>hablar()</code> definido. Esto demuestra el polimorfismo en
+                            acción, ya que el mismo método <code>hacer_hablar()</code> puede
+                            ser utilizado con diferentes tipos de objetos.
+                        </p>
+                        <p><a href="https://www.guru99.com/es/polymorphism-in-python.html">Aquí</a> y <a href="https://uniwebsidad.com/libros/algoritmos-python/capitulo-15/polimorfismo">aquí</a> tienes para ampliar.</p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Qué es un método <i>dunder</i>?</h3>
-                    <p><b><i>Dunder</i></b> es una abreviatura de <i>double underscore</i> (doble guion bajo) y se utiliza para referirse a los métodos especiales en Python que comienzan y terminan con dos guiones bajos.</p>
-                    <p>Recordar que un método es una función que está asociada a una clase y puede ser llamada en otras partes (instancias) de esa clase.</p>
-                    <p>Los métodos <i>dunder</i> son métodos especiales predefinidos en Python que tienen un significado especial y se utilizan para realizar operaciones específicas en objetos.</p>
-                    <p>Ejemplos de métodos <i>dunder</i> en Python, son:</p>
-                    <ol>
-                        <li><b><code>__init__</code></b>: utilizado para inicializar una instancia de una clase. Por ejemplo:
-                            <pre><code>class Persona:
+                    <div class="contenido">
+
+                        <p>
+                            <b><i>Dunder</i></b> es una abreviatura de
+                            <i>double underscore</i> (doble guion bajo) y se utiliza para
+                            referirse a los métodos especiales en Python que comienzan y
+                            terminan con dos guiones bajos.
+                        </p>
+                        <p>
+                            Recordar que un método es una función que está asociada a una
+                            clase y puede ser llamada en otras partes (instancias) de esa
+                            clase.
+                        </p>
+                        <p>
+                            Los métodos <i>dunder</i> son métodos especiales predefinidos en
+                            Python que tienen un significado especial y se utilizan para
+                            realizar operaciones específicas en objetos.
+                        </p>
+                        <p>Ejemplos de métodos <i>dunder</i> en Python, son:</p>
+                        <ol>
+                            <li>
+                                <b><code>__init__</code></b>: utilizado para inicializar una instancia de una clase. Por
+                                ejemplo:
+                                <pre><code>class Persona:
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
 
 persona = Persona("Juan", 25)
 </code></pre>
-                            <p>El ejemplo muestra cómo se puede definir una clase <code>Persona</code> con un constructor <code>__init__</code> que permite crear instancias de <code>Persona</code> con un nombre y una edad específicos. La instancia <code>persona</code> se crea utilizando el constructor y se inicializa con los valores proporcionados.</p>
-                        </li>
-                        <li><b><code>__str__</code></b>: utilizado para representar una instancia de una clase como una cadena legible. Por ejemplo:
-                            <pre><code>class Persona:
+                                <p>
+                                    El ejemplo muestra cómo se puede definir una clase
+                                    <code>Persona</code> con un constructor
+                                    <code>__init__</code> que permite crear instancias de
+                                    <code>Persona</code> con un nombre y una edad específicos. La
+                                    instancia <code>persona</code> se crea utilizando el
+                                    constructor y se inicializa con los valores proporcionados.
+                                </p>
+                            </li>
+                            <li>
+                                <b><code>__str__</code></b>: utilizado para representar una instancia de una clase como
+                                una cadena legible. Por ejemplo:
+                                <pre><code>class Persona:
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
@@ -396,10 +1075,20 @@ persona = Persona("Juan", 25)
 persona = Persona("Juan", 25)
 print(persona)  # Salida: Persona(nombre=Juan, edad=25)
 </code></pre>
-                            <p>En el ejemplo vemos como se puede personalizar la representación de una instancia de la clase <code>Persona</code> utilizando el método especial <code>__str__</code>. Esto permite que la instancia de <code>Persona</code> se muestre de una manera más legible y personalizada cuando se utiliza la función <code>print()</code>.</p>
-                        </li>
-                        <li><b><code>__len__</code></b>: utilizado para obtener la longitud de una instancia de una clase. Por ejemplo:
-                            <pre><code>class ListaPersonalizada:
+                                <p>
+                                    En el ejemplo vemos como se puede personalizar la
+                                    representación de una instancia de la clase
+                                    <code>Persona</code> utilizando el método especial
+                                    <code>__str__</code>. Esto permite que la instancia de
+                                    <code>Persona</code> se muestre de una manera más legible y
+                                    personalizada cuando se utiliza la función
+                                    <code>print()</code>.
+                                </p>
+                            </li>
+                            <li>
+                                <b><code>__len__</code></b>: utilizado para obtener la longitud de una instancia de una
+                                clase. Por ejemplo:
+                                <pre><code>class ListaPersonalizada:
     def __init__(self, elementos):
         self.elementos = elementos
 
@@ -409,10 +1098,20 @@ print(persona)  # Salida: Persona(nombre=Juan, edad=25)
 lista = ListaPersonalizada([1, 2, 3, 4, 5])
 print(len(lista))  # Salida: 5
 </code></pre>
-                            <p>Aquí vemos cómo se puede personalizar la operación de obtener la longitud de una instancia de la clase <code>ListaPersonalizada</code> utilizando el método especial <code>__len__</code>. Esto permite que la instancia de <code>ListaPersonalizada</code> se comporte como una lista estándar para obtener su longitud utilizando la función <code>len()</code>.</p>
-                        </li>
-                        <li><b><code>__add__</code></b>: utilizado para definir la operación de suma entre dos instancias de una clase. Por ejemplo:
-                            <pre><code>class Punto:
+                                <p>
+                                    Aquí vemos cómo se puede personalizar la operación de obtener
+                                    la longitud de una instancia de la clase
+                                    <code>ListaPersonalizada</code> utilizando el método especial
+                                    <code>__len__</code>. Esto permite que la instancia de
+                                    <code>ListaPersonalizada</code> se comporte como una lista
+                                    estándar para obtener su longitud utilizando la función
+                                    <code>len()</code>.
+                                </p>
+                            </li>
+                            <li>
+                                <b><code>__add__</code></b>: utilizado para definir la operación de suma entre dos
+                                instancias de una clase. Por ejemplo:
+                                <pre><code>class Punto:
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -427,10 +1126,19 @@ punto2 = Punto(3, 4)
 resultado = punto1 + punto2
 print(resultado.x, resultado.y)  # Salida: 4 6
 </code></pre>
-                            <p>Este ejemplo muestra cómo se puede personalizar la operación de suma entre dos instancias de la clase <code>Punto</code> utilizando el método especial <code>__add__</code>. Esto permite realizar operaciones matemáticas personalizadas en objetos de la clase <code>Punto</code>.</p>
-                        </li>
-                        <li><b><code>__getitem__</code></b>: utilizado para acceder a elementos de una instancia de una clase mediante indexación. Por ejemplo:
-                            <pre><code>class ListaPersonalizada:
+                                <p>
+                                    Este ejemplo muestra cómo se puede personalizar la operación
+                                    de suma entre dos instancias de la clase
+                                    <code>Punto</code> utilizando el método especial
+                                    <code>__add__</code>. Esto permite realizar operaciones
+                                    matemáticas personalizadas en objetos de la clase
+                                    <code>Punto</code>.
+                                </p>
+                            </li>
+                            <li>
+                                <b><code>__getitem__</code></b>: utilizado para acceder a elementos de una instancia de una
+                                clase mediante indexación. Por ejemplo:
+                                <pre><code>class ListaPersonalizada:
     def __init__(self, elementos):
         self.elementos = elementos
 
@@ -440,44 +1148,93 @@ print(resultado.x, resultado.y)  # Salida: 4 6
 lista = ListaPersonalizada([1, 2, 3, 4, 5])
 print(lista[2])  # Salida: 3
 </code></pre>
-                            <p>En este ejemplo, la clase <code>ListaPersonalizada</code> tiene una lista de elementos y el método <code>__getitem__</code> permite acceder a esos elementos utilizando la sintaxis de indexación <code>lista[indice]</code>. Cuando se llama a <code>lista[2]</code>, el método <code>__getitem__</code> se ejecuta y devuelve el elemento en el índice 2 de la lista, que en este caso es el número 3.</p>
-                            <p>Es importante destacar que el método <code>__getitem__</code> también puede ser utilizado para implementar otras formas de acceso a elementos, como el acceso mediante <i>slices</i> (rebanadas) o incluso mediante claves en caso de estructuras de datos más complejas.</p>
-                        </li>
-                    </ol>
-                    <p>Los métodos <i>dunder</i> son llamados (invocados) automáticamente en ciertas situaciones, como al crear una instancia de una clase, al imprimir una instancia de una clase o al realizar operaciones específicas en una instancia de una clase.</p>
-                    <p>Mencionar que son una parte importante de la programación orientada a objetos en Python y permiten personalizar el comportamiento de las clases y sus instancias.</p>
-                    <p>Concluir resaltando que los métodos dunder son una característica poderosa de Python que permite una mayor flexibilidad y personalización en el diseño de clases y objetos.</p>
+                                <p>
+                                    En este ejemplo, la clase
+                                    <code>ListaPersonalizada</code> tiene una lista de elementos y
+                                    el método <code>__getitem__</code> permite acceder a esos
+                                    elementos utilizando la sintaxis de indexación
+                                    <code>lista[indice]</code>. Cuando se llama a
+                                    <code>lista[2]</code>, el método <code>__getitem__</code> se
+                                    ejecuta y devuelve el elemento en el índice 2 de la lista, que
+                                    en este caso es el número 3.
+                                </p>
+                                <p>
+                                    Es importante destacar que el método
+                                    <code>__getitem__</code> también puede ser utilizado para
+                                    implementar otras formas de acceso a elementos, como el acceso
+                                    mediante <i>slices</i> (rebanadas) o incluso mediante claves
+                                    en caso de estructuras de datos más complejas.
+                                </p>
+                            </li>
+                        </ol>
+                        <p>
+                            Los métodos <i>dunder</i> son llamados (invocados) automáticamente
+                            en ciertas situaciones, como al crear una instancia de una clase,
+                            al imprimir una instancia de una clase o al realizar operaciones
+                            específicas en una instancia de una clase.
+                        </p>
+                        <p>
+                            Mencionar que son una parte importante de la programación
+                            orientada a objetos en Python y permiten personalizar el
+                            comportamiento de las clases y sus instancias.
+                        </p>
+                        <p>
+                            Concluir resaltando que los métodos dunder son una característica
+                            poderosa de Python que permite una mayor flexibilidad y
+                            personalización en el diseño de clases y objetos.
+                        </p>
+                        <p>Aquí tienes <a href="https://barcelonageeks.com/dunder-o-metodos-magicos-en-python/">ejemplos</a> de algunos de los métodos <a href="https://docs.python.org/3/reference/datamodel.html#specialnames">dunder</a>.</p>
+                    </div>
                 </li>
                 <li>
+
                     <h3>¿Qué es un decorador de python?</h3>
-                    <ul>
-                        <li>Un decorador en Python es una función que toma otra función como argumento y devuelve una nueva función.</li>
-                        <li>Los decoradores se utilizan para extender o modificar el comportamiento de una función sin modificar su código fuente original.</li>
-                        <li>Los decoradores se aplican utilizando la sintaxis del signo @ antes de la definición de una función.</li>
-                        <li>Los decoradores pueden realizar acciones como registrar información, medir el tiempo de ejecución, validar entradas o salidas, agregar caché, entre otros.</li>
-                        <li>Los decoradores son útiles para aplicar lógica común a varias funciones sin tener que repetir el código en cada una de ellas.</li>
-                        <li>Los decoradores pueden ser anidados, lo que significa que se pueden aplicar varios decoradores a una función.</li>
-                        <li>Los decoradores también se pueden aplicar a métodos de clase y métodos estáticos en Python.</li>
-                        <li>Los decoradores son una característica poderosa y flexible de Python que permite la reutilización de código y la adición de funcionalidad de manera modular.</li>
-                    </ul>
-                    <p>Ejemplo de decorador para validar argumentos de una función:</p>
-                    <pre><code>def validate_arguments_decorator(func):
-    def wrapper(*args, **kwargs):
-        for arg in args:
-            if not isinstance(arg, int):
-                raise ValueError("Los argumentos deben ser enteros.")
-        return func(*args, **kwargs)
-    return wrapper
-
-@validate_arguments_decorator
-def add_numbers(a, b):
-    return a + b
-
-result = add_numbers(5, 10)
-print(result)
-</code></pre>
-                    <p>Ejemplo de decorador para medir el tiempo de ejecución de una función:</p>
-                    <pre><code>import time
+                    <div class="contenido">
+                        <p>
+                            Un decorador en Python es una función que toma otra función como argumento y extiende o modifica su comportamiento sin modificar el código fuente original de la función. Los decoradores son una forma elegante de agregar funcionalidad a una función existente sin cambiar su implementación.
+                        </p>
+                        <p>
+                            Los decoradores se denotan mediante el símbolo @ seguido del nombre de la función decoradora, que se coloca directamente encima de la definición de la función o clase. Cuando se llama a la función o clase decorada, la función decoradora se ejecuta en primer lugar, lo que permite añadir funcionalidad adicional o modificar el comportamiento de la función o clase original.
+                        </p>
+                        <p>
+                            Aquí tienes algunos puntos clave de los decoradores:
+                        </p>
+                        <ul>
+                            <li>
+                                Los decoradores son funciones que toman una función o clase como entrada y devuelven una versión modificada de esa función o
+                                clase.
+                            </li>
+                            <li>
+                                Los decoradores se aplican utilizando el símbolo @ seguido del nombre de la función decoradora.
+                            </li>
+                            <li>
+                                Los decoradores pueden utilizarse para modificar el comportamiento de funciones o clases sin modificar directamente su código fuente.
+                            </li>
+                            <li>
+                                Los decoradores son útiles para aplicar lógica común a varias funciones sin tener que repetir el código en cada una de ellas.
+                            </li>
+                            <li>
+                                Los decoradores pueden apilarse/anidarse, lo que significa que pueden aplicarse varios decoradores a una misma función o clase.
+                            </li>
+                            <li>
+                                Los decoradores también se pueden aplicar a métodos de clase y métodos estáticos en Python.
+                            </li>
+                            <li>
+                                Los decoradores pueden definirse como funciones normales o como clases que implementan el método <code>__call__</code>.
+                            </li>
+                            <li>
+                                Los decoradores son una característica poderosa y flexible de Python que permite la reutilización de código y la adición de funcionalidad de manera modular.
+                            </li>
+                        </ul>
+                        <p>Los decoradores se utilizan habitualmente para tareas como:</p>
+                        <ul>
+                            <li>
+                                <p>Registrar información, medir el tiempo de ejecución, validar entradas o salidas,...</p>
+                                <p>
+                                    Ejemplo de decorador para medir el tiempo de ejecución de una
+                                    función:
+                                </p>
+                                <pre><code>import time
 
 def timer_decorator(func):
     def wrapper(*args, **kwargs):
@@ -496,8 +1253,27 @@ def my_function():
 
 my_function()
 </code></pre>
-                    <p>Ejemplo de decorador para agregar caché a una función:</p>
-                    <pre><code>def cache_decorator(func):
+                                <p>Ejemplo de decorador para validar argumentos de una función:</p>
+                                <pre><code>def validate_arguments_decorator(func):
+    def wrapper(*args, **kwargs):
+        for arg in args:
+            if not isinstance(arg, int):
+                raise ValueError("Los argumentos deben ser enteros.")
+        return func(*args, **kwargs)
+    return wrapper
+
+@validate_arguments_decorator
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5, 10)
+print(result)
+</code></pre>
+                            </li>
+                            <li>
+                                <p>Modificar el comportamiento de una función o clase, como la memorización o el almacenamiento en caché.</p>
+                                <p>Ejemplo de decorador para agregar caché a una función:</p>
+                                <pre><code>def cache_decorator(func):
     cache = {}
 
     def wrapper(*args):
@@ -518,29 +1294,32 @@ def fibonacci(n):
 result = fibonacci(10)
 print(result)
 </code></pre>
-                    <p>Estos son solo algunos ejemplos básicos de decoradores en Python. Los decoradores pueden ser utilizados de muchas formas diferentes y se pueden adaptar para cumplir con requisitos específicos en diferentes situaciones.</p>
-                    <p>Es importante tener en cuenta que los decoradores pueden ser un concepto un poco avanzado para los principiantes en Python, por lo que es recomendable tener un buen entendimiento de las funciones y la sintaxis de Python antes de utilizarlos.</p>
+                            </li>
+                            <li>
+                                <p>Implementar problemas transversales, como la autenticación o la autorización.</p>
+                                <p>Ejemplo de decorador para autenticar una función:</p>
+                                <pre><code>def authenticated_decorator(func):
+    def wrapper(*args, **kwargs):
+        # Check if user is authenticated
+        if user_authenticated():
+            return func(*args, **kwargs)
+        else:
+            return "User is not authenticated"
+    return wrapper
 
-
-                    <h4>Un decorador en Python es una función que toma otra función como argumento y extiende o modifica su comportamiento sin modificar el código fuente original de la función. Los decoradores son una forma elegante de agregar funcionalidad a una función existente sin cambiar su implementación.</h4>
-
-                    <p>Los decoradores se denotan mediante el símbolo @ seguido del nombre de la función decoradora, que se coloca directamente encima de la definición de la función o clase. Cuando se llama a la función o clase decorada, la función decoradora se ejecuta en primer lugar, lo que permite añadir funcionalidad adicional o modificar el comportamiento de la función o clase original.</p>
-
-                    <p>Los decoradores se utilizan habitualmente para tareas como:</p>
-                    <ul>
-                        <li>Añadir funcionalidad adicional a una función o clase, como registro, temporización o validación de entrada.</li>
-                        <li>Modificar el comportamiento de una función o clase, como la memorización o el almacenamiento en caché.</li>
-                        <li>Implementar problemas transversales, como la autenticación o la autorización.</li>
-                    </ul>
-                    <p>Aquí hay algunos puntos clave para entender acerca de los decoradores:</p>
-                    <ul>
-                        <li>Los decoradores son funciones que toman una función o clase como entrada y devuelven una versión modificada de esa función o clase.</li>
-                        <li>Los decoradores se aplican utilizando el símbolo @ seguido del nombre de la función decoradora.</li>
-                        <li>Los decoradores pueden utilizarse para modificar el comportamiento de funciones o clases sin modificar directamente su código fuente.</li>
-                        <li>Los decoradores pueden apilarse, lo que significa que pueden aplicarse varios decoradores a una misma función o clase.</li>
-                        <li>Los decoradores pueden definirse como funciones normales o como clases que implementan el método __call__.</li>
-                    </ul>
-
+@authenticated_decorator
+def some_protected_function():
+    # Code for protected function</code></pre>
+                            </li>
+                        </ul>
+                        <p>
+                            Estos son solo algunos ejemplos básicos de decoradores en Python. Los decoradores pueden ser utilizados de muchas formas diferentes y se pueden adaptar para cumplir con requisitos específicos en diferentes situaciones.
+                        </p>
+                        <p>
+                            Es importante tener en cuenta que los decoradores pueden ser un concepto un poco avanzado para los principiantes en Python, por lo que es recomendable tener un buen entendimiento de las funciones y la sintaxis de Python antes de utilizarlos.
+                        </p>
+                        <p>Infórmate sobre los decoradores <a href="https://codigofacilito.com/articulos/decoradores-python">aquí</a> y <a href="https://geekflare.com/es/python-decorators/">aquí</a>.</p>
+                    </div>
                 </li>
             </ul>
         </li>
@@ -548,7 +1327,12 @@ print(result)
             <p>y después tienes que realizar este ejercicio y mandarmelo:</p>
             <ul>
                 <li>
-                    <p>Create a Python class called User that uses the init method and creates a username and a password. Create an object using the class.</p>
+                    <h3>
+                        Create a Python class called User that uses the init method and
+                        creates a username and a password. Create an object using the
+                        class.
+                    </h3>
+                    <!-- <div class="contenido"> -->
                     <pre><code>class User:
     def __init__(self, username, password):
         self.username = username
@@ -556,11 +1340,28 @@ print(result)
 
 # Creating an object using the class
 usuario = User("Pepito Palotes", "Password-369")</code></pre>
+                    <!-- </div> -->
                 </li>
             </ul>
         </li>
     </ul>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headings = document.querySelectorAll('h3');
+            headings.forEach(heading => {
+                const content = heading.nextElementSibling;
+                content.style.display = 'none';
+                heading.addEventListener('click', function() {
+                    headings.forEach(otherHeading => {
+                        if (otherHeading !== heading) {
+                            otherHeading.nextElementSibling.style.display = 'none';
+                        }
+                    });
+                    content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
