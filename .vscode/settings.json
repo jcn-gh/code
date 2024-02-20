@@ -6,5 +6,6 @@
     "cSpell.ignoreWords": [
         "titleize"
     ],
-    "cSpell.language": "en,es-ES,es"
+    "cSpell.language": "en,es-ES,es",
+    "git.ignoreLimitWarning": true
 }
