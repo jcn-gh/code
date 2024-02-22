@@ -6,18 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkpoint 6</title>
     <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: #eeeeee;
+            }
+
+            code {
+                background-color: #eeffee;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #ddd;
+                outline: 2px solid green;
+                outline-offset: 5px;
+
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: #111111;
+            }
+
+            code {
+                background-color: #002200;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #000;
+                outline: 2px solid green;
+                outline-offset: 5px;
+
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+
+        }
+
+        h3:has(:hover),
+        h3:not(:hover) {
+            filter:
+                invert(25%);
+        }
+
+        @keyframes pulse {
+            0% {
+                outline-offset: 5px;
+            }
+
+            50% {
+                outline-offset: 10px;
+            }
+
+            100% {
+                outline-offset: 5px;
+            }
+        }
+
         p {
             text-align: justify;
-        }
-
-        pre {
-            text-align: left;
-            margin-left: 2em;
-            background-color: #eeeeee;
-        }
-
-        code {
-            background-color: #eeffee;
         }
     </style>
 </head>
@@ -1355,9 +1426,15 @@ usuario = User("Pepito Palotes", "Password-369")</code></pre>
                     headings.forEach(otherHeading => {
                         if (otherHeading !== heading) {
                             otherHeading.nextElementSibling.style.display = 'none';
+                            otherHeading.classList.remove('button'); // remove 'button' class from other headings
                         }
                     });
                     content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
+                    if (content.style.display === 'block') {
+                        heading.classList.add('button'); // add 'button' class to the clicked heading
+                    } else {
+                        heading.classList.remove('button'); // remove 'button' class if content is hidden
+                    }
                 });
             });
         });
