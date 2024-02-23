@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 7</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        h3 {
+            filter: invert(25%);
+        }
+
+        h3:hover {
+            filter: none;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: #eeeeee;
+            }
+
+            code {
+                background-color: #eeffee;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #ddd;
+                outline: 2px solid green;
+                outline-offset: 5px;
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: #111111;
+            }
+
+            code {
+                background-color: #002200;
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #000;
+                outline: 2px solid green;
+                outline-offset: 5px;
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                outline-offset: 5px;
+            }
+
+            50% {
+                outline-offset: 10px;
+            }
+
+            100% {
+                outline-offset: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Checkpoint 7</h2>
+
+    <p>Este checkpoint consta de dos partes:</p>
+    <ul>
+        <li>
+            <p>
+                Una primera parte que es similar al checkpoint anterior, pero vamos a
+                ir incluyendo nuevas cosas, a estas preguntas hay que realizar una
+                "documentación", lo más completa posible. Esta documentación debe
+                incluir ejemplos de código, enlaces a recursos relevantes, gráficos
+                para visualizar conceptos y flujos de trabajo, y cualquier otro
+                recurso que ayude a entender mejor el software. Es importante que la
+                documentación sea clara, concisa y actualizada, ya que su propósito es
+                informar a los desarrolladores y usuarios sobre cómo funciona el
+                software, cómo instalarlo, cómo usarlo y cómo mantenerlo. Además, debe
+                ser fácil de encontrar y acceder, utilizando herramientas digitales
+                para almacenar y organizar la información.
+            </p>
+            <p><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta.</i></p>
+            <ul>
+                <li>
+                    <h3>
+                        ¿Qué hace que Javascript sea diferente de cualquier otro lenguaje
+                        de programación?
+                    </h3>
+                    <div class="contenido"><img src="https://d8285fmxt3duy.cloudfront.net/public/articulos/img/java-script1.jpg?1" alt="JavaScript" width="100%" height="75%">
+                        <p>JavaScript es único por varias razones:</p>
+                        <ul>
+                            <li><b>Lenguaje de programación del lado del cliente</b>: JavaScript se ejecuta en el navegador del usuario, lo que permite la creación de experiencias interactivas en la web.</li>
+                            <li><b>Lenguaje interpretado</b>: JavaScript es un lenguaje interpretado, lo que significa que no necesita compilarse antes de ejecutarse.</li>
+                            <li><b>Asincronía</b>: JavaScript es conocido por su capacidad para manejar operaciones asíncronas de manera eficiente, lo que lo hace ideal para aplicaciones web interactivas.</li>
+                            <li><b>Tipado débil y dinámico</b>: JavaScript es un lenguaje de tipado débil y dinámico, lo que significa que las variables no tienen un tipo de dato fijo y el tipo de dato de una variable puede cambiar durante la ejecución del programa.</li>
+                            <li><b>Prototipado</b>: JavaScript utiliza un modelo de objetos basado en prototipos en lugar de clases, lo que lo diferencia de otros lenguajes orientados a objetos.</li>
+                        </ul>
+                        <p>Estas son solo algunas de las características que hacen que JavaScript sea único en comparación con otros lenguajes de programación.</p>
+
+                        <p>
+                            En el <a href="https://soyrafaramos.com/que-es-javascript/" target="_blank" rel="noopener">artículo</a>, en esta <a href="https://es.javascript.info/intro">introducción</a>, o en el <a href="https://www.youtube.com/watch?v=riZbwRFMFuw">video</a> tienes unos puntos de partida para ampliar conocimientos.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h3>¿Cuáles son algunos tipos de datos JS?</h3>
+                    <div class="contenido">
+                        <p>En JavaScript, los tipos de datos incluyen:</p>
+                        <ul>
+                            <li><code>number</code>: tanto números enteros como decimales/de punto flotante.
+                                <pre><code>let age = 30;
+let temperature = 98.6;</code></pre>
+                            </li>
+                            <li><code>string</code>: una secuencia de caracteres, como texto.
+                                <pre><code>let name = "John Doe";
+let message = 'Hello, World!';</code></pre>
+                            </li>
+                            <li><code>boolean</code>: un valor lógico, verdadero o falso.
+                                <pre><code>let isRaining = true;
+let hasCar = false;</code></pre>
+                            </li>
+                            <li><code>null</code>: un valor nulo o vacío.
+                                <pre><code>let data = null;</code></pre>
+                            </li>
+                            <li><code>undefined</code>: un valor no definido.
+                                <pre><code>let variable;</code></pre>
+                            </li>
+                            <li><code>object</code>: un conjunto de datos y/o funcionalidades.
+                                <pre><code>let person = {
+    name: "Alice",
+    age: 25
+};</code></pre>
+                            </li>
+                            <li><code>symbol</code>: un identificador único.
+                                <pre><code>const id = Symbol('id');
+const id2 = Symbol('id');</code></pre>
+                            </li>
+                        </ul><img src="https://phpforever.com/wp-content/uploads/2022/03/Data-Types-In-JavaScript.png" alt="Data types" width="100%" height="90%">
+                        <p>
+                            Para saber <a href="https://es.javascript.info/types">más</a> y en el <a href="https://www.youtube.com/watch?v=cC65D2q5f8I">video</a>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h3>¿Qué son las tres funciones de cadena JS?</h3>
+                    <div class="contenido">
+                        <p>Las funciones de cadena sirven para trabajar con cadenas de texto. Estas funciones permiten realizar operaciones como búsqueda de texto, extracción de caracteres, reemplazo de texto, conversión entre mayúsculas y minúsculas, y más.</p>
+                        <p>Las tres funciones de cadena más comunes en JavaScript son:</p>
+                        <ul>
+                            <li><code>charAt()</code>: Devuelve el carácter en la posición especificada de una cadena.
+                                <pre><code>var str = "HELLO WORLD";
+var char = str.charAt(0); // Devuelve "H"</code></pre><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--VysIfh1Q--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/1b51210lqpg7sd2w7pda.png" alt="charAt()" width="75%" height="75%">
+                            </li>
+                            <li><code>indexOf()</code>: Devuelve la posición de la primera vez que aparece un valor especificado en una cadena.
+                                <pre><code>var str = "Sí, tu puedes hacerlo";
+var position = str.indexOf("e"); // Devuelve 10</code></pre><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freecodecamp.org%2Fespanol%2Fnews%2Fcontent%2Fimages%2F2021%2F09%2Filust01.png&f=1&nofb=1&ipt=f4490f3321cc232fd37c24399d36ed41e4e1cb3e0e51ec4fd521044704bc0346&ipo=images" alt="indexOf()" width="50%" height="50%">
+                            </li>
+                            <li><code>substring()</code>: Devuelve una parte de una cadena, según la posición inicial y final especificadas.
+                                <pre><code>var str = "ABCDEFG";
+var sub = str.substring(0, 5); // Devuelve "CDE"</code></pre><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.scaler.com%2Ftopics%2Fimages%2Fsubstring-in-javascript.webp&f=1&nofb=1&ipt=7e69fc1d205a769240c39859f8b765e52ee15c8a759243a0950a6f4874b5842f&ipo=images" alt="substring()" width="100%" height="100%">
+                            </li>
+                        </ul>
+                        <p>
+                            Hay muchas más: <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>trim()</code>, <code>split()</code>, <code>replace()</code>, <code>concat()</code>, <code>slice()</code>, <code>startsWith()</code>, <code>endsWith()</code>... Si estás interesado en aprender más...
+                            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String">¡sigue leyendo!</a> o mira este <a href="https://www.youtube.com/watch?v=dizRP9_tArI">video</a>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h3>¿Qué es un condicional?</h3>
+                    <div class="contenido">
+                        <p>Un condicional es una estructura que permite ejecutar diferentes códigos dependiendo de si se cumple o no una condición dada. Los condicionales más comunes en JavaScript son:</p>
+                        <ul>
+                            <li>
+                                <p><b>if</b>: Ejecuta un código si se cumple una condición.</p>
+                                <pre><code>if (condition) {
+  // código a ejecutar si la condición es verdadera
+}
+</code></pre>
+                            </li>
+                            <li>
+                                <p><b>else</b>: Ejecuta un código si la condición del if no se cumplió.</p>
+                                <pre><code>// Ejemplo con if - else
+if (edad &lt; 18) {
+  console.log("Eres menor de edad");
+} else {
+  console.log("Eres mayor de edad");
+}</code></pre>
+                            </li>
+                            <li>
+                                <p><b>else if</b>: Permite encadenar múltiples condiciones.</p>
+                                <pre><code>// Ejemplo con else if
+if (nota &gt;= 9) {
+  console.log("Sobresaliente");
+} else if (nota &gt;= 7) {
+  console.log("Notable");
+} else if (nota &gt;= 5) {
+  console.log("Suficiente");
+} else {
+  console.log("Insuficiente");
+}</code></pre>
+                            </li>
+                            <li>
+                                <p><b>switch</b>: Evalúa una expresión y ejecuta el código correspondiente a la cláusula/caso que coincida.</p>
+                                <pre><code>// Ejemplo con switch
+switch(estacion) {
+  case "Primavera":
+    console.log("La estación es primavera");
+    break;
+
+  case "Verano":
+    console.log("La estación es verano");
+    break;
+
+  case "Otoño":
+    console.log("La estación es otoño");
+    break;
+
+  case "Invierno":
+    console.log("La estación es invierno");
+    break;
+
+  default:
+    console.log("Estación no válida");
+    break;
+}</code></pre>
+                            </li>
+                            <li>
+                                <p><b>operadores ternarios</b>: Permite ejecutar un bloque de código si la condición es verdadera, y otro bloque si la condición es falsa, todo en una sola línea.</p>
+                                <pre><code>condición ? valorSiVerdadero : valorSiFalso;
+
+const age = 25;
+const canDrink = (age &gt;= 21) ? "Puede beber alcohol" : "No puede beber alcohol";
+console.log(canDrink); // Salida: "Puede beber alcohol"
+                                </code></pre>
+                            </li>
+                            <li>
+                                <p><b>Operadores lógicos (AND, OR y NOT)</b>: Permiten multiples condiciones sin escribir declaraciones <code>if...else</code> anidados.</p>
+                                <ul>
+                                    <li><code>&amp;&amp;</code> — AND; le permite encadenar dos o más expresiones para que todas ellas se tengan que evaluar individualmente <code>true</code> para que expresión entera retorne <code>true</code>.</li>
+                                    <li><code>||</code> — OR; le permite encadenar dos o más expresiones para que una o más de ellas se tengan que evaluar individualmente <code>true</code> para que expresión entera retorne <code>true</code>.</li>
+                                    <li><code>!</code> — NOT; puede ser usado para negar una expresión.</li>
+                                </ul>
+                                <p>Puedes combinar los operadores que quieras dentro de las sentencias, en cualquier estructura.</p>
+                                <pre><code>if ((x === 5 || y &gt; 3 || z &lt;= 10) &amp;&amp; (logueado || nombreUsuario !== "Steve")) {
+    // ejecuta el código
+}
+
+if (!(x &gt; 0 &amp;&amp; y &lt; 15) || x + y === 15) {
+    console.log("¡Es cierto!");
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p>
+                            Si tienes interés en <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals">ampliar</a> o lo quieres ver con un poco de humor <a href="https://www.youtube.com/watch?v=w3-6q7tbt58">humor</a>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h3>¿Qué es un operador ternario?</h3>
+                    <div class="contenido">
+                        <p>El operador ternario en JavaScript es una forma abreviada de escribir una declaración if...else. Tiene la siguiente sintaxis:</p>
+                        <pre><code>condición ? expresión1 : expresión2</code></pre>
+                        <p>Si la condición es verdadera, se devuelve la expresión1; de lo contrario, se devuelve la expresión2.</p>
+                        <pre><code>let edad = 18;
+let mensaje = (edad &gt;= 18) ? "Eres mayor de edad" : "Eres menor de edad";
+console.log(mensaje);
+// Salida: "Eres mayor de edad"</code></pre>
+                        <p>En el ejemplo, la variable <code>edad</code> tiene un valor de 18. La expresión <code>(edad &gt;= 18)</code> es la condición. Si esta condición es verdadera, se asigna el valor "Eres mayor de edad" a la variable <code>mensaje</code>; de lo contrario, se asigna "Eres menor de edad". En este caso, la condición es verdadera, por lo que el mensaje "Eres mayor de edad" se asigna a la variable <code>mensaje</code>.</p>
+                        <h4>Operadores ternarios anidados</h4>
+                        <p>Aunque se pueden anidar, no se suele recomendar por la complejidad que pueden alcanzar. Dicho simplemente, no es más que un operador dentro de otro, permitiendo realizar múltiples comprobaciones en una sola expresión.</p>
+                        <pre><code>const hora = 12;
+const esDia = true;
+const esTarde = true;
+const esNoche = false;
+const saludo = esDia ?
+    hora &lt; 12 ? "Buenos días" :
+        hora &lt; 18 ? "Buenas tardes" :
+        "Buenas noches" :
+    esTarde ? "Buenas tardes" :
+    esNoche ? "Buenas noches" :
+    "¡Hola!";
+console.log(saludo);</code></pre>
+                        <p>En este ejemplo, estamos utilizando un operador ternario anidado para determinar el saludo basado en la hora del día y otras condiciones. Primero, verificamos si es de día. Si es así, comprobamos si la hora es antes del mediodía, antes de las 6 de la tarde, o de lo contrario, asumiendo que es de noche. Si no es de día, verificamos si es tarde, si es de noche, o de lo contrario, simplemente saludamos con un "¡Hola!". Este ejemplo muestra cómo se pueden anidar múltiples operadores ternarios para realizar una lógica compleja en una sola expresión.</p>
+                        <p> <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">Aquí</a> y <a href="https://lenguajejs.com/fundamentos/estructuras-de-control/operador-ternario/">aquí</a> tienes para ampliar. Y puedes ver este <a href="https://www.youtube.com/watch?v=YFES8Nm6uF4">video</a></p>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+                        ¿Cuál es la diferencia entre una declaración de función y una
+                        expresión de función?
+                    </h3>
+                    <div class="contenido">
+                        <p>
+                            La principal diferencia entre una declaración de función y una expresión de función en JavaScript es cómo se definen y se comportan:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><b>Declaración de función</b>:</p>
+                                <p>Una declaración de función se define utilizando la palabra clave <code>function</code> seguida del nombre de la función, parámetros y el cuerpo de la función entre llaves <code>{ }</code>.</p>
+                                <pre><code>function miFuncion() {
+  // código de la función
+}
+</code></pre>
+                                <p>Las declaraciones de función se cargan antes de ejecutar cualquier código, lo que permite llamar a una función antes de que se haya definido en el código.</p>
+                            </li>
+                            <li>
+                                <p><b>Expresión de función</b>:</p>
+                                <p>Una expresión de función se define asignando una función anónima a una variable.</p>
+                                <pre><code>const miFuncion = function() {
+  // código de la función
+};
+</code></pre>
+                                <p>Las expresiones de función se cargan sólo cuando se evalúa la expresión. Esto significa que no se puede llamar una expresión de función antes de que se haya definido en el código.</p>
+                            </li>
+                        </ul>
+                        <p>En resumen, la principal diferencia es que las declaraciones de función se cargan antes de ejecutar el código y permiten ser llamadas antes de definirlas mientras que las expresiones de función no.</p>
+
+                        <p>
+                            Aquí tienes
+                            <a href="https://barcelonageeks.com/diferencia-entre-expresion-de-funcion-vs-declaracion-en-javascript/">ejemplos</a>
+                            aclaratorios y puedes ver un corto
+                            <a href="https://www.youtube.com/watch?v=2p94P2aMk2k">video</a> explicativo.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h3>¿Cuál es la palabra clave <code>this</code>?</h3>
+                    <div class="contenido">
+                        <p>
+                            En JavaScript, <code>this</code> es una palabra clave especial
+                            que se refiere al contexto en el que se está ejecutando la
+                            función actual. Puede referirse a un objeto, un método, una
+                            propiedad, etc., dependiendo de cómo y dónde se use.
+                        </p>
+                        <p>
+                            Por ejemplo, cuando se usa dentro de un método de objeto,
+                            <code>this</code> se refiere al objeto que posee el método.
+                            Cuando se usa en una función regular (no un método o una función
+                            de flecha), <code>this</code> se refiere generalmente al objeto
+                            global, que en la mayoría de los navegadores es 'window'. Sin
+                            embargo, el valor de <code>this</code>
+                            puede ser diferente dependiendo del modo estricto, del uso de
+                            funciones de flecha, de llamadas de función con 'new', 'call',
+                            'apply' o 'bind', etc.
+                        </p>
+                        <pre><code>let coche = {
+  marca: 'Toyota',
+  modelo: 'Corolla',
+  mostrarDetalles: function() {
+    console.log(`Marca: ${this.marca}, Modelo: ${this.modelo}`);
+  }
+}
+
+coche.mostrarDetalles(); // Marca: Toyota, modelos: Corolla</code></pre>
+                        <p>
+                            En este ejemplo, <code>this</code> se usa dentro del método
+                            'mostrarDetalles' del objeto 'coche'. Cuando llamamos a
+                            'coche.mostrarDetalles()', <code>this</code> se refiere al
+                            objeto 'coche' que posee el método. Por lo tanto, 'this.marca' y
+                            'this.modelo' se refieren a las propiedades 'marca' y 'modelo'
+                            del objeto 'coche', y la salida será "Marca: Toyota, Modelo:
+                            Corolla".
+                        </p>
+
+                        <pre><code>function Persona(nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.saludar = function() {
+    console.log(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`);
+  };
+}
+
+let juan = new Persona('Juan', 25);
+juan.saludar(); // Hola, mi nombre es Juan y tengo 25 años.
+
+let pedro = new Persona('Pedro', 30);
+pedro.saludar(); // Hola, mi nombre es Pedro y tengo 30 años.
+
+// Cambiando el contexto de <code>this</code> usando call
+juan.saludar.call(pedro); // Hola, mi nombre es Pedro y tengo 30 años.</code></pre>
+
+                        <p>
+                            En este ejemplo, 'Persona' es una función de constructor que se
+                            utiliza para crear nuevos objetos 'Persona'. Cuando llamamos a
+                            'new Persona()', <code>this</code> dentro de la función
+                            'Persona' se refiere al nuevo objeto que se está creando.
+                        </p>
+                        <p>
+                            Luego, cuando llamamos a 'juan.saludar()' o 'pedro.saludar()',
+                            <code>this</code> dentro del método 'saludar' se refiere al
+                            objeto que posee el método (en este caso, 'juan' o 'pedro').
+                        </p>
+                        <p>
+                            Finalmente, usamos el método 'call' para cambiar el contexto de
+                            <code>this</code> dentro de 'saludar'. Cuando llamamos a
+                            'juan.saludar.call(pedro)', estamos diciendo "llama al método
+                            'saludar' de 'juan', pero haz que <code>this</code> se refiera a
+                            'pedro'". Por lo tanto, la salida es "Hola, mi nombre es Pedro y
+                            tengo 30 años", a pesar de que estamos llamando al método
+                            'saludar' de 'juan'.
+                        </p>
+                        <p>
+                            El siguiente ejemplo involucra el uso de <code>this</code> en
+                            diferentes contextos, incluyendo funciones de callback y
+                            funciones de flecha:
+                        </p>
+                        <pre><code>function Coche(marca) {
+  this.marca = marca;
+  this.velocidad = 0;
+
+  this.acelerar = function(incremento, callback) {
+    this.velocidad += incremento;
+
+    // <code>this</code> no funciona en el contexto de la función de callback
+    // por lo que necesitamos guardar una referencia a <code>this</code> en <code>self</code>
+    let self = this;
+
+    setTimeout(function() {
+      // <code>this</code> en este contexto se referiría al objeto global, pero
+      // usamos <code>self</code> para referirnos al objeto 'Coche'
+      self.velocidad -= incremento;
+      callback(self.velocidad);
+    }, 2000);
+  };
+
+  this.acelerarConFlecha = function(incremento, callback) {
+    this.velocidad += incremento;
+
+    // Las funciones de flecha no crean su propio contexto para <code>this</code>,
+    // por lo que <code>this</code> se refiere al objeto 'Coche' como esperamos
+    setTimeout(() =&gt; {
+      this.velocidad -= incremento;
+      callback(this.velocidad);
+    }, 2000);
+  };
+}
+
+let miCoche = new Coche('Toyota');
+miCoche.acelerar(20, function(velocidad) {
+  console.log(`La velocidad después de frenar es ${velocidad}`); // La velocidad después de frenar es 0
+});
+miCoche.acelerarConFlecha(20, velocidad =&gt; {
+  console.log(`La velocidad después de frenar es ${velocidad}`); // La velocidad después de frenar es 0
+});</code></pre>
+
+                        <p>
+                            Este ejemplo muestra cómo <code>this</code> puede comportarse de
+                            manera diferente en diferentes contextos y cómo podemos manejar
+                            estos comportamientos utilizando una variable
+                            <code>self</code> o funciones de flecha.
+                        </p>
+                        <p>
+                            Tenemos un objeto <code>Coche</code> que tiene tres propiedades:
+                            <code>marca</code>, <code>velocidad</code> y dos métodos
+                            <code>acelerar</code> y <code>acelerarConFlecha</code>.
+                        </p>
+                        <p>
+                            El método <code>acelerar</code> incrementa la velocidad del
+                            coche y después de 2 segundos (2000 milisegundos), disminuye esa
+                            velocidad al valor original y llama a una función de callback
+                            con la velocidad actual.
+                        </p>
+                        <p>
+                            En JavaScript, las funciones de callback a menudo crean un nuevo
+                            contexto para <code>this</code>, lo que significa que
+                            <code>this</code> no se referirá al objeto
+                            <code>Coche</code> como podríamos esperar. En su lugar, en la
+                            mayoría de los casos, se referirá al objeto global (<code>window</code>
+                            en los navegadores, <code>global</code> en Node.js). Para
+                            solucionar este problema, creamos una nueva variable
+                            <code>self</code> que guarda una referencia a
+                            <code>this</code> (el objeto <code>Coche</code>) antes de que se
+                            llame a la función de callback. Luego, dentro de la función de
+                            callback, usamos <code>self</code> en lugar de
+                            <code>this</code> para referirnos al objeto <code>Coche</code>.
+                        </p>
+                        <p>
+                            El método <code>acelerarConFlecha</code> hace lo mismo que
+                            <code>acelerar</code>, pero en lugar de una función de callback
+                            normal, usa una función de flecha. Las funciones de flecha en
+                            JavaScript no crean su propio contexto para <code>this</code>,
+                            por lo que <code>this</code> se referirá al objeto
+                            <code>Coche</code> como podríamos esperar, sin necesidad de la
+                            variable <code>self</code>.
+                        </p>
+                        <p>
+                            Finalmente, creamos un nuevo <code>Coche</code> y llamamos a
+                            ambos métodos, pasando un incremento de velocidad y una función
+                            de callback que imprime la velocidad del coche después de
+                            frenar.
+                        </p>
+
+                        <p>
+                            Si, despues de esto, te has quedado con ganas... aquí tienes
+                            <a href="https://www.w3schools.com/js/js_this.asp">ejemplos</a> y más
+                            <a href="https://www.geeksforgeeks.org/javascript-this-keyword/">ejemplos</a>, y <a href="https://www.freecodecamp.org/espanol/news/que-significa-this-en-javascript-la-palabra-clave-this-explicada-con-ejemplos/">aquí</a> más de lo mismo en castellano.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>EJERCICIO JAVASCRIPT</p>
+            <ul>
+                <li>
+                    <h3>
+                        Cree una función JS que incluya 4 argumentos. Suma los dos
+                        primeros argumentos, luego los dos segundos y multiplícalos. Si el
+                        número creado es mayor que 50, registre la consola "¡El número es
+                        mayor que 50!". Si es más pequeño, registre la consola "¡El número
+                        es inferior a 50!".
+                    </h3>
+                    <pre><code>function calculateAndCompareProductOne(num1, num2, num3, num4) {
+  <!-- Comprueba que todos los argumentos son números positivos distintos de 0. -->
+  if (
+    ![num1, num2, num3, num4].every((num) =&gt; Number.isFinite(num) &amp;&amp; num &gt; 0)
+  ) {
+    <!-- Si cualquier argumento no es válido muestra el mensaje correspondiente. -->
+    console.log(
+    `Todos los argumentos deben ser números positivos y diferentes de cero.`
+    );
+    return;
+  }
+  // Calcula el producto de las dos sumas.
+  const product = (num1 + num2) * (num3 + num4);
+  <!-- Compara el resultado del producto con 50 y muestra el mensaje adecuado. -->
+  if (product &gt; 50) {
+    console.log(`¡El número ${product} es mayor que 50!`);
+  } else if (product &lt; 50) {
+    console.log(`¡El número ${product} es inferior a 50!`);
+  } else {
+    console.log(`¡Enhorabuena, el número es igual a 50!`);
+  }
+}
+
+
+function calculateAndCompareProductTwo(num1, num2, num3, num4) {
+  <!-- Comprueba que todos los argumentos son números positivos distintos de 0. -->
+  if (
+    ![num1, num2, num3, num4].every((num) =&gt; Number.isFinite(num) &amp;&amp; num &gt; 0)
+  ) {
+    <!-- Si cualquier argumento no es válido muestra el mensaje correspondiente. -->
+    console.log(
+    `Todos los argumentos deben ser números positivos y diferentes de cero.`
+    );
+    return;
+  }
+  <!-- Calcula el producto de las dos sumas. -->
+  const product = (num1 + num2) * (num3 + num4);
+  <!-- Compara el resultado del producto con 50 y muestra el mensaje adecuado. -->
+  switch (true) {
+    case product &gt; 50:
+    console.log(`¡El número ${product} es mayor que 50!`);
+    break;
+    case product &lt; 50:
+    console.log(`¡El número ${product} es inferior a 50!`);
+    break;
+    default:
+    console.log(`¡Enhorabuena, el número es igual a 50!`);
+  }
+}
+
+<!-- Variación en la que se pide un quinto número con el que comparar,
+en lugar de hacerlo siempre con el mismo (50). -->
+
+<!-- Función para validar argumentos,
+ comprobando si el número de argumentos es 5
+ y si cada argumento es un número mayor que 0. -->
+function validateArguments(args) {
+  return (
+    args.length === 5 &amp;&amp; args.every((num) =&gt; Number.isFinite(num) &amp;&amp; num &gt; 0)
+  );
+}
+
+function calculateAndCompareProductThree(args) {
+<!-- Si la validación no es satisfactoria muestra el error correspondiente. -->
+  if (!validateArguments(args)) {
+    throw new Error(
+    "Los 5 argumentos deben ser números positivos mayores que cero."
+    );
+  }
+  const [num1, num2, num3, num4, threshold] = args;
+<!-- Calcula el producto de (num1 + num2) y (num3 + num4). -->
+  const product = (num1 + num2) * (num3 + num4);
+<!-- Compara el producto con el umbral e imprime el mensaje adecuado. -->
+  return product &gt; threshold
+    ? `El número ${product} es mayor que ${threshold}!`
+    : product &lt; threshold
+    ? `El número ${product} es inferior a ${threshold}!`
+    : `El número es ${threshold}!`;
+}</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headings = document.querySelectorAll('h3')
+            headings.forEach(heading => {
+                const content = heading.nextElementSibling
+                content.style.display = 'none'
+                heading.addEventListener('click', function() {
+                    headings.forEach(otherHeading => {
+                        if (otherHeading !== heading) {
+                            otherHeading.nextElementSibling.style.display = 'none'
+                            otherHeading.classList.remove('button') // remove 'button' class from other headings
+                        }
+                    })
+                    content.style.display =
+                        content.style.display === 'none' || content.style.display === '' ?
+                        'block' :
+                        'none'
+                    if (content.style.display === 'block') {
+                        heading.classList.add('button') // add 'button' class to the clicked heading
+                    } else {
+                        heading.classList.remove('button') // remove 'button' class if content is hidden
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
