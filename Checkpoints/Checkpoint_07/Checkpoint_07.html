@@ -143,6 +143,9 @@
                                 <pre><code>let age = 30;
 let temperature = 98.6;</code></pre>
                             </li>
+                            <li><code>BigInt</code>: Para números enteros muy grandes que superan el límite de los valores <code>Number</code>.
+                                <pre><code>let numeroGrande = 1000000000000000000000n; // Fijate en la 'n' al final, indicando que es un BigInt</code></pre>
+                            </li>
                             <li><code>string</code>: una secuencia de caracteres, como texto.
                                 <pre><code>let name = "John Doe";
 let message = 'Hello, World!';</code></pre>
@@ -157,15 +160,15 @@ let hasCar = false;</code></pre>
                             <li><code>undefined</code>: un valor no definido.
                                 <pre><code>let variable;</code></pre>
                             </li>
-                            <li><code>object</code>: un conjunto de datos y/o funcionalidades.
+                            <li><code>symbol</code>: un identificador único.
+                                <pre><code>const id = Symbol('id');
+const id2 = Symbol('id');</code></pre>
+                            </li>
+                            <li><code>object</code>: un conjunto de datos y/o funcionalidades. Incluyen todo lo que no es uno de los tipos anteriores. Los objetos pueden ser colecciones de datos (arrays, sets, maps) o entidades más complejas definidas por el programador (objetos personalizados). También incluyen funciones y fechas.
                                 <pre><code>let person = {
     name: "Alice",
     age: 25
 };</code></pre>
-                            </li>
-                            <li><code>symbol</code>: un identificador único.
-                                <pre><code>const id = Symbol('id');
-const id2 = Symbol('id');</code></pre>
                             </li>
                         </ul><img src="https://phpforever.com/wp-content/uploads/2022/03/Data-Types-In-JavaScript.png" alt="Data types" width="100%" height="90%">
                         <p>
