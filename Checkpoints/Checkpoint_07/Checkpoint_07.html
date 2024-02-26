@@ -343,9 +343,24 @@ console.log(saludo);</code></pre>
                                 <p>Una expresión de función se define asignando una función anónima a una variable.</p>
                                 <pre><code>const despedir = function() {
     console.log("Adiós");
-};
-</code></pre>
+};</code></pre>
                                 <p>Las expresiones de función se cargan sólo cuando se evalúa la expresión. Esto significa que no se puede llamar una expresión de función antes de que se haya definido en el código.</p>
+                                <p>Las Expresiones de Función Inmediatamente Invocadas (IIFE, por sus siglas en inglés) son funciones que se ejecutan tan pronto como se definen. Este patrón es útil para crear un ámbito de ejecución privado y evitar contaminar el ámbito global. Aquí tienes un ejemplo de cómo se utiliza una IIFE:</p>
+
+                                <pre><code>(function() {
+    var mensaje = "Hola, mundo!";
+    console.log(mensaje);
+})();</code></pre>
+
+                                <p>En este ejemplo, la función se define entre paréntesis () para tratarla como una expresión, y luego se invoca inmediatamente con otro par de paréntesis (). La variable mensaje queda contenida dentro del ámbito de la función, evitando así interferencias con otras variables en el ámbito global.</p>
+
+                                <p>Las IIFE también pueden recibir parámetros:</p>
+
+                                <pre><code>(function(saludo) {
+    console.log(saludo);
+})("Hola, mundo!");</code></pre>
+
+                                <p>En este caso, la IIFE recibe un parámetro saludo y se le pasa el argumento "Hola, mundo!" al momento de su invocación.</p>
                             </li>
                         </ul>
                         <p>En resumen, la principal diferencia es que las declaraciones de función se cargan antes de ejecutar el código y permiten ser llamadas antes de definirlas mientras que las expresiones de función no.</p>
