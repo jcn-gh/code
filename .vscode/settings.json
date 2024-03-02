@@ -27,5 +27,15 @@
         "/home/user/.var/app/com.vscodium.codium-insiders/data/codium-insiders/extensions/joedevivo.vscode-circuitpython-0.2.0-linux-x64/stubs",
         "/home/user/.var/app/com.vscodium.codium-insiders/config/VSCodium - Insiders/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20240224/adafruit-circuitpython-bundle-py-20240224/lib"
     ],
-    "circuitpython.board.version": null
+    "circuitpython.board.version": null,
+    "cSpell.words": [
+        "deconstrucción",
+        "definirlas",
+        "despues",
+        "estacion",
+        "IIFE",
+        "logueado",
+        "milisegundos",
+        "multiplícalos"
+    ]
 }
