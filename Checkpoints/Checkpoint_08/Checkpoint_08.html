@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 8</title>
+    <link rel="stylesheet" href="https://codemirror.net/style/site.css">
+    <link rel="stylesheet" href="https://codemirror.net/5/theme/eclipse.css">
+    <link rel="stylesheet" href="https://codemirror.net/5/theme/erlang-dark.css">
+    <link rel="stylesheet" href="https://codemirror.net/5/theme/vibrant-ink.css">
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            --background-color: #333;
+            --text-color: #fff;
+            --pre-background-color: #111111;
+            --code-background-color: #003300;
+            --code-color: #aaffaa;
+            --button-background-color: #000;
+            --hide-display: none;
+            --show-display: block;
+        }
+
+        .CodeMirror {
+            /* Set height, width, borders, and global font properties here */
+            font-family: monospace;
+            border: 1px solid #eee;
+            height: auto;
+            color: black;
+            direction: ltr;
+        }
+
+        /* div[id] {
+            background-color: #111;
+        } */
+
+        h3 {
+            color: #fff;
+            transition: color 0.3s ease;
+            filter: invert(25%);
+        }
+
+        h3:hover {
+            filter: none;
+        }
+
+        p {
+            text-align: left;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        textarea {
+            color: var(--text-color);
+            background-color: var(--background-color);
+            height: 300px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .hidden,
+        .hide {
+            display: var(--hide-display);
+        }
+
+        .show {
+            display: var(--show-display);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px green;
+            }
+
+            50% {
+                box-shadow: 0 0 10px green;
+            }
+
+            100% {
+                box-shadow: 0 0 5px green;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --background-color: #fff;
+                --text-color: #333;
+                --pre-background-color: #f5f5f5;
+                --code-background-color: #aaffaa;
+                --code-color: #003300;
+                --button-background-color: #ccc;
+            }
+
+            body {
+                background-color: var(--background-color);
+                color: var(--text-color);
+            }
+
+            h3 {
+                color: var(--text-color);
+                transition: color 0.3s ease;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: var(--pre-background-color);
+            }
+
+            code {
+                background-color: var(--code-background-color);
+                color: var(--code-color);
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: var(--button-background-color);
+                box-shadow: 0 0 5px green;
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--background-color);
+                color: var(--text-color);
+            }
+
+            h3 {
+                color: var(--text-color);
+                transition: color 0.3s ease;
+            }
+
+            pre {
+                text-align: left;
+                margin-left: 2em;
+                background-color: var(--pre-background-color);
+            }
+
+            code {
+                background-color: var(--code-background-color);
+            }
+
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: var(--button-background-color);
+                box-shadow: 0 0 5px green;
+                animation: pulse 1s ease-in-out infinite alternate;
+                transition: 363ms;
+            }
+        }
+    </style>
+    <script defer src="https://codemirror.net/codemirror.js"></script>
+    <script defer src="cm_checkpoint_08.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Checkpoint 8</h1>
+        <p>Este checkpoint consta de dos partes:</p>
+        <ul>
+            <li>
+                <p>
+                    Una primera parte que es similar al checkpoint anterior, tenemos que
+                    ir ampliando utilización de software, buscador de información,
+                    ejemplos te propongo el reto de que intentes crear una documentación
+                    para <b>crear una <i>"terminal"</i></b> como la que tienes en el curso
+                    para practicar ejemplo, te recuerdo que esta documentación debe
+                    incluir ejemplos de código, enlaces a recursos relevantes, gráficos
+                    para visualizar conceptos y flujos de trabajo, y cualquier otro
+                    recurso que ayude a entender mejor el software, lo más completa
+                    posible que si tengo que hacer una llamada contigo me lo puedas
+                    explicar para aclararme.
+                </p>
+                <p class="center"><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta.</i></p>
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FcWUe1aW2Mp0%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=55f5b19d480889119a548180a7701a36cb84aab57bf5ca88dae87bb65ce084a1&ipo=images"
+                    alt="Tutorial CodeMirror">
+                <h3>Tutorial CodeMirror</h3>
+                <div class="contenido">
+                    <p>Como ellos dicen:</p>
+                    <blockquote>CodeMirror es un proyecto de código abierto compartido bajo licencia MIT. Es el editor
+                        utilizado en las herramientas de desarrollo de Firefox, Chrome y Safari, en Light Table, Adobe
+                        Brackets, Bitbucket y muchos otros proyectos.</blockquote>
+                    <blockquote>CodeMirror es un versátil editor de texto implementado en JavaScript para el navegador.
+                        Está
+                        especializado en la edición de código y viene con varios modos de lenguaje y complementos que
+                        implementan funciones de edición más avanzadas.</blockquote>
+                    <p>CodeMirror es un editor de texto enriquecido que se utiliza comúnmente para integrar capacidades
+                        de
+                        edición de código en aplicaciones web. Proporciona resaltado de sintaxis, resaltado de líneas,
+                        autocompletado, plegado de código, y más. Es altamente personalizable y es utilizado en una
+                        amplia
+                        gama de aplicaciones web para la edición de código y texto.</p>
+                    <p>Puedes usar CodeMirror añadiendo su script a tu HTML y luego creando un elemento textarea o div
+                        al
+                        que le asignas la instancia de CodeMirror. Aquí hay un ejemplo básico:</p>
+                    <div id="editor29" class="CodeMirror"></div>
+                    <p>En este ejemplo, primero se enlazan los estilos y scripts de CodeMirror. Luego se crea un
+                        textarea
+                        con un ID, y finalmente se inicializa CodeMirror en ese textarea usando JavaScript.</p>
+                    <p>En el siguiente ejemplo, utilizaremos un editor CodeMirror para editar código JavaScript y luego
+                        ejecutaremos ese código en un iframe dentro de la misma página.</p>
+                    <div id="editor30"></div>
+                    <p>Hemos creado un textarea con un ID "code" que será convertido en un editor CodeMirror. También
+                        añadimos un botón "Run" para ejecutar el código escrito en el editor. Cuando se presiona el
+                        botón
+                        "Run", el código JavaScript escrito en el editor se ejecuta en un iframe llamado "output" dentro
+                        de
+                        la misma página.</p>
+                    <p>En la página oficial de <a href="https://codemirror.net/">CodeMirror</a> podrás encontrar toda la
+                        documentación que puedas necesitar sobre los más de 100 lenguajes soportados (o como hacer que
+                        soporte el tuyo) y sobre los addons y temas (o cómo crearlos) para personalizarlo. También
+                        puedes
+                        descargar el código de <a href="https://github.com/codemirror/dev/">GitHub</a>.</p>
+                    <p>Puedes ver la creación de una terminal en este <a
+                            href="https://www.youtube.com/watch?v=o1DDWQDBT9Y">video</a> y en este <a
+                            href="https://www.youtube.com/watch?v=arRXx4s7o8Q">otro</a>. Y si prefieres <a
+                            href="https://portal.gitnation.org/contents/usando-codemirror-para-construir-un-editor-de-javascript-con-linting-y-autocompletado">leer</a>.
+                    </p>
+                </div>
+                <img src="https://d8285fmxt3duy.cloudfront.net/public/articulos/img/java-script1.jpg?1"
+                    alt="Cabecera JavaScript">
+                <ul>
+
+                    <li>
+                        <h3>¿Qué tipo de bucles hay en JS?</h3>
+                        <div class="contenido">
+                            <img src="https://lenguajejs.com/fundamentos/introduccion/conceptos-previos/bucles-iteraciones.png"
+                                alt="Bucles en JavaScript">
+                            <p>
+                                En JavaScript, hay varios tipos de bucles:
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><code>for</code> que se utiliza para iterar sobre una secuencia de elementos
+                                        mientras
+                                        se cumpla una condición</p>
+                                    <div id="editor00" class="CodeMirror"></div>
+                                    <p>Como se puede ver en el ejemplo, el bucle (entre paréntesis <code>()</code>)
+                                        consta
+                                        de tres partes separadas por punto y coma. La primera parte inicializa el bucle
+                                        (<code>i = 0</code>), la segunda parte establece la condición para continuar el
+                                        bucle (<code>i &lt; 0</code>), y la tercera parte actualiza el estado del bucle
+                                        después de cada iteración (en este caso incrementa el contador
+                                        <code>i++</code>).
+                                        Después tenemos (entre llaves <code>{}</code>) las instrucciones a ejecutar
+                                        (<code>console.log(i)</code> y <code>console.log("Iteración completada")</code>)
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p><code>for...in</code> se utiliza para iterar sobre las propiedades de un
+                                                objeto, incluidas las propiedades heredadas de su prototipo.</p>
+                                            <div id="editor01" class="CodeMirror"></div>
+                                            <p>En el ejemplo recorremos las propiedades de un objeto, y en cada
+                                                iteración,
+                                                obtenemos el nombre de la propiedad accediendo al valor correspondiente
+                                                utilizando corchetes (<code>[]</code>).</p>
+                                            <p>Aunque puede ser tentador usarlo para iterar sobre los elementos
+                                                <code>Array</code>, hay que tener en cuenta que devolverá el nombre de
+                                                sus
+                                                propiedades además de los índices numéricos. Así que suele ser
+                                                preferible
+                                                usar un ciclo <code>for</code> normal con un índice.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><code>for...of</code> se utiliza para iterar sobre objetos iterables
+                                                (como
+                                                arrays, strings, maps, sets, etc.). Itera sobre los valores en lugar de
+                                                las
+                                                propiedades.</p>
+                                            <div id="editor02" class="CodeMirror"></div>
+                                            <p>En este ejemplo recorremos los elementos de un array y, en cada
+                                                iteración,
+                                                obtenemos el valor del elemento y, en este caso, lo imprimimos en la
+                                                consola.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><code>forEach</code> es un método de los arrays que ejecuta una función
+                                                dada
+                                                una vez por cada elemento en el array.</p>
+                                            <div id="editor03" class="CodeMirror"></div>
+                                            <p>En el ejemplo, la función pasada a <code>forEach</code> se ejecutará una
+                                                vez
+                                                por cada número en el array <code>numbers</code>, imprimiendo cada
+                                                número en
+                                                la consola.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li>
+                                    <p><code>while</code> que se ejecuta mientras una condición especificada sea
+                                        verdadera.
+                                    </p>
+                                    <div id="editor04" class="CodeMirror"></div>
+                                    <p>En el ejemplo se ejecuta el bloque de código (entre llaves <code>{}</code>)
+                                        mientras
+                                        la condición especificada (entre paréntesis <code>()</code>) sea verdadera. La
+                                        condición se verifica antes de ejecutar el bloque de código, de ahí que al final
+                                        del
+                                        mismo se incremente el contador <code>j++</code> ya que, de no hacerse, nunca
+                                        saldría (ciclaría). Por lo tanto, es muy importante asegurarse de que haya una
+                                        condición de salida que se cumpla.</p>
+                                </li>
+
+                                <li>
+                                    <p><code>do...while</code> que se ejecuta al menos una vez y luego continúa
+                                        ejecutándose
+                                        mientras una condición especificada sea verdadera.</p>
+                                    <div id="editor05" class="CodeMirror"></div>
+                                    <p>En este bucle primero se ejecuta el bloque de código (igual que en los casos
+                                        anteriores entre llaves <code>{}</code>) y luego verifica la condición
+                                        especificada
+                                        (entre paréntesis <code>()</code>, también como en los casos anteriores).
+                                        Continuará
+                                        ejecutándose mientras la condición sea verdadera.</p>
+                                </li>
+                            </ul>
+                            <p>Relacionadas con los bucles están:</p>
+                            <ul>
+                                <li>
+                                    <p><code>label</code> se utiliza para marcar una posición en el código. Junto con
+                                        las
+                                        sentencias <code>break</code> y <code>continue</code> sirve para especificar qué
+                                        bucle debe verse afectado.</p>
+                                    <div id="editor06" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p><code>break</code> se usa para salir prematuramente de un bucle. Es decir, el
+                                        bucle
+                                        se termina y el programa continúa con la siguiente sentencia después del bucle.
+                                    </p>
+                                    <div id="editor07" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p><code>continue</code> sirve para saltarse la iteración actual de un bucle y
+                                        continuar
+                                        con la siguiente.</p>
+                                    <div id="editor08" class="CodeMirror"></div>
+                                </li>
+                            </ul>
+                            <p>Para documentarte más puedes recurrir a esta <a
+                                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration">Guía
+                                    de JavaScript</a> o ver el <a
+                                    href="https://www.youtube.com/watch?v=qHCQoRMQhj4">video</a>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Cuáles son las diferencias entre const, let y var?</h3>
+                        <div class="contenido">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FojrvxYcKeYg%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=4610e3a436bed82c469c4e26525582d021a317ff925e65fee515d31a0bac8445&ipo=images"
+                                alt="diferencias entre const, let y var">
+                            <p>Las tres son palabras clave usadas para declarar variables y, aunque parecidas, hay
+                                diferencias
+                                entre ellas:</p>
+
+                            <ul>
+                                <li>
+
+                                    <p>Una variable declarada con <code>var</code> tiene un ámbito (alcance) de función
+                                        o
+                                        global y se puede acceder desde cualquier parte del programa, mientras que una
+                                        variable declarada con <code>let</code> o <code>const</code> solo está
+                                        disponible
+                                        dentro del bloque en el que fue declarada.</p>
+                                    <div id="editor09" class="CodeMirror"></div>
+                                    <p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmiro.medium.com%2Fmax%2F1200%2F1*lskdwh7Th3ug538lVYUscQ.png&f=1&nofb=1&ipt=64c3a007c773517857400dbe7be2398fb196ba61bd72d53d60848002e4895d32&ipo=images"
+                                            alt="ámbito de las variables"></p>
+                                </li>
+                                <li>
+                                    <p>No se permite reasignar el valor de una variable declarada con <code>const</code>
+                                        (es
+                                        una constante), mientras que <code>let</code> y <code>var</code> permiten
+                                        reasignar
+                                        el valor de una variable en cualquier momento durante el programa.</p>
+                                    <div id="editor10" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p><code>var</code> puede ser redeclarada dentro del mismo alcance, <code>let</code>
+                                        no
+                                        puede ser redeclarada dentro del mismo alcance y <code>const</code> no puede ser
+                                        reasignada ni redeclarada.</p>
+                                    <div id="editor11" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p>Las variables declaradas con <code>var</code> son elevadas (hoisted) al inicio de
+                                        su
+                                        ámbito, lo que significa que pueden ser usadas antes de que sean declaradas,
+                                        pero su
+                                        valor será <code>undefined</code>. En cambio, las variables declaradas con
+                                        <code>let</code> y <code>const</code> no son elevadas y arrojarán un error si se
+                                        intenta usarlas antes de su declaración.
+                                    </p>
+                                    <div id="editor12" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p>Además, <code>let</code> y <code>const</code> introducen el concepto de
+                                        <i>temporal
+                                            dead zone</i> (zona muerta temporal) donde la variable no puede ser accedida
+                                        hasta después de su declaración, es decir, no se inicializan automáticamente
+                                        como
+                                        hace <code>var</code> (que se inicializa a <code>undefined</code>). Este
+                                        comportamiento puede ayudar a detectar errores más fácilmente.
+                                    </p>
+                                    <div id="editor13" class="CodeMirror"></div>
+                                </li>
+                                <li>
+                                    <p>El siguiente ejemplo define una función <code>variableExample</code> que
+                                        demuestra el
+                                        uso de las variables en JavaScript para la declaración y el ámbito de variables,
+                                        así
+                                        cómo <code>const</code> evita la reasignación, <code>let</code> tiene ámbito de
+                                        bloque y <code>var</code> tiene ámbito de función. La explicación de cada línea
+                                        se
+                                        proporciona en los comentarios.</p>
+                                    <div id="editor14" class="CodeMirror"></div>
+                                </li>
+                            </ul>
+                            <p>En resumen, aunque tienen una sintaxis similar, existen diferencias importantes y, en
+                                general, se recomienda usar <code>const</code> para variables que no cambian, y
+                                <code>let</code> para variables que sí cambian. Evita usar <code>var</code> a menos que
+                                sea
+                                necesario por cuestiones de compatibilidad. Pueden ser confusas por lo que se aconseja
+                                poner
+                                tu propio código a prueba de diferentes maneras para fortalecer tu entendimiento.
+                            </p>
+                            <p>¡¿No te ha quedado claro?! En este <a
+                                    href="https://www.freecodecamp.org/espanol/news/var-let-y-const-cual-es-la-diferencia/">artículo</a>
+                                y en este <a href="https://www.youtube.com/watch?v=ojrvxYcKeYg">video</a> te lo pueden
+                                aclarar... o no.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Qué es una función de flecha?</h3>
+                        <div class="contenido">
+                            <img src="https://static.platzi.com/media/user_upload/d7917c74-9eb9-495e-bd1f-2f9a2a6a3895-88e746a2-18c6-4b21-8254-d565957669b4.jpg"
+                                alt="Encapsulando código en funciones">
+                            <p>
+                                Una función de flecha en JavaScript es una forma concisa de escribir una función ya que
+                                es
+                                anónima, no necesita de la palabra clave <code>function</code> y permite optimizar el
+                                código. Se define utilizando la sintaxis de flecha <code>(=&gt;)</code> y puede tener
+                                una o
+                                varias expresiones como cuerpo de la función.
+                            </p>
+                            <div id="editor15" class="CodeMirror"></div>
+                            <p>
+                                Las funciones de flecha son útiles para escribir código más conciso y para evitar
+                                problemas
+                                con el contexto de <code>this</code>. Por ejemplo:
+                            </p>
+                            <div id="editor16" class="CodeMirror"></div>
+                            <p>Aquí tienes un ejemplo más complejo:</p>
+                            <div id="editor17" class="CodeMirror"></div>
+                            <p>En este ejemplo, la función de flecha <code>calculateStatistics</code> toma un objeto
+                                <code>data</code> con una propiedad <code>values</code>, realiza cálculos estadísticos
+                                sobre
+                                esos valores y devuelve un nuevo objeto con las estadísticas calculadas. Paso a paso:
+                            </p>
+                            <ol>
+                                <li>
+                                    <p><code>const calculateStatistics</code> - Aquí se declara una constante llamada
+                                        <code>calculateStatistics</code>, que es el nombre de la función. Los paréntesis
+                                        contienen los parámetros de la función (en este caso, solo <code>data</code>).
+                                        Luego
+                                        sigue el operador de flecha <code>=&gt;</code>, que indica que estamos
+                                        definiendo
+                                        una función de flecha.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><code>{ values } = data</code> es una desestructuración de objetos. Extrae la
+                                        propiedad <code>values</code> del objeto <code>data</code> y la asigna a una
+                                        nueva
+                                        variable <code>values</code>.</p>
+                                </li>
+                                <li>
+                                    <p>En la siguiente línea se utiliza el método <code>reduce</code> para sumar todos
+                                        los
+                                        valores en el array <code>values</code> y se asigna el resultado a la constante
+                                        <code>sum</code>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>A continuación se calcula el promedio de los valores dividiendo la suma entre la
+                                        longitud del array <code>values</code> y asigna el resultado a la constante
+                                        <code>average</code>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Ahora se utiliza el operador de propagación (spread operator) para encontrar el
+                                        valor
+                                        máximo en el array <code>values</code> y lo asigna a la constante
+                                        <code>max</code>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Lo mismo hacemos con el valor mínimo.</p>
+                                </li>
+                                <li>
+                                    <p>Por último, devolvemos un nuevo objeto con las propiedades <code>sum</code>,
+                                        <code>average</code>, <code>max</code> y <code>min</code>, que contienen los
+                                        resultados de los cálculos estadísticos.
+                                    </p>
+                                </li>
+                            </ol>
+                            <div id="editor18" class="CodeMirror"></div>
+                            <p>En este último ejemplo, la función de flecha <code>sayHello</code> conserva el contexto
+                                de
+                                <code>this</code>, lo que significa que puede acceder al <code>this</code> del ámbito en
+                                el
+                                que fue creada, en este caso, el objeto <code>person1</code>, y por tanto a su propiedad
+                                <code>name</code>, y muestre el saludo correctamente.
+                            </p>
+                            <p>Espero que esta explicación te haya sido útil. Siempre te queda el recurso de <a
+                                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions">leer</a>
+                                y <a href="https://www.youtube.com/watch?v=HVEkbCZAuqA">visualizar</a>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Qué es la deconstrucción variable?</h3>
+                        <div class="contenido">
+                            <img src="https://codigojavascript.online/wp-content/uploads/2022/05/destructuring.jpeg"
+                                alt="Desestructuración en JavaScript">
+                            <p>
+                                La deconstrucción de variables es una característica que permite descomponer, de una
+                                forma
+                                concisa, una estructura de datos (arrays u objetos) en partes más pequeñas y asignar
+                                esas
+                                partes (valores) de forma rápida a variables individuales.
+                            </p>
+                            <p>Ejemplo con un array:</p>
+                            <div id="editor19" class="CodeMirror"></div>
+                            <p>Y con un objeto:</p>
+                            <div id="editor20" class="CodeMirror"></div>
+                            <p>Estamos deconstruyendo el objeto <code>person</code> en las variables <code>name</code> y
+                                <code>age</code>. La sintaxis <code>{ name, age } = person</code> extrae las propiedades
+                                <code>name</code> y <code>age</code> del objeto <code>person</code> y las asigna a las
+                                variables <code>name</code> y <code>age</code>. Luego, podemos utilizar estas variables
+                                como
+                                lo haríamos con cualquier otra variable. En este caso, el <code>console.log</code>
+                                imprime
+                                los valores de <code>name</code> y <code>age</code>, que son "John" y 30
+                                respectivamente.
+                            </p>
+                            <p>Como vemos es conveniente y adecuado usarla cuando se quieren extraer múltiples valores
+                                de un
+                                array o un objeto y asignarlos a variables individuales de manera concisa. Esto puede
+                                ser
+                                útil al trabajar con datos estructurados, como al manipular respuestas de API, datos de
+                                formularios, o al manipular datos estructurados en general. La deconstrucción de
+                                variables
+                                hace que el código sea más legible y fácil de mantener al evitar la repetición de
+                                referencias a propiedades de objetos o a índices de arrays.</p>
+                            <p>Supongamos que tenemos un array multidimensional y queremos extraer valores de diferentes
+                                niveles anidados:</p>
+                            <div id="editor21" class="CodeMirror"></div>
+                            <p>En este ejemplo, estamos deconstruyendo el objeto <code>data</code> para extraer los
+                                valores
+                                <code></code>user, <code>age</code>, <code>city</code> y <code>zip</code>, que están
+                                anidados dentro de diferentes niveles del objeto. La sintaxis permite acceder a estos
+                                valores de forma clara y concisa.
+                            </p>
+                            <p>Puedes ampliar conocimientos leyendo este <a
+                                    href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">artículo</a>
+                                o viendo el <a href="https://www.youtube.com/watch?v=PQinHHCFsVc">video</a>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Qué hace el operador de spread JS?</h3>
+                        <div class="contenido">
+                            <img src="https://i.ytimg.com/vi/FDRJLnGOkdA/maxresdefault.jpg"
+                                alt="Operador spread (de difusión)">
+                            <p>
+                                El operador de <i>spread</i> (de difusión) permite descomponer un objeto en sus
+                                elementos
+                                individuales, o combinar múltiples elementos en un solo objeto. También se puede usar
+                                para
+                                copiar un array o un objeto de manera rápida. Sin embargo, puede no ser conveniente
+                                usarlo
+                                en situaciones donde se requiera un control más fino sobre la manipulación de los datos,
+                                como en operaciones que requieren referencias directas a los objetos originales. En esos
+                                casos, el uso de métodos más explícitos puede ser preferible. La sintaxis del operador
+                                de
+                                spread es el uso de tres puntos suspensivos (<code>...</code>) seguidos del objeto o
+                                array
+                                que se desea descomponer o copiar.
+                            </p>
+                            <div id="editor22" class="CodeMirror"></div>
+                            <p>Aquí vemos un ejemplo donde no es conveniente su uso:</p>
+                            <div id="editor23" class="CodeMirror"></div>
+                            <p>En este <a href="https://www.youtube.com/watch?v=_5V6siSlP2k">video</a> podrás aclarar
+                                cualquier duda, pero si prefieres <a
+                                    href="https://desarrolloweb.com/articulos/operador-spread-es6.html">leer</a>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>
+                            ¿Qué es OOP?
+                        </h3>
+                        <div class="contenido">
+                            <img src="https://blog.openreplay.com/images/a-beginners-guide-to-oop-in-javascript/images/hero.png"
+                                alt="Programación Orientada a Objetos en JavaScript">
+                            <p>
+                                OOP significa "Programación Orientada a Objetos". Esto implica el uso de objetos y
+                                clases
+                                para organizar y estructurar el código. Puedes definir clases, crear instancias de esas
+                                clases y utilizar herencia para compartir funcionalidades entre clases.
+                            </p>
+                            <div id="editor24" class="CodeMirror"></div>
+                            <p>En este ejemplo, definimos dos clases: <code>Animal</code> y <code>Dog</code>. La clase
+                                Dog
+                                hereda de la clase <code>Animal</code> utilizando la palabra clave <code>extends</code>.
+                                Luego creamos una instancia de la clase <code>Dog</code> llamada "Rex" y llamamos al
+                                método
+                                <code>speak</code> de esa instancia. Esto demuestra el concepto de herencia y la
+                                capacidad
+                                de sobrescribir métodos en la programación orientada a objetos en JavaScript.
+                            </p>
+                            <p>Los principales beneficios de la programación orientada a objetos en JavaScript incluyen
+                                la
+                                reutilización de código, la organización y estructuración del código, la capacidad de
+                                modelar entidades del mundo real y la capacidad de crear jerarquías de clases.</p>
+                            <p>Algunos de los problemas incluyen la complejidad añadida, el potencial de
+                                <i>sobreingeniería</i>, y la dificultad para comprender y mantener grandes jerarquías de
+                                clases. Además, JavaScript no es un lenguaje puramente orientado a objetos, por lo que a
+                                veces la implementación de la programación orientada a objetos puede parecer forzada.
+                            </p>
+                            <p>No es un lenguaje puramente orientado a objetos en el sentido de que también admite otros
+                                paradigmas de programación, como la programación funcional. Algunos aspectos en los que
+                                JavaScript no está completamente orientado a objetos incluyen:</p>
+                            <ol>
+                                <li>
+                                    <p>Funciones de primera clase: Las funciones son ciudadanos de primera clase en
+                                        JavaScript, lo que significa que pueden ser tratadas como cualquier otra
+                                        variable.
+                                        Esto es una característica de la programación funcional y no exclusivamente
+                                        orientada a objetos.</p>
+                                </li>
+                                <li>
+                                    <p>Prototipos: JavaScript utiliza un modelo de prototipos en lugar de clases para la
+                                        herencia. Aunque esto puede ser poderoso, también puede desviarse del enfoque
+                                        más
+                                        clásico de la programación orientada a objetos basada en clases.</p>
+                                </li>
+                                <li>
+                                    <p>Tipado dinámico: JavaScript es un lenguaje de tipado dinámico, lo que significa
+                                        que
+                                        las variables no están asociadas a un tipo específico y pueden cambiar de tipo
+                                        durante la ejecución del programa. Mientras que la programación orientada a
+                                        objetos
+                                        a menudo se asocia con el tipado estático y fuerte.</p>
+                                </li>
+                            </ol>
+                            <p>Estos aspectos demuestran que JavaScript no está completamente orientado a objetos y
+                                muestra
+                                su flexibilidad para admitir múltiples paradigmas de programación.</p>
+                            <p>Si quieres saber más pasa por <a
+                                    href="https://lenguajejs.com/javascript/oop/que-es/">aquí</a> o echale un ojo a este
+                                <a href="https://www.youtube.com/watch?v=zK6qV9xU8zY">video</a>.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Qué es una promesa JS?</h3>
+                        <div class="contenido">
+                            <img src="https://res.cloudinary.com/matiasfha/image/upload/e_auto_contrast,g_south_west,l_text:montserrat_30:@matiasfha,x_20,y_10/c_scale,w_1024/l_logo,y_10,x_15,g_north_east,w_60/f_auto,q_auto/2e83c37b5506427db241f046575270124020a1fd-1280x710.jpg"
+                                alt="¿Qué es una promesa en JavaScript">
+                            <p>
+                                Una promesa en JavaScript es un objeto que representa el resultado eventual de una
+                                operación
+                                asíncrona. Puede estar en uno de tres estados: pendiente, cumplida o rechazada. Las
+                                promesas
+                                son comúnmente utilizadas para manejar operaciones asíncronas como solicitudes HTTP o
+                                lectura de archivos de forma más legible y manejable.
+                            </p>
+                            <p>La sintaxis básica de una promesa en JavaScript es la siguiente:</p>
+                            <div id="editor25" class="CodeMirror"></div>
+                            <p>La función pasada a <code>new Promise</code> toma dos argumentos, <code>resolve</code> y
+                                <code>reject</code>, que son funciones que se llaman para completar la promesa. Luego,
+                                se
+                                encadenan los métodos <code>then</code> y <code>catch</code> para manejar el resultado
+                                de la
+                                promesa.
+                            </p>
+                            <div id="editor26" class="CodeMirror"></div>
+                            <p>En este ejemplo, la función <code>asyncOperation</code> devuelve una promesa que se
+                                resuelve
+                                o se rechaza después de un segundo.</p>
+                            <ul>
+                                <li>
+                                    <p>Dentro de <code>new Promise</code>, hay un temporizador (<code>setTimeout</code>)
+                                        que
+                                        simula una operación asíncrona que toma un segundo en completarse.</p>
+                                </li>
+                                <li>
+                                    <p>Dentro de la función del temporizador, se genera un número aleatorio y se evalúa
+                                        si
+                                        es mayor que 0.5.</p>
+                                </li>
+                                <li>
+                                    <p>Si es mayor que 0.5, la promesa se resuelve con el número aleatorio; de lo
+                                        contrario,
+                                        se rechaza con un nuevo error.</p>
+                                </li>
+                            </ul>
+                            <p>Luego, se encadenan los métodos <code>then</code> y <code>catch</code> para manejar el
+                                resultado de la promesa.</p>
+                            <ul>
+                                <li>
+                                    <p>El método <code>then</code> maneja el caso en el que la promesa se resuelve
+                                        exitosamente, imprimiendo un mensaje con el número aleatorio generado.</p>
+                                </li>
+                                <li>
+                                    <p>El método <code>catch</code> maneja cualquier error que ocurra durante la
+                                        ejecución
+                                        de la promesa, imprimiendo un mensaje de error con el mensaje del error
+                                        rechazado.
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>Este ejemplo ilustra cómo crear y manejar una promesa para gestionar una operación
+                                asíncrona,
+                                proporcionando un enfoque estructurado para manejar el resultado exitoso o el error de
+                                la
+                                operación.</p>
+                            <p>Si quieres una <a href="https://blog.hubspot.es/website/promesas-javascript">lectura</a>
+                                y si
+                                prefieres un <a href="https://www.youtube.com/watch?v=VPHAIUFgc3k">video</a>.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>¿Qué hacen async y await por nosotros?</h3>
+                        <div class="contenido">
+                            <img src="https://i.ytimg.com/vi/c9ok2Z1gx9g/maxresdefault.jpg"
+                                alt="Entendiendo async y await de forma rápida y sencilla">
+                            <p>
+                                <code>async</code> y <code>await</code> son palabras clave en JavaScript que trabajan
+                                juntas
+                                para simplificar el manejo de código asincrónico.
+                            </p>
+                            <ul>
+                                <li>
+                                    <p><code>async</code> se utiliza para declarar que una función retorna una promesa.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><code>await</code> se utiliza para esperar que una promesa se resuelva. Esto hace
+                                        que
+                                        el código asincrónico se vea más como código síncrono, lo que facilita su
+                                        lectura y
+                                        escritura.</p>
+                                </li>
+                            </ul>
+                            <div id="editor27" class="CodeMirror"></div>
+                            <ul>
+                                <li><code>async function fetchData() {</code>: Declara una función asincrónica llamada
+                                    fetchData.</li>
+                                <li><code>try {</code>: Inicia un bloque de código donde se intentarán las operaciones
+                                    asincrónicas.</li>
+                                <li><code>let response = await fetch('https://api.example.com/data');</code>: Realiza
+                                    una
+                                    solicitud a la
+                                    API y espera a que la promesa se resuelva, luego almacena la respuesta en la
+                                    variable
+                                    <code>response</code>.
+                                </li>
+                                <li><code>let data = await response.json();</code>: Espera a que la promesa de parseo de
+                                    la
+                                    respuesta
+                                    como JSON se resuelva, luego almacena los datos en la variable <code>data</code>.
+                                </li>
+                                <li><code>return data;</code>: Devuelve los datos obtenidos.</li>
+                                <li><code>} catch (error) {</code>: Captura cualquier error que ocurra en el bloque
+                                    <code>try</code>.
+                                </li>
+                                <li><code>console.error('Error fetching data:', error);</code>: Muestra un mensaje de
+                                    error
+                                    en la consola.</li>
+                                <li><code>throw error;</code>: Relanza el error para que pueda ser manejado por el
+                                    código
+                                    que llama a <code>fetchData</code>.</li>
+                                <li><code>fetchData()...</code>: Llama a la función <code>fetchData</code> y maneja la
+                                    promesa resultante con <code>then</code> y <code>catch</code>.</li>
+                                <li><code>.then(data =&gt; { console.log('Data received:', data); })</code>: Si la
+                                    promesa
+                                    se resuelve
+                                    exitosamente, muestra los datos recibidos en la consola.</li>
+                                <li><code>.catch(error =&gt; { console.error('Error:', error); })</code>: Si la promesa
+                                    es
+                                    rechazada, muestra el error en la consola.</li>
+                            </ul>
+                            <p>El uso de <code>async</code> y <code>await</code> es beneficioso cuando se trabaja con
+                                operaciones asincrónicas, como solicitudes a una API, operaciones de lectura/escritura
+                                de
+                                archivos, o consultas a una base de datos. Estas palabras clave simplifican el manejo de
+                                promesas y hacen que el código sea más legible y fácil de mantener.</p>
+                            <p>Sin embargo, su uso puede ser perjudicial si se abusa de ellas en operaciones que no son
+                                realmente asincrónicas. En tales casos, el uso innecesario de <code>async</code> y
+                                <code>await</code> puede llevar a un código innecesariamente complicado. Es importante
+                                utilizarlas de manera apropiada, donde realmente se necesite manejar operaciones
+                                asincrónicas.
+                            </p>
+                            <div id="editor28" class="CodeMirror"></div>
+                            <p>En el ejemplo, el uso de <code>async</code> y <code>await</code> es perjudicial porque la
+                                función <code>addNumbers</code> no realiza ninguna operación asincrónica. No hay
+                                necesidad
+                                de hacer que <code>addNumbers</code> sea una función asincrónica, ya que no espera
+                                ninguna
+                                promesa. El uso de <code>async</code> y <code>await</code> en este caso solo agrega
+                                complejidad innecesaria al código. Sería más claro y directo simplemente llamar a
+                                <code>addNumbers</code> de forma síncrona.
+                            </p>
+                            <p>Para verlos en <a href="https://www.youtube.com/watch?v=pywyV4pbnQQ">funcionamiento</a> o
+                                tener una <a href="https://www.youtube.com/watch?v=41VfSbuYBP0">opinión</a> y para <a
+                                    href="https://www.aluracursos.com/blog/asyncawait-en-javascript-que-es-y-cuando-usar-programacion-asincrona">leer</a>
+                                sobre estas palabras clave.</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>EJERCICIO PRÁCTICO</p>
+                <ul>
+                    <li>
+                        <h3>
+                            Cree un bucle for en JS que imprima cada nombre de esta lista. myList = "velma", "scout",
+                            "jane", "john", "harry"
+                        </h3>
+                        <div class="contenido">
+                            <p>
+                                <b>Respuesta:</b>
+                            </p>
+                            <div id="editorE1" class="cm-s-vibrant-ink CodeMirror"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>
+                            Cree un bucle while que recorra la misma lista e imprima también los nombres.
+                        </h3>
+                        <div class="contenido">
+                            <p>
+                                <b>Respuesta:</b>
+                            </p>
+                            <div id="editorE2" class="cm-s-erlang-dark CodeMirror"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>
+                            Cree una función de flecha que devuelva "Hello World".
+                        </h3>
+                        <div class="contenido">
+                            <p>
+                                <b>Respuesta:</b>
+                            </p>
+                            <div id="editorE3" class="cm-s-eclipse"></div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const headings = document.querySelectorAll('h3')
+            headings.forEach(heading => {
+                const content = heading.nextElementSibling
+                content.style.display = 'none'
+                heading.addEventListener('click', function () {
+                    headings.forEach(otherHeading => {
+                        if (otherHeading !== heading) {
+                            otherHeading.nextElementSibling.style.display = 'none'
+                            otherHeading.classList.remove('button') // remove 'button' class from other headings
+                        }
+                    })
+                    content.style.display =
+                        content.style.display === 'none' || content.style.display === '' ?
+                            'block' :
+                            'none'
+                    if (content.style.display === 'block') {
+                        heading.classList.add('button') // add 'button' class to the clicked heading
+                    } else {
+                        heading.classList.remove('button') // remove 'button' class if content is hidden
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
