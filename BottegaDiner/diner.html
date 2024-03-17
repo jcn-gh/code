@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Diner Menu 3</title>
+    <style>
+        button {
+            padding: 12px 24px;
+            color: black;
+            background: #00ff44;
+            border-radius: 4px;
+            font-weight: bolder;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .diner-form,
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        fieldset,
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-name {
+            font-weight: 600;
+        }
+
+        .item-price {
+            font-style: oblique;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-wrapper"></div>
+    <h1>Welcome to Bottega Diner!</h1>
+    <section id="menu-display">
+        <!-- The menu will be displayed by the JavaScript code -->
+    </section>
+    <noscript>
+        <p>Please enable JavaScript to view and interact with the content on this page.</p>
+    </noscript>
+    <form class="diner-form" autocomplete="off">
+        <fieldset>
+            <legend>Choose Your Meal</legend>
+            <label for="breakfast">Breakfast</label>
+            <input type="radio" id="breakfast" name="meal" value="breakfastMenu">
+
+            <label for="lunch">Lunch</label>
+            <input type="radio" id="lunch" name="meal" value="lunchMenu">
+
+            <label for="dinner">Dinner</label>
+            <input type="radio" id="dinner" name="meal" value="dinnerMenu">
+        </fieldset>
+        <fieldset>
+            <legend>Select Your Entrée</legend>
+            <label for="entree">Entree:</label>
+            <select name="entree" id="entree"></select>
+        </fieldset>
+        <fieldset>
+            <legend>Select Your Sides</legend>
+            <label for="side1">First Side:</label>
+            <select name="side1" id="side1"></select>
+            <label for="side2">Second Side:</label>
+            <select name="side2" id="side2"></select>
+        </fieldset>
+        <fieldset>
+            <legend>Customize Your Entrée</legend>
+            <label for="entreeCustomization">Preparation Style:</label>
+            <select name="entreeCustomization" id="entreeCustomization">
+            </select>
+        </fieldset>
+        <button aria-label="Submit your order" type="submit" id="submit">Submit</button>
+    </form>
+    <script>
+        const breakfast = document.getElementById('breakfast');
+        const lunch = document.getElementById('lunch');
+        const dinner = document.getElementById('dinner');
+        const entreeElement = document.getElementById('entree');
+        const side1Element = document.getElementById('side1');
+        const side2Element = document.getElementById('side2');
+        const menuDisplay = document.getElementById('menu-display');
+        const entreeCustomizationElement = document.getElementById('entreeCustomization');
+        const form = document.querySelector('.diner-form');
+        let lunchMenu = {};
+        let dinnerMenu = {};
+        let selectedMealType = "";
+        let mainMenu = {};
+        let sidesMenu = {};
+
+        function createElement(tag, options = {}) {
+            const element = document.createElement(tag);
+            Object.entries(options).forEach(([key, value]) => {
+                element[key] = value;
+            });
+            return element;
+        }
+
+        function handleError(error, displayElement, functionName) {
+            logger.error(`Error in ${functionName}:`, error);
+            if (error instanceof TypeError) {
+                displayElement.textContent = `Error in ${functionName}: Network error. Please check your connection and try again.`;
+            } else if (error instanceof SyntaxError) {
+                displayElement.textContent = `Error in ${functionName}: Error loading menu. Data format is incorrect.`;
+            } else {
+                displayElement.textContent = `Error in ${functionName}: An unexpected error occurred. Please try again later.`;
+            }
+        }
+
+        document.querySelectorAll('input[name="meal"]').forEach((radio) => {
+            radio.addEventListener('change', (event) => {
+                selectedMealType = event.target.value;
+                initializeMenu(selectedMealType);
+            });
+        });
+        async function initializeMenu(mealType) {
+                try {
+                    const response = await fetch('./menuData2.json');
+                    if (!response.ok) {
+                        const error = new Error(`Communication error! Status: ${response.status} ${response.statusText}`);
+                        handleError(error, menuDisplay, "initializeMenu");
+                    }
+
+                    const data = await response.json();
+
+                    function adjustMenuPrices(menu, multiplier) {
+                        const adjustedMenu = {};
+                        for (const [category, items] of Object.entries(menu)) {
+                            adjustedMenu[category] = {};
+                            for (const [itemName, itemDetails] of Object.entries(items)) {
+                                adjustedMenu[category][itemName] = {
+                                    ...itemDetails,
+                                    price: parseFloat((itemDetails.price * multiplier).toFixed(2))
+                                };
+                            }
+                        }
+                        return adjustedMenu;
+                    }
+
+                    data.dinnerMenu = adjustMenuPrices(data.lunchMenu, 1.2);
+
+                    const selectedMealMenu = data[mealType];
+                    if (!selectedMealMenu) {
+                        const error = new TypeError(`Invalid meal type: ${mealType}`);
+                        handleError(error, menuDisplay, "initializeMenu");
+                    }
+
+                    mainMenu = selectedMealMenu.mainMenu;
+                    sidesMenu = selectedMealMenu.sidesMenu;
+
+                    menuDisplay.textContent = '';
+
+                    const getReadableMealType = (mealType) => {
+                        const mealTypes = {
+                            breakfastMenu: 'Breakfast',
+                            lunchMenu: 'Lunch',
+                            dinnerMenu: 'Dinner'
+                        };
+                        return mealTypes[mealType] || 'Meal';
+                    };
+
+                    const mealTypeHeader = document.createElement('h2');
+                    mealTypeHeader.textContent = getReadableMealType(mealType);
+                    menuDisplay.appendChild(mealTypeHeader);
+
+                    const menuContainer = document.createElement('div');
+                    menuContainer.className = 'menu-container';
+                    menuDisplay.appendChild(menuContainer);
+
+                    const createMenuSection = (sectionName, menuItems) => {
+                        const menuItemsHtml = Object.entries(menuItems).map(([itemName, itemDetails]) => `
+        <li class="menu-item">
+            <span class="item-name">${itemName}</span>
+            <span class="item-price">\u00A0\u00A0\u00A0$${itemDetails.price.toFixed(2)}</span>
+        </li>
+    `).join('');
+
+                        const sectionHtml = `
+        <div class="menu-section">
+            <h3>${sectionName}</h3>
+            <ul>${menuItemsHtml}</ul>
+        </div>
+    `;
+
+                        menuContainer.insertAdjacentHTML('beforeend', sectionHtml);
+                    };
+                    createMenuSection('Main Menu', mainMenu);
+                    createMenuSection('Sides Menu', sidesMenu);
+
+                    function createOptionElement(text, value, additionalPrice = 0) {
+                        const optionElement = document.createElement("option");
+                        optionElement.textContent = text;
+                        optionElement.value = value;
+
+                        if (additionalPrice !== 0) {
+                            optionElement.setAttribute('data-price', additionalPrice);
+                        }
+                        return optionElement;
+                    }
+
+                    function clearOptions(element) {
+                        while (element.firstChild) {
+                            element.removeChild(element.firstChild);
+                        }
+                    }
+
+                    function populateOptions() {
+                        clearOptions(entreeElement);
+                        entreeElement.add(createOptionElement("Please select...", ""));
+                        const entreeFragment = createOptionsFragment(mainMenu);
+                        entreeElement.append(entreeFragment);
+
+                        [side1Element, side2Element].forEach(sideElement => {
+                            clearOptions(sideElement);
+                            sideElement.add(createOptionElement("Please select...", ""));
+                            const sideFragment = createOptionsFragment(sidesMenu);
+                            sideElement.append(sideFragment);
+                        });
+
+                        clearOptions(entreeCustomization);
+                        entreeCustomizationElement.add(createOptionElement("Please select...", ""));
+                        entreeCustomizationElement.add(createOptionElement("Grilled (no extra cost)", "grilled", 0));
+                        entreeCustomizationElement.add(createOptionElement("Fried (+$1.60)", "fried", 1.60));
+                    }
+
+                    function createOptionsFragment(menu) {
+                        const fragment = document.createDocumentFragment();
+                        const optionElements = Object.keys(menu).map(itemName => createOptionElement(itemName, itemName));
+                        fragment.append(...optionElements);
+                        return fragment;
+                    }
+
+                    populateOptions()
+                } catch (error) {
+                    handleError(error, menuDisplay, "initializeMenu");
+                    return null;
+                }
+            }
+            (function() {
+                initializeMenu();
+            })();
+        class Modal {
+            constructor() {
+                this.modal = null;
+                this.focusableElements = [];
+            }
+
+            createModal() {
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.setAttribute('aria-live', 'polite');
+                modal.setAttribute('tabindex', '0'); // Make it focusable
+                document.body.appendChild(modal);
+                this.modal = modal;
+                this.cacheFocusableElements();
+                return modal;
+            }
+
+            cacheFocusableElements() {
+                if (this.modal) {
+                    this.focusableElements = this.modal.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
+                }
+            }
+
+            showModal(messages) {
+                if (!this.modal) {
+                    this.createModal();
+                    this.modal.addEventListener('keydown', this.trapFocus.bind(this));
+                }
+                // Clear existing content
+                while (this.modal.firstChild) {
+                    this.modal.removeChild(this.modal.firstChild);
+                }
+                // Split messages if it's a single string
+                if (typeof messages === 'string') {
+                    messages = messages.split('\n');
+                }
+
+                messages.forEach(message => {
+                    const p = document.createElement('p');
+                    p.textContent = message;
+                    this.modal.appendChild(p);
+                });
+                this.modal.focus();
+            }
+
+            trapFocus(event) {
+                if (event.key !== 'Tab') {
+                    return;
+                }
+                // Use the cached focusable elements
+                const focusableModalElements = this.focusableElements;
+                const firstFocusableElement = focusableModalElements[0];
+                const lastFocusableElement = focusableModalElements[focusableModalElements.length - 1];
+                const isShiftPressed = event.shiftKey;
+
+                if (!isShiftPressed && document.activeElement === lastFocusableElement) {
+                    event.preventDefault();
+                    firstFocusableElement.focus();
+                } else if (isShiftPressed && document.activeElement === firstFocusableElement) {
+                    event.preventDefault();
+                    lastFocusableElement.focus();
+                }
+            }
+
+            close() {
+                if (this.modal) {
+                    this.modal.removeEventListener('keydown', this.trapFocus.bind(this));
+                    this.modal.remove();
+                    this.modal = null;
+                }
+            }
+
+            init() {
+                document.addEventListener('click', (event) => {
+                    if (this.modal && !this.modal.contains(event.target)) {
+                        this.close();
+                    }
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Tab' && this.modal) {
+                        event.preventDefault();
+                    }
+                });
+            }
+        }
+
+        const modal = new Modal();
+        modal.init();
+
+
+        function calculateTotalCost(entreeChoice, sideChoices, mainMenu, sidesMenu) {
+            let totalCost = 0;
+
+            if (!mainMenu.hasOwnProperty(entreeChoice)) {
+                const error = new Error(`Invalid entree choice: ${entreeChoice}`);
+                handleError(error, menuDisplay, "calculateTotalCost");
+            }
+            totalCost += mainMenu[entreeChoice].price;
+
+            for (const sideChoice of sideChoices) {
+                if (!sidesMenu.hasOwnProperty(sideChoice)) {
+                    const error = new Error(`Invalid side choice: ${sideChoice}`);
+                    handleError(error, menuDisplay, "calculateTotalCost");
+                }
+                totalCost += sidesMenu[sideChoice].price;
+            }
+
+            const entreeCustomization = entreeCustomizationElement.value;
+            const selectedOption = entreeCustomizationElement.querySelector(`option[value="${entreeCustomization}"]`);
+            const additionalPrice = selectedOption ? parseFloat(selectedOption.getAttribute('data-price') || 0) : 0;
+
+            totalCost += additionalPrice;
+
+            totalCost = parseFloat(totalCost.toFixed(2));
+
+            return totalCost;
+        }
+
+        function validateEntreeChoice(entreeChoice, mainMenu) {
+            if (!(entreeChoice in mainMenu)) {
+                return "Sorry, that's not a valid entree option.";
+            }
+            return null;
+        }
+
+        function validateSideChoices(sideChoices, sidesMenu) {
+            if (sideChoices[0] === sideChoices[1]) {
+                return "Please select two different sides.";
+            }
+            if (!sideChoices.every(choice => choice in sidesMenu)) {
+                return "Sorry, one or both of your side choices are not valid.";
+            }
+            return null;
+        }
+
+        const randomComment = [
+            "Hope you enjoy your meal!", "Bon appétit!", "Our chef's special touch makes every meal memorable.",
+            "Thank you for dining with us. Enjoy!", "We're sure you'll love our chef's choice!",
+            "Your taste buds are in for a treat!", "Made with love and the freshest ingredients.",
+            "We're thrilled to serve you today!", "Every bite brings you closer to culinary heaven.",
+            "Savor the flavors of our kitchen!"
+        ];
+
+        function getRandomComment() {
+            return randomComment[Math.floor(Math.random() * randomComment.length)];
+        }
+
+        function constructFeedbackMessages(entreeChoice, sideChoices, mainMenu, sidesMenu) {
+            const messages = [];
+            const entreeError = validateEntreeChoice(entreeChoice, mainMenu);
+            if (entreeError) {
+                messages.push(entreeError);
+            } else {
+                const entree = mainMenu[entreeChoice];
+                messages.push(`You selected the ${entreeChoice}. ${entree.comment} The price for the ${entreeChoice} is $${entree.price}.`);
+            }
+
+            const sideErrors = validateSideChoices(sideChoices, sidesMenu);
+            if (sideErrors) {
+                messages.push(sideErrors);
+            } else {
+                sideChoices.forEach((sideChoice, index) => {
+                    const side = sidesMenu[sideChoice];
+                    if (side) {
+                        messages.push(`Side ${index + 1}: You selected ${sideChoice}. ${side.comment} The price for the ${sideChoice} is $${side.price}.`);
+                    }
+                });
+            }
+
+            const entreeCustomizationElementValue = entreeCustomizationElement.value;
+            const selectedOption = entreeCustomizationElement.querySelector(`option[value="${entreeCustomizationElementValue}"]`);
+            const additionalPrice = selectedOption ? parseFloat(selectedOption.getAttribute('data-price') || 0) : 0;
+            const entreeCustomizationText = selectedOption ? selectedOption.value : "";
+
+            let customizationMessage = "No extra selected.";
+
+            if (entreeCustomizationElementValue) {
+                if (additionalPrice > 0) {
+                    customizationMessage = `Entrée will be prepared ${entreeCustomizationText} at an additional cost of $${additionalPrice.toFixed(2)}.`;
+                } else {
+                    customizationMessage = `Entrée will be prepared ${entreeCustomizationText} at no extra cost.`;
+                }
+            }
+
+            messages.push(customizationMessage);
+
+            const totalCost = calculateTotalCost(entreeChoice, sideChoices, mainMenu, sidesMenu);
+            messages.push(`The total cost is $${totalCost}.`);
+
+            messages.push(getRandomComment());
+            return messages;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const entreeChoice = entreeElement.value;
+            const sideChoices = [side1Element.value, side2Element.value];
+            const messages = constructFeedbackMessages(entreeChoice, sideChoices, mainMenu, sidesMenu);
+            if (messages && messages.length > 0) {
+                modal.showModal(messages);
+            }
+        }
+
+        form.addEventListener('submit', handleSubmit);
+
+        function handleSideChange(currentElement, otherElement) {
+            const selectedValue = currentElement.value;
+            const otherOptions = Array.from(otherElement.options);
+
+            otherOptions.forEach((option) => {
+                if (option.value === selectedValue) {
+                    option.disabled = true;
+                } else {
+                    option.disabled = false;
+                }
+            });
+
+            const defaultOption = document.getElementById("default-option");
+            defaultOption.disabled = false;
+        }
+
+        side1Element.addEventListener('change', () => handleSideChange(side1Element, side2Element));
+        side2Element.addEventListener('change', () => handleSideChange(side2Element, side1Element));
+    </script>
+
+</body>
+
+</html>
