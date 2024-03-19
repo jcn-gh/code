@@ -1,0 +1,110 @@
+{
+    "breakfastMenu": {
+        "mainMenu": {
+            "Cornflakes": {
+                "comment": "Start your day with our crunchy and delightful cornflakes.",
+                "price": 2
+            },
+            "Fried eggs": {
+                "comment": "Classic fried eggs, cooked to perfection for a hearty breakfast.",
+                "price": 4
+            },
+            "Mushroom stir-fry": {
+                "comment": "Savor the rich flavors of our freshly prepared mushroom stir-fry.",
+                "price": 6.95
+            },
+            "Omelette": {
+                "comment": "Fluffy and filling, our omelette is made with fresh eggs and your choice of fillings.",
+                "price": 7
+            },
+            "Pancakes": {
+                "comment": "Enjoy our fluffy pancakes, served with syrup and a side of happiness.",
+                "price": 5
+            },
+            "Waffles": {
+                "comment": "Crispy on the outside, soft on the inside, our waffles are a sweet start to your day.",
+                "price": 5.5
+            }
+        },
+        "sidesMenu": {
+            "Bacon": {
+                "comment": "Crispy, smoky bacon to complement your breakfast.",
+                "price": 3
+            },
+            "Croissant": {
+                "comment": "Buttery and flaky, our croissants are baked fresh every morning.",
+                "price": 3.99
+            },
+            "Doughnut": {
+                "comment": "Indulge in our sweet and soft doughnuts, a perfect treat.",
+                "price": 2.49
+            },
+            "Fruit Salad": {
+                "comment": "A refreshing mix of seasonal fruits, perfect for a light start.",
+                "price": 4.25
+            },
+            "Mini sausages": {
+                "comment": "Juicy and flavorful, our mini sausages are a great addition to any breakfast.",
+                "price": 3.49
+            },
+            "Toast": {
+                "comment": "Golden and crispy toast, served with butter and jam.",
+                "price": 2
+            }
+        }
+    },
+    "lunchMenu": {
+        "mainMenu": {
+            "Burger": {
+                "comment": "Our juicy burger is a customer favorite.",
+                "price": 8.99
+            },
+            "Cheeseburger": {
+                "comment": "A classic favorite!",
+                "price": 9.99
+            },
+            "Dill salmon": {
+                "comment": "The best taste from Norway!",
+                "price": 11.49
+            },
+            "Pasta": {
+                "comment": "Our pasta is made fresh daily.",
+                "price": 11.99
+            },
+            "Pizza": {
+                "comment": "Delicious and cheesy!",
+                "price": 10.99
+            },
+            "Veggie Pizza": {
+                "comment": "Loaded with fresh vegetables!",
+                "price": 9.99
+            }
+        },
+        "sidesMenu": {
+            "Creamy Potatoes": {
+                "comment": "Our best potatoes with a French touch.",
+                "price": 4.49
+            },
+            "Fries": {
+                "comment": "Our crispy fries are the perfect side.",
+                "price": 4.99
+            },
+            "Green Beans": {
+                "comment": "Oriental style fresh beans.",
+                "price": 2.49
+            },
+            "Meatballs": {
+                "comment": "Insanely popular.",
+                "price": 3.49
+            },
+            "Roasted Mushrooms": {
+                "comment": "Some of our favorite mountain mushrooms.",
+                "price": 5.99
+            },
+            "Salad": {
+                "comment": "Try our fresh and delicious salad.",
+                "price": 3.99
+            }
+        }
+    }
+}
