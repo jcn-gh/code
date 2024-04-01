@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 11</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://codemirror.net/style/site.css">
+
+    <link rel="stylesheet" href="./css/Checkpoint_11.css">
+</head>
+
+<body>
+    <main>
+        <h1 tabindex="0">
+            Checkpoint
+            <span class="loader center">
+                <b>11</b>
+            </span>
+        </h1>
+
+
+        <p>Estas son las preguntas, pon ejemplos, mejores prácticas…</p>
+        <p class="center">
+            <b>Nota</b>:
+            <i>pulsa en la pregunta para ver la respuesta</i>.
+        </p>
+
+        <img class="center" src="./img/git-js.jpg" alt="Cabecera Git/JavaScript">
+        <h2 tabindex="0">Preguntas</h2>
+        <ul>
+            <li>
+                <h3 tabindex="0">¿Por qué usamos ramas git?</h3>
+                <div class="contenido">
+                    <img class="center" src="https://grandepexinxa.com.br/wp-content/uploads/2022/11/por-que-voce-deve-usar-o-git.jpg" alt="Las ramas sirven para llevar un mejor control del código.">
+                    <p>Para poder tener un mejor control del código <b>Git</b> ofrece a sus desarrolladores las <i><a tabindex="0" href="https://git-scm.com/docs/git-branch" target="_blank" rel="noopener">ramas</a></i>. Aunque es normal que cualquier sistema de control de versiones tenga ramas (o alguna herramienta con características parecidas), Git las implementa de tal forma que mejora la eficiencia del trabajo en cada proyecto.</p>
+                    <h4>¿Qué son las ramas en Git?</h4>
+                    <p>Las ramas son una bifurcación que permite <b>la evolución del código</b> (y de su historial) de forma diferente en cada una de ellas, al proporcionar un entorno aislado para cada cambio en el código. Son una forma de <b>almacenar el historial</b> de cualquier proyecto, una <b>guía instantánea para ver los cambios realizados.</b></p>
+                    <p>Si se quiere añadir una nueva función, o si se quiere arreglar un error, se genera una nueva rama en la que se alojan estos cambios. Al realizar esta acción va a resultar más complicado que algún error o fallo del nuevo código se incorpore al código principal, dando la oportunidad de limpiar el historial, antes de fusionarlo con la rama principal, y mejorando la eficiencia en el trabajo.</p>
+                    <p>Al teclear el comando <code>git branch</code> en la consola nos muestra las ramas existentes. En vez de copiar entre directorios, Git almacena las ramas como referencia, es decir, no es un contenedor si no un índice. El historial de una rama se extrapola de las diferentes relaciones. Las ramas en Git representan una línea independiente de desarrollo. Se pueden ver como un nuevo historial en el proyecto.</p>
+                    <img class="center" src="https://castor.com.co/wp-content/uploads/2020/04/ramas.png" alt="Estructura simplificada del desarrollo mediante ramas.">
+                    <p>El comando <code>git branch</code> permite crear, listar y eliminar ramas, así como editar su nombre. Eso sí, no permite cambiar entre ramas (para lo que se usa <code>git checkout</code>) o volver a unir un historial bifurcado (que se realiza con el comando <code>git merge</code>).</p>
+                    <img class="center" src="https://s3.amazonaws.com/media-p.slid.es/uploads/843308/images/4760613/git-flow-commands-without-flow.png" alt="Estructura de desarrollo mediante ramas con comandos git.">
+                    <p>En el gráfico anterior podemos ver como se trabaja con ramas en Git y sus comandos.</p>
+                    <p>Usar Git puede presentar algunos inconvenientes, como la curva de aprendizaje inicial, la resolución de conflictos al fusionar ramas, y la necesidad de mantener un flujo de trabajo organizado para evitar confusiones. Sin embargo, podría decirse que los beneficios de control de versiones y colaboración superan a los inconvenientes si seguimos unas pautas:</p>
+                    <ul>
+                        <li>Crear ramas separadas para nuevas características o correcciones de errores.</li>
+                        <li>Hacer commits pequeños y frecuentes.</li>
+                        <li>Utilizar mensajes de commit descriptivos y significativos.</li>
+                        <li>Realizar pruebas antes de hacer merge a la rama principal.</li>
+                        <li>Mantener actualizada la rama principal con los cambios de otras ramas mediante merge o rebase.</li>
+                    </ul>
+                    <p>En conclusión, trabajar con ramas en Git para los desarrolladores, lo elimina todo, desde el tiempo perdido esperando confirmaciones hasta las horas de trabajo necesarias para integrar los cambios en un sistema de control de versiones centralizado. Les ofrece a los desarrolladores un entorno seguro para trabajar. Permite a los diseñadores probar nuevas interfaces en el producto real con pocos gastos y reaccionar a las quejas de los clientes de inmediato.</p>
+                    <p>Ser ágil consiste en descubrir qué funciona lo más rápido posible, incrementar las labores que tienen éxito y eliminar las que no lo tienen. Git sirve como multiplicador de todas las actividades y garantiza que cada uno haga su trabajo con más eficiencia.</p>
+                    <h4>¿Por dónde seguir?</h4>
+                    <p>Ahora que sabes un poco más sobre qué es Git, las ramas en Git y cómo ver ramas en git, <b>¿quieres seguir adquiriendo conocimientos en el área?</b></p>
+                    <p>
+                        Para documentarte más puedes recurrir a este
+                        <a tabindex="0" href="https://www.arsys.es/blog/ramas-git">artículo</a>
+                        o ver el
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=gjKKtQVVCZU">video</a>. Y siempre se puede usar <code>git <i>commando</i> --help</code> en la línea de comandos.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="0">¿Cuál es el comando para crear un repositorio git?</h3>
+                <div class="contenido">
+                    <img class="center" src="https://i.ytimg.com/vi/5XX-aOScyUI/maxresdefault.jpg" alt="¿Cómo crear repositorio en Git? How to create repository.">
+                    <p>Vamos a crear un repositorio de git básico, para lo cual primero, crearemos un directorio para el <code>proyecto</code> y nos cambiamos a él, a continuación, crearemos nuestro primer repositorio git llamado <code>app1.git</code> (que estará dentro del directorio del proyecto) y nos cambiamos a él:</p>
+                    <pre><code class="language-bash">mkdir proyecto &amp;&amp; cd proyecto </code></pre>
+                    <pre><code class="language-bash">mkdir app1.git &amp;&amp; cd app1.git </code></pre>
+                    <p>Ahora, <b>para inicializar el repositorio</b> (no olvide usar la palabra clave <code>bare</code> en el comando para crear un repositorio simple) tecleamos:</p>
+                    <pre><code class="language-bash">git --bare init</code></pre>
+                    <pre><code class="language-output">Initialized empty Git repository in /home/git/proyecto/app1.git/</code></pre>
+                    <p>Este comando creará una nueva carpeta oculta llamada <code>.git</code> en la ubicación actual, que es donde se almacenará la información del repositorio.</p>
+                    <pre><code class="language-bash">ls -l </code></pre>
+                    <pre><code class="language-output">total 32
+drwxrwxr-x 2 git git 4096 Mar  8 12:33 branches
+-rw-rw-r-- 1 git git   66 Mar  8 12:33 config
+-rw-rw-r-- 1 git git   73 Mar  8 12:33 description
+-rw-rw-r-- 1 git git   23 Mar  8 12:33 HEAD
+drwxrwxr-x 2 git git 4096 Mar  8 12:33 hooks
+drwxrwxr-x 2 git git 4096 Mar  8 12:33 info
+drwxrwxr-x 4 git git 4096 Mar  8 12:33 objects
+drwxrwxr-x 4 git git 4096 Mar  8 12:33 refs
+</code></pre>
+                    <h4 id="repositorio-de-clonaci-n-clonaci-n-"><b>Repositorio de clonación</b></h4>
+                    <p>Ahora se puede crear un clon de este repositorio desde cualquier sistema cliente usando, por ejemplo, el siguiente comando:</p>
+                    <pre><code class="language-bash">git clone <i>{ usuario }</i>:proyecto/app1.git</code></pre>
+                    <p>Algunas recomendaciones adicionales al inicializar un repositorio Git:</p>
+                    <ul>
+                        <li>Siempre es una buena idea inicializar un repositorio en la raíz de tu proyecto, donde se almacenarán todos los archivos relacionados con ese proyecto específico. Esto facilitará el seguimiento de los cambios y la colaboración en el futuro.</li>
+                        <li>Antes de hacer cualquier cambio en el repositorio, asegúrate de hacer un commit inicial para capturar el estado inicial del proyecto. Esto asegurará que todo esté en orden desde el principio.</li>
+                        <li>Considera configurar un archivo <code>.gitignore</code> para especificar los tipos de archivos o directorios que no quieres que Git rastree. Por ejemplo, puedes excluir archivos generados automáticamente o archivos de configuración específicos del sistema operativo.</li>
+                    </ul>
+                    <p>Algunos posibles inconvenientes al inicializar un repositorio Git podrían incluir:</p>
+                    <ul>
+                        <li><b>Sobrecarga de mantenimiento</b>: Al utilizar Git, se agrega una capa adicional de mantenimiento para realizar seguimiento de los cambios, realizar commits, manejar ramas, etc. Esto puede resultar en una sobrecarga adicional para el desarrollador si no se está familiarizado con los conceptos y comandos de Git.</li>
+                        <li><b>Posible confusión</b>: Si no se entiende completamente cómo funciona Git y se cometen errores al realizar operaciones como revertir cambios, fusionar ramas, o reorganizar el historial, se podrían introducir problemas en el repositorio.</li>
+                        <li><b>Posible pérdida de datos</b>: Si no se tiene cuidado al realizar operaciones delicadas en el repositorio, como el <i>reseteo duro</i> de un commit o la reescritura de la historia, se corre el riesgo de perder datos importantes.</li>
+                        <li><b>Conflicto con otros sistemas de control de versiones</b>: Si un proyecto ya tiene otro sistema de control de versiones establecido, digamos Subversion, podría ser complicado integrar Git sin causar conflictos o problemas de compatibilidad.</li>
+                    </ul>
+                    <p>Es importante tener en cuenta estos puntos al decidir si se debe inicializar un repositorio Git, y asegurarse de comprender los fundamentos de Git antes de usarlo en un proyecto.</p>
+                    <p>¡¿No te ha quedado claro?! En la
+                        <a tabindex="0" href="https://git-scm.com/docs/git-init/es">documentación del comando</a>
+                        y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=qk-GWtcdQek">video</a>
+                        te lo pueden aclarar… o no.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="0">¿Qué es un conflicto de fusión?</h3>
+                <div class="contenido">
+                    <img class="center" src="https://codigonaranja.com/wp-content/uploads/2017/05/git-conflictos-copy.jpg" alt="Como resolver conflictos en Git.">
+                    <p>Los Conflictos de Fusión son comunes en la codificación colaborativa, pero no tienen por qué ser intimidantes. Con una buena comprensión de cómo ocurren y cómo resolverlos y las mejores prácticas, se pueden solventar con facilidad y mantener el proyecto funcionando sin problemas.</p>
+                    <p>
+                        Espero que esta explicación te haya sido útil. Siempre te queda el recurso de <a tabindex="0" href="https://www.delftstack.com/es/howto/git/resolve-merge-conflicts-in-git/">leer</a>
+                        y el de <a tabindex="0" href="https://www.youtube.com/watch?v=cBMu43Uj9tA">ver</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="0">¿Qué es el DOM?</h3>
+                <div class="contenido">
+                    <img class="center" src="https://i.ytimg.com/vi/BwFygAN0iok/maxresdefault.jpg" alt="¿Qué es el DOM?">
+                    <p>Las siglas <b>DOM</b> (<b lang="en">Document Object Model</b>) hacen referencia a la estructura del documento HTML. Una página HTML está formada por múltiples etiquetas anidadas que dan forma a lo que se denomina <b>árbol DOM</b> (o, simplemente <i>DOM</i>).</p>
+                    <p><img src="https://lenguajejs.com/javascript/dom/que-es/que-es-dom.png" alt="Comparación HTML y DOM"></p>
+                    <p>Cuando nos referimos al <b>DOM</b> lo hacemos a esta estructura de árbol, mediante la cuál podemos acceder a los elementos de HTML desde, en nuestro caso, JavaScript. Se pueden añadir nuevas etiquetas, eliminar o modificar otras (cambiar sus atributos HTML, añadir clases…), cambiar el contenido del texto, etc.</p>
+                    <h4>El objeto <code>document</code></h4>
+                    <p>En Javascript, la forma de acceder al DOM es a través de un objeto llamado <code>document</code>, que representa la página de la pestaña del navegador donde nos encontramos. En su interior pueden existir varios tipos de elementos, pero principalmente serán <code>element</code> o <code>node</code>:</p>
+                    <ul>
+                        <li>
+                            <code>element</code> es la representación genérica de una etiqueta: <code>HTMLElement</code>.
+                        </li>
+                        <li>
+                            <code>node</code> es una unidad básica que puede ser <code>element</code> o un <b>nodo de texto</b>.
+                        </li>
+                    </ul>
+                    <p>Algunas de las ventajas de trabajar con el DOM son:</p>
+                    <ul>
+                        <li><b>Páginas web dinámicas</b>: El DOM permite actualizar dinámicamente el contenido de una página web sin necesidad de recargarla por completo. Esto puede proporcionar una mejor experiencia de usuario y mejorar el rendimiento.</li>
+                        <li><b>Accesibilidad</b>: El DOM proporciona una forma estandarizada de acceder y manipular los elementos de una página web, lo que facilita la creación de aplicaciones web.</li>
+                        <li><b>Manipulación de JavaScript</b>: El DOM permite manipular elementos, estilos y atributos HTML mediante JavaScript. Esto permite crear aplicaciones web interactivas y dinámicas.</li>
+                    </ul>
+                    <p>El mayor inconveniente es el <b>Rendimiento</b>: La manipulación del DOM puede ser más lenta que la modificación directa del código fuente HTML subyacente. Esto puede afectar al rendimiento de la aplicación web, especialmente cuando se trata de árboles DOM de gran tamaño.</p>
+                    <p>Si no se desea trabajar con el DOM directamente se pueden usar librerías o frameworks (como React, Vue o Angular) con un coste mínimo en tiempo de ejecución.</p>
+                    <p>
+                        Puedes ampliar conocimientos leyendo este
+                        <a tabindex="0" href="https://lenguajejs.com/javascript/dom/que-es/">artículo</a>
+                        o viendo el
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=BwFygAN0iok">video</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="0">¿Qué es un oyente de eventos?</h3>
+                <div class="contenido">
+                    <img class="center" src="./img/eventos-JS.png" alt="¿Qué es un oyente de eventos?">
+                    <p>En el momento de utilizar una aplicación, el usuario desencadena acciones/<b>eventos</b> que son tratadas por el programa y devueltas al usuario.</p>
+                    <img class="center" src="https://personales.unican.es/corcuerp/sistinf/tecweb/Slides/images/figure_3_event.png" alt="Representación del ciclo de los eventos.">
+                    <p>Esta es una tabla con algunos eventos:</p>
+                    <img class="center" src="https://maximoguando.com/wp-content/uploads/2018/04/evento-javascrit.jpg" alt="Cuadro de los eventos.">
+                    <p>Podemos manejar los eventos directamente como atributos:</p>
+                    <img class="center" src="https://maximoguando.com/wp-content/uploads/2018/04/evento-html.jpg" alt="Manejadores de evento como atributos.">
+                    <p>o, para cosas más complejas, como funciones:</p>
+                    <img class="center" src="https://maximoguando.com/wp-content/uploads/2018/04/manejador-evento2.jpg" alt="Manejadores de eventos como funciones.">
+                    <p>Pero lo más recomendable es hacer uso de la función <code>addEventListener</code> (que <i>escucha</i> hasta que el evento sucede) porque permite separar el código HTML del Javascript, lo cual hace más sencillo mantener el código. La sintaxis sería:</p>
+                    <p><code>document.getElementById(<i>id</i>).<b class="keyword">addEventListener(<i>evento</i>, función, bool)</b></code></p>
+                    <p>Donde:</p>
+                    <ul>
+                        <li><b><i>evento</i></b> es el nombre del evento sin el prefijo “on-”,</li>
+                        <li><b>función</b>, es el nombre de la función que ejecuta el evento,</li>
+                        <li><b>bool</b>, indica si el evento de captura está antes o después. Puede ser: (<span lang="en">true</span>) o (<span lang="en">false</span>)</li>
+                    </ul>
+                    <p>Los dos primeros parémetros son obligatorios</p>
+                    <p>Aunque es una forma eficaz de adjuntar un evento a un elemento en el DOM, tiene sus beneficios:</p>
+                    <ul>
+                        <li><b>Flexibilidad</b>: Permite adjuntar múltiples eventos a un mismo elemento.</li>
+                        <li><b>Separación de <i>preocupaciones</i></b>: Promueve un mejor diseño de código al separar la lógica del evento de la etiqueta HTML.</li>
+                        <li><b>Compatibilidad</b>: Es compatible con todos los navegadores modernos.</li>
+                        <li><b>No sobrescribe</b>: No sobrescribe los eventos previamente adjuntados al elemento.</li>
+                    </ul>
+                    <p>y sus problemas:</p>
+                    <ul>
+                        <li><b>Compatibilidad con versiones antiguas de IE</b>: Puede haber problemas de compatibilidad con versiones antiguas de Internet Explorer.</li>
+                        <li><b>Eventos anidados</b>: Puede haber problemas si se adjuntan eventos anidados y se necesita controlar el orden de ejecución.</li>
+                        <li><b>Escuchadores múltiples</b>: A veces, adjuntar múltiples escuchadores a un mismo evento puede complicar el código y hacerlo difícil de mantener.</li>
+                    </ul>
+                    <p>En general, se puede decir que es una buena práctica y se recomienda su uso en la mayoría de los casos.</p>
+                    <img class="center" src="https://maximoguando.com/wp-content/uploads/2018/04/llamar-funcion.jpg" alt="Cuadro de los eventos.">
+                    <p>
+                        En este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=03eid8Lc8V8">video</a>
+                        podrás aclarar cualquier duda, pero si prefieres
+                        <a tabindex="0" href="https://developer.mozilla.org/es/docs/Web/Events">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="0">¿Qué es un selector de consultas?</h3>
+                <div class="contenido">
+                    <img class="center" src="https://trspos.com/wp-content/uploads/metodo-del-selector-de-consultas-de-javascript-768x384.jpg" alt="¿Qué es un selector de consultas? JavaScript query selector() method - Explicado">
+                    <p>El <code lang="en">querySelector</code>, o selector de consulta, es un método que permite seleccionar el primer elemento que coincida con el selector especificado en el documento. Si no encuentra coincidencias devuelve <code>null</code>.</p>
+                    <pre><code><i class="comentary">// Usando querySelector con un selector de etiqueta</i>
+let div = document.querySelector(‘div’);
+
+<i class="comentary">// Usando querySelector con un selector de clase</i>
+let miClase = document.querySelector(’.miClase’);
+
+<i class="comentary">// Usando querySelector con un selector de id</i>
+let miId = document.querySelector(’#miId’);</code></pre>
+                    <p>Por otro lado tenemos el método <code>querySelectorAll</code> que devuelve todos los elementos que coinciden con el selector especificado.</p>
+                    <pre><code><i class="comentary">// Usando querySelectorAll para seleccionar todos los elementos div</i>
+let divs = document.querySelectorAll(‘div’);
+
+<i class="comentary">// Usando querySelectorAll para seleccionar todos los elementos con una clase específica</i>
+let elementosMiClase = document.querySelectorAll(’.miClase’);</code></pre>
+                    <p>Como añadido, recordar que existen también métodos de selección específicos que, aunque tienen un mejor desempeño (en la mayoría de los casos) y se pueden usar, no son recomendados. Así tenemos los métodos para etiquetas (<code>getElementsByTagName</code>), identificadores (<code>getElementsById</code>), clases (<code>getElementsByClassName</code>) etc.</p>
+                    <p>Por ejemplo, para obtener las celdas que contienen los resultados de una tabla con un <code>id</code> <i>score</i>, se pueden adoptar, al menos, dos enfoques. Al utilizar solo las específicas (API del nivel 2 de DOM), se requiere un script como el siguiente que recorre en iteración cada <code>tr</code> dentro de cada <code>tbody</code> en la tabla para encontrar la segunda celda de cada fila.</p>
+                    <pre><code>var table = document.<b>getElementById</b>(“score”);
+var groups = table.tBodies;
+var rows = null;
+var cells = [];
+
+for (var i = 0; i &lt; groups.length; i++) {
+    rows = groups[i].rows;
+    for (var j = 0; j &lt; rows.length; j++) {
+        cells.push(rows[j].cells[1]);
+    }
+}</code></pre>
+                    <p>Alternativamente, usando el método <code>querySelectorAll()</code>, ese script se vuelve mucho más conciso.</p>
+                    <pre><code>var cells = document.<b>querySelectorAll</b>(”#score&gt;tbody&gt;tr&gt;td:nth-of-type(2)”);</code></pre>
+                    <p>Hay que tener en cuenta que el script opera en el DOM y funciona independientemente de la sintaxis utilizada para crear el documento. Por lo tanto, funcionará correctamente para una tabla creada e insertada dinámicamente, XHTML o HTML.</p>
+                    <h4>Errores comunes</h4>
+                    <p>Un error común es olvidar que <code>querySelector</code> solo devuelve el primer elemento que coincide. Si se necesita seleccionar varios elementos hay que usar <code>querySelectorAll</code>.</p>
+                    <p>Otro error común es no verificar si el elemento seleccionado existe antes de manipularlo.</p>
+                    <pre><code><i class="comentary">// Forma de verificar si un elemento existe</i>
+let miElemento = document.querySelector(’.miClase’);
+if(miElemento) {
+    miElemento.style.color = ‘red’;
+}</code></pre>
+                    <p>Hay que recordar que <code>querySelectorAll</code> devuelve una <code lang="en">NodeList</code>, no un <code lang="en">Array</code>. Para usar los métodos de Array en una <code lang="en">NodeList</code>, hay que convertirlo a <code lang="en">Array</code> primero.</p>
+                    <pre><code>let divsNodeList = document.querySelectorAll(‘div’);
+let divsArray = Array.from(divsNodeList);</code></pre>
+                    <p>Está claro que la gran ventaja de su utilización es la flexibilidad que ofrece a la hora de seleccionar elementos del DOM usando selectores CSS, sin olvidar la ayuda que ofrece a la legibilidad del código al permitir la selección de elementos de forma más concisa. En cuanto a sus inconvenientes destacan la pérdida de eficiencia frente a los métodos específicos (especialmente cuando se trabaja con grandes conjuntos de datos), que no es compatible con los navegadores antiguos y que su uso excesivo puede resultar en un código menos mantenible y propenso a errores al depender en exceso de selectores específicos de la estructura del DOM.</p>
+                    <p>En resumen, es una herramienta útil para la selección de elementos, pero su uso debe ser equilibrado con consideraciones de rendimiento y compatibilidad con navegadores.</p>
+                    <p>
+                        Si quieres saber más pasa por
+                        <a tabindex="0" href="https://www.w3.org/TR/2020/SPSD-selectors-api-20201103/">aquí</a> o échale un ojo a este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=NDQeHF6nIq8">video</a>.
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+        <h2 tabindex="0">Extra</h2>
+        <ul>
+            <li>
+                <h3 tabindex="0">Tutorial CodeMirror 6</h3>
+                <div class="contenido">
+                    <img class="center" src="./img/cm6.png" alt="El éxito o el fracaso al implementar un editor es cuestión de procedimiento y no de estilo.">
+                    <p>CodeMirror es una colección de módulos que proporcionan un editor de código y texto con todas las funciones. Esto significa que se puede elegir qué instalar para configurar un editor y, según sus necesidades, requerirá que junte más o menos piezas.</p>
+                    <p>En este tutorial, veremos como implementar un editor de código en CodeMirror 6. Lo haremos para el lenguaje SQL pero el proceso se puede aplicar a todo lenguaje para el que haya librerías porque de lo contrario habría que crearlas.</p>
+
+                    <p>Empezaremos por clonar su <a tabindex="0" href="https://github.com/codemirror/dev/">directorio de desarrollo</a> en nuestro directorio de trabajo. De entre las opciones existentes he elegido</p>
+                    <pre><code class="language-bash">gh repo clone codemirror/dev</code></pre>
+                    <p>Comprobamos que la versión de <a tabindex="0" href="https://nodejs.org/">node.js</a> que tenemos instalda es superior a la 16 y es accesible</p>
+                    <pre><code class="language-bash">node --version</code></pre>
+                    <p>Para clonar los paquetes que componen el sistema, instalar dependencias y compilar los paquetes ejecutamos</p>
+                    <pre><code class="language-bash">node bin/cm.js install</code></pre>
+                    <p>En cualquier momento puedes reconstruir los paquetes, ya sea ejecutando <code>npm run prepare</code> en su subdirectorio, o todos a la vez con</p>
+                    <pre><code class="language-bash">node bin/cm.js build</code></pre>
+                    <p>Aconsejan que el desarrollo se haga configurando</p>
+                    <pre><code class="language-bash">npm run dev</code></pre>
+                    <p>que inicia un servidor que reconstruye automáticamente los paquetes cuando su código cambia y abre un servidor de desarrollo en el puerto 8090 ejecutando la <a tabindex="0" href="http://localhost:8090/">demostración</a> y las <a tabindex="0" href="http://localhost:8090/test/">pruebas del navegador</a>.</p>
+                    <p>En mi caso ha dado dos errores en la primera ejecución de las pruebas pero en la segunda ha pasado todas.</p>
+                    <div>
+                        <img src="./img/error_1.png" alt="Primer error en la primera ejecución.">
+                        <img src="./img/error_2.png" alt="Segundo error en la primera ejecución.">
+                    </div>
+                    <p>Comenzaremos creando un archivo <span class="keyword">index.html</span> con el enlace a nuestro archivo de estilos <span class="keyword">styles.css</span> y a nuestro guión <span class="keyword">editor.js</span>, sin olvidarnos del <code>div</code> con el identificador <b>editor</b> que será donde se muestre nuestro editor:</p>
+                    <div id="editor00"></div>
+                    <p>En nuestra hoja de estilos (<span class="keyword">styles.css</span>) iremos incluyendo todos los que estimemos oportunos:</p>
+                    <div id="editor01"></div>
+                    <p>Ahora podemos crear el archivo del editor principal (<span class="keyword">editor.js</span>) agregando lo siguiente:</p>
+                    <div id="editor02"></div>
+                    <p>Un editor de código real necesita combinaciones de teclas, resaltado, un margen de número de línea o un historial de deshacer, etc. Si bien se puede agregar cada uno manualmente, CodeMirror proporciona un paquete de “configuración básica” que incluye todas las funciones de un editor de código. Por eso utilizamos <span class="keyword">basicSetup</span>.</p>
+                    <p>Como puedes ver, también usamos el paquete <span class="keyword">@codemirror/lang-javascript</span>. Dado que cada lenguaje de programación tiene sus reglas y características específicas, debemos utilizar el paquete de lenguaje correcto. De esta manera nos beneficiamos de un analizador, autocompletado, resaltado, etc.</p>
+                    <p>Aquí se puede ver cómo utilizar el lang-html:</p>
+                    <div id="editor03"></div>
+                    <p>Vemos que hay dos partes:</p>
+                    <ul>
+                        <li>estado (EditorState): que contiene las estructuras de datos que modelan el estado del editor (que se compone de un documento actual y una selección)</li>
+                        <li>vista (EditorView): que proporciona la interfaz de usuario del editor.</li>
+                    </ul>
+                    <p>El editor se representará dentro del cuerpo. Si desea que se represente en otro lugar, solo se necesita cambiar el selector de elementos establecido en <span lang="en" class="keyword">parent</span> (tal y como vimos en el primer ejemplo).</p>
+                    <p>Para establecer un documento inicial para el editor, solo se necesita establecer la propiedad <span class="keyword">doc</span> en ese valor. En el primer editor le asignábamos la variable <i>jscode</i> que al comienzo habíamos declarado con nuestro código de prueba correspondiente.</p>
+                    <p>Para leer el texto actual mostrado por el editor podemos usar:</p>
+                    <div id="editor04"></div>
+                    <p>Se puede cambiar el valor de varias maneras enviando cambios.</p>
+                    <div id="editor05"></div>
+                    <p>En este ejemplo se inserta el texto al comienzo el documento.</p>
+                    <div id="editor06"></div>
+                    <p>En este otro reemplazaríamos un texto. Luego, para reemplazar todo, solo necesita obtener la longitud del texto.</p>
+                    <p>Se puede enviar varios cambios a la vez si se necesita; los cambios deben ser una serie de cambios individuales.</p>
+                    <p>Habrá veces que deseemos saber cuando se realiza un cambio y hacer algo con el nuevo código, por ejemplo, reinterpretar/evaluar el código. Esto se hace agregando un <code>updateListener</code> a la vista del editor (por supuesto, si no desea procesar cada vez que se presiona una tecla, se debe usar un tiempo de espera).</p>
+                    <div id="editor07"></div>
+                    <p>La única pieza que falta es un evaluador de código, que para JavaScript debería ser fácil de hacer (ya que se ejecuta en el navegador). Simplemente añade algo de <code>console.log()</code> para ver los resultados de la ejecución del código en la consola DevTools del navegador.</p>
+                    <div id="editor08"></div>
+                    <p>Si unimos todo, podríamos tener:</p>
+                    <div id="editor09"></div>
+                    <p>Y eso es todo. Tienes un bonito patio de juegos de JavaScript que se puede integrar en una plataforma más grande.</p>
+                    <p>
+                        En la página oficial de
+                        <a tabindex="0" href="https://codemirror.net/">CodeMirror</a>
+                        podrás encontrar toda la documentación que puedas necesitar sobre los más de 100
+                        lenguajes soportados (o como hacer que soporte el tuyo) y sobre los addons y temas (o cómo
+                        crearlos) para personalizarlo. También puedes descargar el código de
+                        <a tabindex="0" href="https://github.com/codemirror/dev/">GitHub</a>.
+                    </p>
+                    <p>
+                        Puedes ver la creación de una terminal en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=o1DDWQDBT9Y">video</a>
+                        y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=arRXx4s7o8Q">otro</a>. Y si prefieres
+                        <a tabindex="0" href="https://portal.gitnation.org/contents/usando-codemirror-para-construir-un-editor-de-javascript-con-linting-y-autocompletado">leer</a>.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script defer src="https://codemirror.net/codemirror.js"></script>
+    <script defer src="./js/cm_checkpoint_11.js"></script>
+</body>
+
+</html>
