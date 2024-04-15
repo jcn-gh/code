@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 13</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/Checkpoint_13.css">
+</head>
+
+<body>
+    <main>
+        <h1 class="typewriter">Checkpoint 13</h1>
+        <p class="center"><b>Nota</b>:<br>
+            <i>pulsa en la pregunta para ver la respuesta</i><br>
+            o sobre una imagen para ampliarla (o devolverla a su tamaño original).</p>
+        <img class="center" loading="lazy" decoding="async" src="https://www.vtc.com/files/images/courses/33815.jpeg" alt="Cabecera UML">
+        <h2>Preguntas</h2>
+        <ul>
+            <li>
+                <h3 tabindex="-1">¿Cuáles son las partes de un diagrama de clases?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="./img/dClases.png" alt="Diagrama de clases">
+                    <p>El diagrama UML de clases está formado por dos elementos: las clases y sus relaciones.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml.jpg" alt="Elementos y símbolos en los diagramas de clase.">
+                    <h4>Clases</h4>
+                    <p>Las clases son el elemento principal del diagrama y normalmente se utilizan para representar conceptos o entidades del «negocio». Una clase define un grupo de objetos que comparten características, condiciones y significado. La manera más rápida para encontrar clases sobre un enunciado, sobre una idea de negocio o, en general, sobre un tema concreto es buscar los sustantivos que aparecen en el mismo. Si no se identifican adecuadamente se generarán problemas que acabarán en un nuevo análisis.</p>
+                    <p>Una clase está compuesta por tres elementos representados en un rectángulo dividido en zonas por líneas horizontales:</p>
+                    <ul>
+                        <li>En la parte superior del bloque encontramos el <strong>nombre</strong> de cada clase, o elemento que se desea clasificar centrado y en negrita.</li>
+                        <li>En la parte central, en forma de lista o items, se ubican los <strong>atributos</strong> de dicha clase. Y, aunque el formato oficial es:<br><em class="center">visibilidad nombre_atributo : tipo = valor-inicial { propiedades }</em><br>se suele simplificar usando únicamente el nombre y a veces el tipo.</li>
+                        <li>En la parte inferior del bloque, también en forma de lista, se colocan las <strong>operaciones o métodos</strong> a implementar. De forma parecida a los atributos, sigue el formato:<br><em class="center">visibilidad nombre_funcion { parametros } : tipo-devuelto { propiedades }</em><br> y, de igual forma, se suele simplificar indicando únicamente el nombre de la función y, en ocasiones, el tipo devuelto.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://4.bp.blogspot.com/-NXQnHCrYVGY/UoXQC3D8ASI/AAAAAAAAAAY/7eMEdZgJZ5c/s1600/Sin+t%C3%ADtulo.jpg" alt="Ubicación del nombre de la clase, sus atributos y sus operaciones o métodos">
+                    </figure>
+                    <p>Tanto los atributos como las funciones incluyen al principio de su descripción la <strong>visibilidad</strong> que tendrán:</p>
+                    <ul>
+                        <li>
+                            <p><strong>(<span class="keyword">+</span>) Pública.</strong> Representa que se puede acceder al atributo o función desde cualquier clase.</p>
+                        </li>
+                        <li>
+                            <p><strong>(<span class="keyword">-</span>) Privada.</strong> Indica que se puede acceder al atributo o función únicamente desde la misma clase.</p>
+                        </li>
+                        <li>
+                            <p><strong>(<span class="keyword">#</span>) Protegida.</strong> Expresa que el atributo o función puede ser accedido únicamente desde la misma clase o desde las clases que hereden de ella (clases derivadas).</p>
+                        </li>
+                    </ul>
+                    <p>En la práctica solo se suelen usar estos tres. No obstante, aunque no es muy común, se pueden usar otros símbolos como <strong>(<span class="keyword">/</span>) Derivado</strong>, <strong>(<span class="keyword">_</span>) Estático</strong> y <strong>(<span class="keyword">~</span>) Paquete</strong>.</p>
+
+                    <h4>Relaciones</h4>
+                    <p>Una relación <strong>identifica una dependencia</strong>. Esta dependencia puede ser entre dos o más clases (la más común) o de una clase hacía sí misma (raro, pero existen), este último tipo se denomina <em>dependencia reflexiva</em>. Las relaciones se representan con una linea que une las clases y variará dependiendo del tipo de relación. Como ejemplo cercano de relación reflexiva tendríamos la de parentesco, en la que la clase <span class="keyword">Persona</span> tendría una relación con otra instancia de la misma clase <span class="keyword">Persona</span> para indicar cómo una persona puede ser el progenitor o el descendiente de otra persona.</p>
+                    <figure>
+                        <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases1.png" alt="Relación reflexiva">
+                        <figcaption>Relación reflexiva</figcaption>
+                    </figure>
+                    <p>Las relaciones en el diagrama de clases tienen varias propiedades que, dependiendo del nivel de detalle que se quiera dar al diagrama, se representarán o no. Estas propiedades son las siguientes:</p>
+                    <ul>
+                        <li><strong>Multiplicidad</strong>. Es decir, el número de elementos de una clase que participan en una relación. Se puede indicar un número, un rango… Se utiliza <em>n</em> o * para identificar un número cualquiera.</li>
+                        <li><strong>Nombre de la asociación.</strong> En ocasiones se escribe una indicación de la asociación que ayuda a entender la relación que tienen dos clases. Suelen utilizarse verbos como por ejemplo: «Una empresa contrata a n empleados»</li>
+                    </ul>
+                    <figure>
+                        <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/Clase8.png" alt="Ejemplo de relación Empresa-Empleado">
+                        <figcaption>Ejemplo de relación Empresa-Empleado</figcaption>
+                    </figure>
+                    <p>Los tipos de relación son los siguienteses:</p>
+                    <ul>
+                        <li>
+                            <p><strong>Asociación.</strong> Es el más común y se utiliza para representar dependencia semántica, es decir, una clase es <em>consciente</em> de la otra. Puede ser unidireccional o bidireccional y se representa con una simple linea continua que une las clases que están incluidas en la asociación.</p>
+                            <figure>
+                                <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases2.png" alt="Ejemplo de asociación">
+                                <figcaption>Ejemplo de asociación</figcaption>
+                            </figure>
+                            <p>En el caso de la relación de asociación entre las clases <span class="keyword">Persona</span> y <span class="keyword">Mascota</span>, podríamos tener una asociación donde una persona podría tener una o más mascotas. Esta asociación sería unidireccional, ya que la persona es consciente de sus mascotas, pero las mascotas pueden no ser conscientes de la persona propietaria. La multiplicidad en esta relación podría indicar que una persona puede no tener ninguna, o tener una o más mascotas.</p>
+                            <p>Esta asociación se representaría con una línea continua conectando las clases <span class="keyword">Persona</span> y <span class="keyword">Mascota</span>, con una flecha apuntando hacia la clase <span class="keyword">Mascota</span> para indicar la dirección de la asociación.</p>
+                        </li>
+                        <li>
+                            <p><strong>Agregación.</strong> Representa relaciones en las que una clase es parte de otra contenedora, pero aun así debe tener existencia en sí misma y puede estar asociada con otras clases. Se representa con una línea que tiene un rombo hueco/vacío en la parte de la clase contenedora.</p>
+                            <figure>
+                                <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases3.png" alt="Ejemplo de agregación">
+                                <figcaption>Ejemplo de agregación</figcaption>
+                            </figure>
+                            <p>En este caso una <span class="keyword">mesa</span> tiene <span class="keyword">tablas de madera</span> como parte de su estructura, pero las tablas de madera pueden existir por sí solas y estar asociadas con otros objetos, además de una mesa.</p>
+                            <p>En otro ejemplo, un Comité puede tener varios miembros, pero el destruir el Comité no debe causar la destrucción de los miembros, ya que pueden ser miembros de otros Comités.</p>
+                        </li>
+                        <li>
+                            <p><strong>Composición.</strong> Es similar a la agregación, representa una relación jerárquica entre un clase y las partes que la componen pero, en este caso, la existencia de las clases de la que forman parte no tiene sentido cuando la primera clase no existe. Es decir, cuando la clase que contiene las otras desaparece, deben desaparecer todas las clases ya que no tienen sentido por sí mismas sino que dependen de la clase que conforman. Además de tener el mismo tiempo de vida, los componentes no se comparten entre varias clases, a diferencia de lo que ocurre con la agregación. Se representa con una linea continua con un rombo relleno en la clase que está “compuesta” por otra clase. Esto significa que la clase que contiene la composición es responsable de la creación y destrucción de la clase que está siendo compuesta.</p>
+                            <figure>
+                                <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases4.png" alt="Ejemplo de composición">
+                                <figcaption>Ejemplo de composición</figcaption>
+                            </figure>
+                            <p>Aquí vemos como la clase <span class="keyword">vuelo</span> está compuesta por la clase <span class="keyword">pasajero</span> y, por tanto, si se destruye la clase <span class="keyword">vuelo</span> también será destruida la clase <span class="keyword">pasajero</span> que estaba asociada a él.</p>
+                            <p>En otro ejemplo, un cliente puede tener un nombre y una dirección. Un cliente sin nombre o dirección no tiene valor. Por la misma razón, cuando se destruye al cliente, no tiene sentido mantener el nombre y la dirección.</p>
+                        </li>
+                        <li>
+                            <p><strong>Dependencia.</strong> Se utiliza este tipo de relación para representar que una clase requiere de otra para su funcionamiento, pero no está directamente relacionada con ella. Es muy sencilla y se representa con una flecha discontinua que va desde la clase que depende hasta la clase de la que depende.</p>
+                            <figure>
+                                <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases5.png" alt="Ejemplo de dependencia">
+                                <figcaption>Ejemplo de dependencia</figcaption>
+                            </figure>
+                            <p>Supongamos que tenemos una clase <span class="keyword">Coche</span> que tiene un método <span class="keyword">motorArranque</span> que toma un objeto de la clase <span class="keyword">Motor</span> como parámetro para arrancar el motor. En este caso, la clase <span class="keyword">Coche</span> depende de la clase <span class="keyword">Motor</span> para poder arrancar su motor.</p>
+                        </li>
+                        <li>
+                            <p><strong>Herencia.</strong> Es muy común ya que permite que una clase (clase hija o subclase) reciba (herede) los atributos y métodos de otra clase (clase padre o superclase). Estos atributos y métodos recibidos se suman a los que la clase tiene por sí misma. Se representa mediante una línea continua con una flecha vacía que apunta desde la clase hija hacia la clase padre.</p>
+                            <figure>
+                                <img loading="lazy" decoding="async" src="https://diagramasuml.com/wp-content/uploads/2018/08/clases6.png" alt="Ejemplo de herencia">
+                                <figcaption>Ejemplo de herencia</figcaption>
+                            </figure>
+                            <p>Aquí vemos como todos los animales heredan el método <span class="keyword">respirar()</span> de la clase <span class="keyword">Animal</span>.</p>
+                        </li>
+                    </ul>
+                    <p>En el ejemplo siguiente podemos ver, en la práctica, lo anterior.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml-ejemplo-2.jpg" alt="Diagrama de clases de un servicio de alquiler de autos.">
+                    <p>En el diagrama se observa una línea horizontal que representa la asociación que hay entre la <span class="keyword">Agencia</span> y el <span class="keyword">Cliente</span> para realizar el intercambio económico.</p>
+                    <p>Sin embargo, para que la transacción sea posible es indispensable la <span class="keyword">Atención al cliente</span> por ello se representa con una flecha discontinua.</p>
+                    <p>Las siguientes flechas son las que salen del <span class="keyword">Cliente</span> a la <span class="keyword">Reservación</span> y de ésta al <span class="keyword">Pago</span>, en estos casos las flechas en un extremo poseen una forma de rombo de color negro que representan composición. Es decir, que la <span class="keyword">Reservación</span> se compone del <span class="keyword">Cliente</span> y que a su vez el <span class="keyword">Pago</span> se compone de la <span class="keyword">Reservación</span>, ya que, de no existir el <span class="keyword">Cliente</span> la <span class="keyword">Reservación</span> y el <span class="keyword">Pago</span> no serían posibles.</p>
+                    <p>En cuanto a la multiplicidad, en este caso la agencia puede relacionarse con uno o muchos clientes (1…*), los clientes pueden hacer la reserva de un solo auto (1) a la vez y al cliente se le permite hacer un único pago o fraccionarlo en varias partes (1…*).</p>
+                    <h4>¿Por dónde seguir?</h4>
+                    <p>Para documentarte más puedes recurrir a la <a tabindex="0" href="http://www.uml.org/" target="_blank" rel="noreferrer noopener">fuente</a>, leer el <a tabindex="0" href="https://www.lucidchart.com/pages/es/tutorial-de-diagrama-de-clases-uml">tutorial</a> o ver el <a tabindex="0" href="https://www.youtube.com/watch?v=kNV-NvBuH7M" target="_blank" rel="noreferrer noopener">video</a> introductorio.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Los diagramas de implementación son estructurales o conductuales?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="./img/dImplementacion.png" alt="Diagrama de implementación">
+                    <p>Dentro de los diagramas <strong>estructurales</strong> se encuentran los diagramas de implementación (o componentes) que muestran la forma física del sistema, es decir, permiten visualizar la arquitectura física del <i lang="en">hardware</i>, el <i lang="en">software</i> y todos los dispositivos del sistema.</p>
+                    <p>Este tipo de diagramas representa un elemento muy importante en la documentación de sistemas pues ayudan con la planificación de proyectos complejos y facilitan la comprensión de la arquitectura del proyecto. Cuando los componentes de <i lang="en">hardware</i> se muestran en relación con los demás, es más fácil hacer un seguimiento de toda la infraestructura de <i lang="en">hardware</i> y asegurarse de que todos los elementos se tienen en cuenta en una implementación.</p>
+                    <p>Se pueden dividir, básicamente, en:</p>
+                    <ul>
+                        <li>
+                            <p>Diagrama de paquetes. Se utilizan para mostrar las dependencias entre los diferentes paquetes de un sistema. Un paquete, representado como una carpeta de archivos, organiza los elementos del modelo, como los casos de uso o las clases, en grupos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://lucidchart.directus.app/assets/361f2435-77e0-4513-9477-c49dd11a2ec7.png" alt="Ejemplo de diagrama de paquetes.">
+                        </li>
+                        <li>
+                            <p>Diagramas de componentes. Representan las dependencias entre varios componentes físicos del sistema. Muestran la organización (contención de unos dentro de otros) y las dependencias entre componentes de <i lang="en">software</i>.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/component-diagram-for-ATM-system-UML/component_diagram_ATM_system-843x746.PNG" alt="Diagrama de componentes para un sistema de cajero automático.">
+                            <p>
+                                Normalmente se consideran componentes de <i lang="en">software</i> de tres niveles:</p>
+                            <ul>
+                                <li>Código fuente. Muestra las dependencias de compilación entre ficheros.</li>
+                                <li>
+                                    <p>Librerías. Muestra el mapeo de las clases a librerías en tiempo de ejecución.</p>
+                                    <p>La siguiente figura ilustra que la libreria <span class="keyword">Trade</span> (Trade.dll) depende de la clase <span class="keyword">Slate</span> (Slate.cls) y la clase <span class="keyword">Trade</span> (Trade.cls).</p>
+                                    <img class="center" loading="lazy" decoding="async" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjRZc9hrT3o0MxYQvv78l3-MB0yOd5QUl5ri4FKEvhqH1hDUpWtoJKM0ReDs7yr6vUY2PAOMaSYu9X53_a0I-u9XHbufv0bKrqHzRZTtGOICryMK9JhDSKTG8vA8h6OMJMz11CQTqdLo8/s1600/Trade.png" alt="La libreria Trade (Trade.dll) depende de la clase Slate (Slate.cls) y la clase Trade (Trade.cls).">
+                                </li>
+                                <li>
+                                    <p>Ejecutables. Muestra las interfaces y las dependencias de las llamadas entre programas ejecutables.</p>
+                                    <img class="center" loading="lazy" decoding="async" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSzTG74x0Myjtfu8vgIGStGQfIIQVaB09G3b470FkoUO8ogeo-qv1QiGB_BA1eXdUCFTDdF02YChlP66dTQdmXz1khsj5BnRXThgVSwpimLk_d-SNh01hVd8MrgeD5LngYHqXcTV0_4-w/s1600/Trade.png" alt="Ejemplo de comunicación de el ejecutable y libreria con interface.">
+                                    <p>Esta figura muestra que el ejecutable <span class="keyword">Trade</span> se comunica con el ejecutable <span class="keyword">Contracts</span> a través de la interface <span class="keyword">TradeContract</span>. También se comunica con la libreria <span class="keyword">Trade</span> por medio de la interface <span class="keyword">Trade</span>.</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Diagramas de despliegue. Visualizan la configuración del sistema en tiempo de ejecución a partir de ilustrar como los procesos se distribuyen en procesadores, ordenadores u otros dispositivos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIpufeNsEE5yXvfW4Ms6p4MVKe2sRoClL9mZG2l8J1GLZr8K2tzJcmeIxwfUk639QMPIWQ-ZI1Hp6kg3vPxJr2PThxGDzyJzAwrcn03VpqZCJC7_Qq3B9VW1IuPWJMaPbXG70HDe2r8Wc/s1600/Deployment.png" alt="Ejemplo de diagrama de despliegue">
+                        </li>
+                    </ul>
+
+                    <p>¡¿No te ha quedado claro?! En este
+                        <a tabindex="0" href="https://tutoriales.edu.lat/pub/uml/uml-deployment-diagram/uml-diagramas-de-implementacion" target="_blank" rel="noreferrer noopener">tutorial</a>, en este
+                        <a tabindex="0" href="https://www.guru99.com/es/deployment-diagram-uml-example.html" target="_blank" rel="noreferrer noopener">artículo</a>
+                        y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=yZSOnx5iMEI" target="_blank" rel="noreferrer noopener">video</a> o en este <a tabindex="0" href="https://www.youtube.com/watch?v=s0R132efDoc" target="_blank" rel="noreferrer noopener">otro video</a> te lo pueden aclarar… o no.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es un diagrama de actividad?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="./img/dActividad.png" alt="Diagrama de actividad.">
+                    <p>Dentro de los diagramas UML de comportamiento encontramos los diagramas de actividades, que representan el flujo de los procedimientos de un programa o sistema de cualquier área. Dicho de otra forma, los diagramas de actividad muestran las acciones que realizan los usuarios a la hora de usar algún servicio como, por ejemplo, el cajero automático.</p>
+                    <p>Estos diagramas se integran con formas especializadas que luego se conectan con flechas e indican las operaciones que se deben ejecutar cronológicamente.</p>
+                    <h4>Símbolos</h4>
+                    <p>Estos son algunos de los símbolos que se emplean:</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/inicio.png" alt="Símbolo de inicio.">
+                        <strong>Inicio</strong>: como su nombre indica, es el comienzo del proceso.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/actividad.png" alt="Símbolo de actividad.">
+                        <strong>Actividad</strong>: son descripciones breves de las labores en el proceso de modelado.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/conector.png" alt="Símbolo de conector.">
+                        <strong>Conector</strong>: es una flecha entrante que indica el inicio de una actividad, es decir, el flujo direccional. Tras finalizar el proceso comienza otro con la flecha saliente.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/image4.png" alt="Símbolo de unión o barra de sincronización.">
+                        <strong>Barra de sincronización</strong>: se refiere a la combinación o bifurcación de actividades que solo pueden repetirse una vez. La línea gruesa también se puede trazar de forma vertical. En este ejemplo se observa como dos actividades se unen en una.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/decision.png" alt="Símbolo de decisión.">
+                        <strong>Decisión</strong>: indica que se tiene que elegir una opción y se añade una descripción con las opciones a considerar.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/nota.png" alt="Símbolo de nota.">
+                        <strong>Nota</strong>: sirve para aclarar detalles o indicar especificaciones.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/enviar-senal.png" alt="Símbolo de enviar señal.">
+                        <strong>Símbolo de enviar señal</strong>: se refiere a que se está remitiendo una señal a una actividad receptora.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07//historia-superficial.png" alt="Símbolo de historia superficial.">
+                        <strong>Historia superficial</strong>: transición del último estado activo.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/simbolo-final-flujo.png" alt="Símbolo de final de flujo.">
+                        <strong>Símbolo de final de flujo</strong>: indica que concluyó el flujo de un proceso específico.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/condicion.png" alt="Símbolo de condición.">
+                        <strong>Condición</strong>: señala que el flujo de actividad debe dividirse en otra dirección, resaltando su condición.</p>
+                    <p>
+                        <img loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/finalizacion.png" alt="Símbolo de finalizacion.">
+                        <strong>Finalización</strong>: señala el cese de actividades.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://3.bp.blogspot.com/-0crpNglo3ZI/U7wnNx204gI/AAAAAAAAIDg/ZLxGxDZzrGk/s1600/Ejemplo+Diagrama+Actividades+-+New+Page.png" alt="Ejemplo de diagrama de actividad para procesar un pedido.">
+                    <h4>¿Para qué se utiliza?</h4>
+                    <p>El diagrama de actividades es una herramienta útil a la hora de compartir información. Es ideal para ilustrar las operaciones que se realizan en un sistema, describiendo las diferentes fases por las que se pasa.</p>
+                    <p>Aunque se emplea con frecuencia en el campo de la informática (a fin de explicar la lógica de un algoritmo o una función, el método y la operación de la arquitectura de un software), el esquema se aplica igualmente en procesos industriales y de negocio.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/diagrama-de-actividades.jpg" alt="Ejemplo de diagrama de actividades de ofertas.">
+
+                    <p>Puedes ampliar conocimientos leyendo este <a tabindex="0" href="https://es.venngage.com/blog/diagrama-de-actividades/">artículo</a> o viendo este <a tabindex="0" href="https://www.youtube.com/watch?v=cqpDepWz9V4&t=364s" target="_blank" rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿De qué manera el diseño del sistema ayuda al proceso de desarrollo?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="./img/sistema-desarrollo_2s.png" alt="Cabecera stop diseño.">
+                    <h4>Ciclo de vida de un sistema de información</h4>
+                    <p>Para saber a qué nos enfrentamos al momento de desarrollar un sistema de información, es necesario tener una visión general de la arquitectura de un sistema, y, en nuestro caso, incidiendo en el trabajo que se lleva a cabo, inmediatamente antes, en la fase de diseño del sistema.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://2.bp.blogspot.com/-NVy6vO2F4aM/VkN78oq-zqI/AAAAAAAAAIw/yTBD2H9nY20/s1600/TERCERO.png" alt="Ciclo de vida de un sistema de información.">
+                    <p>El proceso se inicia siempre con la petición de ayuda (de un sistema de información) por parte de una persona.</p>
+                    <p>Continua con la <strong>determinación de los requisitos del sistema</strong> en la fase de analisis. El aspecto fundamental del análisis de sistemas es comprender todas las facetas importantes de la parte de la empresa que se encuentra bajo estudio. Los analistas, al trabajar con los empleados y administradores, deben estudiar los procesos de una empresa para dar respuesta a las siguientes preguntas:</p>
+                    <ul>
+                        <li>¿Qué es lo que hace?</li>
+                        <li>¿Cómo se hace?</li>
+                        <li>¿Con qué frecuencia se presenta?</li>
+                        <li>¿Cuál es el volumen de transacciones o decisiones?</li>
+                        <li>¿Cuál es el grado de eficiencia con el que se efectúan las tareas?</li>
+                        <li>¿Existe algún problema?</li>
+                        <li>¿Cómo de serio es?</li>
+                        <li>¿Cuál es la causa que lo origina?</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://image.slidesharecdn.com/analisisdesistemas-blog-110317185910-phpapp02/95/analisis-de-sistemas-10-728.jpg?cb=1300388897" alt="Ciclo de vida del sistema.">
+                    </figure>
+                    <p>Como puede verse, es un proceso de recopilación e interpretación de hechos, identificación de problemas y descomposición de un sistema en sus componentes, e incluye estudios de viabilidad, diagramas de flujo de datos y otras técnicas.</p>
+                    <p>Con esa base de conocimiento se elabora el documento de <em>Especificación de requisitos de <i lang="en">software</i> (SRS)</em> donde se detalla qué debería hacer el sistema.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://codestar.vn/wp-content/uploads/2022/05/srs-software-requirements-specification-acronym.jpg" alt="Logotipo SRS.">
+                    <h4>Diseño de sistemas</h4>
+                    <p>Fases que incluye:</p>
+                    <ul>
+                        <li>
+                            <p>Inclusión en el diseño de los componentes de <i lang="en">hardware</i>, aplicaciones, redes, bases de datos, interfaces de usuario, interfaces del sistema y la creación de los casos de prueba.</p>
+                        </li>
+                        <li>
+                            <p>Transformación del documento de <em>Especificación de requisitos de <i lang="en">software</i> (SRS)</em> en una estructura lógica, que contiene un conjunto completo y detallado de especificaciones que se pueden implementar en un lenguaje de programación.</p>
+                            <figure>
+                                <img class="center" loading="lazy" decoding="async" src="https://s7280.pcdn.co/wp-content/uploads/2017/09/srs-software-requirement-specifications-1024x754.jpg" alt="Tipos de especificaciones SRS.">
+                                <figcaption>Tipos de especificaciones SRS.</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <p>Creación de un plan de contingencia, capacitación, mantenimiento y operación.</p>
+                        </li>
+                        <li>
+                            <p>Revisión del diseño propuesto, asegurándose que el diseño final cumple con los requisitos establecidos en el documento SRS y con unos estándares mínimos:</p>
+                            <ul>
+                                <li>Identificación de los límites e interfaces del sistema</li>
+                                <li>Una clara comprensión de los requisitos del sistema</li>
+                                <li>Diseño lógico y físico del sistema</li>
+                                <li>Elección de las tecnologías y arquitecturas adecuadas</li>
+                                <li>Escalabilidad y extensibilidad</li>
+                                <li>Seguridad y fiabilidad</li>
+                                <li>Facilidad de mantenimiento y evolución</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Por último, elaboración de un documento de diseño que se utilizará en las siguientes fases.</p>
+                        </li>
+                    </ul>
+                    <p>Veamos cuáles son las principales tareas realizadas durante el proceso de diseño del sistema.</p>
+                    <ol>
+                        <li>Crear la definición del diseño
+                            <ul>
+                                <li>Planificar e identificar las tecnologías que se utilizarán para construir e implementar los componentes del sistema y las interfaces físicas.</li>
+                                <li>Determinar qué tecnologías y componentes del sistema están en peligro de quedar obsoletos o evolucionar a lo largo de la etapa operativa del sistema. Hacer los preparativos para su eventual reemplazo.</li>
+                                <li>Documentar el enfoque de definición del diseño, incluidos los sistemas, bienes o servicios que se requieren para completar el diseño.</li>
+                            </ul>
+                        </li>
+                        <li>Determinar los atributos del diseño
+                            <ul>
+                                <li>Definir los criterios de diseño relacionados con las características arquitectónicas y asegurarse de que puedan implementarse.</li>
+                                <li>Definir las interfaces que no se establecieron durante la fase de arquitectura del sistema o que deben definirse a medida que los detalles del diseño se vuelven más precisos.</li>
+                                <li>Definir y registrar los atributos de diseño de cada elemento del sistema.</li>
+                            </ul>
+                        </li>
+                        <li>Considerar las opciones para obtener componentes
+                            <ul>
+                                <li>Examinar las alternativas de diseño.</li>
+                                <li>Elegir las mejores opciones.</li>
+                                <li>Si se decide desarrollar el elemento del sistema, se emplearán el resto de los procesos de definición e implementación del diseño. Si se opta por comprar o reutilizar un elemento del sistema, se puede emplear el método de adquisición para obtenerlo.</li>
+                            </ul>
+                        </li>
+                        <li>Organizar el diseño
+                            <ul>
+                                <li>Capturar y realizar un seguimiento del razonamiento detrás de cada parte del diseño y decisión arquitectónica.</li>
+                                <li>Evaluar y mantener el control sobre la progresión de los atributos de diseño.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://1.bp.blogspot.com/--gaJScohHuw/VV2LLMUL3TI/AAAAAAAAAEU/VjDnW94r2oU/s1600/Dise%25C3%25B1o%2Bde%2BSistemas.png" alt="Partes del diseño de sistemas de computación.">
+                    </figure>
+                    <p>Por otra parte, las innovaciones habidas durante las dos décadas anteriores han cambiado nuestra perspectiva sobre el desarrollo de <i lang="en">software</i>.</p>
+                    <p>Las aplicaciones y servicios que usamos a diario, son todos sistemas escalables. Debido a que estos sistemas son utilizados por miles de millones de personas en todo el mundo al mismo tiempo, deben construirse para administrar volúmenes masivos de tráfico y datos. Aquí es donde el diseño del sistema entra en juego.</p>
+                    <p>Cada vez es más importante comprender ideas de diseño de sistemas y cómo aplicarlas al trabajo diario, y se convertirá en un elemento más importante a medida que pase el tiempo. Por lo tanto, independientemente del nivel, el diseño del sistema es importante.</p>
+                    <p>Por último, citar algunos de los beneficios del diseño del sistema</p>
+                    <ul>
+                        <li>Agiliza los trámites.</li>
+                        <li>Disminuye el precio del diseño.</li>
+                        <li>Se eliminan las inconsistencias.</li>
+                        <li>Ofrece varios recursos y posibilidades.</li>
+                        <li>Hace la vida del cliente más fácil y sencilla.</li>
+                    </ul>
+                    <p>En resumen, el diseño de un sistema de información produce los elementos que establecen cómo cumplirá el sistema los requerimientos indicados durante la etapa de análisis.</p>
+                    <p>Además, este diseño es revisado por el director del proyecto y el cliente para asegurarse que satisface sus necesidades.</p>
+                    <h4>Consecuencia</h4>
+                    <img class="center" loading="lazy" decoding="async" src="https://3.bp.blogspot.com/-MsM4zZUkEco/TdCEf0LJmCI/AAAAAAAAAFI/KgBNlOxRtOg/s1600/ciclo_de_vida.jpg" alt="Ciclo de vida del sistema.">
+                    <p>Si no existiera un diseño del sistema solo se tendría un objetivo que alcanzar, unas necesidades que cubrir, algunas opciones entre las que elegir y&hellip; poco más.</p>
+                    <p>Sin un diseño no habría nada en lo que basarse (requisitos, especificaciones&hellip;), nada que implementar (aplicaciones, interfaces, bases de datos&hellip;) y, por lo tanto, habría que ir improvisando sobre la marcha e ir avanzando por <em>“prueba y error”</em>.</p>
+                    <p>Habría que empezar por organizar el caos e ir haciendo el trabajo básico del diseño del sistema y tomar decisiones para las que habría que estar en comunicación con otros departamentos.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.processmaker.com/wp-content/uploads/2020/04/ProcessMakerBAM-03.png" alt="Reunión de trabajo.">
+                    <p>El desarrollo se convertiría en una <em>carrera de obstáculos</em> permanente por la falta de documentación en la que basarse para repartir el trabajo y desarrollar las diferentes partes. Por lo que, de una u otra forma, habría que lograr tener una comunicación constante y fluida en el equipo de desarrollo para que no se <em>pisasen</em> unos a otros y/o para que las diferentes partes funcionaran conjuntamente.</p>
+                    <p>En definitiva, podría convertirse en el <em>“cuento de nunca acabar”</em>, en un trabajo interminable y agotador.</p>
+                    <h4>Conclusión</h4>
+                    <p>La mayoría del trabajo que se realiza en la parte del diseño del sistema habría que realizarlo en la fase de análisis o en la de desarrollo. En el mejor de los casos, que hubiera personas que pudieran realizar esas labores, probablemente se entraría en conflictos de interés. Lo que es seguro es que se sobrecargaría una o ambas fases, lo que derivaría en ineficacia, falta de productividad y aumento considerable del tiempo de desarrollo.</p>
+                    <p>Aunque, a primera vista, sea la fase que la mayoría de la gente eliminaría, llegado el momento habría que pensárselo dos veces.</p>
+
+                    <p>En este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=j83X1if9h1A" target="_blank" rel="noreferrer noopener">video</a>
+                        podrás aclarar dudas, pero si lo tuyo es
+                        <a tabindex="0" href="https://www.ttandem.com/blog/desarrollo-que-son-los-sistemas-de-diseno/7-ventajas-de-los-sistemas-de-diseno/" target="_blank" rel="noreferrer noopener">leer</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Por qué usaríamos un diagrama de implementación?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="./img/usar-implementacion.png" alt="Diagrama de implementación: Cabecera">
+                    <p>Se puede decir que hay diferentes aspectos o enfoques que se pueden representar dentro de un diagrama de implementación:</p>
+                    <ul>
+                        <li>
+                            <p><strong>Diagramas de Despliegue</strong>: Muestran la configuración física de los componentes de <i lang="en">hardware</i> y cómo las aplicaciones de <i lang="en">software</i> se distribuyen entre ellos. Son útiles para planificar la infraestructura física y para asegurar que los recursos de <i lang="en">hardware</i> están adecuadamente asignados para cumplir con los requisitos del sistema.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://image.slidesharecdn.com/diagramas-de-implementacion-110316084514-phpapp02/75/diagramas-de-implementacion-16-2048.jpg" alt="Diagrama de despliegue de un ordenador.">
+                        </li>
+
+                        <li>
+                            <p><strong>Diagramas de Componentes</strong>: Muestran cómo se organizan y se relacionan los componentes de <i lang="en">software</i> entre sí y con el <i lang="en">hardware</i>. Son útiles para entender la estructura del <i lang="en">software</i> y cómo los componentes individuales se conectan y dependen unos de otros.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://plantillaarbolgenealogico.net/wp-content/uploads/2022/07/diagrama-de-componentes-ejemplo-software-de-correo-electronico.jpg" alt="Diagrama de componentes de un software de correo electrónico.">
+                        </li>
+                        <li>
+                            <p><strong>Diagramas de Paquetes</strong>: Representan la estructura de los paquetes (módulos o <i lang="en">namespaces</i>) de un sistema de <i lang="en">software</i>. Se utilizan para visualizar la agrupación lógica de elementos de un sistema y mostrar las dependencias entre los distintos paquetes. Son útiles para permitir a los desarrolladores comprender rápidamente la organización del código, identificar posibles ciclos de dependencia que puedan causar problemas, y facilitar la comunicación entre los miembros del equipo sobre la arquitectura del sistema.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://diagramaweb.com/wp-content/uploads/2020/10/diagrama-de-paquetes-sistema.png" alt="Diagrama de paquetes de un sistema.">
+                        </li>
+                    </ul>
+                    <p>Estos diagramas se utilizan en diferentes etapas del desarrollo de sistemas:</p>
+                    <ul>
+                        <li><strong>En la fase de diseño</strong>, para ayudar a visualizar y planificar cómo se implementará el sistema en el entorno de producción.</li>
+                        <li><strong>Durante la implementación</strong>, para guiar la configuración física y la instalación de <i lang="en">software</i>.</li>
+                        <li><strong>En la gestión y mantenimiento</strong>, para ayudar en la resolución de problemas y en la optimización del rendimiento del sistema.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://slidetodoc.com/presentation_image_h/fc82c91d13ba83b6dc4dd20b8abdeedf/image-37.jpg" alt="Ejemplo de diagrama de despliegue.">
+                    </figure>
+                    <p>Cada uno de estos diagramas sirve para proporcionar una visión clara de diferentes aspectos de la arquitectura física y lógica del sistema, facilitando así la toma de decisiones y la comunicación entre los miembros del equipo de desarrollo y las partes interesadas.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://i.stack.imgur.com/sX6KY.png" alt="Ejemplo de diagrama de despliegue de servidor de aplicaciones web.">
+                    <p>En general, un diagrama de implementación es útil para:</p>
+                    <ul>
+                        <li>Visualizar la arquitectura física de un sistema y cómo interactúan los diferentes componentes en un entorno específico.</li>
+                        <li>Planificar la implementación real del sistema, identificar los recursos necesarios y comprender la relación entre los componentes de <i lang="en">software</i> y <i lang="en">hardware</i>.</li>
+                        <li>Identificar las dependencias entre los componentes de <i lang="en">software</i>.</li>
+                        <li>Verificar la integridad y la disponibilidad de los componentes de <i lang="en">hardware</i> y de <i lang="en">software</i>.</li>
+                        <li>Ayudar a asegurar que todos los aspectos físicos del sistema están adecuadamente contemplados y coordinados, lo que puede mejorar la eficiencia y reducir los riesgos durante la implementación del sistema.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://revistaseug.ugr.es/index.php/RETOSXXI/article/download/24228/version/19961/22850/82301/Image_006.jpg" alt="Desarrollo de un modelo de robot aplicado a la educación y simulación.">
+                    </figure>
+                    <p>Ejemplos prácticos:</p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://www.researchgate.net/profile/Mireille-Blay-Fornarino/publication/237502645/figure/fig5/AS:669533266251796@1536640578640/nitial-Context-Model-Updating-by-the-ACL-Profile-Integration.jpg" alt="Actualización inicial del modelo de contexto mediante la integración del perfil ACL.">
+                        <figcaption>Actualización inicial del modelo de contexto mediante la integración del perfil ACL.</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Mxwm7D3oqBO5aGcXbZzIsw.png" alt="Diagrama de balanceador de carga.">
+                        <figcaption>Balanceador de carga con tres servidores web de respaldo y un servidor de imágenes.</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://www.3ds.com/uploads/pics/no-magic-magicdraw-package-diagram.png" alt="Diagrama de paquetes de medidas.">
+                        <figcaption>Diagrama de paquetes de medidas.</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://www.en.pms.ifi.lmu.de/publications/diplomarbeiten/Holger.Wagner/diagrams/DeploymentPeerToPeer.gif" alt="Hacia un enfoque integrado para el uso colaborativo de la web.">
+                        <figcaption>Hacia un enfoque integrado para el uso colaborativo de la web.</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://images.edrawsoft.com/images2020/deployment-example1.jpg" alt="Diagrama de despliegue de servidor de aplicaciones web.">
+                        <figcaption>Diagrama de despliegue de servidor de aplicaciones web.</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://www.edrawsoft.com/templates/images/online-reading-uml-component.png" alt="Diagrama de componentes de lectura en línea.">
+                        <figcaption>Diagrama de componentes de lectura en línea.</figcaption>
+                    </figure>
+
+                    <p>Este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=NSB0ATJUavA" target="_blank" rel="noreferrer noopener">video</a>, <a tabindex="0" href="https://www.youtube.com/watch?v=oOycG_n1ARs" target="_blank" rel="noreferrer noopener">este</a> y <a tabindex="0" href="https://www.youtube.com/watch?v=ataioNckj-E" target="_blank" rel="noreferrer noopener">este otro</a> te podrán aclarar dudas, pero si te gusta <a tabindex="0" href="https://campusvirtual.ull.es/ocw/pluginfile.php/14343/mod_resource/content/1/6.%20Diagramas%20de%20Implementaci%C3%B3n.pdf" target="_blank" rel="noreferrer noopener">leer</a>.</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <script defer src="./js/cm_checkpoint_13.js"></script>
+
+</body>
+
+</html>
