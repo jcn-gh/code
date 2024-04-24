@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 14</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/Checkpoint_14.css">
+</head>
+
+<body>
+    <main>
+        <h1 class="typewriter difuminado">Checkpoint 14</h1>
+        <p class="center difuminado"><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta</i><br>
+            o sobre una imagen para ampliarla (o devolverla a su tamaño original).
+        </p>
+        <img class="center" loading="lazy" decoding="async"
+            src="https://losmejorescursosde.com/wp-content/uploads/2021/08/react.png" alt="Cabecera React JS.">
+        <h2>Preguntas</h2>
+        <ul>
+            <li>
+                <h3 tabindex="-1">¿Cuál es el comando para instalar un módulo de nodo? y ¿ si quiero instalar una
+                    versión concreta?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://hackanons.com/wp-content/uploads/2021/07/nodejs-npm.gif"
+                        alt="Cabecera Node JS y NPM">
+                    <h4>¿Cómo instalar paquetes?</h4>
+                    <p>Primero, abre una terminal.</p>
+                    <p>Debes asegurarte de tener Node.js y NPM instalados.</p>
+                    <p>En la línea de comandos, escribe estos comandos:</p>
+                    <pre><code>node -v
+npm -v</code></pre>
+                    <p>Deberías obtener un número de versión al ingresar cada uno de los comandos anteriores.</p>
+                    <p>Antes de comenzar a instalar paquetes, necesitas un archivo <span
+                            class="keyword">package.json</span>. Este archivo realiza un seguimiento de todos los
+                        paquetes que utiliza un proyectos.</p>
+                    <p>Para crearlo, comienza creando una nueva carpeta y, dentro de ella, escribe lo siguiente en la
+                        línea de
+                        comandos:</p>
+                    <pre><code>npm init -y</code></pre>
+                    <blockquote>
+                        <p><strong>Nota</strong>: Si vas a usar Git para el control de versiones, crea el
+                            repositorio de Git primero y luego ejecuta <code>npm init</code>. El comando entiende de
+                            forma automática que se encuentra en una carpeta habilitada para Git y completa de forma
+                            automática el <span class="keyword">repositorio</span>, los <span
+                                class="keyword">errores</span> y los campos de la <span class="keyword">página de
+                                inicio</span> de tu archivo <span class="keyword">package.json</span>. Si inicializaste
+                            el repositorio después de crear el archivo <span class="keyword">package.json</span>,
+                            deberás añadir esta información de forma manual. Para obtener más información sobre el
+                            control de versiones de Git, puedes consultar el artículo: <a
+                                href="https://www.digitalocean.com/community/tutorial_series/introduction-to-git-installation-usage-and-branches">Git:
+                                Instalación, uso y ramificaciones</a>.</p>
+                    </blockquote>
+                    <p>El parámetro <span class="keyword">-y</span> responderá automáticamente a los valores
+                        predeterminados de cosas como nombre, versión, etc.</p>
+                    <p>Tu archivo <span class="keyword">package.json</span> debería contener algo parecido a esto:</p>
+                    <pre><code>{
+    “name”: “npm-test”,
+    “version”: “1.0.0”,
+    “description”: ””,
+    “main”: “index.js”,
+    “scripts”: {
+        “test”: “echo \“Error: no test specified\” &amp;&amp; exit 1”
+    },
+    “keywords”: [],
+    “author”: ””,
+    “license”: “ISC”
+}</code></pre>
+                    <p>Digamos que quieres instalar el paquete <span class="keyword">express</span>. Escribe lo
+                        siguiente:</p>
+                    <pre><code>npm install express</code></pre>
+                    <p>Si observas tu archivo <span class="keyword">package.json</span>, puedes ver que se añadió una
+                        sección de dependencias con los paquetes en tu proyecto:</p>
+                    <pre><code>“dependencies”: {
+    “express”: ”^4.19.2”
+}</code></pre>
+                    <blockquote>
+                        <p><strong>Nota:</strong> Se espera que los paquetes de Node.js sigan la guía de <a
+                                href="https://semver.org/">Versionamiento semántico</a> (semver). Por lo tanto, el
+                            primer número será el de la versión <span class="keyword" lang="en">MAJOR</span>, que solo
+                            cambia cuando se
+                            modifica la API. El segundo número será el de la versión <span class="keyword"
+                                lang="en">MINOR</span>, que
+                            cambia cuando se añaden funciones. El último número será el de la versión de <span
+                                class="keyword" lang="en">PATCH</span>, que cambia cuando se solucionan errores.</p>
+                    </blockquote>
+                    <p>También puedes instalar paquetes usando este comando abreviado:</p>
+                    <pre><code>npm i express</code></pre>
+                    <p>Antes de la versión 5.0.0 se añadía la opción <span class="keyword">--save</span> tras el nombre
+                        del paquete que se queria instalar, para incluirlo en la sección de dependencias. Todavía
+                        funciona, pero está obsoleto.</p>
+                    <p>Hay paquetes que no se utilizan en la aplicación, no son necesarios para que la aplicación se
+                        ejecute, pero ayudan en el desarrollo. Por ejemplo, no puedes ejecutar una aplicación de
+                        servidor Express sin Express, pero puedes ejecutar la aplicación sin un paquete de prueba de
+                        código como Karma. Estos paquetes se instalan usando la opción <span
+                            class="keyword">--save-dev</span> o <span class="keyword">-D</span> en su versión abreviada.
+                        Por ejemplo:</p>
+                    <pre><code>npm install karma -D</code></pre>
+                    <p>En el archivo <span class="keyword">package.json</span>, puedes ver que este paquete se ha
+                        añadido en otra sección:</p>
+                    <pre><code>“devDependencies”: {
+    “karma”: ”^6.4.3”
+}</code></pre>
+                    <blockquote>
+                        <p><strong>Nota</strong>: Habrás observado el <span class="keyword">^</span> antes del número de
+                            versión de la dependencia. Recuerda que el control de versiones semántico consta de tres
+                            dígitos: <strong>MAJOR</strong>, <strong>MINOR</strong> y <strong>PATCH</strong>. El símbolo
+                            <span class="keyword">^</span> indica que cualquier versión MINOR o PATCH superior cumpliría
+                            con esta restricción de versión. Si ves <span class="keyword">~</span> al comienzo de un
+                            número de versión, solo las versiones PATCH superiores satisfacen la restricción.
+                        </p>
+                    </blockquote>
+                    <h4>¿Cómo instalar paquetes globalmente?</h4>
+                    <p>Hasta ahora, sólo has instalado un paquete en tu proyecto actual. También puedes instalar
+                        paquetes de forma global.</p>
+                    <p>Normalmente se instalan paquetes globales para herramientas que no están directamente
+                        relacionadas con nuestro proyecto (por ejemplo, una herramienta como Nodemon es algo que puedes
+                        instalar globalmente).</p>
+                    <pre><code>npm i nodemon -g</code></pre>
+                    <p>Como puedes ver, tan solo se agrega la opción <span class="keyword">-g</span>. Dado que el
+                        paquete está instalado localmente en tu computadora, no aparecerá en el archivo <span
+                            class="keyword">package.json</span>.</p>
+                    <blockquote>
+                        <p><strong>Nota</strong>: Si observas un error de permiso al intentar instalar un paquete de
+                            forma global, es posible que necesites de privilegios de superusuario para ejecutar
+                            el comando. Vuelva a probar con <code>sudo npm i nodemon -g</code>.</p>
+                    </blockquote>
+                    <h4>¿Cómo instalar una versión específica de un paquete NPM?</h4>
+                    <p>Por ejemplo, mientras escribo esto, la última versión de <span class="keyword">lodash</span> es
+                        4.17.21.</p>
+                    <p>Es posible que desees instalar una versión anterior si la última versión no es compatible con
+                        otras dependencias de tu proyecto.</p>
+                    <p>Digamos que queremos instalar la versión 4.17.5. Para ello, agrega <span
+                            class="keyword"><strong>@</strong><em>{número de versión}</em></span> después del nombre del
+                        paquete, de esta manera:</p>
+                    <pre><code>npm i lodash@4.17.5</code></pre>
+                    <p>Puedes ver el historial de versiones en el sitio web de <a tabindex="0"
+                            href="https://www.npmjs.com/package/lodash" target="_blank"
+                            rel="noreferrer noopener">NPM</a>.</p>
+                    <h4>¿Cómo encontrar paquetes obsoletos?</h4>
+                    <p>Para ver qué dependencias de un proyecto están desactualizadas, puedes usar este comando:</p>
+                    <pre><code>npm outdated</code></pre>
+                    <p>Y para ver qué paquetes están desactualizados a nivel global, puedes usar el comando:</p>
+                    <pre><code>npm outdated -g</code></pre>
+                    <h4>¿Cómo actualizar paquetes?</h4>
+                    <p>Para actualizar el paquete lodash anterior, teclea:</p>
+                    <pre><code>npm update lodash</code></pre>
+                    <h4>¿Cómo desinstalar paquetes?</h4>
+                    <p>Desinstalemos lodash de nuestro proyecto.</p>
+                    <pre><code>npm uninstall lodash</code></pre>
+                    <p>Con esto, la dependencia se eliminará del archivo <span class="keyword">package.json</span>.</p>
+                    <h4>Listar paquetes</h4>
+                    <p>Si quisieres saber qué módulos se instalan en un proyecto, es más fácil usar el comando <span
+                            class="keyword" lang="en">list</span> o <span class="keyword">ls</span>
+                        en lugar de leer directamente <span class="keyword">package.json</span>. Para hacerlo, teclea
+                        lo siguiente:</p>
+                    <pre><code>npm ls</code></pre>
+
+                    <h4>¿Por dónde seguir?</h4>
+                    <p>Para documentarte más puedes recurrir a la línea de comandos (<code>npm i --help</code>), leer el
+                        <a tabindex="0"
+                            href="https://www.freecodecamp.org/espanol/news/node-js-npm-tutorial/">tutorial</a> o
+                        ver el <a tabindex="0" href="https://www.youtube.com/watch?v=y1Z9vimloyw" target="_blank"
+                            rel="noreferrer noopener">video</a> introductorio.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Cuáles son los dos tipos de componentes de React?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://i.ytimg.com/vi/gjRrL_VCrqY/maxresdefault.jpg" alt="React Componentes">
+                    <p>Tenemos dos tipos de componentes, los componentes de clase y los componentes funcionales, que
+                        pueden tener otros nombres ya que cada uno de ellos tiene sus propias características.</p>
+                    <p>Componentes de clase: Tienen un estado (<em lang="en">state</em>) y pueden ser llamados también
+                        <strong lang="en">Statefull Components</strong> (componentes con estado). Siempre tienen un
+                        método <strong class="keyword">render()</strong> y tienen ciclos de vida.
+                    </p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://res.cloudinary.com/dgccxjtyc/image/upload/v1663766473/react_hooks_flow_ad839a9dc1.png"
+                        alt="Ciclo de Vida de React Component.">
+                    <p>Componentes funcionales: Al no tener un estado suelen ser llamados tambien
+                        <strong lang="en">Stateless Components</strong> (componentes sin estado). Son solo funciones y
+                        no tienen un método <strong class="keyword">render()</strong> a diferencia del anterior.
+                    </p>
+                    <p>Veamos un ejemplo de cada uno.</p>
+                    <figure><img class="center" loading="lazy" decoding="async"
+                            src="https://thepracticaldev.s3.amazonaws.com/i/15z9b0gn9t39yxgcvctl.png"
+                            alt="Componente de clase">
+                        <figcaption>Componente de clase o <span lang="en">Statefull Component</span>.</figcaption>
+                    </figure>
+                    <p>Podemos ver que hereda de <span class="keyword">Component</span>, tiene un método <span
+                            class="keyword">constructor</span> y un <span class="keyword">state</span> y, como vimos
+                        anteriormente, tiene un método <span class="keyword">render</span>.</p>
+                    <figure><img class="center" loading="lazy" decoding="async"
+                            src="https://thepracticaldev.s3.amazonaws.com/i/qzciqwctg0ljozyu9wc4.png"
+                            alt="Componente de clase">
+                        <figcaption>Componente funcional o <span lang="en">Stateless Component</span>.</figcaption>
+                    </figure>
+                    <p>En este componente podemos ver que solo retorna un <i lang="en">template</i> (plantilla).</p>
+                    <p>Seguro que te encuentras un poco confundido y te preguntas cuándo usar cada uno de estos
+                        componentes.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://www.educative.io/api/page/4980251767865344/image/download/5538985506242560"
+                        alt="Componentes de React.">
+                    <p>Veámoslos de otra forma.</p>
+                    <p>En un <span class="keyword">Componente de clase</span> tenemos toda nuestra lógica específica
+                        para ese componente. Por ejemplo, podemos usar una API y, posteriormente, los datos que
+                        hemos obtenido de esa API los pasamos, vía <span class="keyword">props</span>, al
+                        <span class="keyword">componente funcional</span>, que solo se encarga de mostrarlos al usuario.
+                    </p>
+
+                    <p>¡¿No te ha quedado claro?! En este
+                        <a tabindex="0"
+                            href="https://latteandcode.medium.com/react-4-tipos-de-componentes-para-gobernarlos-a-todos-7c8f5c28e0b0"
+                            target="_blank" rel="noreferrer noopener">tutorial</a>, en este
+                        <a tabindex="0"
+                            href="https://adrianalonsodev.medium.com/tipos-de-componentes-en-reactjs-f387a6f8e2b7"
+                            target="_blank" rel="noreferrer noopener">artículo</a>
+                        y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=y97WIEJxx5E" target="_blank"
+                            rel="noreferrer noopener">video</a> o en este <a tabindex="0"
+                            href="https://www.youtube.com/watch?v=XnIETlV0RQ4" target="_blank"
+                            rel="noreferrer noopener">otro video</a> te lo pueden aclarar… o no.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Por qué usamos accesorios en React?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://community.listopro.com/content/images/size/w2000/2023/12/-----LISTOPRO-BLOG---Props-en-React_-que--son-y-co-mo-usarlos.png"
+                        alt="Props en React.">
+
+                    <h4>Los accesorios (<span lang="en">props</span>) del componente</h4>
+                    <p>Un componente no es más, ni menos, que una pieza lógica encapsulada, una <em>píldora</em> de
+                        código. Por ejemplo, aquí hay un
+                        componente que muestra el mensaje
+                        ¡Hola, mundo!</p>
+                    <pre><code>function HolaMundo() {
+    return &lt;div&gt;¡Hola, mundo!&lt;/div&gt;;
+}
+
+// Render
+&lt;HolaMundo /&gt;
+
+// Salida
+&lt;div&gt;¡Hola, mundo!&lt;/div&gt;
+</code></pre>
+
+                    <p>El problema con el componente <span class="keyword">&lt;HolaMundo /&gt;</span> es que es
+                        inflexible. No puedes cambiar a quien se saluda ni el tipo de
+                        saludo. Por ejemplo, si se quiere <em>¡Buenas, Joker!</em> habrá que crear un nuevo componente.
+                    </p>
+                    <p>Para resolver este problema se utiliza el concepto de <em>accesorios de componentes</em>.</p>
+                    <p>Por supuesto, se pueden utilizar tantos accesorios como se necesiten. Hagamos que el componente
+                        <span class="keyword">&lt;Mensaje&gt;</span> acepte 2 accesorios para personalizar el tipo de
+                        saludo y la persona a
+                        saludar:
+                    </p>
+                    <pre><code>function Mensaje({ saludo, quien }) {
+    return &lt;div&gt;¡{saludo}, {quien}!&lt;/div&gt;;
+}
+
+// Render
+&lt;Mensaje <i class="keyword">saludo</i>=“Bienvenidos” <i class="keyword">quien</i>=“Alienígenas” /&gt;
+
+// Salida
+&lt;div&gt;¡Bienvenidos, Alienígenas!&lt;/div&gt;
+</code></pre>
+                    <p>Si se utilizan componentes de clase, se puede acceder a los accesorios desde la propiedad
+                        <code>this.props</code> de la instancia del componente.
+                    </p>
+                    <pre><code>import { Component } from ‘react’;
+
+class MensajeComoClase extends Component {
+    render() {
+        return &lt;div&gt;¡{<b class="keyword">this.props</b>.saludo}, {<b class="keyword">this.props</b>.quien}!&lt;/div&gt;;
+    }
+}
+
+// Render
+&lt;MensajeComoClase <i class="keyword">saludo</i>=“Bienvenidos” <i class="keyword">quien</i>=“Alienígenas” /&gt;
+
+// Salida
+&lt;div&gt;¡Bienvenidos, Alienígenas!&lt;/div&gt;
+</code></pre>
+                    <h4>Valores de <em lang="en">props</em></h4>
+                    <p>En los ejemplos anteriores, los valores de los accesorios eran cadenas. Pero, a
+                        menudo, querremos usar los accesorios con valores como números, booleanos, objetos,
+                        matrices e incluso variables.</p>
+                    <p>React no impone ninguna restricción sobre el valor que puede tener un accesorio. Pero todos los
+                        valores, excepto los literales de cadena que van entre comillas dobles, deben estar entre llaves
+                        <span class="keyword">prop={valor}</span>.
+                    </p>
+                    <pre><code>
+// Cadenas
+&lt;MiComponente <i class="keyword">prop</i>=“Mi texto” /&gt;
+
+// Plantillas con variables:
+&lt;MiComponente <i class="keyword">prop</i>={`Mi texto ${miVariable}`} /&gt;
+
+// Números
+&lt;MiComponente <i class="keyword">prop</i>={42} /&gt;
+
+// Booleanos
+&lt;MiComponente <i class="keyword">prop</i>={false} /&gt;
+
+// Objetos
+&lt;MiComponente <i class="keyword">prop</i>={{ propiedad: ‘Valor’ }} /&gt;
+
+// Matrices
+&lt;MiComponente <i class="keyword">prop</i>={[‘Item 1’, ‘Item 2’]} /&gt;
+
+// JSX
+&lt;MiComponente <i class="keyword">prop</i>={&lt;Mensaje quien=“Joker” /&gt;} /&gt;
+
+// Variables con cualquier tipo de valor
+&lt;MiComponente <i class="keyword">prop</i>={miVariable} /&gt;
+
+</code></pre>
+                    <h4>Pasar <em lang="en">props</em></h4>
+                    <p>Dentro del componente se pueden usar accesorios como cualquier variable JavaScript normal. Se
+                        puede renderizar condicionalmente o incluso pasar accesorios a otros componentes.</p>
+                    <p>Por ejemplo, podemos crear un componente <span class="keyword">&lt;HolaGente /&gt;</span> que
+                        acepte una lista de personas. Este componente pasará cada persona al componente <span
+                            class="keyword">&lt;Mensaje/&gt;</span>.
+                    </p>
+                    <pre><code>function HolaGente({ personas }) {
+    return (
+        &lt;div&gt;
+            {personas.map((persona, index) =&gt; {
+                return &lt;Mensaje saludo=“Hola” quien={persona} <strong class="keyword" lang="en">key</strong>={index} /&gt;;
+            })}
+        &lt;/div&gt;
+    );
+}
+
+// Render
+&lt;HolaGente personas={[‘Joker’, ‘Batman’]} /&gt;
+
+// Salida
+&lt;div&gt;
+    &lt;div&gt;¡Hola, Joker!&lt;/div&gt;
+    &lt;div&gt;¡Hola, Batman!&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    <p>
+                        <span class="keyword">&lt;HolaGente personas={personas} /&gt;</span> acepta un accesorio,
+                        <span class="keyword">personas</span>, que es una matriz de cadenas.
+                        Dentro del componente, la lista de personas se itera y cada persona se asigna al componente
+                        <span class="keyword">&lt;Mensaje quien={persona} /&gt;</span>. De esta manera, los accesorios
+                        se pueden transmitir a los componentes secundarios. Además vemos que se utiliza el accesorio
+                        especial <strong class="keyword" lang="en">key</strong> (clave) que permite a React realizar
+                        actualizaciones en los elementos de la matriz más rápido.
+                    </p>
+                    <h4>Valor por defecto</h4>
+                    <p>Hay situaciones en las que se tiene un valor predeterminado para un accesorio. En tal caso,
+                        se puede omitir el accesorio.</p>
+                    <pre><code>function Mensaje({ saludo<i class="keyword">=‘Ave’</i>, quien<i class="keyword">=‘C&aelig;sar’</i> }) {
+    return &lt;div&gt;¡{saludo}, {quien}!&lt;/div&gt;;
+}
+
+// Render
+&lt;Mensaje /&gt;
+
+// Salida
+&lt;div&gt;¡Ave, C&aelig;sar!&lt;/div&gt;
+</code></pre>
+                    <h4>Sintaxis de propagación de <em lang="en">props</em></h4>
+                    <p>Si se construyen dinámicamente los accesorios de un componente, se pueden mantener los accesorios
+                        del componente dentro de un objeto JavaScript.</p>
+                    <p>Por ejemplo, se puede definir el objeto <span class="keyword">heyBatman</span> con las
+                        propiedades del componente <span class="keyword">&lt;Mensaje /&gt;</span> (<span
+                            class="keyword">saludo</span> y <span class="keyword">quien</span>). Luego, al configurar
+                        los accesorios del componente, en lugar de enumerarlos manualmente, se puede usar la
+                        sintaxis de propagación <span class="keyword">&lt;Mensaje {…heyBatman} /&gt;</span>:
+                    </p>
+                    <pre><code>const heyBatman = { <i class="keyword">saludo</i>: ‘Hey’, <i class="keyword">quien</i>: ‘Batman’ };
+
+// Render
+<small><s>&lt;Mensaje <i class="keyword">saludo</i>={heyBatman.saludo} <i class="keyword">quien</i>={heyBatman.quien} /&gt;</s></small>
+&lt;Mensaje {…heyBatman} /&gt;
+
+// Salida
+&lt;div&gt;¡Hey, Batman!&lt;/div&gt;
+</code></pre>
+                    <h4>Conclusión</h4>
+                    <p>Los accesorios son una forma de escribir partes de lógica de interfaz de usuario reutilizables.
+                        Sirven como entrada para el componente.</p>
+                    <p>Usar accesorios es bastante sencillo. Basta con asegurarse de que el componente lea los
+                        accesorios del parámetro <span class="keyword">props</span> (o <span
+                            class="keyword">this.props</span> en el
+                        caso de componentes de clase) y luego, al renderizar el componente en JSX, hay que asegurarse de
+                        establecer el valor de <span class="keyword">prop</span> utilizando una sintaxis similar a un
+                        atributo: <span class="keyword">prop=“Mi Valor”</span>:
+                    </p>
+
+                    <figure><img class="center" loading="lazy" decoding="async"
+                            src="https://dmitripavlutin.com/static/6d14625626a323816b47d301a6319626/59014/cover.png"
+                            alt="Uso de los accesorios.">
+                        <figcaption>Ciclo de los accesorios.</figcaption>
+                    </figure>
+
+
+                    <p>Puedes ampliar conocimientos leyendo este <a tabindex="0"
+                            href="https://es.react.dev/learn/passing-props-to-a-component">manual</a> o viendo este <a
+                            tabindex="0" href="https://www.youtube.com/watch?v=SxK_pgoticY" target="_blank"
+                            rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es JSX?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://dev-to-uploads.s3.amazonaws.com/i/bqc1gncxdhau0zfuxqmp.png"
+                        alt="Cabecera ¿Qué es JSX?">
+                    <p>JSX significa JavaScript XML y es una sintaxis similar a XML utilizada por React que extiende
+                        ECMAScript de modo que el texto similar a XML pueda coexistir con el código JavaScript.
+                        Básicamente, es una extensión de sintaxis del JavaScript normal que se utiliza para crear
+                        elementos de React y nos permite escribir y agregar HTML en un solo archivo React. Esto hace que
+                        sea más fácil y claro escribir componentes de React.</p>
+                    <p>Se puede utilizar React sin JSX, aunque JSX hace que React sea un poco más <em>elegante</em>. Al
+                        igual que XML, las etiquetas JSX tienen un nombre, atributos y elementos secundarios. Un
+                        atributo entre comillas es una cadena, mientras que el que se encuentra entre llaves es una
+                        expresión de JavaScript.</p>
+                    <p>Bajo la superficie, React transforma JSX en un montón de llamadas a una función
+                        <code>React.createElement()</code>, <a tabindex="0"
+                            href="https://frontarm.com/james-k-nelson/jsx-live-cheatsheet/" target="_blank"
+                            rel="noreferrer noopener">usando 6 reglas</a>.
+                    </p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async"
+                            src="https://jamesknelson.com/wp-content/uploads/2016/05/jsx-cheatsheet.png"
+                            alt="JSX se compila a JavaScript">
+                        <figcaption>JSX no es una forma especial de incrustar HTML en JavaScript. Todo lo que hace JSX
+                            es reemplazar las <span class="keyword">&lt;etiquetas&gt;</span> de un archivo con llamadas
+                            equivalentes a <code>React.createElement()</code>.</figcaption>
+                    </figure>
+                    <p>JSX es muy simple. Se escribe código HTML normal y se inyectan datos del objeto agregando llaves.
+                        Se ejecutará el código JavaScript entre corchetes y el valor se insertará en el DOM resultante.
+                        Una de las ventajas de JSX es que React crea un DOM virtual (una representación virtual de la
+                        página) para rastrear cambios y actualizaciones. En lugar de reescribir todo el HTML, React
+                        modifica el DOM de la página cada vez que se actualiza la información. Este es uno de los
+                        principales problemas para cuya solución se creó React.</p>
+                    <figure>
+                        <pre><code>
+import React from ‘react’;
+
+const App = () =&gt; {
+  const name = ‘Mundo’;
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hola, {name}!&lt;/h1&gt;
+      &lt;p&gt;Este es un ejemplo de programa en JSX.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+
+</code></pre>
+                        <figcaption>Un ejemplo de JSX.</figcaption>
+                    </figure>
+                    <h4>Buenas practicas</h4>
+                    <p>Algunas buenas prácticas de programación en JSX incluyen:</p>
+                    <ul>
+                        <li><strong>Separar la Lógica de la Interfaz de Usuario</strong>: Intentar mantener la lógica
+                            separada de la interfaz de usuario en componentes distintos para mejorar la legibilidad y
+                            facilitar el mantenimiento.</li>
+                        <li><strong>Utilizar Fragmentos o Elementos Padre</strong>: Cuando se devuelvan múltiples
+                            elementos en un componente, utilizar Fragmentos o un elemento padre para envolverlos y
+                            evitar errores.</li>
+                        <li><strong>Descomponer Componentes</strong>: Dividir los componentes en partes más pequeñas y
+                            reutilizables para facilitar la comprensión y promover la reutilización de código.</li>
+                        <li><strong>Evitar Lógica Compleja en JSX</strong>: Si se necesita realizar operaciones
+                            complejas, es mejor hacerlo en métodos separados fuera del bloque JSX para mantener el
+                            código limpio.</li>
+                        <li><strong>Usar <span lang="en">Props</span> y <span lang="en">State</span> de manera
+                                efectiva</strong>: Utilizar apropiadamente las propiedades (<span
+                                lang="en">props</span>) y el estado (<span lang="en">state</span>) para pasar datos
+                            entre componentes y manejar cambios en la interfaz de usuario de manera eficiente.</li>
+                        <li>Cerrar todas las etiquetas.</li>
+                    </ul>
+                    <p>Estas son solo algunas de las buenas prácticas que pueden ayudar a escribir código JSX limpio,
+                        legible y mantenible en las aplicaciones React.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://i.pinimg.com/originals/19/1d/92/191d9296424f92cfa125a40723daa3d0.png"
+                        alt="A tener en cuenta.">
+                    <h4>¿Por qué JSX?</h4>
+                    <p>Puntos a favor:</p>
+                    <ul>
+                        <li>Permite escribir código más legible al combinar HTML y JavaScript de una manera más
+                            intuitiva.</li>
+                        <li>Es más rápido que el JavaScript normal porque realiza optimizaciones al traducir a
+                            JavaScript normal.</li>
+                        <li>Facilita la creación de plantillas.</li>
+                        <li>En lugar de separar la lógica en archivos separados, React utiliza componentes para este
+                            propósito.</li>
+                        <li>Reduce el tiempo de renderizado.</li>
+                        <li>Reduce el tiempo de desarrollo.</li>
+                        <li>Facilita la creación de componentes reutilizables y mantenibles al poder tener la estructura
+                            de la interfaz de usuario junto con la lógica en un solo lugar.</li>
+                    </ul>
+                    <p>Puntos en contra:</p>
+                    <ul>
+                        <li>No es compatible con React Native.</li>
+                        <li>Curva de Aprendizaje: Al principio, puede resultar confuso por la mezcla de HTML y
+                            JavaScript en un solo archivo.</li>
+                        <li>Mantenimiento: En proyectos grandes, el código JSX puede volverse complicado y difícil de
+                            mantener si no se siguen buenas prácticas de organización y modularización.</li>
+                        <li>Preprocesamiento: Algunas herramientas de construcción y editores pueden tener problemas al
+                            manejar archivos JSX, lo que puede requerir configuraciones adicionales.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async"
+                            src="https://systemseed.com/sites/default/files/styles/container_image_2x/public/2020-07/react-diagram.png"
+                            alt="Desarrollo web con ReactJS y React Native.">
+                        <figcaption>Desarrollo web con ReactJS y React Native.</figcaption>
+                    </figure>
+                    <p>A pesar de estos posibles inconvenientes, JSX sigue siendo ampliamente utilizado en el desarrollo
+                        de aplicaciones React debido a sus ventajas en legibilidad y mantenibilidad del código.</p>
+
+                    <p>En este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=oGSf4_bOzec" target="_blank"
+                            rel="noreferrer noopener">video</a>
+                        podrás aclarar dudas, pero si lo tuyo es
+                        <a tabindex="0"
+                            href="https://matiashernandez.dev/blog/post/que-es-jsx-por-que-usamos-jsx-en-react-y-como-funciona"
+                            target="_blank" rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es el estado?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://somospnt.com/images/blog/cover/Hook_-_useState.jpg"
+                        alt="Cabecera: estado en React.">
+                    <p>El estado en React es un objeto que contiene datos que afectan a la representación de un
+                        componente de React y a cómo se comporta en un momento dado. El estado es mutable y se puede
+                        actualizar usando el método <span class="keyword">setState</span>. Se utiliza para almacenar
+                        datos que pueden cambiar durante la vida útil de un componente ya que los cambios en el estado
+                        provocan que el componente se vuelva a renderizar. Se inicializa en el constructor del
+                        componente y se recomienda mantenerlo tan pequeño como sea posible para evitar efectos
+                        secundarios no deseados.
+                    </p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://mcqstop.com/wp-content/uploads/2020/09/Slide6-768x524.png" alt="States">
+                    <p>El gancho (<span lang="en">hook</span>) React <span class="keyword">useState()</span> gestiona el
+                        estado en los componentes funcionales de React. En los componentes de clase, <span
+                            class="keyword">this.state</span> contiene el estado y se invoca el método especial <span
+                            class="keyword">this.setState()</span> para actualizar el estado. En ambos casos se
+                        actualizan la variable de estado y la salida del componente de forma asincrónica. Es decir, no
+                        se actualiza el estado, sino que se programa una actualización del estado.</p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async"
+                            src="https://www.chiyanasimoes.com/sites/default/files/carbon.png"
+                            alt="Ejemplo de uso de estado en React.">
+                        <figcaption>Ejemplo de uso de estado en React.</figcaption>
+                    </figure>
+
+                    <h4>Problemas comunes</h4>
+                    <p>Entre los problemas que pueden surgir al trabajar con el estado en React se encuentran:</p>
+                    <ul>
+                        <li>Mutación directa del estado: Modificar el estado directamente en lugar de utilizar la
+                            función proporcionada por React para actualizarlo puede llevar a comportamientos
+                            inesperados.</li>
+                        <li>Inconsistencias en la renderización: Si no se actualiza correctamente el estado, la
+                            renderización del componente puede no reflejar el estado actualizado.</li>
+                        <li>Problemas de rendimiento: Actualizar el estado en exceso o realizar operaciones costosas al
+                            actualizar el estado puede afectar al rendimiento de la aplicación.</li>
+                        <li>Problemas de sincronización: Cuando se trabaja con múltiples estados o componentes que
+                            comparten estado, puede ser complicado mantener la sincronización entre ellos.</li>
+                        <li>Problemas de depuración: En aplicaciones grandes, puede resultar difícil rastrear el origen
+                            de un cambio de estado específico, lo que dificulta la depuración.</li>
+                    </ul>
+                    <p>Es importante seguir buenas prácticas al trabajar con el estado en React para evitar estos
+                        problemas.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://i.ytimg.com/vi/aUzHfsFA0T0/maxresdefault.jpg"
+                        alt="No puedes programar con React si no sabes esto.">
+                    <h4>Buenas prácticas</h4>
+                    <ul>
+                        <li>Utilizar <span class="keyword">setState</span> para actualizar el estado: En lugar de
+                            modificar directamente el estado, es importante utilizar la función <span
+                                class="keyword">setState</span> proporcionada por React para actualizar el estado de
+                            forma segura.</li>
+                        <li>Actualizar el estado de forma inmutable: En React, se recomienda crear una nueva copia del
+                            estado en lugar de modificar el estado existente. Esto ayuda a prevenir efectos secundarios
+                            no deseados.</li>
+                        <li>Dividir el estado en piezas más pequeñas: Si un componente tiene múltiples valores de estado
+                            relacionados, considera dividirlos en piezas más pequeñas para facilitar su gestión y
+                            mantenimiento.</li>
+                        <li>Utilizar el <em lang="en">hook</em> <span class="keyword">useState</span> en componentes
+                            funcionales: Si estás trabajando con componentes funcionales, utiliza el <em
+                                lang="en">hook</em> <span class="keyword">useState</span> para manejar el estado de
+                            manera efectiva.</li>
+                        <li>Utilizar el estado local cuando sea posible: Si el estado solo es relevante para un
+                            componente en particular y no necesita ser compartido con otros componentes, considera
+                            utilizar el estado local en lugar del estado global.</li>
+                        <li>Optimizar el rendimiento: Evita actualizar el estado en exceso y considera utilizar técnicas
+                            como <span class="keyword">useMemo</span> y <span class="keyword">useCallback</span> para
+                            optimizar el rendimiento de tus componentes.</li>
+                    </ul>
+                    <p>Siguiendo estas buenas prácticas, puedes trabajar de manera más eficiente y evitar problemas
+                        comunes al manejar el estado en React.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://es.legacy.reactjs.org/ef94afc3447d75cdc245c77efb0d63be/react-devtools-state.gif"
+                        alt="Ejemplo de un cambio de estado en React.">
+
+                    <h4>Pros y contras</h4>
+                    <p>Algunos de los pros de trabajar con el estado en React son:</p>
+                    <ul>
+                        <li>Facilita la gestión de datos dinámicos: El estado en React permite a los componentes manejar
+                            y actualizar datos dinámicos de manera sencilla.</li>
+                        <li>Rendimiento optimizado: React maneja de forma eficiente las actualizaciones de estado y solo
+                            renderiza los componentes afectados, lo que puede mejorar el rendimiento de la aplicación.
+                        </li>
+                        <li>Reactividad: Al actualizar el estado, React automáticamente re-renderiza los componentes
+                            afectados, lo que facilita la creación de interfaces de usuario interactivas y reactivas.
+                        </li>
+                        <li>Facilita la comunicación entre componentes: Permite compartir datos entre componentes, lo
+                            que facilita la comunicación entre diferentes partes de la aplicación.</li>
+                    </ul>
+                    <p>En contra tenemos:</p>
+                    <ul>
+                        <li>Complejidad: Manejar el estado puede añadir complejidad a medida que la aplicación crece,
+                            especialmente al trabajar con múltiples componentes que comparten estado.</li>
+                        <li>Posibilidad de errores: Si no se maneja correctamente, el estado puede llevar a errores
+                            difíciles de depurar, como actualizaciones de estado incorrectas o inconsistencias en la
+                            renderización.</li>
+                        <li>Necesidad de sincronización: Al trabajar con múltiples componentes que comparten estado,
+                            puede ser necesario sincronizar los cambios para mantener la coherencia en la aplicación..
+                        </li>
+                        <li>Posible pérdida de rendimiento: Actualizar el estado en exceso o manejar grandes cantidades
+                            de datos en el estado puede afectar al rendimiento de la aplicación.</li>
+                    </ul>
+                    <p>En general, trabajar con el estado en React es fundamental para el desarrollo de aplicaciones
+                        interactivas, pero es importante seguir buenas prácticas y considerar los posibles desafíos para
+                        optimizar su uso.</p>
+
+                    <p>Este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=LmldFbeSTFc" target="_blank"
+                            rel="noreferrer noopener">video</a> y <a tabindex="0"
+                            href="https://www.youtube.com/watch?v=8PaMmyK6vBM" target="_blank"
+                            rel="noreferrer noopener">este otro</a> te podrán aclarar dudas, pero si te gusta <a
+                            tabindex="0" href="https://es.react.dev/learn/state-a-components-memory" target="_blank"
+                            rel="noreferrer noopener">leer</a> y <a tabindex="0"
+                            href="https://es.react.dev/learn/managing-state" target="_blank"
+                            rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Con qué tipo de componente usamos un constructor?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://www.coderglass.com/react/images/reactjs-Constructor.png"
+                        alt="Constructor en React.">
+                    <p>En React, se usa un constructor en componentes de clase. Los componentes de clase son una forma
+                        de definir componentes en React que extienden la clase <code>React.Component</code> y
+                        necesitan un constructor para inicializar el estado y enlazar métodos. Los componentes
+                        funcionales en React no requieren un constructor ya que no tienen estado interno.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://manualestutor.com/wp-content/uploads/Ciclo-de-vida-de-creacion-de-un-componente-de-React-basado-en-clases-700x300.jpg"
+                        alt="Ciclo de vida de creación de un componente React basado en clases.">
+                    <p>Algunas características importantes del constructor en los componentes de clase son:</p>
+                    <ul>
+                        <li>Se llama al constructor antes de que el componente se monte.</li>
+                        <li>Se utiliza para inicializar el estado del componente mediante
+                            <code>this.state = { /* estado inicial */ }</code>.
+                        </li>
+                        <li>Se utiliza para enlazar métodos de instancia, como por ejemplo
+                            <code>this.handleClick = this.handleClick.bind(this)</code>.
+                        </li>
+                        <li>Si se necesita pasar <span class="keyword">props</span> al constructor, se deben pasar al
+                            constructor y al método <code>super</code> para que estén disponibles en el componente.
+                        </li>
+                        <li>No se recomienda actualizar el estado directamente en el constructor, se debe usar <span
+                                class="keyword">setState</span>.</li>
+                    </ul>
+                    <p>Es importante recordar que a partir de React 16.3, se puede omitir el constructor en los
+                        componentes de clase y utilizar el estado de clase directamente.</p>
+                    <p>La sintaxis del constructor en un componente de clase de React es la siguiente:</p>
+                    <pre><code>
+class MiComponente extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // inicializar el estado aquí
+        };
+        // enlazar métodos aquí si es necesario
+        }
+
+        render() {
+        return (
+            // JSX a renderizar
+        );
+    }
+}
+
+</code></pre>
+                    <p>Se puede observar como el constructor recibe <span class="keyword">props</span> como parámetro y
+                        debe llamar a <span class="keyword">super(props)</span> como primera línea puesto que es el
+                        encargado de llamar al constructor de la clase padre (algo necesario, cuando estás definiendo un
+                        constructor en una clase que extiende otra, para poder acceder a <span
+                            class="keyword">this.props</span> en el constructor y, además, es una buena práctica para
+                        asegurar que todas las funcionalidades del componente se inicialicen correctamente).
+                        Luego, se inicializa el estado del componente dentro del constructor y se enlazan
+                        métodos si es necesario.</p>
+                    <figure><img class="center" loading="lazy" decoding="async"
+                            src="https://miro.medium.com/v2/resize:fit:2368/1*5M47kZGEOgt4WxZO1wfldw.png"
+                            alt="Ejemplo de clase con constructor.">
+                        <figcaption>Ejemplo de clase con constructor.</figcaption>
+                    </figure>
+                    <h4>Buenas prácticas</h4>
+                    <p>Algunas buenas prácticas en el uso del constructor en React son las siguientes:</p>
+                    <ul>
+                        <li>Llamar a <code>super(props)</code>: Siempre como primera línea del constructor para
+                            asegurarte de que las propiedades se pasen correctamente al componente padre.</li>
+                        <li>Inicializar el estado: Es recomendable inicializar el estado en el constructor si el
+                            componente necesita tener un estado interno.</li>
+                        <li>Enlazar métodos: Si necesitas utilizar métodos de instancia que hacen referencia a <span
+                                class="keyword">this</span>, es recomendable enlazar estos métodos en el constructor
+                            para mantener el contexto correcto.
+                        </li>
+                        <li>Evitar operaciones costosas: Evita realizar operaciones costosas en el constructor, como
+                            llamadas a APIs o cálculos complejos que no están directamente relacionados con la
+                            inicialización del estado.</li>
+                        <li>Considerar usar la inicialización de estado fuera del constructor: A partir de React 16.3,
+                            se puede inicializar el estado directamente fuera del constructor, lo cual puede hacer que
+                            el código sea más limpio y fácil de leer.</li>
+                        <li>Considerar usar funciones flecha para los métodos: Si utilizas funciones flecha para definir
+                            los métodos en tu componente, no necesitarás enlazarlos en el constructor, ya que las
+                            funciones flecha mantienen el contexto de <span class="keyword">this</span>.</li>
+                    </ul>
+                    <p>Siguiendo estas buenas prácticas, puedes escribir componentes más limpios, mantenibles y
+                        eficientes en React.</p>
+                    <h4>Pros y contras</h4>
+                    <p>Pros de usar constructor:</p>
+                    <ul>
+                        <li>Inicialización del estado: Permite inicializar el estado del componente en el constructor,
+                            lo que puede ser útil para establecer un estado inicial complejo.</li>
+                        <li>Enlazar métodos: Permite enlazar métodos de instancia para mantener el contexto de <span
+                                class="keyword">this</span> correctamente en los métodos del componente.</li>
+                        <li>Compatibilidad con versiones anteriores: Es una práctica común y compatible con versiones
+                            anteriores de React, por lo que está ampliamente entendida por la comunidad de
+                            desarrolladores.</li>
+                    </ul>
+                    <p>Contras de usar constructor:</p>
+                    <ul>
+                        <li>Potencial de errores: Si no se llama a <code>super(props)</code> correctamente en el
+                            constructor, puede provocar errores en la aplicación.</li>
+                        <li>Código repetitivo: Puede llevar a la repetición de código, especialmente al tener que llamar
+                            a <code>super(props)</code> y enlazar métodos para cada componente de clase.</li>
+                        <li>Menos legible: Puede hacer que el código sea menos legible, especialmente para
+                            desarrolladores nuevos en React que no estén familiarizados con la sintaxis de las clases.
+                        </li>
+                        <li>Menos conciso: Requiere más líneas de código en comparación con la inicialización de estado
+                            fuera del constructor o el uso de componentes funcionales.</li>
+                        <li>Problemas de rendimiento: Operaciones costosas realizadas en el constructor pueden afectar
+                            el rendimiento de la aplicación, ya que el constructor se llama cada vez que se instancia el
+                            componente.</li>
+                        <li>Posible error en el enlace de métodos: Si se olvida enlazar un método en el constructor,
+                            puede provocar errores de contexto de <span class="keyword">this</span> en los métodos.</li>
+                        <li>Problemas de inicialización de estado: Si no se utiliza el constructor para inicializar el
+                            estado, puede llevar a problemas de estado no inicializado o inconsistente.</li>
+                        <li>Compatibilidad con versiones anteriores: Si se está trabajando en un código base existente
+                            que utiliza constructores en componentes de clase, la falta de uso del constructor puede
+                            causar problemas de compatibilidad.</li>
+                    </ul>
+                    <p>En resumen, tanto el uso excesivo como la falta de uso del constructor en React pueden causar
+                        problemas en la aplicación, por lo que es importante equilibrar su uso y considerar las
+                        necesidades específicas de cada componente.</p>
+                    <p>En general, el uso del constructor en React es una práctica común y válida, pero con la
+                        introducción de <span lang="en">hooks</span> en React, muchas veces se prefiere utilizar
+                        componentes funcionales y <span lang="en">hooks</span> (como <span
+                            class="keyword">useState</span> y <span class="keyword">useEffect</span>) en lugar de
+                        componentes de clase, a menos que sea necesario inicializar el estado o enlazar métodos de
+                        instancia.</p>
+
+                    <h4>¿Cómo avanzar?</h4>
+                    <p>Para documentarte más puedes recurrir al <a tabindex="0"
+                            href="https://www.knowledgehut.com/blog/web-development/understanding-constructors-with-react-components"
+                            target="_blank" rel="noreferrer noopener">artículo</a>, leer el <a tabindex="0"
+                            href="https://es.react.dev/reference/react/Component">tutorial</a> o
+                        ver el <a tabindex="0" href="https://www.youtube.com/watch?v=vQfMR6ZIRgc" target="_blank"
+                            rel="noreferrer noopener">video introductorio</a>.</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script defer src="./js/cm_checkpoint_14.js"></script>
+
+</body>
+
+</html>
