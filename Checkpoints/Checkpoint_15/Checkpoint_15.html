@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 15</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@75,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Mono:wdth,wght@75,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/Checkpoint_15.css">
+</head>
+
+<body>
+    <main>
+        <h1 class="typewriter difuminado">Checkpoint 15</h1>
+        <p class="center difuminado"><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta</i><br>
+            o sobre una imagen para ampliarla (o devolverla a su tamaño original).
+        </p>
+        <img class="center" loading="lazy" decoding="async"
+            src="https://losmejorescursosde.com/wp-content/uploads/2021/08/react.png" alt="Cabecera React JS.">
+        <h2>Preguntas</h2>
+        <ul>
+            <li>
+                <h3 tabindex="-1">¿Qué es Axios?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/36k73z7ceesz2jvrsi74.png"
+                        alt="Axios logo">
+                    <p>Axios es una biblioteca de JavaScript que se utiliza para realizar solicitudes HTTP desde el lado
+                        del cliente en aplicaciones web. Proporciona una interfaz sencilla y flexible para enviar
+                        solicitudes HTTP y recibir respuestas de un servidor. Axios es altamente configurable y admite
+                        múltiples formatos de datos, como JSON y form-data. Además, Axios es compatible con promesas y
+                        puede ser utilizado en varios entornos de ejecución, como navegadores web y Node.js.</p>
+                    <p>Algunas buenas prácticas y recomendaciones al utilizar Axios incluyen:</p>
+                    <ul>
+                        <li>
+                            <p><strong>Instalación y configuración</strong>: Asegúrate de instalar Axios correctamente
+                                en tu proyecto y configurarlo según tus necesidades. Puedes utilizar:</p>
+                            <pre><code class="language-bash">npm install axios</code></pre>
+                            <p>o</p>
+                            <pre><code class="language-bash">yarn add axios</code></pre>
+                            <div id="editor00"></div>
+                            <p>para instalarlo y luego importarlo en tu código. Por ejemplo, para hacer una solicitud
+                                GET a una API:</p>
+                            <div id="editor01"></div>
+                        </li>
+                        <li><strong>Manejo de errores</strong>: Asegúrate de manejar adecuadamente los errores al
+                            realizar solicitudes con Axios. Puedes utilizar el bloque <span
+                                class="keyword">try/catch</span> para capturar y manejar cualquier error que ocurra
+                            durante la solicitud. También puedes utilizar los métodos <span
+                                class="keyword">.catch()</span> y <span class="keyword">.finally()</span> para manejar
+                            errores y realizar acciones finales.</li>
+                        <li><strong>Cancelación de solicitudes</strong>: Si necesitas cancelar una solicitud, asegúrate
+                            de utilizar el método <span class="keyword">.cancelToken()</span> proporcionado por Axios.
+                            Esto te permitirá cancelar solicitudes pendientes si es necesario.</li>
+                        <li><strong>Interceptores</strong>: Utiliza interceptores para realizar acciones comunes antes
+                            de realizar una solicitud, como agregar encabezados comunes o manejar autenticación. Puedes
+                            utilizar los métodos <span class="keyword">.interceptors.request</span> y <span
+                                class="keyword">.interceptors.response</span> para configurar tus interceptores.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async"
+                            src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8f5ob0ih3wfypxl4md2c.png"
+                            alt="Diagrama de un modelo de interceptores Axios.">
+                        <figcaption>Diagrama de un modelo de interceptores Axios.</figcaption>
+                    </figure>
+                    <p>Ventajas de Axios:</p>
+                    <ul>
+                        <li>Proporciona una interfaz fácil de usar para realizar solicitudes HTTP.</li>
+                        <li>Es compatible con promesas, lo que facilita el manejo de solicitudes asíncronas.</li>
+                        <li>Permite la cancelación de solicitudes.</li>
+                        <li>Ofrece la posibilidad de interceptar solicitudes y respuestas.
+                            <img class="center" loading="lazy" decoding="async"
+                                src="https://res.cloudinary.com/endjin/image/upload/f_auto/q_80/assets/images/blog/2020/08/axios-interceptors.png"
+                                alt="Se pueden configurar fácilmente en el momento de configurar axios.">
+                        </li>
+                        <li>Es ampliamente utilizado y tiene una buena documentación de la comunidad.</li>
+                    </ul>
+                    <p>Inconvenientes:</p>
+                    <ul>
+                        <li>Es una biblioteca adicional que debe ser agregada al proyecto, lo que aumenta el
+                            tamaño del paquete.</li>
+                        <li>Depender de una biblioteca externa (como Axios) no es una opción para quien prefiere usar
+                            funciones nativas (como las de Fetch).</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://www.freecodecamp.org/news/content/images/2021/03/clip-2-axios-min.gif"
+                        alt="Ejemplo de uso de Axios en React.">
+                    <p>En general, Axios es una excelente opción para hacer solicitudes HTTP en JavaScript, ya que
+                        simplifica la realización de solicitudes HTTP y el manejo de respuestas. Además, ofrece
+                        funcionalidades adicionales como la cancelación de solicitudes, la transformación de datos y la
+                        protección contra ataques de CSRF (Cross-Site Request Forgery, en los que el atacante puede
+                        hacer que una aplicación web realice acciones en nombre del usuario sin su consentimiento). Pero
+                        es importante considerar los pros y los contras al decidir si utilizarlo en un proyecto
+                        específico.</p>
+
+                    <h4>¿Por dónde seguir?</h4>
+                    <p>Para documentarte más puedes empezar por leer el
+                        <a tabindex="0" href="https://axios-http.com/es/docs/intro">tutorial</a>, recurrir a la <a
+                            tabindex="0" href="https://github.com/axios/axios" target="_blank"
+                            rel="noreferrer noopener">fuente</a> o
+                        ver el <a tabindex="0" href="https://www.youtube.com/watch?v=2Dg-635Kvo4" target="_blank"
+                            rel="noreferrer noopener">video</a> introductorio.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es Fetch?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://www.freecodecamp.org/news/content/images/2020/08/wall-2.jpeg" alt="Cabecera Fetch">
+                    <p>Fetch es una API nativa de JavaScript que permite hacer solicitudes HTTP a servidores y está
+                        disponible en los navegadores modernos.
+                        Proporciona una forma sencilla y flexible de enviar solicitudes HTTP y manejar las respuestas.
+                    </p>
+                    <p>Algunas buenas prácticas y recomendaciones al utilizar Fetch:</p>
+                    <ul>
+                        <li>
+                            <p>Sintaxis: Fetch utiliza una sintaxis basada en promesas y tiene una sintaxis más concisa
+                                que Axios. Por ejemplo, para hacer una solicitud GET, puedes usar el siguiente código:
+                            </p>
+                            <div id="editor02"></div>
+                        </li>
+                        <li>Manejo de errores: Fetch proporciona una forma sencilla de manejar errores en las
+                            solicitudes HTTP. Asegúrate de utilizar el método <span class="keyword">catch</span>, en la
+                            promesa devuelta por <span class="keyword">fetch</span>,
+                            para capturar y manejar los errores que ocurran durante la solicitud.</li>
+                        <li>Verificación del estado de la respuesta: Antes de tratar de acceder a los datos de la
+                            respuesta, verifica el estado de la respuesta utilizando el método <span
+                                class="keyword">ok</span> del objeto <span class="keyword">Response</span>.
+                            Si el estado es <span class="keyword">false</span>, significa que la solicitud no se realizó
+                            correctamente y puedes
+                            manejar el error adecuadamente.</li>
+                        <li>Conversión de datos: Utiliza los métodos adecuados para convertir los datos de la respuesta
+                            en el formato deseado. Por ejemplo, si la respuesta es en formato JSON, puedes utilizar
+                            <span class="keyword">response.json()</span> para obtener los datos en formato JSON.
+                        </li>
+                        <li>Interceptores: Fetch permite interceptar y modificar las solicitudes y respuestas utilizando
+                            los interceptores. Esto es útil para agregar lógica común a todas las solicitudes, como el
+                            manejo de tokens de autenticación o el agregado de encabezados comunes.</li>
+                        <li>
+                            <p>Configuración de encabezados: Utiliza el objeto <span class="keyword">Headers</span> para
+                                establecer los encabezados
+                                de la solicitud, como el tipo de contenido o los encabezados de autenticación. Por
+                                ejemplo:</p>
+                            <div id="editor031"></div>
+                        </li>
+                        <li>Gestión de estado: Considera utilizar una biblioteca de administración de estado como Redux
+                            o MobX para gestionar el estado de la aplicación y evitar la necesidad de realizar
+                            solicitudes HTTP directamente en componentes.</li>
+                        <li>Compatibilidad: Fetch está disponible en los navegadores modernos y también se puede
+                            utilizar en Node.js a través de bibliotecas como node-fetch.</li>
+                    </ul>
+                    <p>Ventajas de Fetch:</p>
+                    <ul>
+                        <li>Flexibilidad: Fetch ofrece una gran flexibilidad y personalización en comparación con otras
+                            bibliotecas de solicitudes HTTP. Puedes personalizar los encabezados, manejar errores de
+                            manera personalizada e interceptar las solicitudes y respuestas.</li>
+                        <li>Compatibilidad: Fetch es una API nativa de JavaScript y está disponible en los navegadores
+                            modernos, lo que significa que no necesitas instalar ninguna biblioteca adicional.</li>
+                        <li>Simplicidad: Fetch tiene una sintaxis sencilla y concisa, lo que facilita el envío de
+                            solicitudes HTTP y el manejo de las respuestas.</li>
+                        <li>Rendimiento: Fetch es más eficiente, en términos de rendimiento, que otras bibliotecas, ya
+                            que, por defecto, no realiza muchas transformaciones internas de los datos.
+                        </li>
+                        <li>Compatibilidad con Node.js: Fetch también se puede utilizar en Node.js a través de
+                            bibliotecas como node-fetch, lo que te permite utilizar la misma API en ambientes de
+                            servidor.</li>
+                    </ul>
+                    <p>Su desventaja principal es que no soporta Internet Explorer. Fetch no está disponible en
+                        versiones anteriores de Internet Explorer, lo que puede limitar su uso en proyectos que
+                        necesitan compatibilidad con navegadores más antiguos.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://blog.logrocket.com/wp-content/uploads/2021/12/Rendering-posts-frontend.gif"
+                        alt="Ejemplo de uso de Fetch.">
+                    <p>En resumen, Fetch es una API fácil de usar para hacer solicitudes HTTP en JavaScript, ofreciendo
+                        una alternativa moderna y eficiente a bibliotecas como Axios.</p>
+
+                    <p>¡¿No te ha quedado claro?! En este
+                        <a tabindex="0" href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch"
+                            target="_blank" rel="noreferrer noopener">tutorial</a>, en este
+                        <a tabindex="0" href="https://www.neoguias.com/fetch-javascript/" target="_blank"
+                            rel="noreferrer noopener">artículo</a>
+                        y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=PGxG9iam_aU" target="_blank"
+                            rel="noreferrer noopener">video</a> o en este <a tabindex="0"
+                            href="https://www.youtube.com/watch?v=eLqMkQf4Qks" target="_blank"
+                            rel="noreferrer noopener">otro video</a> te lo pueden aclarar… o no.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">Principales Diferencias entre Axios y Fetch</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://soshace.com/wp-content/uploads/2020/10/1200-2.jpg" alt="Axios vs. Fetch.">
+                    <p>Algunas diferencias clave entre ellas son:</p>
+                    <ol>
+                        <li>Sintaxis: La sintaxis de uso de Axios es más concisa y fácil de leer que la de fetch. Axios
+                            proporciona una API más amigable y fluida. Por otro lado, fetch requiere una sintaxis más
+                            verbosa y puede ser más difícil de leer.
+                        </li>
+                        <li>Promesas: Axios devuelve promesas nativas de JavaScript, lo que facilita el uso de las
+                            funciones asincrónicas como async/await. Por otro lado, fetch devuelve un objeto Promise que
+                            se puede manejar de manera similar, pero puede requerir más código para manejar los errores
+                            y las respuestas.
+                        </li>
+                        <li>Interceptores: Axios proporciona una funcionalidad de interceptores que permite agregar
+                            lógica personalizada antes de enviar una solicitud o después de recibir una respuesta. Esto
+                            es útil para agregar encabezados de autorización, manejar errores globales o realizar
+                            acciones comunes en todas las solicitudes. Fetch no tiene esta funcionalidad integrada, pero
+                            se puede lograr mediante el uso de bibliotecas adicionales.
+                        </li>
+                        <li>Configuración global: Axios permite establecer una configuración global que se aplicará a
+                            todas las solicitudes realizadas con la biblioteca. Esto incluye la configuración de
+                            encabezados, de <em lang="en">timeout</em> y otras opciones de configuración. Fetch no tiene
+                            una configuración global incorporada, pero se puede lograr mediante el uso de funciones de
+                            envoltorio o bibliotecas adicionales.
+                        </li>
+                        <li>Manejo de errores: Axios proporciona una API más amigable para manejar errores. Puede
+                            manejar errores de red, errores de respuesta y errores de tiempo de espera de forma más
+                            intuitiva.
+                            Fetch también permite manejar errores, pero requiere más código y puede ser más difícil de
+                            leer.
+                        </li>
+                        <li>Manejo de carga de archivos: Axios tiene una funcionalidad integrada para enviar solicitudes
+                            de carga de archivos. Esto es útil para enviar archivos grandes sin tener que manejar el
+                            proceso manualmente. Fetch también puede manejar la carga de archivos, pero requiere más
+                            código y puede ser más difícil de implementar.
+                        </li>
+                        <li>Compatibilidad con navegadores: Axios es compatible con navegadores modernos y también
+                            proporciona una versión para Node.js. Fetch es nativo en navegadores modernos y no requiere
+                            ninguna biblioteca adicional en Node.js.</li>
+                        <li>Tamaño: Axios es una biblioteca más ligera en términos de tamaño, lo que puede ser útil para
+                            proyectos más pequeños o en entornos de desarrollo. Fetch es más grande en comparación, pero
+                            proporciona más funcionalidades.
+                        </li>
+                        <li>Comunidad: Axios tiene una comunidad más grande y activa en comparación con fetch. Hay una
+                            amplia variedad de recursos, tutoriales y soporte disponible en línea.
+                        </li>
+                        <li>Actualización: Axios se actualiza con frecuencia y ofrece características y mejoras
+                            constantemente.
+                            Fetch es parte de la especificación de la API Fetch y no se actualiza tan a menudo.
+                        </li>
+                        <li>CORS (<em lang="en">Cross-Origin Resource Sharing</em>): Axios maneja automáticamente las
+                            solicitudes CORS y realiza solicitudes de tipo OPTIONS adicionales para asegurarse de que se
+                            permitan las solicitudes cruzadas.
+                            Fetch, por otro lado, no maneja automáticamente las solicitudes CORS. Si necesitas realizar
+                            solicitudes a un dominio diferente, deberás configurar correctamente los encabezados CORS en
+                            el servidor o utilizar un proxy para evitar problemas de seguridad.
+                        </li>
+                    </ol>
+                    <div id="editor03"></div>
+                    <p>En este ejemplo, se realiza una solicitud POST a una API de ejemplo utilizando Axios y Fetch. En
+                        Axios, se utiliza el método <span class="keyword">post</span> para enviar los datos en el cuerpo
+                        de la solicitud. En Fetch,
+                        se utiliza el método <span class="keyword">fetch</span> y se especifica el método de solicitud
+                        como ‘POST’ en la opción
+                        <span class="keyword">method</span>. Además, en Fetch se establecen los encabezados y el cuerpo
+                        de la solicitud en las
+                        opciones <span class="keyword">headers</span> y <span class="keyword">body</span>,
+                        respectivamente.
+                    </p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://miro.medium.com/v2/resize:fit:679/1*quTpcb5i1NuOx235KQynOg.jpeg"
+                        alt="HTTP balance">
+                    <p>En general, Axios ofrece una API más simple y concisa, mientras que Fetch es más flexible y
+                        permite más personalización. Sin embargo, Axios también proporciona más funcionalidades, como la
+                        capacidad para manejar errores de forma global y la posibilidad de realizar solicitudes en modo
+                        promesa.</p>
+
+
+                    <p>Puedes ampliar conocimientos leyendo este <a tabindex="0"
+                            href="https://medium.com/@johnnyJK/axios-vs-fetch-api-selecting-the-right-tool-for-http-requests-ecb14e39e285">artículo</a>
+                        o <a tabindex="0"
+                            href="https://codewithmee.medium.com/the-best-way-to-fetch-data-in-react-and-next-js-47b291922089"
+                            target="_blank" rel="noreferrer noopener">este otro</a>
+                        y viendo este <a tabindex="0" href="https://www.youtube.com/watch?v=p8q-eU8kRm4" target="_blank"
+                            rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Por qué son útiles las herramientas de desarrollo de React en el navegador?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://elemensoft.com/blog/wp-content/uploads/2023/05/react-developer-tools-1.webp"
+                        alt="Cabecera React Developer Tools">
+                    <p>Las herramientas de desarrollo de React en el navegador son una serie de herramientas que ayudan
+                        a los desarrolladores a depurar, inspeccionar y analizar aplicaciones React. Estas herramientas
+                        son útiles para realizar diversas tareas, como:</p>
+
+                    <ul>
+                        <li><strong>Depuración</strong>: Permiten detener la ejecución del código en un punto específico
+                            para inspeccionar variables, ver el flujo de ejecución y detectar errores. Esto ayuda a
+                            identificar y solucionar problemas en el código de manera más eficiente.</li>
+                        <li><strong>Inspección de componentes</strong>: Te permiten ver la estructura y el estado de los
+                            componentes React en tiempo real. Esto te ayuda a comprender cómo se renderizan los
+                            componentes y a realizar cambios en el código de manera más eficiente.</li>
+                        <li><strong>Análisis de rendimiento</strong>: Permiten analizar el rendimiento de la aplicación
+                            React e identificar posibles cuellos de botella. Esto incluye la capacidad de ver cuánto
+                            tiempo se tarda en renderizar componentes o en cargar recursos y cuántas actualizaciones se
+                            producen en ciertos componentes&hellip; entre otros indicadores de rendimiento. Esto te
+                            ayuda a identificar áreas de rendimiento que puedes optimizar para mejorar la velocidad y la
+                            experiencia del usuario.</li>
+                        <li><strong>Depuración de red</strong>: Te permiten ver y analizar las solicitudes de red
+                            realizadas por tu aplicación React. Esto te ayuda a identificar problemas de red y a
+                            optimizar las solicitudes de datos.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://reactjsexample.com/content/images/2018/08/devtools-full.gif"
+                        alt="React Dev Tools en funcionamiento.">
+                    <p>El principal inconveniente del uso de las herramientas de desarrollo de React en el navegador es
+                        que pueden ralentizar el rendimiento de la aplicación en comparación con su ejecución normal.
+                        Esto se debe a que realizan un seguimiento detallado de la aplicación y realizan operaciones en
+                        segundo plano que afectan al rendimiento general de la aplicación.</p>
+                    <p>Además, el uso excesivo de estas herramientas puede hacer que el código se vuelva más complejo y
+                        difícil de mantener, ya que los desarrolladores pueden depender demasiado de estas herramientas
+                        para realizar tareas comunes como la inspección de elementos o la depuración de errores. Esto
+                        puede hacer que el código sea más propenso a errores y más difícil de entender para otros
+                        desarrolladores que no estén familiarizados con las herramientas específicas.</p>
+                    <p>En general, es recomendable utilizar las herramientas de desarrollo de React en el navegador solo
+                        cuando sea necesario, y evitar su uso excesivo o en entornos de producción donde el rendimiento
+                        sea una preocupación importante.</p>
+
+                    <p>En este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=Wo7_OVtu1ls" target="_blank"
+                            rel="noreferrer noopener">video</a>
+                        podrás aclarar dudas, pero si lo tuyo es
+                        <a tabindex="0" href="https://www.freecodecamp.org/news/how-to-use-react-dev-tools/"
+                            target="_blank" rel="noreferrer noopener">leer</a> o <a tabindex="0"
+                            href="https://flaviocopes.com/react-developer-tools/" target="_blank"
+                            rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es el <em lang="en">debugger</em> en JavaScript? ¿Cómo se utiliza?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://i.ytimg.com/vi/MJZfGhJ_csc/maxresdefault.jpg"
+                        alt="Cabecera: Debugger en JavaScript.">
+                    <p>El <em lang="en">debugger</em> en JavaScript es una herramienta que te permite detener la
+                        ejecución del código en un punto específico (<em lang="en">breakpoint</em>) para poder
+                        inspeccionar variables, ver el flujo de ejecución y detectar
+                        errores. Se utiliza colocando la palabra clave <span class="keyword">debugger</span> en el
+                        lugar donde quieras que se detenga la ejecución. Cuando el navegador encuentre esta palabra
+                        clave, activará el <em lang="en">debugger</em> si la consola del desarrollador está abierta.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://assets.digitalocean.com/articles/alligator/js/debugging-js-best-practices/debugger.jpg"
+                        alt="Debugger en uso.">
+                    <p>Veamos un ejemplo.</p>
+                    <div id="editor05"></div>
+                    <p>Supongamos que queremos depurar la función <span class="keyword">sumar</span> para verificar si
+                        está funcionando
+                        correctamente. Podemos hacerlo de la siguiente manera:</p>
+                    <ul>
+                        <li>Abre la consola del navegador. Puedes hacerlo presionando <span class="keyword">F12</span>
+                            en la mayoría de los
+                            navegadores o buscando la opción “Developer Tools” en el menú de herramientas del navegador.
+                        </li>
+                        <li>
+                            <p>En la consola, ingresa el comando <span class="keyword">debugger</span> para establecer
+                                un punto de interrupción en la
+                                línea donde deseas iniciar la depuración. En este caso, podemos colocarlo en la primera
+                                línea de la función <span class="keyword">sumar</span>:</p>
+                            <div id="editor051"></div>
+                        </li>
+                        <li>Ejecuta el código. Cuando se llegue a la línea con <span class="keyword">debugger</span>, la
+                            ejecución se detendrá y se abrirá la ventana de depuración en la consola.</li>
+                        <li>En la ventana de depuración, podrás ver el estado actual de la aplicación, como las
+                            variables y los argumentos de las funciones. Puedes examinar estos valores y utilizar
+                            comandos como <span class="keyword">console.log</span> para imprimir información adicional
+                            en la consola.</li>
+                    </ul>
+
+                    <p>Este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=4Z8CM-E-HRE" target="_blank"
+                            rel="noreferrer noopener">video</a> y <a tabindex="0"
+                            href="https://www.youtube.com/watch?v=I388w3wDkjc" target="_blank"
+                            rel="noreferrer noopener">este otro</a> te podrán aclarar dudas, pero si te gusta <a
+                            tabindex="0"
+                            href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/debugger"
+                            target="_blank" rel="noreferrer noopener">leer</a> y <a tabindex="0"
+                            href="https://es.javascript.info/debugging-chrome" target="_blank"
+                            rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es un escuchador de eventos?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://i.ytimg.com/vi/jrI0WFCCLWY/maxresdefault.jpg"
+                        alt="Escuchador de eventos JavaScript.">
+                    <p>En JavaScript, un “escuchador de eventos” es una función que se asocia a un evento específico en
+                        un elemento del DOM (<em lang="en">Document Object Model</em>). Cuando ese evento ocurre, el
+                        escuchador de eventos se ejecuta automáticamente.</p>
+                    <p>Por ejemplo, si tienes un botón en tu página y quieres hacer algo cuando el usuario lo presiona,
+                        puedes agregar un escuchador de eventos al botón para que se ejecute una función cuando se
+                        produzca el evento “click”. Aquí tienes un ejemplo:</p>
+                    <div id="editor06"></div>
+                    <p>En este ejemplo, el escuchador de eventos se asocia al evento “click” del botón. Cuando el
+                        usuario presiona el botón, se ejecuta la función y se muestra el mensaje “El botón fue
+                        presionado” en la consola.</p>
+                    <p>Los escuchadores de eventos son una parte fundamental de la programación interactiva en
+                        JavaScript, ya que te permiten responder a acciones del usuario y realizar acciones en
+                        consecuencia.</p>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://cdn.educba.com/academy/wp-content/uploads/2022/01/Javascript-Event-Listener-768x427.jpg"
+                        alt="Definición de 'escuchador de eventos' JavaScript.">
+                    <p>Los beneficios de su uso están claros:</p>
+                    <ul>
+                        <li>Permite una programación más interactiva al estar atento a acciones del usuario como clics,
+                            teclas presionadas, etc.</li>
+                        <li>Ayuda a separar la lógica del programa al permitir la definición de funciones que respondan
+                            a eventos específicos.</li>
+                        <li>Facilita la creación de aplicaciones dinámicas y <em>responsivas</em>.</li>
+                    </ul>
+                    <p>Sin embargo, también hay problemas o perjuicios a tener en cuenta:</p>
+                    <ul>
+                        <li>Su uso excesivo puede complicar el mantenimiento y la depuración del código.</li>
+                        <li>El uso excesivo también puede afectar el rendimiento de la aplicación,
+                            especialmente en páginas con muchos elementos.</li>
+                        <li>Algunos eventos pueden causar problemas de rendimiento si no se gestionan adecuadamente,
+                            como eventos de desplazamiento (<em lang="en">scroll</em>) o redimensionamiento (<em
+                                lang="en">resize</em>).</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async"
+                        src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/JavaScript-Event-Types.jpg"
+                        alt="Tipos de eventos.">
+                    <p>Dos consejos:</p>
+                    <ul>
+                        <li><strong>Utiliza eventos específicos</strong>: En lugar de agregar un solo <em
+                                lang="en">event listener</em> a
+                            un elemento y esperar que se active, utiliza eventos específicos para cada acción que desees
+                            realizar. Esto ayuda a mantener el código más organizado y fácil de entender.</li>
+                        <li><strong>Agrega y elimina <em lang="en">event listeners</em> con cuidado</strong>: Asegúrate
+                            de agregarlos, y eliminarlos, adecuadamente. Especialmente cuando trabajas con elementos
+                            dinámicos en la página. Esto evita que se acumulen y afecte al rendimiento.</li>
+                    </ul>
+                    <p>Es importante tener en cuenta estos aspectos al decidir cuándo y cómo utilizar <em
+                            lang="en">event listeners</em>.</p>
+
+                    <h4>¿Cómo avanzar?</h4>
+                    <p>Para documentarte más puedes recurrir al <a tabindex="0"
+                            href="https://lenguajejs.com/javascript/eventos/addeventlistener/" target="_blank"
+                            rel="noreferrer noopener">artículo</a>, leer el <a tabindex="0"
+                            href="https://webdesign.tutsplus.com/es/introduction-to-javascript-event-listeners--cms-35236t">tutorial</a>
+                        o
+                        ver el <a tabindex="0" href="https://www.youtube.com/watch?v=03eid8Lc8V8" target="_blank"
+                            rel="noreferrer noopener">video introductorio</a>.</p>
+                </div>
+            </li>
+        </ul>
+        <h2>Ejercicios prácticos</h2>
+        <ul>
+            <li>
+                <h3>Usando codepen, cree una variable SCSS que almacene un color</h3>
+                <div class="contenido">
+                    <div id="editorE1"></div>
+                    <p>
+                        <a tabindex="0" href="https://codepen.io/jcn-gh/pen/MWRdqqE" target="_blank"
+                            rel="noreferrer noopener">CodePen</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3>Usando codepen, cree un SCSS Mixin que pueda usarse para diseñar botones</h3>
+                <div class="contenido">
+                    <div id="editorE2"></div>
+                    <p>Si tenemos el mixin anterior en un archivo SCSS, pongamos <span
+                            class="keyword">estilos.scss</span>,
+                        podemos usarlo en otro archivo CSS, digamos <span class="keyword">mi-archivo.scss</span>, de
+                        esta
+                        forma:</p>
+                    <div id="editorE3"></div>
+                    <p>
+                        <a tabindex="0" href="https://codepen.io/jcn-gh/pen/MWRdqqE" target="_blank"
+                            rel="noreferrer noopener">CodePen</a>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3>Usando Sandbox, agregue una fuente personalizada al código de inicio normal</h3>
+                <div class="contenido">
+                    <p>Encabezamiento HTML</p>
+                    <div id="editorE4"></div>
+                    <p>CSS</p>
+                    <div id="editorE5"></div>
+                    <p>
+                        <a tabindex="0"
+                            href="https://codesandbox.io/p/sandbox/checkpoint-15-673kkk?file=%2Findex.html%3A13%2C7"
+                            target="_blank" rel="noreferrer noopener">CodeSandbox</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script defer src="https://codemirror.net/codemirror.js"></script>
+    <script defer src="./js/cm_checkpoint_15.js"></script>
+
+</body>
+
+</html>
