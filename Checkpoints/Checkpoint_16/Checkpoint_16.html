@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 16</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/Checkpoint_16.css">
+</head>
+
+<body>
+    <article>
+        <h1 class="typewriter difuminado">Checkpoint 16</h1>
+        <p class="center difuminado"><b>Nota</b>: <i>pulsa en la pregunta para ver la respuesta</i><br>
+            o sobre una imagen para ampliarla (o devolverla a su tamaño original).
+        </p>
+        <img class="center" loading="lazy" decoding="async" src="https://netcloudengineering.com/wp-content/uploads/2018/10/Cyber-Attack-01.png" alt="Cabecera">
+        <h2>Preguntas</h2>
+        <ul>
+            <li>
+                <h3 tabindex="-1">¿Por qué utilizamos rutas de guardia?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://dev-to-uploads.s3.amazonaws.com/i/7is2fvy499tnuhv8p66v.png" alt="Protege tus rutas con condiciones.">
+                    <p>Las rutas de guardia son una forma de controlar el acceso a ciertas rutas en una aplicación. Se utilizan para asegurarse de que solo los usuarios autorizados puedan acceder a determinadas partes de la aplicación.</p>
+                    <p>Las rutas de guardia se pueden implementar utilizando componentes de enrutamiento como React Router. Estos componentes permiten definir rutas y especificar qué acciones deben realizarse cuando se accede a una ruta determinada.</p>
+                    <p>Por ejemplo, en una aplicación de autenticación, se puede utilizar una ruta de guardia para asegurarse de que solo los usuarios autenticados puedan acceder a la página de inicio. Si un usuario no está autenticado, se puede redirigir a una página de inicio de sesión o mostrar un mensaje de error.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://tag-afm-bucket.s3.amazonaws.com/static/assets/img/404/404-error.png" alt="Error 404 (No encontrado)">
+                    <p>Aunque el uso de rutas de guardia puede introducir una cierta complejidad adicional en la aplicación y es posible que se requiera más código y lógica para implementarlas y mantenerlas correctamente, sus beneficios lo compensan:</p>
+                    <ul>
+                        <li>Permiten controlar el acceso a diferentes partes de la aplicación. Esto puede ser útil para aplicaciones que requieren autenticación o autorización, como aplicaciones de administración o aplicaciones de comercio electrónico.</li>
+                        <li>Pueden ayudar a garantizar que solo los usuarios autorizados puedan acceder a ciertas partes de la aplicación. Esto puede mejorar la seguridad y la privacidad de la aplicación.</li>
+                        <li>Pueden mejorar la experiencia del usuario al proporcionar una navegación más fluida y evitar que los usuarios accedan a contenido no deseado o no autorizado.</li>
+                        <li>Pueden ayudar a organizar el código y la estructura de la aplicación. Se pueden definir rutas específicas y asociar acciones o componentes correspondientes a cada una de ellas.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://www3.gobiernodecanarias.org/medusa/ecoescuela/buenaspracticas/files/2019/04/logo-buenas-practicas.png" alt="Buenas prácticas">
+                    <p>Consejos para grantizar una implementación eficaz y segura.</p>
+                    <ul>
+                        <li>Separación de responsabilidades: Es importante separar la lógica de las rutas de guardia de la lógica de los componentes de la aplicación. Esto ayuda a mantener un código más limpio y fácil de mantener.</li>
+                        <li>Centralización de la lógica de autorización: Es recomendable centralizar la lógica de autorización en un solo lugar. Esto facilita la gestión y mantenimiento de las reglas de autorización en la aplicación.</li>
+                        <li>
+                            <p>Uso de <a tabindex="0" href="https://github.com/Upstatement/react-router-guards" target="_blank" rel="noreferrer noopener">middleware</a>: Puede ser útil utilizar middleware para manejar la lógica de autorización en las rutas de guardia. Esto puede simplificar la implementación y permitir reutilizar la lógica en diferentes rutas.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://cdn.sanity.io/images/fwtcx5qs/production/b002e649a1603edbf48a16c071f3f789151c0d61-1778x1000.jpg" alt="Una nueva (pero familiar) aproximación al enrutamiento middleware.">
+                        </li>
+                        <li>Protección de rutas sensibles: Asegúrate de proteger las rutas sensibles de forma adecuada. Por ejemplo, las rutas que requieren autenticación deben estar protegidas para evitar el acceso no autorizado.</li>
+                        <li>Manejo del redireccionamiento: Define de manera clara, y consistente, cómo manejar las redirecciones en caso de que un usuario no esté autorizado para acceder a una determinada ruta. Puedes redirigir al usuario a una página de inicio de sesión o mostrar un mensaje de error.</li>
+                        <li>Pruebas: Asegúrate de escribir pruebas para las rutas de guardia. Esto te ayudará a verificar que la lógica de autorización funciona como se espera y a detectar posibles problemas de seguridad.</li>
+                    </ul>
+                    <p>Siguiendo estas buenas prácticas, puedes implementar de manera efectiva rutas de guardia en tu aplicación React y mejorar la seguridad y la experiencia del usuario.</p>
+                    <h4>React Router</h4>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.bigscal.com/wp-content/uploads/2022/09/React-Router.png" alt="React-Router logo">
+                    <p>Si estás creando aplicaciones React para la web, necesitarás usar un enrutador para mostrar páginas al usuario y que pueda navegar por ellas.</p>
+                    <p>Vamos con lo que hay que saber para usar React Router en proyectos para la web, usando el paquete <span class="keyword">react-router-dom</span>.</p>
+                    <h4>Instalar React Router</h4>
+                    <p>Antes de seguir a delante, daremos por hecho que tienes unos conocimientos básicos de la línea de comandos, dispones de un <a tabindex="0" href="https://www.xataka.com/basics/14-mejores-editores-codigo-ide-para-programar-tus-aplicaciones" target="_blank" rel="noreferrer noopener">editor</a> donde teclear el código y has instalado <a tabindex="0" href="https://nodejs.org" target="_blank" rel="noreferrer noopener">node.js</a>.</p>
+                    <p>Primero instalaremos el paquete para aplicaciones web (para aplicaciones móviles se usaría React Router Native) usando npm (o yarn):</p>
+                    <div id="editor00" class="Codemirror"></div>
+                    <h4>Configuración básica</h4>
+                    <p>El primer componente que necesitamos para usar React Router es el <span class="keyword">BrowserRouter</span>, que se suele usar con el alias ‘Router’ al importarlo:</p>
+                    <div id="editor01"></div>
+                    <p>Su función principal es poder declarar rutas dentro de nuestra aplicación.</p>
+                    <p>Hay que tener en cuenta que no se puede acceder a ningún dato del enrutador fuera del componente. Por ejemplo, no se puede acceder a los datos del historial fuera del enrutador (es decir, con el hook <span class="keyword">useHistory</span>) y no podemos crear una ruta fuera de un componente Router.</p>
+                    <h4>Componente Route</h4>
+                    <p>Para declarar las rutas dentro del componente Router usamos el componente Route. Podemos declarar tantas rutas como queramos (o necesitemos) y necesitaremos proporcionar, al menos, dos propiedades para cada ruta: <span class="keyword">path</span> y <span class="keyword">component</span> (o render).</p>
+                    <div id="editor02"></div>
+                    <p>En <span class="keyword">path</span> se especifica la ubicación y <span class="keyword">component</span> se usa para mostrar el componente correspondiente a nuestra ruta.</p>
+                    <p><span class="keyword">component</span> solo puede recibir una referencia a un componente dado, por eso cuando queramos aplicar alguna lógica deberemos usar la propiedad <span class="keyword">render</span>. Para renderizar se puede usar una referencia a un componente o usar una función:</p>
+                    <div id="editor03"></div>
+                    <p>Hay que decir que se pueden eliminar tanto <span class="keyword">render</span> como <span class="keyword">component</span> y usar el componente que se desea asociar con una ruta determinado como hijo de Route:</p>
+                    <div id="editor04"></div>
+                    <p>Finalmente, si deseas que un componente (como una barra de navegación) sea visible en todas las páginas, colócalo dentro del <span class="keyword">BrowseRouter</span>, pero encima (o debajo) de las rutas declaradas:</p>
+                    <div id="editor05"></div>
+                    <h4>Componente switch</h4>
+                    <p>El componente <span class="keyword">Switch</span> debe incluir todas las rutas dentro de él para poder cambiar de una a otra (si, por algún motivo, quieres ver varias páginas al mismo tiempo&hellip; esta no es tu opción) y para que el enrutador sepa cuál es la ruta de inicio debemos declararla con <span class="keyword">exact</span>.</p>
+                    <div id="editor06"></div>
+                    <h4>Ruta 404</h4>
+                    <p>Podemos crear una ruta por defecto, con dirección <span class="keyword">*</span>, para el caso que se intente acceder a una página para la que no tenemos una ruta definida.</p>
+                    <div id="editor07"></div>
+                    <h4>Componente Link</h4>
+                    <p>Lo normal es que tengamos una barra de navegación con enlaces para desplazarnos por nuestra aplicación.</p>
+                    <p>Para esto tenemos al componente <span class="keyword">Link</span> que, junto con su propiedad <span class="keyword">to</span>, nos permite ir a donde le indiquemos.</p>
+                    <div id="editor08"></div>
+                    <h4>Componente NavLink</h4>
+                    <p>Este componente nos proporciona la posibilidad de indicarle, visualmente, al usuario donde se encuentra, mediante las propiedades <span class="keyword">activeStyle</span> y <span class="keyword">activeClassName</span>, según queramos incluir los estilos en línea o preferamos un estilo reutilizable.</p>
+                    <div id="editor09"></div>
+                    <h4>Componente Redirect</h4>
+                    <p>Aunque pueda paracer un poco extraño que un componente nos redireccione al intentar acceder a una página, no es ni más ni menos que lo que ocurre al intentar acceder a una página <em>privada</em> sin habernos autenticado primero: somos redirigidos a la página de inicio de sesión.</p>
+                    <div id="editor10"></div>
+                    <p>Las entradas de la función <span class="keyword">PrivateRoute</span> son el componente a mostrar si el usuario está autenticado y el resto de <em lang="en">props</em> (parámetros) pasados al componente.</p>
+                    <p>Se usa el <em lang="en">hook</em> <span class="keyword">useAuth</span> para obtener el estado de autenticación del usuario y, basándose en el mismo, se muestra la ruta correspondiente. Si está autenticado el componente especificado es mostrado con las props pasadas al componente <span class="keyword">PrivateRoute</span> y si no lo está, el usuario es redirigido a la página principal.</p>
+                    <p>Consulta la documentación oficial de las librerías de <a href="https://es.reactjs.org/docs/getting-started.html" target="_blank">React</a>, <a href="https://reactrouter.com/en/6.23.0/start/overview" target="_blank">React Router v6</a>, y <a href="https://jwt.io/introduction" target="_blank">JSON Web Token</a> para conocer más detalles.</p>
+                    <h4>Hook useHistory</h4>
+                    <p>A parte de los anteriores, quizás sea <span class="keyword">useHistory</span> el gancho más útil. Podemos llamarlo en la parte superior de cualquier componente declarado dentro de nuestro componente de enrutador y recuperar datos del historial con <span class="keyword">history</span>, que incluyen información como la ubicación asociada a nuestro componente mediante <span class="keyword">history.location</span>.</p>
+                    <div id="editor11"></div>
+                    <p>Además, <span class="keyword">history</span> incluye dos métodos, <span class="keyword">history.push</span> y <span class="keyword">history.replace</span>, que nos permiten dirigir al usuario a diferentes páginas de nuestra aplicación. La diferencia entre ambos es que con el último se borrará el historial tras realizar la navegación (como cuando el usuario cierra la sesión).</p>
+                    <div id="editor12"></div>
+                    <h4>Hook useLocation</h4>
+                    <p>Cuando solo necesitamos los datos de ubicación podemos ahorrar memoria, y ganar algo de agilidad, usando <span class="keyword">use.Location</span> en lugar de <span class="keyword">history.location</span>.</p>
+                    <div id="editor13"></div>
+                    <h4>Hook useParams + Rutas dinámicas</h4>
+                    <p>Algo que apenas se menciona cuando se trata de rutas es que se pueden crear rutas dinámicas. Es decir, rutas que no son fijas ni determinadas, sino que pueden tener cualquier número de caracteres.</p>
+                    <p>Las rutas dinámicas son útiles en situaciones en las que tenemos, digamos, una publicación de blog con un <em lang="en">slug</em> (identificador) único. ¿Cómo nos aseguramos de mostrar los datos y los componentes adecuados, dado que el slug de nuestra publicación de blog puede ser completamente diferente?</p>
+                    <p>Para declarar un parámetro de ruta en una ruta determinada, debe tener el prefijo dos puntos <span class="keyword">:</span>. Si quisiera crear una ruta dinámica, ”/blog/:postSlug”, para un componente de publicación de blog, podría hacer lo siguiente:</p>
+                    <div id="editor14"></div>
+                    <p>Con esto hemos hecho coincidir el componente apropiado con cualquiera que sea el identificador. Pero dentro de nuestro componente BlogPost, ¿cómo recibimos esos datos de publicación?</p>
+                    <p>Podemos acceder a cualquier parámetro de una ruta con su componente asociado usando el gancho <span class="keyword">useParams</span>.</p>
+                    <p>Nos devolverá un objeto que contendrá propiedades que coincidan con nuestros parámetros de ruta (en este caso,<span class="keyword">postSlug</span>). Podemos usar la desestructuración de objetos para acceder y declarar como una variable denominada <span class="keyword">postSlug</span>:</p>
+                    <div id="editor15"></div>
+                    <p>Y en la ruta ’/blog/my-blog-post’, se puede acceder a la cadena ‘my-blog-post’ en la variable <span class="keyword">postSlug</span> y recuperar los datos asociados a esa publicación dentro de <span class="keyword">useEffect</span>.</p>
+                    <h4>Hook useRouteMatch</h4>
+                    <p>Cuando queremos mostrar algo en función de si estamos en una ruta determinada o no, podemos usar el gancho <span class="keyword">useRouteMatch</span>.</p>
+                    <div id="editor16"></div>
+                    <p>Aquí se comprueba si la ruta actual conicide con la muestra para actuar en consecuencia.</p>
+                    <h4>Recomendaciones</h4>
+                    <ul>
+                        <li>Organizar las rutas: Mantén tus rutas organizadas y separadas en archivos o módulos para que sea más fácil de entender y mantener.</li>
+                        <li>Utilizar componentes de enrutamiento: Utiliza componentes de enrutamiento como <span class="keyword">BrowserRouter</span>, <span class="keyword">Route</span>, <span class="keyword">Switch</span> y <span class="keyword">Link</span> para manejar el enrutamiento en tu aplicación.</li>
+                        <li>Utilizar rutas dinámicas: Utiliza rutas dinámicas para permitir la navegación a través de datos, como <span class="keyword">/users/:id</span> para mostrar detalles de un usuario específico.</li>
+                        <li>Utilizar parámetros de ruta: Utiliza parámetros de ruta para capturar y pasar datos a través de las rutas, como <span class="keyword">/products/:id</span> para mostrar detalles de un producto específico.</li>
+                        <li>Utilizar protección de rutas: Utiliza protección de rutas para permitir el acceso, por ejemplo, solo a usuarios autenticados.</li>
+                        <li>Utilizar carga progresiva: Utiliza carga progresiva para cargar solo los componentes necesarios para cada ruta, lo que puede mejorar el rendimiento de la aplicación.</li>
+                        <li>Si tu aplicación es muy simple y no necesita un enrutamiento complejo, podrías considerar no usar React Router y manejar el enrutamiento manualmente con componentes de React.</li>
+                        <li>Si estás trabajando en un proyecto existente que ya tiene un enrutamiento implementado y no deseas cambiarlo, podrías optar por no usar React Router y seguir utilizando el enrutamiento existente.</li>
+                        <li>Si estás trabajando en un proyecto que tiene requisitos específicos de rendimiento y escalabilidad, y React Router no se ajusta a esos requisitos, deberías considerar otras opciones de enrutamiento.</li>
+                    </ul>
+                    <h4>Beneficios del enrutador React</h4>
+                    <ul>
+                        <li>Proporciona una forma de manejar el enrutamiento en la aplicación, como navegar entre diferentes vistas o páginas.</li>
+                        <li>Es componible y adaptativo.</li>
+                        <li>Agregar enlaces fácilmente después de diseñar la página web</li>
+                        <li>Ofrece una serie de características avanzadas, como la gestión de parámetros de ruta, el enrutamiento basado en rutas anidadas y la protección de rutas.</li>
+                    </ul>
+                    <h4>En contra</h4>
+                    <ul>
+                        <li>Puede aumentar la complejidad de la aplicación si se utiliza en exceso, especialmente si hay muchas rutas y componentes asociados.</li>
+                        <li>Puede dificultar la navegación en la aplicación si las rutas están demasiado anidadas o si hay demasiados parámetros de ruta.</li>
+                        <li>Puede generar un código más difícil de entender y mantener si no se utiliza correctamente, especialmente si hay muchas rutas y componentes asociados.</li>
+                        <li>Puede agregar un tiempo de carga adicional a la aplicación si se utiliza en exceso, especialmente si hay muchas rutas y componentes asociados.</li>
+                        <li>Puede generar un tamaño de paquete más grande para la aplicación si se utiliza en exceso, especialmente si hay muchas rutas y componentes asociados.</li>
+                        <li>Puede dificultar la indexación de la aplicación por parte de motores de búsqueda si las rutas son demasiado dinámicas o si hay demasiados parámetros de ruta.</li>
+                    </ul>
+                    <h4>Conclusión</h4>
+                    <p>El uso de React Router depende del contexto de tu proyecto y de tus necesidades específicas. Si React Router se adapta a tus necesidades y te brinda las funcionalidades que necesitas, es una buena opción. Sin embargo, si hay otras alternativas que se ajusten mejor a tus requisitos, deberías considerar utilizarlas.</p>
+
+                    <h4>¿Por dónde seguir?</h4>
+                    <p>
+                        <a tabindex="0" href="https://mauriciogc.medium.com/react-react-router-db391b3def2a" target="_blank" rel="noreferrer noopener">Lee</a> o mira este <a tabindex="0" href="https://www.youtube.com/watch?v=oDQAzTJrbSI" target="_blank" rel="noreferrer noopener">video</a> o este <a tabindex="0" href="https://www.youtube.com/watch?v=iPNt12IdbCU" target="_blank" rel="noreferrer noopener">otro</a> y puedes aclarar dudas con este <a tabindex="0" href="https://github.com/Upstatement/react-router-guards" target="_blank" rel="noreferrer noopener">middleware</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es una solicitud POST?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://blog.openreplay.com/images/a-guide-to-http-post-requests-in-javascript/images/hero.png" alt="Cabecera solicitud POST">
+                    <p>Es un método HTTP que envía datos al servidor. Es decir, significa crear o actualizar un recurso en el Servidor.</p>
+                    <p> La representación del cuerpo del mensaje se indica mediante el encabezado <span class="keyword" lang="en">Content-Type</span> (tipo de contenido). Dependiendo de este valor, el servidor tiene diferentes expectativas en cuanto a cómo se formatea el cuerpo del mensaje.</p>
+                    <blockquote lang="en">application/x-www-form-urlencoded<p>Este es el tipo de contenido predeterminado, que especifica la codificación en pares clave-valor. Cada par está delimitado por el carácter <span class="keyword">&amp;</span> y las asignaciones se indican con el signo igual <span class="keyword">=</span>. Los valores no alfanuméricos se <em>escapan</em> mediante codificación porcentual. Se pueden utilizar varios pares clave/valor en una sola línea.</p>
+                    </blockquote>
+                    <blockquote lang="en">multipart/form-data<p>En un formulario de varias partes, cada valor se envía como un bloque de datos y se utiliza un delimitador para separar cada parte. El delimitador entre partes se llama <em lang="en">Boundary</em> (Límite) y se especifica como parte del encabezado <span class="keyword" lang="en">Content-Type</span>. Las claves se especifican en el encabezado <span class="keyword" lang="en">Content-Disposition</span> (disposición del contenido) de cada parte del cuerpo del mensaje.</p>
+                    </blockquote>
+                    <blockquote lang="en">text/plain<p>No existe un formato prescrito para el cuerpo del mensaje y se espera que el servidor lo procese en consecuencia.</p>
+                    </blockquote>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.studytonight.com/servlet/images/post-request-method.jpg" alt="Partes de una solicitud POST">
+                    <p>El código de estado HTTP devuelto por el servidor después de recibir una solicitud HTTP POST variará según el resultado del procesamiento interno.</p>
+                    <p>El método HTTP POST es similar a HTTP PUT, donde se puede utilizar para crear un recurso, aunque PUT es idempotente, mientras que una solicitud POST idéntica no lo es, lo que significa que la misma solicitud POST puede tener diferentes efectos dependiendo de cómo se maneje en el servidor. Por ejemplo, si se envía una solicitud POST para crear un nuevo registro en una base de datos, esa misma solicitud POST podría crear un nuevo registro cada vez que se envíe, incluso si los datos son los mismos.</p>
+                    <p>En un método de solicitud POST, los datos del formulario se codifican en el cuerpo del mensaje. Ésta es una diferencia importante entre GET y POST.</p>
+                    <figure><img class="center" loading="lazy" decoding="async" src="https://www.tutorialexample.com/wp-content/uploads/2019/08/http-request-method-get-vs-post.png" alt="GET vs POST">
+                        <figcaption>GET vs POST</figcaption>
+                    </figure>
+                    <p>Ventajas de POST:</p>
+                    <ul>
+                        <li>Los datos del formulario se envían utilizando el cuerpo del mensaje. Por lo tanto, es más seguro que GET.</li>
+                        <li>No hay limitación en la longitud de los datos del formulario.</li>
+                        <li>Sin restricciones sobre el tipo de datos. También se permiten datos binarios.</li>
+                    </ul>
+                    <p>Desventajas de POST:</p>
+                    <ul>
+                        <li>No se puede marcar como favorito.</li>
+                        <li>Una solicitud HTTP POST se puede almacenar en caché, pero solo si se incluye información sobre la actualización.</li>
+                    </ul>
+                    <p>Los usos comunes de las solicitudes HTTP POST son:</p>
+                    <ul>
+                        <li>Enviar un bloque de datos a un recurso de procesamiento de datos, como la información ingresada por un usuario en un formulario HTML.</li>
+                        <li>Modificar o agregar datos a un recurso existente.</li>
+                        <li>Transferir un mensaje o artículo de blog para publicarlo en un foro.</li>
+                        <li>Indicar al servidor que realice acciones como iniciar o detener tareas.</li>
+                        <li>Crear un nuevo recurso.</li>
+                    </ul>
+                    <figure><img class="center" loading="lazy" decoding="async" src="https://www.tektutorialshub.com/wp-content/uploads/2015/08/HTTP-GET-Query-String.png" alt="Cadena de consulta HTTP GET">
+                        <figcaption>Cadena de consulta HTTP GET</figcaption>
+                    </figure>
+                    <p>Es decir, utiliza GET para operaciones seguras como una solicitud de una página o consultar una base de datos. Si alguna información que envíes al servidor es confidencial, no utilice GET. Porque todo lo que envías al servidor es visible en la URL. Por ejemplo, información como nombre de inicio de sesión, contraseña, etc. no debe enviarse mediante GET.</p>
+                    <p>Para todas las demás operaciones utiliza el método POST.</p>
+
+                    <p>¡¿No te ha quedado claro?! En este
+                        <a tabindex="0" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/get-vs-post/" target="_blank" rel="noreferrer noopener">artículo</a> y en este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=4vLQ8Py3dSo" target="_blank" rel="noreferrer noopener">video</a> te lo pueden aclarar… o no.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es un Portfolio y porque es importante?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://www.esdesignbarcelona.com/sites/default/files/img/6_pasos_para_crear_un_portfolio_digital_y_todo_lo_que_debe_incluir_2.png" alt="Portfolio (cartera)">
+                    <p>Un <strong>portafolio</strong> es una colección de documentos destinado a mostrar la creación de trabajos en distintas áreas, ya sea en diseño, arquitectura o fotografía, exhibiendo el esfuerzo del profesional y sus habilidades.</p>
+                    <p><strong>El portafolio sirve como una herramienta de recopilación</strong>, donde se recoge lo mejor que se ha producido a lo largo del tiempo.</p>
+                    <p>No es un sitio para mostrar la experiencia profesional, para eso está el CV, aquí únicamente se busca presentar los resultados a través de la muestra de diferentes <em>productos</em>.</p>
+                    <p>Con este recurso podrás organizar tu archivo personal para mostrar tu trabajo en la web <strong>de una manera más profesional</strong> y respaldar tu currículo con el mismo, ayudándote así a crear alianzas y contactos.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.mktnoticias.com/wp-content/uploads/2022/09/portolio.png" alt="Sin complicaciones.">
+                    <h4>Cómo crear un portafolio paso a paso</h4>
+                    <h5>Paso 1:</h5>
+                    <p>Crea una carpeta, para añadir cada uno de tus trabajos más destacados dentro de la misma, y así tener un amplio panorama de lo que sí debes incluir y de lo que no en tu <strong>portafolio</strong>. Es importante que trates de ser lo más intuitivo posible y seleccionar lo mejor que hayas elaborado a lo largo de tu trayectoria.</p>
+                    <h5>Paso 2:</h5>
+                    <p>Organiza cada uno de tus proyectos cronológicamente o por categorías.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://obedalvarado.pw/blog/wp-content/uploads/2018/10/portafolio_php.png" alt="Portafolios creativo.">
+                    <h5>Paso 3:</h5>
+                    <p>Un resumen es la clave, recuerda que no queremos un álbum de fotos sino un verdadero <em><strong>“portafolio digital”</strong></em>, además, es importante que describas brevemente cada uno de ellos. Tu portafolio se verá mucho más armonioso y con la información necesaria.</p>
+                    <h5>Paso 4:</h5>
+                    <p>En internet encontrarás diversos sitios web para colocar tu portafolio, hay plantillas que te harán más llevadero el proceso de creación.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.oberlo.com/media/1631547041-como-hacer-portfolio.png" alt="Consejos a tener en cuenta.">
+                    <p>Algunos aspectos que puedes tener cuenta:</p>
+                    <ul>
+                        <li>Mantén la calidad de tus imágenes.</li>
+                        <li>Generar un nombre de dominio para tu portafolio.</li>
+                        <li>Portafolios en línea optimizados para Google.</li>
+                        <li>Máxima velocidad y banda ancha ilimitada.</li>
+                        <li>Personalización de las plantillas.</li>
+                        <li>Disponibilidad 24/7 en la web para que tus visitantes puedan verlo cuando deseen.</li>
+                    </ul>
+                    <h5>Paso 5:</h5>
+                    <p>Solo te queda darte a conocer después de que hayas puesto todo tu tiempo, empeño y creatividad en <strong>crear un portafolio</strong>.</p>
+                    <p>Asimismo, puedes cargar el portafolio en diferentes páginas web de empleo con aquellas vacantes relacionadas a tu profesión o enviarlo vía correo electrónico a aquella empresa con la que siempre has querido trabajar, no olvides que el límite lo pones tú.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.nicaraguadisena.com/wp-content/uploads/2018/09/Tips-portafolio.jpg" alt="Consejos de como presentar un portafolio.">
+                    <h4>Recordatorio</h4>
+                    <p>Un portfolio es importante para mostrar tus habilidades y proyectos a posibles empleadores o clientes. Puede demostrar tu experiencia, creatividad y capacidad para resolver problemas a través de ejemplos concretos.</p>
+
+                    <p>Puedes ampliar perspectivas leyendo este <a tabindex="0" href="https://www.mktnoticias.com/portfolio-que-es-y-como-hacer-uno-para-mejorar-mi-marca/">artículo</a>
+                        o viendo este <a tabindex="0" href="https://www.youtube.com/watch?v=sBrGYIxjYxQ" target="_blank" rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Cuáles son algunas cosas que puede hacer para prepararse para las entrevistas de trabajo?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://2.bp.blogspot.com/-oKOaOHrLqsw/UoYQE3aXh_I/AAAAAAAAAQM/DMumCdbFRqQ/s1600/entrevista-trabajo.jpg" alt="Cabecera Diferentes actitudes antes de la entrevista">
+                    <p>En la entrevista de trabajo, no solo ponen a prueba nuestros conocimientos, sino que también evalúan nuestra actitud frente a las diferentes preguntas que se realizan.</p>
+                    <p>Queremos dar lo mejor de nosotros para lograr ese puesto de trabajo, pero muchas veces los nervios nos sabotean y no nos permiten demostrar todo nuestro potencial. ¡Atento a estos tips!</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://i.pinimg.com/originals/8a/2a/8d/8a2a8db120804e15e20e81824a0aaf5f.png" alt="Debes conocer antes y durante la entrevista">
+                    <p>Antes de acudir a la entrevista, es muy recomendable conseguir todos los datos posibles sobre la empresa, a qué se dedican, qué producen, cuáles son sus posibilidades de progreso. Esto impresionará a tu entrevistador y mostrará tu interés por el trabajo.</p>
+                    <p>Tan importante como lo anterior es saber si el puesto será capaz de satisfacer tus expectativas, tanto a nivel personal como profesional.</p>
+                    <p>Revisa cada requisito de la oferta de empleo. Reconoce tus fortalezas y debilidades o carencias. Prepara una defensa de los últimos.</p>
+                    <p>Siempre se puede elaborar una lista de preguntas directas e inteligentes que te podrá hacer el entrevistador, y que le darán la oportunidad de conocer más de cerca lo que deseas, a la vez, que dejará en claro que tienes objetivos precisos.</p><img class="center" loading="lazy" decoding="async" src="https://i.pinimg.com/originals/f2/73/f6/f273f6b0d1b0b9c0474f6d2ab9905989.jpg" alt="Consejos para la entrevista">
+                    <p>Repasa los conocimientos que exige el puesto.</p>
+                    <p>Prepara con tiempo el CV.</p>
+                    <p>Elige con tiempo el vestuario para la entrevista. Un atuendo formal en colores sobrios suele ser adecuado.</p>
+                    <p>Practica frente al espejo cuidando tu lenguaje corporal, tonalidad y actitud. Hay preguntas que se repiten: ¿te gusta trabajar solo o en grupo? ¿por qué estudiaste la carrera? ¿cómo te ves en cinco años? o el consabido “cuéntame de tí”.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://ticsyformacion.com/wp-content/uploads/2014/12/11-preguntas-entrevista-trabajo-infografia.jpg" alt="Preguntas que deberías hacer">
+                    <p>Se puntual, llega diez minutos antes.</p>
+
+                    <p>En este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=tReJugaY6tk" target="_blank" rel="noreferrer noopener">video</a>
+                        podrás aclarar dudas, pero si lo tuyo son los
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=72SAcNtBqx0" target="_blank" rel="noreferrer noopener">trucos</a> o <a tabindex="0" href="https://careersidekick.com/es/las-20-preguntas-y-respuestas-esenciales-de-una-entrevista/" target="_blank" rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Que es Linkdn y para que se utiliza?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://www.escuelasm.ec/wp-content/uploads/2018/07/linkedin-3504141_960_720.jpg" alt="Cabecera con logo de LindedIN">
+                    <p>Cuántas veces escuchaste: ¿te hiciste un perfil en Linkedin? ¿estás en Linkedin? ¿lo encontraste en Linkedin?. Y podemos seguir. Linkedin es una red social profesional orientada al ámbito empresarial.</p>
+                    <h4>Entonces&hellip; ¿qué es y cómo funciona Linkedin?</h4>
+                    <p>Linkedin es una plataforma social y profesional, una red que está principalmente orientada a empresas, negocios y empleos.</p>
+                    <p>La idea es que, a partir de los perfiles que se crean los usuarios (experiencia laboral, virtudes de los usuarios, etc), la web conecta a millones de empleados y de empresas en todo el mundo. De esta manera, se busca poner en contacto a determinadas personas que se encuentran buscando nuevas oportunidades en el mercado laboral y profesional.</p>
+                    <p>Es una plataforma que cuenta ingresos en base a suscripciones de diferentes usuarios, publicidad en la plataforma y en las distintas soluciones para la selección del personal. Por ello, en diciembre de 2016, <strong>Microsoft</strong> se convirtió en el propietario de esta plataforma considerada, a nivel mundial, la comunidad más profesional de todas.</p>
+                    <p>Esta red, a diferencia de las que todos conocemos, intenta ser un nexo en el espacio laboral y profesional. Es muy importante que tanto el pequeño emprendedor o como grandes empresas tengan presencia en esta plataforma.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://socialmediamarketingdigital.es/wp-content/uploads/2020/11/infografia-para-que-sirve-linkedin.png" alt="¿Para qué sirve Linkedin?">
+                    <h4>Entonces&hellip; ¿para qué sirve Linkedin?</h4>
+                    <ul>
+                        <li>
+                            <p>Mostrar cuáles son <strong>nuestras aptitudes profesionales</strong> y hacer Networking:</p>
+                            <p>Es importante contar con una amplia red de contactos de profesionales con los que podamos negociar y establecer relaciones comerciales. De ahí la importancia de contar con una página web (o por lo menos tener un Blog).</p>
+                            <p>Por eso es importante un término conocido, en el mundo de los negocios, como <strong>Networking</strong>, que hace referencia a una actividad socioeconómica, donde los profesionales y/o emprendedores se juntan para crear relaciones empresariales, desarrollar nuevas oportunidades de negocios, compartir su información e intentar atraer clientes potenciales.</p><img class="center" loading="lazy" decoding="async" src="https://waveonmedia.com/wp-content/uploads/2021/05/Mejorar-perfil-en-Linkedin_Wave-On-Media-1013x570.png" alt="Networking">
+                        </li>
+                        <li>
+                            <p>Encontrar el <strong>empleo deseado</strong> en base a nuestras aptitudes:</p>
+                            <p>Muchas veces, cuando estamos buscando trabajo, entramos en Linkedin para saber cuáles son los perfiles que se están buscando en el empleo que estemos buscando. Así esta plataforma te informa de los perfiles y aptitudes que necesitan las empresas. En los perfiles de las empresas podemos encontrar sus ofertas de empleo. Hay que estar atentos en el día a día para ver si lo que buscan encajan con tu perfil.</p>
+                            <p>A veces las empresas buscan directamente a la persona que necesitan, y con un perfil en Linkedin y un CV (Currículum Vitae) hay más oportunidades de que te conozcan.</p><img class="center" loading="lazy" decoding="async" src="https://www.oberlo.com/media/1646668230-como-crear-una-empresa-en-linkedin.png" alt="Cómo optimizar el perfil en Linkedin">
+                        </li>
+                        <li>
+                            <p>Encontrar <strong>nuevos proveedores</strong> para nuestro negocios:</p>
+                            <p>Es fácil encontrar en el buscador de Linkedin profesionales que podrían llegar a ser nuestros futuros proveedores.</p>
+                        </li>
+                        <li>
+                            <p>Encontrar <strong>nuevos clientes</strong> en el mercado laboral:</p>
+                            <p>Lo mismo que ocurre con los proveedores, ocurre con los clientes: podemos relacionarnos con departamentos o secciones de empresas que estén buscando los servicios que nosotros ofrezcamos.</p>
+                        </li>
+                        <li><img class="center" loading="lazy" decoding="async" src="https://consejodelhierro.es/wp-content/uploads/2023/06/que-es-y-para-que-sirve-linkedin.png" alt="Red de contactos">
+                            <p><strong>Aumentar el tráfico</strong> de nuestra página web:</p>
+                            <p>Es una buena manera de aumentar el tráfico de nuestro sitio web, blog o de lo que dispongamos. Como ocurre en las redes sociales, si generamos contenido para compartirlo, las personas interesadas podrán terminar en nuestro sitio web.</p>
+                        </li>
+                    </ul>
+                    <h4>Misión y Visión de Linkedin</h4>
+                    <p>Su idea principal es conectar a los profesionales de todo el mundo para que terminen siendo más productivos y ayudarlos a alcanzar las metas laborales que se hayan propuesto.</p>
+                    <p>Su objetivo es generar nuevas oportunidades económicas para los miembros del mercado laboral.</p>
+
+                    <p>Este
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=XeWp74UG7CI" target="_blank" rel="noreferrer noopener">video</a> y <a tabindex="0" href="https://www.rdstation.com/blog/es/linkedin-para-que-sirve/" target="_blank" rel="noreferrer noopener">este otro</a> te podrán aclarar dudas, pero si te gusta <a tabindex="0" href="https://paginasweb.tech/que_es/que_es_linkedin_que_es/" target="_blank" rel="noreferrer noopener">leer</a> y <a tabindex="0" href="https://www.rdstation.com/blog/es/linkedin-para-que-sirve/" target="_blank" rel="noreferrer noopener">leer</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Cómo debemos preparar nuestro perfil en Linkdn?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://linkedmas.com/wp-content/uploads/2022/05/Perfil-linkedin-blog-articulo-1.jpg" alt="¿Cómo crear un perfil en Linkedin super profesional?">
+                    <p>Este pretende ser tu GPS para aprender a crear tu perfil de LinkedIn, y ayudarte a colocar una huella digital que atraiga, deslumbre y narre tu carrera como: <em>¡la mejor de las novelas!</em></p>
+                    <p>Crear tu perfil en LinkedIn es como hacer un buen curriculum vitae que esté disponible para todos los profesionales de tu industria, hayas presentado una candidatura o no. Esa es la magia de esta plataforma.</p>
+                    <p>Regístrate en <a tabindex="0" href="https://linkedin.es/" target="_blank" rel="noreferrer noopener">Linkedin</a>, con tu correo electrónico, y sigue estos pasos para crear un perfil de 10:</p>
+                    <ul>
+                        <li>
+                            <p>Crea un encabezado potente</p>
+                            <p>No te conformes con un “Busco oportunidades laborales”, escribe tu descripción personal. Deja a un lado la timidez, es tu momento para brillar y ser original, así que establece el tipo de mercado laboral en el que quieres participar. Un juego de palabras relacionado con tu industria o un fragmento de tu mantra laboral favorito pueden agregar creatividad y un toque de personalidad a tu perfil. Pero recuerda que debe estar relacionado con tu campo profesional.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.seoptimer.com/storage/images/2017/06/perfil-linkedin-parte-superior.png" alt="Perfil Linkedin">
+                        </li>
+                        <li>
+                            <p>Redacta una descripción cautivadora</p>
+                            <p>En el apartado de “Acerca de” cuentas con 2.600 caracteres para hacer maravillas. Piensa en una metáfora que describa tu trayectoria profesional. Incluye algún logro profesional que hayas conseguido y que no quieres que el reclutador tenga que esperar para conocerlo. Sea más o menos ambicioso, menciónalo y empieza a lo grande. Menciona cuáles son tus objetivos profesionales, y cómo quieres conseguirlos.</p>
+                        </li>
+                        <li>
+                            <p>Deja que las fotos te representen</p>
+                            <p>¡Tranquilo, fiera! Eso no quiere decir que tengas que salir&hellip; de cualquier manera. La foto del perfil y del banner deben ser profesionales, pero con más gracia que la del DNI. Piensa en cómo te vistes para una entrevista laboral, ¿lo tienes? Pues igual, opta por una imagen de hombre de negocios elegante, contemporáneo y urbano.</p>
+                            <p>Tu <em lang="en">banner</em> es lo primero que se verá al entrar en tu perfil. Debe ser atractivo, añade color y deja que tu creatividad hable por tí. Y ¿por qué no? Aprovecha para <em>anunciarte</em> y enumera tus mayores logros.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://cdn-images.zety.es/pages/perfil_linkedin_zety_es_2.png" alt="El anuncio es importante">
+                        </li>
+                        <li>
+                            <p>Resalta tu experiencia laboral</p>
+                            <p>Hazlo de tal forma que cuando las empresas lean este apartado, tengan la impresión de que tus habilidades son equiparables a las de un genio o que gestionas proyectos como un director de orquesta.</p>
+                            <p>Ve directo al grano y resume tu experiencia en puntos, en vez de en párrafos. Describe 4 o 5 funciones por empleo y deja al reclutador con ganas de querer conocer más de ti.</p>
+                            <p>Tus logros y resultados sin números no son nada. Pon números y porcentajes como si fueras profesor de Matemáticas, recuerda que deben cantar tus logros, no susurrarlos.</p>
+                            <p>Siempre es aconsejable personalizar el CV a cada oferta laboral. Haz lo mismo aquí. Cada puesto debe verse como un traje hecho a medida. Resalta las habilidades y logros que corresponden a tus objetivos profesionales actuales.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://4.bp.blogspot.com/-7q1hI6VdLMo/VEDU4YHVUsI/AAAAAAAAAgo/_doKpnqjKJw/s1600/shutterstock_193429178.jpg" alt="Un traje hecho a la medida">
+                        </li>
+                        <li>
+                            <p>Muestra tu formación académica con orgullo</p>
+                            <p>Piensa que los estudios son los cimientos de la fortaleza que estás construyendo. Lo que has estudiado proporciona una visión de los conocimientos que tienes, así que, para cada título, comparte una de las aptitudes profesionales que hayas conseguido. Aprovecha para agregar las actividades extraescolares y clubes de estudio que han formado parte de tu formación académica.</p>
+                        </li>
+                        <li>
+                            <p>Destaca tus habilidades al máximo</p>
+                            <p>Basándose en la información profesional que hayas puesto en las secciones previas, Linkedin te recomendará una selección de <em lang="en">hard skills</em> (habilidades/competencias técnicas) relativas a tu industria. A su vez, podrás manualmente buscar otras habilidades técnicas e incluso <em lang="en">soft skills</em> (habilidades sociales) que se adapten a tu perfil y añadir ¡hasta 16 habilidades y competencias!</p>
+                            <p>Coloca tus habilidades más relevantes y codiciadas primero. ¡Tus habilidades y competencias digitales deberían liderar el grupo!</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.trecebits.com/wp-content/uploads/2016/01/linkedin1-595x316-595x316.jpg" alt="La importancia de los conocimientos informáticos">
+                            <p>Consigue recomendaciones. Cuando tus conexiones respaldan tus habilidades, tu perfil automáticamente se llena de credibilidad.</p>
+                        </li>
+                        <li>
+                            <p>Termina tu perfil de LinkedIn con proyectos y voluntariados</p>
+                            <p>Al crear tu perfil puedes incluir una gran variedad de información adicional para demostrar que las últimas secciones ¡no son menos que el resto de tu página!</p>
+                            <p>Incluir un portfolio con tus proyectos te ayudará a diferenciarte de los otros solicitantes de empleo y a demostrar tu valor de una manera más dinámica y atractiva.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://image.slidesharecdn.com/linkedinprofessionalportfolio-130430235443-phpapp01/95/slide-1-638.jpg" alt="No lo digas. Muéstralo.">
+                            <p>Tus actividades como voluntario muestran tu pasión, tu empatía y tu afán de contribución a un bien mayor.</p>
+                        </li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.idat.edu.pe/sites/default/files/infografia-768x988.png" alt="Recomendaciones para un buen perfil">
+
+                    <h4>¿Cómo ampliar?</h4>
+                    <p>Para más datos, puedes recurrir al <a tabindex="0" href="https://linkedmas.com/como-crear-un-perfil-de-linkedin-super-profesional/" target="_blank" rel="noreferrer noopener">artículo</a>, leer el <a tabindex="0" href="https://nagoregarciasanz.com/buen-perfil-linkedin/">tutorial</a>
+                        o
+                        ver el <a tabindex="0" href="https://www.youtube.com/watch?v=RmvLw0jfAGE" target="_blank" rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+        </ul>
+    </article>
+
+    <script defer src="https://codemirror.net/codemirror.js"></script>
+    <script defer src="./js/cm6editor.js"></script>
+    <script defer src="./js/checkpoint_16.js"></script>
+
+</body>
+
+</html>
