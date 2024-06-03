@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 20</title>
+    <link rel="icon" href="./img/lauburu.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/Checkpoint_20.css" media="(prefers-color-scheme: dark)">
+</head>
+
+<body id="body">
+
+    <div class="grid-btn">
+        <button id="sound-toggle" type="button" class="btn-sound btn-sound-off" aria-label="Toggle sound">
+            <svg class="svg" aria-hidden="true">
+                <path d="M6 7l8-5v20l-8-5v-10zm-6 10h4v-10h-4v10zm20.264-13.264l-1.497 1.497c1.847 1.783 2.983 4.157 2.983 6.767 0 2.61-1.135 4.984-2.983 6.766l1.498 1.498c2.305-2.153 3.735-5.055 3.735-8.264s-1.43-6.11-3.736-8.264zm-.489 8.264c0-2.084-.915-3.967-2.384-5.391l-1.503 1.503c1.011 1.049 1.637 2.401 1.637 3.888 0 1.488-.623 2.841-1.634 3.891l1.503 1.503c1.468-1.424 2.381-3.309 2.381-5.394z" />
+            </svg>
+        </button>
+        <button id="dark-light-toggle" type="button" class="btn-dark btn-dark-off" aria-label="Toggle theme">
+            <img src="../img/moon-solid.svg" width="24" height="24" alt="Moon icon">
+            <!-- <object id="iconTheme" data="&#127770;" width="24" height="24">dark-light-toggle</object> -->
+        </button>
+    </div>
+    <header>
+        <h1 class="typewriter">Checkpoint 20</h1>
+        <p class="center"><b>Nota</b>:<br><i>pulsa en la pregunta para ver la respuesta</i><br>o sobre una imagen para
+            ampliarla (o devolverla a su tamaño original).</p>
+        <img class="center" loading="lazy" decoding="async" src="https://velog.velcdn.com/images/baeyuna97/post/6c6e828b-5535-4c14-b2ef-802fe2a356b7/image.png" alt="Cabecera">
+        <h2 class="typedelete">¡Disfruta! ☕, Preguntas</h2>
+    </header>
+    <main>
+        <ul>
+            <li>
+                <h3 tabindex="-1">¿Qué es Fetch?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://i.ytimg.com/vi/kXSMTvvObLg/maxresdefault.jpg" alt="JavaScript Fetch API.">
+                    <p>Fetch (o FETCH) es una función incorporada en JavaScript que permite realizar solicitudes HTTP a
+                        servidores web, y se utiliza para hacer solicitudes y recibir respuestas de APIs (<em lang="en">Application Programming Interfaces</em>). En otras palabras, es una herramienta
+                        para comunicarse con servidores web y obtener o enviar datos.</p>
+                    <p>En su forma más básica, Fetch es como un <span class="keyword">XMLHttpRequest</span> (XHR, antes
+                        conocido como AJAX) pero mucho más fácil de usar. Se puede utilizar en el lado cliente (en el
+                        navegador) o en el lado servidor (como parte de una aplicación Node.js).</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F13%2Fe6%2F39%2F13e6392f9388b33b991dc604f41393da.jpg" alt="FETCH abreviado.">
+                    <p>Fetch ofrece varias <strong>ventajas</strong> sobre las solicitudes HTTP tradicionales:</p>
+                    <ul>
+                        <li><strong>Simplificación</strong>: Fetch es muy fácil de usar, ya que proporciona una API
+                            simplificada para hacer solicitudes y recibir respuestas.</li>
+                        <li><strong>Promesas</strong>: Fetch utiliza promesas para manejar las solicitudes y respuestas,
+                            lo que permite trabajar con los datos de la respuesta de manera asincrónica.</li>
+                        <li><strong>Compatibilidad</strong>: Fetch es compatible con la mayoría de los navegadores
+                            modernos y puede ser utilizado en el lado servidor o cliente.
+                            <figure><img class="center" loading="lazy" decoding="async" src="https://www.freecodecamp.org/news/content/images/2020/08/6-2.png" alt="Compatibilidad de Fetch con diferentes navegadores.">
+                                <figcaption>Compatibilidad de Fetch con diferentes navegadores.</figcaption>
+                            </figure>
+                        </li>
+                        <li><strong>Manejo de errores</strong>: Fetch incluye un manejo de errores avanzado que ayuda a
+                            detectar y tratar errores de manera efectiva.</li>
+                        <li><strong>Flexibilidad</strong>: Fetch admite diferentes tipos de solicitudes (GET, POST, PUT,
+                            DELETE) y permite personalizar las opciones de solicitud (por ejemplo, headers, cuerpo de la
+                            solicitud&hellip;).</li>
+                        <li><strong>Sintaxis clara</strong>: La sintaxis de Fetch es clara y fácil de entender, lo que
+                            facilita el desarrollo de aplicaciones.</li>
+                    </ul>
+                    <p>No es de extrañar que Fetch se haya convertido en una herramienta muy popular, especialmente en
+                        aplicaciones que requieren comunicación con APIs o servicios en la nube.</p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://miro.medium.com/v2/resize:fit:3496/1*-84RQ5CoiIY2V2hY00OybQ.png" alt="Uso de FETCH en React.">
+                        <figcaption>Uso de FETCH en React.</figcaption>
+                    </figure>
+                    <p>Pero, como todo, también tiene algunos <strong>inconvenientes</strong>:</p>
+                    <ul>
+                        <li><strong>Limitaciones en el lado servidor</strong>: Fetch solo es compatible con los
+                            servidores web que admiten la solicitud HTTP, lo que es un problema si se necesita
+                            comunicarse con servidores que no admiten esta solicitud.</li>
+                        <li><strong>Dependencia del navegador</strong>: Fetch es una biblioteca del lado cliente (en el
+                            navegador), lo que significa que no se puede utilizar en aplicaciones que no están
+                            ejecutadas en un navegador.</li>
+                        <li><strong>No compatible con IE</strong>: Aunque Fetch es compatible con la mayoría de los
+                            navegadores modernos, no es compatible con Internet Explorer (IE) debido a las limitaciones
+                            de su motor de JavaScript.</li>
+                        <li>
+                            <p><strong>No soporta <em><a tabindex="0" href="https://es.javascript.info/formdata" target="_blank" rel="noreferrer noopener">multipart/form-data</a></em></strong>: Fetch no
+                                admite solicitudes con <em class="tooltip">multipart/form-data<span class="tooltiptext">Es un tipo de contenido en el que los datos se dividen en
+                                        partes y cada una tiene su propia cabecera que especifica el tipo de contenido y
+                                        los datos asociados. Esto permite enviar varios tipos de datos en una única
+                                        solicitud. Es usado para enviar datos de formulario en solicitudes HTTP. Es
+                                        especialmente útil cuando se necesita enviar archivos adjuntos o datos binarios
+                                        junto con otros datos de formulario.</span></em> (como las que se utilizan para
+                                subir archivos), lo que puede ser un problema.</p>
+                        </li>
+                        <li><strong>No soporta WebSockets</strong>: Fetch no admite WebSockets, lo que es un problema
+                            cuando se necesita establecer una conexión bi-direccional con el servidor.</li>
+                        <li><strong>No es un reemplazo para XHR</strong>: Aunque Fetch es una biblioteca más
+                            simplificada y fácil de usar que XHR, no es un reemplazo directo ya que Fetch no admite
+                            algunas características de XHR, como la capacidad de cancelar solicitudes.</li>
+                    </ul>
+                    <p>Veamos un ejemplo de cómo obtener datos de una API:</p>
+                    <div id="editor01"></div>
+                    <p><strong>Explicación:</strong></p>
+                    <ul>
+                        <li><strong>La solicitud</strong>: Primero, hacemos una solicitud a la API de GitHub para
+                            obtener la lista de repositorios del usuario <em>jcn-gh</em>. La URL de la solicitud es
+                            <span class="keyword">https://api.github.com/users/jcn-gh/repos</span>.
+                        </li>
+                        <li><strong>La respuesta</strong>: La función <span class="keyword">fetch</span> devuelve un
+                            objeto que contiene la respuesta de la solicitud. En este caso, estamos interesados en el
+                            cuerpo de la respuesta (el JSON).</li>
+                        <li><strong>Convertir el JSON a un objeto JavaScript</strong>: Utilizamos la función <span class="keyword">response.json()</span> para convertir el cuerpo de la respuesta en un
+                            objeto JavaScript.</li>
+                        <li><strong>Tratar los datos</strong>: La función <span class="keyword">then</span> se llama
+                            cuando la solicitud ha sido exitosa y el objeto JavaScript ha sido creado. En este caso,
+                            estamos interesados en obtener la lista de repositorios y crear elementos HTML para cada
+                            repositorio.</li>
+                        <li><strong>Crear elementos HTML</strong>: Creamos un elemento <span class="keyword">&lt;li&gt;</span> para cada repositorio y agregamos texto al elemento
+                            con el nombre del repositorio y el lenguaje utilizado (si está especificado).</li>
+                        <li><strong>Agregar elementos HTML a una lista</strong>: Agregamos los elementos <span class="keyword">&lt;li&gt;</span> a la lista <span class="keyword">&lt;ul&gt;</span> con
+                            el ID <em>repo-list</em> en el documento.</li>
+                        <li><strong>Manejar errores</strong>: La función <span class="keyword">catch</span> se llama
+                            cuando hay un error en la solicitud o al convertir el JSON a un objeto JavaScript. En este
+                            caso, imprimimos el mensaje de error en la consola.<img class="center" loading="lazy" decoding="async" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdmitripavlutin.com%2Ffetch-with-json%2Fcover.png" alt="Cómo usar Fetch con JSON."></li>
+                    </ul>
+                    <h4>¿Cuándo usar Fetch y porqué?</h4>
+                    <p><strong>Cuándo&hellip;</strong></p>
+                    <ul>
+                        <li><strong>Necesitas hacer solicitudes HTTP</strong>: Si necesitas comunicarte con un servidor
+                            web para obtener o enviar datos.</li>
+                        <li><strong>Quieres simplificar el proceso de solicitud</strong>: Si estás haciendo solicitudes
+                            HTTP manualmente, Fetch ayuda a simplificar el proceso y reducir la complejidad del código.
+                        </li>
+                        <li><strong>Necesitas manejar errores de manera efectiva</strong>: Fetch incluye un manejo de
+                            errores avanzado que ayuda a detectar y tratar errores de manera efectiva.</li>
+                        <li><strong>Quieres utilizar promesas</strong>: Si estás desarrollando una aplicación
+                            asincrónica, Fetch es una excelente opción porque utiliza promesas para manejar las
+                            solicitudes y respuestas.</li>
+                    </ul>
+                    <p><strong>No usar cuándo&hellip;</strong></p>
+                    <ul>
+                        <li><strong>Necesitas comunicarte con servidores que no admiten HTTP</strong>: Si necesitas
+                            comunicarte con servidores que no admiten la solicitud HTTP (por ejemplo, servidores
+                            WebSocket o servidores que requieren una conexión bi-direccional), no es recomendable
+                            utilizar Fetch.</li>
+                        <li><strong>Necesitas subir archivos</strong>: Si necesitas subir archivos, Fetch no admite
+                            multipart/form-data y necesitarás utilizar otra biblioteca o técnica.</li>
+                        <li><strong>Necesitas establecer una conexión bi-direccional</strong>: Si necesitas establecer
+                            una conexión bi-direccional con el servidor (como en las aplicaciones que requieren una
+                            conexión WebSocket), no es recomendable utilizar Fetch.</li>
+                        <li><strong>Quieres hacer solicitudes complejas</strong>: Si necesitas hacer solicitudes
+                            complejas, como cancelar solicitudes o manejar la carga de datos en segundo plano, es más
+                            adecuado utilizar XHR directamente.</li>
+                    </ul>
+                    <p><strong>Usar porque&hellip;</strong></p>
+                    <ul>
+                        <li><strong>Simplifica el código</strong>: Fetch simplifica el proceso de solicitud y
+                            reduce la complejidad del código.
+                            <figure><img class="center" loading="lazy" decoding="async" src="https://www.entonbiba.com/img/codes/fetchapi.jpg" alt="Ejemplo">
+                                <figcaption>Ejemplo</figcaption>
+                            </figure>
+                        </li>
+                        <li><strong>Mejora la legibilidad</strong>: La sintaxis de Fetch es clara y fácil de entender,
+                            lo que facilita el desarrollo de aplicaciones.</li>
+                        <li><strong>Mejora la eficiencia</strong>: Fetch es más rápido y eficiente que algunas
+                            bibliotecas o técnicas anteriores, como XHR.</li>
+                        <li><strong>Es compatible con los navegadores modernos</strong>: Fetch es compatible con la
+                            mayoría de los navegadores modernos, lo que facilita el desarrollo de aplicaciones web.</li>
+                    </ul>
+                    <h4>Recomendaciones</h4>
+                    <ul>
+                        <li>
+                            <p>Asegúrate de verificar si el navegador admite la función <span class="keyword">fetch</span> antes de utilizarla.</p>
+                            <div id="editor02"></div>
+                        </li>
+                        <li>
+                            <p>Asegúrate de manejar errores y rechazos en tus solicitudes.</p>
+                            <div id="editor03"></div>
+                        </li>
+                        <li>
+                            <p>Asegúrate de verificar el estado de la respuesta antes de procesar los datos.</p>
+                            <div id="editor04"></div>
+                        </li>
+                        <li>
+                            <p>Asegúrate de utilizar la función <span class="keyword">fetch</span> en lugar de una
+                                biblioteca como Axios, excepto si tienes un buen motivo para hacerlo.</p>
+                            <div id="editor05"></div>
+                            <figure>
+                                <img class="center" loading="lazy" decoding="async" src="https://www.freecodecamp.org/news/content/images/2021/03/clip-2-axios-min.gif" alt="Conversión entre Fetch y Axios en React.">
+                                <figcaption>Conversión entre Fetch y Axios en React.</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <p>Asegúrate de enviar peticiones POST y PUT correctamente, ya que pueden requerir un cuerpo
+                                de solicitud.</p>
+                            <div id="editor06"></div>
+                        </li>
+                        <li>
+                            <p>Asegúrate de manejar las solicitudes con cuerpo, ya que pueden requerir un tratamiento
+                                especial.</p>
+                            <div id="editor07"></div>
+                        </li>
+                        <li>
+                            <p>Asegúrate de manejar las solicitudes con credenciales, tiempos, redirección y/o
+                                parámetros, ya que pueden requerir un tratamiento especial.</p>
+                            <div id="editor08"></div>
+                        </li>
+                    </ul>
+                    <p>Por último, recuerda que Fetch es una biblioteca JavaScript simple y potente para manejar
+                        solicitudes HTTP, pero debes asegurarte de manejar errores y rechazos correctamente.</p>
+                    <h4>Conclusión</h4>
+                    <p>En resumen, Fetch es una excelente opción para hacer solicitudes HTTP en aplicaciones web que
+                        requieren comunicación con APIs o servicios en la nube, y si necesitas hacer solicitudes HTTP
+                        simplificadas y manejar errores y rechazos de manera efectiva.</p>
+                    <p>Sin embargo, hay situaciones en las que otra biblioteca o técnica puede ser más adecuada (si
+                        necesitas comunicarte con servidores que no admiten HTTP o requieren una conexión
+                        bi-direccional).</p>
+
+                    <p>¡Espero que esto te haya ayudado a entender qué es Fetch! Pero si no es así, prueba en la
+                        documentación de <a tabindex="0" href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noreferrer noopener">mdn</a>, lee el <a tabindex="0" href="https://www.freecodecamp.org/news/fetch-api-cheatsheet/" target="_blank" rel="noreferrer noopener">artículo</a> o mira este <a tabindex="0" href="https://www.youtube.com/watch?v=37vxWr0WgQk" target="_blank" rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Que es React Animate Height?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://opengraph.githubassets.com/833c04909fa1131a743a2b88a24afbf9067f915ee7f920c68ccb2a3ab3442786/Stanko/react-animate-height" alt="GitHub - Stanko/react-animate-height.">
+                    <p>React Animate Height es una popular librería de código abierto que te permite añadir fácilmente
+                        animaciones y efectos de desplazamiento suave a tus aplicaciones React al actualizar la altura
+                        de un elemento.</p>
+                    <p>Cuando actualizas el contenido o los hijos de un contenedor en React, la altura del contenedor
+                        puede cambiar. Esto puede causar un efecto de parpadeo cuando el navegador recalcula el diseño.
+                        React Animate Height ayuda a mitigar este problema animando la transición en la altura de forma
+                        suave y eficiente en respuesta a cambios en su contenido o a eventos externos.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://4.bp.blogspot.com/-GQeEUOhkC_E/WfOJkl_ytuI/AAAAAAAACQg/2GhbvMpjtuoCQ7ymB0H9W7pjHR54OmLDwCLcBGAs/s700/animate_height_with_CSS_Transitions.gif" alt="Ejemplo de react-animate-height.">
+                    <h4>Características principales</h4>
+                    <p>La biblioteca proporciona una serie de componentes y funciones de utilidad que facilitan la
+                        implementación de animaciones de altura:</p>
+                    <ul>
+                        <li>Cuando actualizas el contenido o los hijos de un contenedor, anima el cambio de altura para
+                            crear un efecto de desplazamiento suave.</li>
+                        <li>La biblioteca utiliza Web Animations API, lo que proporciona un renderizado de animación
+                            eficiente y buen rendimiento.</li>
+                        <li>Puedes personalizar el tiempo de animación, la facilidad de transición, y otros ajustes para
+                            adaptarlo al estilo y las necesidades de tu aplicación.</li>
+                        <li>Es compatible con React 16 y superior, por lo que es una gran opción para aplicaciones React
+                            modernas.</li>
+                    </ul>
+                    <h4>Casos de uso:</h4>
+                    <ul>
+                        <li>Para animar la altura, de <em lang="en">tooltips</em> (descripciones emergentes),
+                            desplegables u otros elementos interactivos, desde cero hasta su altura real, o desde su
+                            altura real hasta cero.</li>
+                        <li>Añadir animaciones al colapsar o expandir encabezados de sección, tablas u otros contenidos.
+                        </li>
+                        <li>Mejorar la experiencia del usuario animando los cambios de altura al desplazarse por listas
+                            o cuadrículas.</li>
+                    </ul>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://user-images.githubusercontent.com/5382443/32377966-aeec59ee-c0a9-11e7-8bc4-aea099da2c7d.gif" alt="Ejemplo de funcionamiento.">
+                        <figcaption>Ejemplo de funcionamiento.</figcaption>
+                    </figure>
+                    <h4>¿Por qué usar React Animate Height?</h4>
+                    <ul>
+                        <li>Al proporcionar una experiencia de animación suave y natural, puede mejorar la usabilidad
+                            general de tu aplicación.</li>
+                        <li>Las actualizaciones de altura animadas pueden añadir un toque de elegancia a la interfaz de
+                            usuario de tu aplicación, haciéndola más atractiva y agradable de de usar.</li>
+                    </ul>
+                    <h4>Ejemplo</h4>
+                    <p>Veamos un ejemplo de cómo usar React Animate Height en una aplicación React.</p>
+                    <p>Si no lo has hecho, es el momento, instala la biblioteca mediante npm (o yarn):</p>
+                    <div id="editor21"></div>
+                    <p>Ahora, en tu componente React, puedes importar y utilizar los componentes y funciones de React
+                        Animate Height de la siguiente manera:</p>
+                    <div id="editor22"></div>
+                    <p>Una vez importado el componente <span class="keyword">AnimateHeight</span> de React Animate
+                        Height, dentro de nuestro componente, tenemos un estado <span class="keyword">isExpanded</span>
+                        que controla si el contenido se debe expandir o contraer. Cuando se hace clic en el botón, se
+                        invoca la función <span class="keyword">toggleExpand</span> que cambia el valor de <span class="keyword">isExpanded</span>.</p>
+                    <p>¡Así de complicado es!</p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://raw.githubusercontent.com/nkbt/react-collapse/HEAD/example/react-collapse.gif" alt="Comparación de diferentes efectos.">
+                        <figcaption>Comparación de diferentes efectos.</figcaption>
+                    </figure>
+                    <p>En general, React Animate Height es una biblioteca que puede ayudarte a crear aplicaciones React
+                        más atractivas y fáciles de usar con animaciones suaves y eficientes.</p>
+
+                    <p>¡¿No te ha quedado claro?! En su página de
+                        <a tabindex="0" href="https://github.com/Stanko/react-animate-height" target="_blank" rel="noreferrer noopener">GitHub</a>, en este <a tabindex="0" href="https://muffinman.io/react-animate-height/" target="_blank" rel="noreferrer noopener">artículo</a> y en este <a tabindex="0" href="https://www.youtube.com/watch?v=nxS90Gpin9E" target="_blank" rel="noreferrer noopener">video</a> (usando únicamente CSS y HTML) te lo pueden aclarar… o
+                        no. En <a tabindex="0" href="https://codesandbox.io/p/sandbox/kind-scooby-j535s5?file=%2Fsrc%2Findex.js%3A13%2C1&from-embed=" target="_blank" rel="noreferrer noopener">codesandbox</a> puedes ver (y modificar) efectos.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">CSS Media Queries y su utilidad</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://codingwithkaushal.com/wp-content/uploads/2023/08/admin-ajax-media-e1698299409643.png" alt="CSS Media Queries.">
+                    <p>Una <em lang="en">CSS Media Query</em> (consulta de medios de CSS) es una declaración, en un
+                        archivo CSS, que permite aplicar diferentes estilos basados en ciertas condiciones, tales como
+                        el tamaño de la pantalla, el tipo de dispositivo o la orientación.</p>
+                    <p><img class="center" loading="lazy" decoding="async" src="https://www.freecodecamp.org/news/content/images/size/w1600/2021/05/image-56.png" alt="Sintaxis de la consulta de medios."></p>
+                    <p>La sintaxis de una consulta de medios CSS es la siguiente:</p>
+                    <div id="editor30"></div>
+                    <p>Donde <span class="keyword">condición</span> puede ser:</p>
+                    <ul>
+                        <li><span class="keyword">screen</span>: para pantallas y dispositivos de sobremesa.</li>
+                        <li><span class="keyword">handheld</span>: para los dispositivos portátiles, como los
+                            teléfonos inteligentes.</li>
+                        <li><span class="keyword">projector</span>: se aplica a las pantallas basadas en proyectores.
+                        </li>
+                        <li><span class="keyword">print</span>: se aplica a medios impresos, como papel o PDF.</li>
+                        <li><span class="keyword">(min-width: 300px)</span>: cuando el ancho de la pantalla es
+                            de al menos 300 píxeles.</li>
+                        <li><span class="keyword">(max-width: 800px)</span>: cuando el ancho de la pantalla no
+                            supera los 800 píxeles.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.csssolid.com/images/css-media-query.png" alt="Esquema de consulta de medios.">
+                    <h4>¿Cuáles son las ventajas de utilizar CSS media queries?</h4>
+                    <ul>
+                        <li>Las consultas de medios te permiten crear diseños que se adaptan a diferentes tamaños de
+                            pantalla, dispositivos y orientaciones.</li>
+                        <li>Puedes aplicar diferentes estilos en función de condiciones específicas, como el tamaño de
+                            la pantalla, el tipo de dispositivo o la orientación.</li>
+                        <li>Al proporcionar una experiencia adaptada a diferentes dispositivos y tamaños de pantalla,
+                            puedes mejorar la usabilidad general de tu aplicación.</li>
+                        <li>Las consultas de medios te ayudan a evitar escribir código duplicado para diferentes
+                            escenarios, haciendo que tu CSS sea más eficiente.</li>
+                    </ul>
+                    <h4>¿Cuándo usarlas?</h4>
+                    <ul>
+                        <li>Utiliza consultas para ajustar el diseño de tu aplicación en función del tamaño o la
+                            orientación de la pantalla.</li>
+                        <li>Aplica tamaños de fuente proporcionales al tamaño de las pantallas.</li>
+                        <li>Utiliza consultas para crear una experiencia única para dispositivos móviles, como ocultar
+                            elementos innecesarios o ajustar los diseños.</li>
+                        <li>Las consultas de medios te permiten adaptar tu diseño para medios impresos, como PDF o
+                            publicaciones en papel.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.dongee.com/tutoriales/content/images/2022/12/image-64.png" alt="Ejemplos de media queries para diferentes pantallas.">
+                    <h4>Mejores prácticas</h4>
+                    <ul>
+                        <li>Combina múltiples condiciones utilizando operadores lógicos (por ejemplo, <span class="keyword">and</span> y <span class="keyword">or</span>) para crear reglas más
+                            complejas.</li>
+                        <li>Prueba tus estilos en diferentes dispositivos y tamaños de pantalla para asegurarte de que
+                            funcionan como está previsto.</li>
+                        <li>Empieza con consultas básicas y ve añadiendo complejidad según sea necesario.</li>
+                    </ul>
+                    <h4>Ejemplo</h4>
+                    <p>Veamos un ejemplo de <em lang="es">CSS media query</em> para dispositivos diferentes
+                        con diferentes orientaciones de
+                        pantalla y para impresión.</p>
+                    <div id="editor31"></div>
+                    <p>Aunque hay casos variados y únicamente se han aplicado al elemento <span class="keyword">body</span>, obviamente, debes añadir los que necesites en tus archivos.</p>
+                    <p>Resumiendo, al aprovechar las consultas de medios CSS, puedes crear diseños adaptables,
+                        eficientes y con capacidad de respuesta que ofrezcan una mejor experiencia de usuario en
+                        distintos dispositivos y tamaños de pantalla.</p>
+
+                    <p>Puedes ampliar perspectivas acudiendo a la <a tabindex="0" href="https://lenguajecss.com/css/responsive-web-design/media-queries/" target="_blank" rel="noreferrer noopener">lectura</a> y viendo este <a tabindex="0" href="https://www.youtube.com/watch?v=2rlWBZ17Wes" target="_blank" rel="noreferrer noopener">video</a>.</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Que es responsive mobile design?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://i.ytimg.com/vi/zEdRVt2H63I/maxresdefault.jpg" alt="Mobile Responsive Design.">
+                    <p><em lang="en">Responsive Mobile Design</em> (RMD, Diseño de móvil adaptable) es un enfoque
+                        de diseño web que permite que un sitio web se adapte y se vea correctamente en diferentes
+                        dispositivos y tamaños de pantalla, ofreciendo una experiencia de usuario óptima,
+                        independientemente de cómo accedan los usuarios a él. Esto se logra mediante el uso de <em lang="en">CSS media queries</em> y un diseño fluido que se ajusta automáticamente según el
+                        tamaño de la pantalla del dispositivo en el que se está visualizando.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://assets.justinmind.com/wp-content/uploads/2020/09/responsive-website-examples-prioritize-content-mobile-first.png" alt="Priorizar el contenido para móviles.">
+                    <h4>Características</h4>
+                    <ul>
+                        <li>
+                            <p>La estructura de la cuadrícula está diseñada para adaptarse a diferentes tamaños de
+                                pantalla mediante el uso de unidades relativas (por ejemplo, <span class="keyword">%</span> o <span class="keyword">em</span>) en lugar de unidades
+                                fijas (como <span class="keyword">px</span>).</p>
+                            <img class="center" loading="lazy" decoding="async" src="./img/mobile-responsive-design-example-01.png" alt="Diseño de cuadrícula.">
+                        </li>
+                        <li>Las imágenes están optimizadas para diferentes resoluciones de pantalla y dispositivos, lo
+                            que garantiza que sigan siendo legibles y visualmente atractivas.</li>
+                        <li>Las consultas de medios CSS se utilizan para aplicar estilos basados en condiciones
+                            específicas, como el tamaño de la pantalla, el tipo de dispositivo o la orientación.</li>
+                        <li>El diseño del sitio web se ajusta para adaptarse al espacio de pantalla disponible, teniendo
+                            en cuenta factores como la anchura, la altura y la relación de aspecto de la pantalla.</li>
+                        <li>RMD prioriza un enfoque centrado en el usuario, centrándose en la creación de una
+                            experiencia fluida a través de diferentes dispositivos y plataformas.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://uxfactor.ca/wp-content/uploads/2016/12/responsive-mobile-design-1.png" alt="Prototipos clicables, diseño de interacción.">
+                    <h4>Ventajas</h4>
+                    <ul>
+                        <li>Al adaptarse a diferentes pantallas, garantiza que los usuarios puedan navegar e interactuar
+                            fácilmente con el sitio web o la aplicación, independientemente de su dispositivo.</li>
+                        <li>RMD ayuda a garantizar que los sitios web sean accesibles para un público más amplio,
+                            incluidos aquellos que utilizan dispositivos móviles, tabletas u otros ordenadores no
+                            tradicionales.</li>
+                        <li>Con un diseño adaptativo, solo es necesario mantener una versión del sitio web, en lugar de
+                            versiones separadas para diferentes dispositivos y plataformas.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://wpactivethemes.com/wp-content/uploads/2023/08/mobile-friendly-web-design.jpeg" alt="Diseño web adaptable a dispositivos móviles.">
+                    <h4>Consejos</h4>
+                    <ul>
+                        <li>Diseña primero para pantallas pequeñas y luego adapta tu diseño para pantallas más grandes.
+                        </li>
+                        <li>Utiliza <span class="keyword">%</span>, <span class="keyword">em</span> u otras unidades
+                            relativas para crear cuadrículas fluidas que se adapten a los diferentes tamaños de
+                            pantalla.</li>
+                        <li>
+                            <p>Comprime las imágenes y utiliza soluciones de imagen adaptables (por ejemplo, <span class="tooltip"><span class="keyword">srcset</span>)<span class="tooltiptext">Es un
+                                        atributo de la
+                                        etiqueta <span class="keyword">&lt;img&gt;</span> en HTML que se utiliza para
+                                        proporcionar múltiples versiones de una imagen en diferentes
+                                        resoluciones.</span></span> para garantizar que sigan siendo legibles y
+                                visualmente atractivas en diferentes dispositivos.</p>
+                        </li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://i0.wp.com/www.silocreativo.com/wp-content/uploads/2016/11/media-query-para-mobile-first.png?resize=666%2C500&quality=100&strip=all&ssl=1" alt="Diseñar primero para el móvil.">
+                    <p>En resumen, el diseño responsive mobile garantiza una experiencia de usuario óptima al ajustar el
+                        contenido y la disposición de los elementos para que sean fáciles de leer y navegar en cualquier
+                        dispositivo. Por lo que, si adoptas el diseño adaptable para móviles, podrás crear un sitio web,
+                        o una aplicación, optimizado para distintos dispositivos y plataformas, mejorando en última
+                        instancia la calidad general de su presencia en línea.</p>
+
+                    <p>Lo mejor es <a tabindex="0" href="https://davidsandyofficial.com/mobile-responsive-design/" target="_blank" rel="noreferrer noopener">leer</a> ¿o prefieres un <a tabindex="0" href="https://www.youtube.com/watch?v=PM3XW_1RAIs" target="_blank" rel="noreferrer noopener">video</a>?</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Qué es una base de datos SQL?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://www.uisort.com/blog/wp-content/uploads/2022/05/SQL-1024x341-2-768x256.png" alt="SQL.">
+                    <p>Una base de datos SQL es un sistema de gestión de bases de datos relacionales que utiliza el
+                        lenguaje SQL (<em lang="en">Structured Query Language</em>, Lenguaje de consulta estructurado)
+                        para almacenar, manipular y recuperar datos. SQL es un lenguaje estándar utilizado para
+                        interactuar con bases de datos relacionales.</p>
+                    <p>Las bases de datos SQL almacenan datos en tablas que se relacionan entre sí mediante claves
+                        primarias y claves foráneas. Estas bases de datos están estructuradas y garantizan la integridad
+                        de los datos, lo que significa que siguen un esquema predefinido y aseguran que los datos sean
+                        consistentes y precisos.</p>
+                    <figure>
+                        <img class="center" loading="lazy" decoding="async" src="https://powerbidocs.com/wp-content/uploads/2019/12/SQL-Keys.png" alt="Las claves SQL.">
+                        <figcaption>Las claves SQL son un campo único o una combinación de varios campos en una tabla.
+                            Permiten crear relaciones entre dos o más tablas y mantener la unicidad en una tabla.
+                        </figcaption>
+                    </figure>
+                    <p>Algunos ejemplos de sistemas de gestión de <a tabindex="0" href="https://databasetown.com/examples-of-relational-database/" target="_blank" rel="noreferrer noopener">bases de datos relacionales</a> que utilizan SQL son
+                        MySQL, PostgreSQL, Oracle, DB2 y SQL Server.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://blog.devart.com/wp-content/uploads/2021/12/database-1.png" alt="Bases de datos SQL polpulares.">
+                    <p>Las características de una base de datos SQL son las siguientes:</p>
+                    <ul>
+                        <li>
+                            <p>Las bases de datos SQL utilizan tablas para almacenar datos, donde cada tabla tiene filas
+                                (registros) y columnas (campos) que representan entidades y atributos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.guru99.com/images/1/091318_0803_RelationalD1.png" alt="Conceptos y ejemplo de bases de datos">
+                        </li>
+                        <li>
+                            <p>SQL proporciona un lenguaje estándar para consultar y manipular datos en la base de
+                                datos.
+                                Permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) como INSERT,
+                                SELECT,
+                                UPDATE y DELETE.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://docs.railsbridge.org/job-board/img/crud_grid.jpg" alt="SQL Language">
+                        </li>
+                        <li>Las bases de datos SQL permiten establecer restricciones de integridad para garantizar la
+                            precisión y consistencia de los datos, como claves primarias, claves foráneas y
+                            restricciones de unicidad.</li>
+                        <li>
+                            <p>SQL admite transacciones para garantizar la atomicidad, consistencia, aislamiento y
+                                durabilidad (ACID) de las operaciones en la base de datos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://image.slideserve.com/1344224/3-5-1-2-propiedades-de-atomicidad-consistencia-aislamiento-y-durabilidad-acid-l.jpg" alt="Atomicidad, consistencia, aislamiento y durabilidad.">
+                        </li>
+                        <li>Proporciona mecanismos de seguridad para controlar el acceso a los datos, como roles,
+                            permisos y autenticación.</li>
+                        <li>Las bases de datos SQL pueden escalar vertical u horizontalmente para manejar grandes
+                            volúmenes de datos y ofrecer un rendimiento óptimo.</li>
+                        <li>SQL permite crear índices para acelerar la búsqueda y recuperación de datos, mejorando el
+                            rendimiento de las consultas.</li>
+                        <li>Permite crear vistas, que son consultas predefinidas almacenadas en la base de datos,
+                            facilitando la reutilización de consultas complejas.</li>
+                    </ul>
+                    <p>Aunque las bases de datos SQL están diseñadas para manejar grandes cantidades de datos y soportar
+                        un alto volumen de transacciones, es importante realizar tareas de mantenimiento, como hacer
+                        copias de seguridad, optimizar consultas, crear índices&hellip; para garantizar un
+                        rendimiento óptimo.</p>
+                    <p>Una base de datos SQL funciona mediante la creación de tablas para almacenar datos, la
+                        manipulación de estos datos a través de consultas SQL y el mantenimiento adecuado para
+                        garantizar la integridad y eficiencia de la base de datos.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://coggle-downloads-production.s3.eu-west-1.amazonaws.com/19e463b20be3be2df7713fd7dcc19745658ee3989f48a41f4b46a4be13d45ebd/SQLStructured_Query_Language.png?AWSAccessKeyId=ASIA4YTCGXFHBIW2CT5Y&Expires=1717357768&Signature=clrmT5eOLSxFFyKZlWk36pPNP70%3D&X-Amzn-Trace-Id=Root%3D1-665c7868-486e0035b1a754e66df9c94c%3BParent%3D3914feb312d1cf0d%3BSampled%3D0%3BLineage%3D51963df5%3A0&x-amz-security-token=IQoJb3JpZ2luX2VjEO7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIQCYYrgsCMSKkp9yhYGAVngnN43J4z%2Fqd0ETc2bWkKVoPgIgYOJaLEWCvXmA2xEB%2B9OuN3x1Sazj2d9JK8G7PC%2FUmJsqggMIdxAAGgw4Nzc0NTMwMzE3NTgiDOPxQMq24JMvgZ1vkirfAkOFqbJIe4Y9SdbJfNFg8PyoDLp6w6ZyHDV%2BGzXZa6X9L02ICMGZn4BgVM0A8T7JrPnsDHNrbm6n62FbE2ORiIihHLYzOzGfUIYfESl%2F44o2BaYuKSDL%2FMJ%2FqaEV9viEXeLTloySWvcW3EOCAytS2yy90V2M5yU5haZ6K9Q0O4%2BgLjKsHz180nmC9fhDDsg6xXtJZ3noHxUOWJnhuPdkZD5nC%2BV6M5lVsoStkeP0Eq8D1JBsCZCuU2mNHloHUYhOudEebFt3C%2FdovTMZoYjc5CPxDTkSat3MkVZtGt%2FEFn3UskGEO9e%2F0vZcIexNmhonuCXeRgtbtfb9MofoCv2eimKrcc%2FEUgHq6MCThgaMqlTb%2B7izf2l6mcvfX0c4dGfQm1XYJLVbhoZk%2FNUYajkdGI7jd9q5iWhLTozVf8J6DVoeyOcWL78%2FTtIYXpg9GvdT5FqmnNI5tV0LFJNXbRJDIzCz6PGyBjqeAdOZFSQL5smt%2BKdzU7aBipkCYJ53RaJfgNi%2FOcN9Q5SHVvrydt0yjbF9r7kvHwtDy2wP2AYLoLlictnRAR65LiuUE5uVipgN82A0PlHagYmt8RX4UIWqhVRj52qzm8IWbehDQZvIK9G%2BCStAyuCpYQqS5USKZP8Uf5XdxNv4bqh02PgZn%2F%2Bk%2FwrBVEdg0jJ9y0IkS3u5BnVPLPJUazYO" alt="Diagrama del lenguaje SQL (lenguaje de consulta estructurado).">
+                    <p>Tienen grandes <strong>ventajas</strong>:</p>
+                    <ul>
+                        <li>SQL es un lenguaje estándar ampliamente utilizado en la industria, lo que facilita la
+                            comunicación y colaboración entre diferentes sistemas y equipos.</li>
+                        <li>Las bases de datos SQL proporcionan una forma estructurada de almacenar y gestionar los
+                            datos, facilitando la búsqueda de información específica.</li>
+                        <li>La base de datos garantiza la coherencia de los datos reforzando las relaciones entre las
+                            tablas y evitando que se inserten datos no válidos.</li>
+                        <li>
+                            <p>Se pueden realizar consultas complejas mediante comandos SQL para extraer datos
+                                o analizar patrones.</p>
+                            <div class="CodeMirror" id="editor41"></div>
+                            <p><small><i>En esta consulta, se seleccionan el ID del empleado, el nombre del empleado, el
+                                        volumen de ventas y el número de órdenes para los empleados de ventas que tienen
+                                        un volumen de ventas superior al promedio y que tienen el mayor número de
+                                        órdenes.</i></small></p>
+                        </li>
+                        <li>Soporta un alto volumen de transacciones.</li>
+                    </ul>
+                    <p>Pero también presentan algunos <strong>inconvenientes</strong>:</p>
+                    <ul>
+                        <li>Suelen ser más complejas que otras tecnologías de almacenamiento de datos.</li>
+                        <li>Normalmente requieren más recursos de hardware y administración.</li>
+                        <li>No están adecuadas para almacenar grandes cantidades de datos no estructurados (como
+                            imágenes, archivos PDF o datos de streaming).</li>
+                        <li>Algunas soluciones de bases de datos SQL pueden resultar costosas en términos de licencias y
+                            mantenimiento.</li>
+                    </ul>
+                    <img class="center" loading="lazy" decoding="async" src="https://www.radiobase.eu/wp-content/uploads/Ventajas-y-desventajas.png" alt="Pros y contras.">
+                    <p>Como puede deducirse, las bases de datos SQL son una opción sólida para aplicaciones que
+                        requieren estructura y consistencia en los datos, pero es importante considerar las ventajas e
+                        inconvenientes antes de elegir este tipo de base de datos para un proyecto específico.</p>
+                    <p>Se debe utilizar una base de datos SQL cuando se requiere almacenar y gestionar datos
+                        estructurados de manera relacional, con relaciones bien definidas entre las tablas. Es común
+                        utilizar bases de datos SQL en aplicaciones web, sistemas empresariales y análisis de datos.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://blog.devart.com/wp-content/uploads/2021/12/sql-nosql.png" alt="Usos de NoSQL y SQL.">
+                    <p>Sin embargo, no se debe utilizar una base de datos SQL cuando se requiere almacenar grandes
+                        cantidades de datos no estructurados o semiestructurados, en ese caso se deben utilizar bases de
+                        datos NoSQL. Tampoco si se necesitan almacenar datos temporales o transitorios que se utilizan y
+                        luego se descartan, es más eficiente utilizar una solución de almacenamiento en memoria o un
+                        archivo plano. Por último, si se necesitan procesar grandes volúmenes de datos en tiempo real es
+                        más adecuado, debido a la sobrecarga, usar tecnologías de procesamiento en tiempo real como
+                        Kafka o Spark.</p>
+                    <img class="center" loading="lazy" decoding="async" src="https://miro.medium.com/v2/resize:fit:3308/1*gjxr9qbm2QG5hTILgvlSdw.jpeg" alt="SQL vs. NoSQL">
+                    <p>En conclusión, una base de datos SQL es una herramienta para almacenar, gestionar y recuperar
+                        datos estructurados mediante comandos SQL. Su estructura relacional y sus capacidades de
+                        consulta la convierten en un componente esencial de muchos sistemas modernos.</p>
+
+                    <p>Este <a tabindex="0" href="https://www.youtube.com/watch?v=rMswGXhCKJA" target="_blank" rel="noreferrer noopener">video</a> y este <a tabindex="0" href="https://www.youtube.com/watch?v=DFg1V-rO6Pg" target="_blank" rel="noreferrer noopener">otro</a>, e incluso <a tabindex="0" href="https://www.youtube.com/watch?v=uUdKAYl-F7g" target="_blank" rel="noreferrer noopener">este</a> te podrán aclarar dudas, pero si quieres un <a tabindex="0" href="https://thedataschools.com/sql/" target="_blank" rel="noreferrer noopener">tutorial</a> o un <a tabindex="0" href="https://learnsql.es/blog/que-es-una-base-de-datos-sql/" target="_blank" rel="noreferrer noopener">artículo</a>&hellip;</p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Por qué utilizamos MySQL Workbench?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://blog.kakaocdn.net/dn/dvUuUq/btqTSUdXoBs/wGFLPYJ2UaAAFvStKVVKO0/img.png" alt="MySQL Workbench.">
+                    <p>MySQL Workbench es una herramienta de diseño visual de bases de datos que se utiliza para
+                        facilitar la creación, mantenimiento y administración de bases de datos MySQL. Algunas razones
+                        por las que se utiliza MySQL Workbench son:</p>
+                    <ul>
+                        <li>
+                            <p>Proporciona una interfaz gráfica intuitiva que facilita la creación y gestión de bases de
+                                datos sin necesidad de escribir consultas SQL manualmente.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.techotopia.com/images/2/26/Mysql_workbench_home_screen.jpg" alt="Pantalla de Inicio de MySQL Workbench.">
+                        </li>
+                        <li>
+                            <p>Permite diseñar esquemas de bases de datos visualmente mediante diagramas de
+                                entidad-relación (ER), lo que facilita la comprensión y la colaboración en proyectos de
+                                bases de datos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.mysql.com/common/images/products/MySQL_Workbench_Editor_General_Linux.gif" alt="Editor de MySQL Workbench.">
+                        </li>
+                        <li>
+                            <p>MySQL Workbench permite generar consultas SQL de forma visual a partir de los diagramas
+                                de
+                                bases de datos, lo que agiliza el desarrollo de consultas complejas.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.mysql.com/common/images/products/MySQL_Workbench_Visual_Design_Linux.gif" alt="Diseñador Visual de MySQL Workbench.">
+                        </li>
+                        <li>Facilita tareas de mantenimiento como la creación de tablas, la modificación de esquemas, la
+                            importación y exportación de datos, entre otros.</li>
+                        <li>
+                            <p>Permite administrar servidores MySQL, realizar copias de seguridad, configurar usuarios y
+                                privilegios, y monitorear el rendimiento de las bases de datos.</p>
+                            <img class="center" loading="lazy" decoding="async" src="https://www.mysql.com/common/images/products/mysql_wb_performance_dashboard_linux.png" alt="Pantalla de Rendimiento de MySQL Workbench.">
+                        </li>
+                    </ul>
+                    <p>En resumen, MySQL Workbench es una herramienta poderosa que simplifica el trabajo con bases de
+                        datos MySQL, tanto para desarrolladores como para administradores de bases de datos.</p>
+
+                    <h4>¿Cómo ampliar?</h4>
+                    <p>Para más datos, puedes acudir a la <a tabindex="0" href="https://www.mysql.com/products/workbench/" target="_blank" rel="noreferrer noopener">fuente</a>, recurrir a la lectura de este
+                        <a tabindex="0" href="https://www.espai.es/blog/2023/01/conectar-a-una-base-de-datos-con-mysql-workbench/" target="_blank" rel="noreferrer noopener">artículo</a> y su
+                        <a tabindex="0" href="https://www.espai.es/blog/2023/02/crear-una-base-de-datos-con-mysql-workbench/" target="_blank" rel="noreferrer noopener">secuela</a> o ver el
+                        <a tabindex="0" href="https://www.youtube.com/watch?v=-GnKwwc4KSA" target="_blank" rel="noreferrer noopener">video</a> o este <a tabindex="0" href="https://www.youtube.com/watch?v=uUdKAYl-F7g" target="_blank" rel="noreferrer noopener">otro</a>.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 tabindex="-1">¿Cuáles son algunos tipos de datos SQL?</h3>
+                <div class="contenido">
+                    <img class="center" loading="lazy" decoding="async" src="https://codigolite.com/wp-content/uploads/2017/05/data_type_mysql.gif" alt="Tipos de datos MySQL.">
+                    <p>En SQL, los tipos de datos más comunes son:</p>
+                    <ul>
+                        <li>
+                            <p><strong>INTEGER</strong>: Almacena números enteros positivos y negativos. Los tipos de
+                                datos INTEGER ocupan menos espacio en comparación con tipos de datos que permiten
+                                decimales, como DECIMAL o FLOAT. Esto puede ser beneficioso cuando se trabaja con
+                                grandes conjuntos de datos.</p>
+                            <p>Se utiliza para almacenar valores numéricos enteros como IDs, cantidades, etc.</p>
+                            <div id="editor50"></div>
+                        </li>
+                        <li>
+                            <p><strong>VARCHAR(n)</strong> (<em lang="en">Variable Character</em>): Almacena cadenas de
+                                texto de longitud variable. La longitud máxima se especifica con el parámetro 'n'.</p>
+                            <p>VARCHAR permite almacenar cadenas de longitud variable, lo que significa que el tamaño de
+                                la cadena puede variar dentro de un rango específico definido al crear la columna en la
+                                base de datos.</p>
+                            <p>Utiliza solo la cantidad de espacio necesario para almacenar la cadena de caracteres, lo
+                                que puede ser más eficiente en términos de almacenamiento en comparación con tipos de
+                                datos fijos como CHAR.</p>
+                            <p>Al ser de longitud variable, VARCHAR es útil cuando se necesita almacenar cadenas de
+                                diferentes longitudes sin desperdiciar espacio en la base de datos.</p>
+                            <p>Se utiliza para almacenar nombres, descripciones, etc. ya que su longitud puede variar y
+                                no queremos asignar un espacio fijo para cada uno.</p>
+                            <div id="editor51"></div>
+                        </li>
+                        <li>
+                            <p><strong>CHAR(n)</strong>: Almacena cadenas de texto de longitud fija, donde "n"
+                                representa la longitud fija de la cadena. Esto significa que si defines un campo
+                                CHAR(10), siempre ocupará 10 caracteres, rellenando con espacios en blanco si la cadena
+                                es más corta.</p>
+                            <p>Al ser de longitud fija, CHAR puede ser más eficiente en términos de almacenamiento y
+                                acceso en comparación con VARCHAR, especialmente cuando se trabaja con datos que tienen
+                                una longitud constante.</p>
+                            <p>Hay que tener en cuenta que al comparar cadenas CHAR en SQL, se comparan hasta la
+                                longitud máxima definida, por lo que si tienes un campo CHAR(10) y comparas dos valores
+                                "hola" y "hola " (rellenado con espacios en blanco para completar los 10 caracteres),
+                                serán considerados iguales.</p>
+                            <p>Es recomendable utilizar CHAR cuando se conoce de antemano la longitud exacta de los
+                                datos que se van a almacenar y cuando se desea un rendimiento optimizado en términos de
+                                almacenamiento y acceso.</p>
+                            <div id="editor52"></div>
+                        </li>
+                        <li>
+                            <p><strong>DATE</strong>: Almacena fechas en formato 'YYYY-MM-DD' (año-mes-día). No incluye
+                                la hora.</p>
+                            <p>Puedes formatear las fechas en diferentes formatos para mostrarlas de manera legible para
+                                los usuarios.</p>
+                            <p>Se utiliza para almacenar fechas de cumpleaños, eventos, registros, etc.</p>
+                            <div id="editor53"></div>
+                        </li>
+                        <li>
+                            <p><strong>BOOLEAN</strong>: Se utiliza para representar valores de verdad, es decir,
+                                valores lógicos que pueden ser verdadero (TRUE), falso (FALSE) o desconocido (NULL).
+                                Este tipo de dato es útil para almacenar información que requiere evaluación lógica,
+                                como condiciones de búsqueda o restricciones en consultas.</p>
+                            <p>Por ejemplo, puedes utilizar el tipo de dato BOOLEAN en una tabla para indicar si un
+                                producto está disponible o no, si un usuario ha aceptado los términos y condiciones, o
+                                para representar cualquier otra situación que pueda ser evaluada como verdadera o falsa.
+                            </p>
+                            <div id="editor54"></div>
+                        </li>
+                        <li>
+                            <p><strong>DECIMAL(p, s)</strong>: Almacena números decimales precisos. Se especifica el
+                                total de dígitos (p) de los que (s) son decimales. Es útil cuando se necesita una alta
+                                precisión en cálculos financieros, por ejemplo, para almacenar valores monetarios donde
+                                la precisión decimal es crítica.</p>
+                            <div id="editor55"></div>
+                        </li>
+                        <li>
+                            <p><strong>FLOAT</strong>: Almacena números de coma flotante. Es útil cuando se necesita
+                                representar números reales que no necesitan una precisión extrema: temperaturas,
+                                coordenadas geográficas, etc.</p>
+                            <p>Es importante tener en cuenta que FLOAT no es adecuado para situaciones que requieran una
+                                precisión exacta, ya que los números de punto flotante pueden tener errores de redondeo.
+                                En esos casos, sería más apropiado utilizar tipos de datos como DECIMAL o NUMERIC que
+                                ofrecen una precisión fija.</p>
+                            <div id="editor56"></div>
+                        </li>
+                        <li>
+                            <p><strong>BLOB</strong> (<em lang="en">Binary Large Object</em>): Se utilizan para
+                                almacenar
+                                datos binarios de gran tamaño, como imágenes, archivos de audio, videos, documentos,
+                                etc. Estos tipos de datos son útiles cuando necesitas almacenar información que no se
+                                puede representar fácilmente en formato de texto, ya que permiten almacenar datos
+                                binarios de hasta varios gigabytes de tamaño.</p>
+                            <div id="editor57"></div>
+                        </li>
+                    </ul>
+                    <p>Estos son algunos de los tipos de datos más comunes en SQL. Es importante elegir el tipo de dato
+                        adecuado según el tipo de información que se va a almacenar para garantizar la integridad y
+                        eficiencia de la base de datos.</p>
+
+                    <p>¡¿Ganas de más?! En el
+                        <a tabindex="0" href="https://thedataschools.com/sql/data-types/" target="_blank" rel="noreferrer noopener">tutorial</a> y en este <a tabindex="0" href="https://www.youtube.com/watch?v=F6yOrMWxaKY" target="_blank" rel="noreferrer noopener">video</a> o en <a tabindex="0" href="https://www.youtube.com/watch?v=_F__SHpoPwo" target="_blank" rel="noreferrer noopener">este</a> te lo pueden ampliar… o no.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script defer src="./js/checkpoint_20.js"></script>
+    <script defer src="./js/typewriter.js"></script>
+    <script defer src="./js/typedelete.js"></script>
+    <script defer src="./js/dark-mode-toggle.js"></script>
+    <script defer src="https://codemirror.net/codemirror.js"></script>
+    <script defer src="./js/cm6editor.js"></script>
+</body>
+
+</html>
