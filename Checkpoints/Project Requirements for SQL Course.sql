@@ -119,3 +119,17 @@ JOIN Professors p ON c.ProfessorID = p.ProfessorID
 GROUP BY s.StudentName, p.ProfessorName
 ORDER BY CommonCourses DESC
 LIMIT 1;
+
+-- Or a better solution
+
+WITH MaxCommonCourses AS (
+    SELECT s.StudentName, p.ProfessorName, COUNT(*) AS CommonCourses
+    FROM Students s
+    JOIN Grades g ON s.StudentID = g.StudentID
+    JOIN Courses c ON g.CourseID = c.CourseID
+    JOIN Professors p ON c.ProfessorID = p.ProfessorID
+    GROUP BY s.StudentName, p.ProfessorName
+)
+SELECT StudentName, ProfessorName, CommonCourses
+FROM MaxCommonCourses
+WHERE CommonCourses = (SELECT MAX(CommonCourses) FROM MaxCommonCourses);
